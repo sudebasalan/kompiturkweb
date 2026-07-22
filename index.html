@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compiturk Bilgisayar | DİA Yazılım Çözüm Ortağı</title>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#DC2626',
+                        brandNavy: '#0F172A',
+                        brandAnthracite: '#1E293B',
+                        brandIce: '#F8FAFC',
+                        brandSlate: '#334155',
+                        brandCyan: '#0EA5E9',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .nav-link-hover {
+            position: relative;
+        }
+        .nav-link-hover::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #DC2626;
+            transition: width 0.3s ease;
+        }
+        .nav-link-hover:hover::after {
+            width: 100%;
+        }
+        .mega-menu {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        .group:hover .mega-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-white">
+
+    <!-- TOP-BAR -->
+    <div class="bg-brandRed text-white py-2.5 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs md:text-sm font-medium">
+            <!-- Sol İçerik (İletişim & SEO Bağlantıları) -->
+            <address class="flex flex-wrap justify-center md:justify-start items-center gap-4 md:gap-6 not-italic">
+                <a href="https://maps.google.com" target="_blank" class="flex items-center gap-1.5 hover:text-white/80 transition-colors">
+                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                    <span>Beylikdüzü, İSTANBUL</span>
+                </a>
+                <a href="mailto:destek@compiturk.com.tr" class="flex items-center gap-1.5 hover:text-white/80 transition-colors">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    <span>destek@compiturk.com.tr</span>
+                </a>
+                <a href="tel:+902128733537" class="flex items-center gap-1.5 hover:text-white/80 transition-colors">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                    <span>+90 (212) 873 35 37</span>
+                </a>
+                <a href="https://wa.me/902128733537" target="_blank" class="flex items-center gap-1.5 bg-white/10 px-2 py-1 rounded-md hover:bg-white/20 transition-all">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    <span>WhatsApp Destek</span>
+                </a>
+            </address>
+
+            <!-- Sağ İçerik (Sosyal Medya) -->
+            <div class="hidden md:flex items-center gap-4 border-l border-white/20 ml-6 pl-6">
+                <a href="#" class="hover:scale-110 transition-transform"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                <a href="#" class="hover:scale-110 transition-transform"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                <a href="#" class="hover:scale-110 transition-transform"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20 md:h-24">
+                
+                <!-- Sol Taraf: Logo ve İş Ortağı Rozeti -->
+                <div class="flex items-center gap-4 lg:gap-8">
+                    <a href="/" class="flex-shrink-0">
+                        <!-- Sade Logo Alanı -->
+                        <span class="text-2xl md:text-3xl font-extrabold text-brandNavy tracking-tight">
+                            COMPI<span class="text-brandRed">TURK</span>
+                        </span>
+                    </a>
+                    <div class="hidden sm:flex items-center pl-4 border-l border-slate-200">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Yetkili</span>
+                            <span class="text-xs font-bold text-brandCyan">DİA Çözüm Ortağı</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Orta Taraf: Navigasyon -->
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="#" class="nav-link-hover text-sm font-semibold text-brandNavy">Ana Sayfa</a>
+                    
+                    <!-- Dropdown: DİA ERP -->
+                    <div class="relative group cursor-pointer">
+                        <div class="flex items-center gap-1 nav-link-hover text-sm font-semibold text-brandNavy">
+                            DİA ERP <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </div>
+                        <div class="absolute top-full left-0 w-48 pt-4 mega-menu">
+                            <div class="bg-white border border-slate-100 shadow-xl rounded-xl p-2">
+                                <a href="#" class="block px-4 py-2 text-sm hover:bg-brandIce rounded-lg transition-colors">DİA Bulut ERP</a>
+                                <a href="#" class="block px-4 py-2 text-sm hover:bg-brandIce rounded-lg transition-colors">E-Ticaret Çözümleri</a>
+                                <a href="#" class="block px-4 py-2 text-sm hover:bg-brandIce rounded-lg transition-colors">E-Devlet Entegrasyonu</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mega Menu: Çözümlerimiz -->
+                    <div class="relative group cursor-pointer">
+                        <div class="flex items-center gap-1 nav-link-hover text-sm font-semibold text-brandNavy">
+                            Çözümlerimiz <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </div>
+                        <div class="absolute top-full left-1/2 -translate-x-1/2 w-[600px] pt-4 mega-menu">
+                            <div class="bg-white border border-slate-100 shadow-2xl rounded-2xl p-6 grid grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-bold text-brandRed mb-3 text-xs uppercase tracking-wider">Donanım & Teknik</h4>
+                                    <ul class="space-y-2">
+                                        <li><a href="#" class="text-sm text-brandSlate hover:text-brandCyan transition-colors">Sunucu Çözümleri</a></li>
+                                        <li><a href="#" class="text-sm text-brandSlate hover:text-brandCyan transition-colors">Network & Güvenlik</a></li>
+                                        <li><a href="#" class="text-sm text-brandSlate hover:text-brandCyan transition-colors">Bakım Anlaşmaları</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-brandRed mb-3 text-xs uppercase tracking-wider">Yazılım Çözümleri</h4>
+                                    <ul class="space-y-2">
+                                        <li><a href="#" class="text-sm text-brandSlate hover:text-brandCyan transition-colors">Özel Yazılım Geliştirme</a></li>
+                                        <li><a href="#" class="text-sm text-brandSlate hover:text-brandCyan transition-colors">Sektörel Çözümler</a></li>
+                                        <li><a href="#" class="text-sm text-brandSlate hover:text-brandCyan transition-colors">Mobil Uygulamalar</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#" class="nav-link-hover text-sm font-semibold text-brandNavy">Hakkımızda</a>
+                    <a href="#" class="nav-link-hover text-sm font-semibold text-brandNavy">Blog</a>
+                    <a href="#" class="nav-link-hover text-sm font-semibold text-brandNavy">İletişim</a>
+                </nav>
+
+                <!-- Sağ Taraf: İletişim Kutusu & DİA Badge -->
+                <div class="flex items-center gap-6">
+                    <div class="hidden xl:flex items-center gap-3 bg-brandIce px-4 py-2 rounded-full border border-slate-100">
+                        <div class="bg-brandRed p-2 rounded-full text-white">
+                            <i data-lucide="phone-call" class="w-4 h-4 text-white"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-[10px] text-brandSlate font-medium uppercase leading-none">Bizi Arayın!</span>
+                            <a href="tel:+902128733537" class="text-sm font-bold text-brandNavy hover:text-brandRed transition-colors tracking-tight">+90 (212) 873 35 37</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobil Menü Butonu -->
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 text-brandNavy">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobil Menü (Drawer) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 py-6 space-y-4 shadow-inner">
+            <a href="#" class="block font-semibold text-brandNavy">Ana Sayfa</a>
+            <div class="font-semibold text-brandNavy">DİA ERP</div>
+            <div class="font-semibold text-brandNavy pl-4 space-y-2 text-sm text-brandSlate">
+                <a href="#" class="block">DİA Bulut ERP</a>
+                <a href="#" class="block">E-Ticaret</a>
+            </div>
+            <a href="#" class="block font-semibold text-brandNavy">Hakkımızda</a>
+            <a href="#" class="block font-semibold text-brandNavy">İletişim</a>
+            <div class="pt-4 border-t border-slate-100">
+                <a href="tel:+902128733537" class="flex items-center gap-3 text-brandRed font-bold">
+                    <i data-lucide="phone" class="w-5 h-5"></i> +90 (212) 873 35 37
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        // Lucide ikonlarını başlat
+        lucide.createIcons();
+
+        // Mobil Menü Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
