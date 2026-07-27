@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim & DİA ERP Destek Merkezi | Compiturk</title>
+    <meta name="description" content="DİA ERP çözümleri, kurumsal IT altyapı hizmetleri, ücretsiz demo ve teknik destek talepleriniz için bize ulaşın. Compiturk Bilgisayar.">
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#DC2626',
+                        brandRedDark: '#B91C1C',
+                        brandNavy: '#0F172A',
+                        brandNavyLight: '#1E3A8A',
+                        brandSlate: '#334155',
+                        brandIce: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: 0.4 },
+                            '50%': { opacity: 0.8 },
+                        }
+                    },
+                    animation: {
+                        float: 'float 4s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans antialiased text-slate-800 bg-[#F8FAFC] min-h-screen flex flex-col overflow-x-hidden">
+
+    <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-header"></div>
+
+    <!-- MAIN İÇERİK BAŞLANGICI -->
+    <main class="flex-grow">
+
+        <!-- ========================================================================= -->
+        <!-- 1. HERO / BANNER SECTION (HAREKETLİ, CANLI VE AŞAĞIYA ÇAĞRI YAPAN TASARIM) -->
+        <!-- ========================================================================= -->
+        <section id="module-hero" class="w-full bg-[#0F172A] text-white relative overflow-hidden py-20 lg:py-28 z-20 border-b-4 border-[#DC2626]">
+            <!-- Animasyonlu Arka Plan Işıltıları -->
+            <div class="absolute inset-0 bg-[radial-gradient(rgba(220,38,38,0.2)_1px,transparent_1px)] [background-size:24px_24px] animate-pulse-glow pointer-events-none"></div>
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#DC2626]/30 rounded-full blur-[130px] animate-float pointer-events-none"></div>
+            <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#1E3A8A]/50 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#DC2626] font-bold text-xs sm:text-sm tracking-wide shadow-lg">
+                    <span class="w-2 h-2 rounded-full bg-[#DC2626] animate-ping"></span>
+                    <span class="text-white">B2B ÇÖZÜM & DESTEK MERKEZİ</span>
+                </div>
+
+                <!-- TEK H1 BAŞLIĞI -->
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                    İletişim & DİA ERP <br class="hidden sm:inline" />
+                    <span class="text-[#DC2626]">Destek Merkezi</span>
+                </h1>
+
+                <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto">
+                    DİA ERP çözümleri, kurumsal IT altyapı hizmetleri, ücretsiz demo ve teknik destek talepleriniz için bize ulaşın. Aşağıdaki formu doldurun veya ofisimizi ziyaret edin!
+                </p>
+
+                <!-- Hızlı İletişim Rozetleri -->
+                <div class="flex flex-wrap items-center justify-center gap-4 pt-2 text-xs sm:text-sm font-bold text-slate-200">
+                    <a href="tel:02128733537" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/25 border border-white/20 transition-all hover:scale-105">
+                        <i data-lucide="phone" class="w-4 h-4 text-[#DC2626]"></i>
+                        <span>0212 873 35 37</span>
+                    </a>
+                    <a href="mailto:destek@compiturk.com.tr" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/25 border border-white/20 transition-all hover:scale-105">
+                        <i data-lucide="mail" class="w-4 h-4 text-sky-400"></i>
+                        <span>destek@compiturk.com.tr</span>
+                    </a>
+                    <div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 border border-white/20">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-emerald-400"></i>
+                        <span>Beylikdüzü, İstanbul</span>
+                    </div>
+                </div>
+
+                <!-- Aşağıya Devam Edildiğini Gösteren Dikkat Çekici Gösterge (Aşağı Ok Sinyali) -->
+                <div class="pt-8 flex flex-col items-center justify-center space-y-2 opacity-90">
+                    <span class="text-xs font-semibold tracking-widest uppercase text-slate-300">İletişim Formu ve Harita Aşağıdadır</span>
+                    <div class="w-8 h-12 rounded-full border-2 border-white/40 flex items-start justify-center p-1">
+                        <div class="w-1.5 h-3 bg-[#DC2626] rounded-full animate-bounce"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 2. İLETİŞİM BİLGİLERİ VE FORUM ALANI (2 SÜTUNLU GRID LAYOUT)              -->
+        <!-- ========================================================================= -->
+        <section id="iletisim-icerik" class="py-16 lg:py-24 bg-[#F8FAFC]">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+
+                    <!-- SOL SÜTUN: İLETİŞİM KARTLARI (Col-span-5) -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="space-y-2">
+                            <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-3.5 py-1.5 rounded-full border border-red-100">
+                                BİZE ULAŞIN
+                            </span>
+                            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                                İletişim Kanallarımız ve <span class="text-[#1E3A8A]">Ofis Bilgileri</span>
+                            </h2>
+                            <p class="text-sm text-slate-600">
+                                DİA ERP bayilik operasyonlarımız, yazılım çözümlerimiz ve teknik destek talepleriniz için aşağıdaki kanallardan bize 7/24 ulaşabilirsiniz.
+                            </p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <!-- Kart 1: Güncellenmiş Tam Adres Bilgisi -->
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-red-50 text-[#DC2626] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="map-pin" class="w-6 h-6"></i>
+                                </div>
+                                <div class="space-y-1">
+                                    <h3 class="font-bold text-slate-900 text-base">İstanbul Yetkili Ofis</h3>
+                                    <p class="text-xs text-slate-600 leading-relaxed">
+                                        Yakuplu Mahallesi, Yakuplu Caddesi, Haramidere, Hasırcılar AVM Arkası, Ceylan Rezidans A Blok Daire: 157-158, Beylikdüzü / İstanbul
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Kart 2: Telefon & WhatsApp -->
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-blue-50 text-[#1E3A8A] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="phone-call" class="w-6 h-6"></i>
+                                </div>
+                                <div class="space-y-1">
+                                    <h3 class="font-bold text-slate-900 text-base">Telefon & WhatsApp Destek</h3>
+                                    <p class="text-xs text-slate-600">
+                                        Satış & Bilgi: <a href="tel:02128733537" class="font-bold text-[#DC2626] hover:underline">0212 873 35 37</a>
+                                    </p>
+                                    <p class="text-xs text-slate-600">
+                                        Teknik Destek Hattı: <a href="tel:02128733537" class="font-bold text-[#1E3A8A] hover:underline">0212 873 35 37</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Kart 3: E-Posta Adresleri -->
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="mail" class="w-6 h-6"></i>
+                                </div>
+                                <div class="space-y-1">
+                                    <h3 class="font-bold text-slate-900 text-base">E-Posta Adreslerimiz</h3>
+                                    <p class="text-xs text-slate-600">
+                                        Destek: <a href="mailto:destek@compiturk.com.tr" class="font-bold text-sky-600 hover:underline">destek@compiturk.com.tr</a>
+                                    </p>
+                                    <p class="text-xs text-slate-600">
+                                        Satış: <a href="mailto:satis@compiturk.com.tr" class="font-bold text-sky-600 hover:underline">satis@compiturk.com.tr</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Kart 4: Çalışma Saatleri -->
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all flex items-start gap-4 relative overflow-hidden group border-l-4 border-l-emerald-500">
+                                <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="clock" class="w-6 h-6"></i>
+                                </div>
+                                <div class="space-y-1">
+                                    <h3 class="font-bold text-slate-900 text-base">Çalışma Saatleri</h3>
+                                    <p class="text-xs text-slate-600">
+                                        Hafta İçi: 09:00 - 18:00 (Cumartesi - Pazar Kapalı)
+                                    </p>
+                                    <div class="inline-flex items-center gap-1 mt-2 px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 text-[11px] font-bold">
+                                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                                        Genellikle 5 dakika içinde yanıt verilir
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SAĞ SÜTUN: B2B İLETİŞİM & DEMO TALEP FORMU (Col-span-7) -->
+                    <div class="lg:col-span-7">
+                        <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-2xl border-t-4 border-[#DC2626] border-x border-b border-slate-200 relative">
+                            <div class="absolute top-0 right-0 w-48 h-48 bg-red-50 rounded-bl-full pointer-events-none opacity-50"></div>
+
+                            <div class="space-y-2 mb-6 relative z-10">
+                                <h3 class="text-2xl font-black text-slate-900 flex items-center gap-2">
+                                    <i data-lucide="send" class="w-6 h-6 text-[#DC2626]"></i>
+                                    Demo Talep & İletişim Formu
+                                </h3>
+                                <p class="text-xs sm:text-sm text-slate-600">
+                                    Formu doldurun; DİA ERP uzmanlarımız projenizi inceleyip size en uygun çözüfle dönüş yapsın.
+                                </p>
+                            </div>
+
+                            <form action="#" method="POST" class="space-y-5 relative z-10" onsubmit="event.preventDefault(); alert('Mesajınız ve demo talebiniz başarıyla alınmıştır. En kısa sürede size dönüş yapacağız.');">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                    <div class="space-y-1.5">
+                                        <label for="iletisim-ad" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Ad Soyad <span class="text-[#DC2626]">*</span>
+                                        </label>
+                                        <input type="text" id="iletisim-ad" name="iletisim-ad" required placeholder="Örn: Ahmet Yılmaz" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    </div>
+
+                                    <div class="space-y-1.5">
+                                        <label for="iletisim-sirket" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Şirket Adı <span class="text-[#DC2626]">*</span>
+                                        </label>
+                                        <input type="text" id="iletisim-sirket" name="iletisim-sirket" required placeholder="Firma Ünvanı" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                    <div class="space-y-1.5">
+                                        <label for="iletisim-eposta" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            E-Posta Adresi <span class="text-[#DC2626]">*</span>
+                                        </label>
+                                        <input type="email" id="iletisim-eposta" name="iletisim-eposta" required placeholder="ahmet@sirketiniz.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    </div>
+
+                                    <div class="space-y-1.5">
+                                        <label for="iletisim-telefon" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Telefon Numarası <span class="text-[#DC2626]">*</span>
+                                        </label>
+                                        <input type="tel" id="iletisim-telefon" name="iletisim-telefon" required placeholder="05XX XXX XX XX" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    </div>
+                                </div>
+
+                                <div class="space-y-1.5">
+                                    <label for="iletisim-hizmet" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        İlgilendiğiniz Hizmet / Çözüm <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <select id="iletisim-hizmet" name="iletisim-hizmet" required class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all cursor-pointer">
+                                        <option value="" disabled selected>Lütfen bir hizmet seçin</option>
+                                        <option value="dia-erp">DİA ERP Yazılım Çözümleri & Demo</option>
+                                        <option value="pazaryeri">Pazar Yeri & E-Ticaret Entegrasyonu</option>
+                                        <option value="it-altyapi">Kurumsal IT Altyapı & Ağ (Network)</option>
+                                        <option value="kargo">Ozon / Kargo & Lojistik Entegrasyonu</option>
+                                        <option value="donanim">Sunucu, Bilgisayar & Yazıcı Kiralama</option>
+                                        <option value="diger">Diğer / Genel Destek Talebi</option>
+                                    </select>
+                                </div>
+
+                                <div class="space-y-1.5">
+                                    <label for="iletisim-mesaj" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        Mesajınız veya Proje Detayınız <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <textarea id="iletisim-mesaj" name="iletisim-mesaj" rows="4" required placeholder="Şirketinizin ihtiyaçlarını veya sormak istediklerinizi buraya yazabilirsiniz..." class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all resize-none"></textarea>
+                                </div>
+
+                                <div class="flex items-start gap-3 pt-1">
+                                    <input type="checkbox" id="kvkk-onay" name="kvkk-onay" required class="w-4 h-4 mt-0.5 rounded border-slate-300 text-[#DC2626] focus:ring-[#DC2626] cursor-pointer" />
+                                    <label for="kvkk-onay" class="text-xs text-slate-500 leading-snug cursor-pointer">
+                                        Kişisel verilerimin KVKK Aydınlatma Metni kapsamında demo ve bilgilendirme amacıyla işlenmesini kabul ediyorum. <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                </div>
+
+                                <button type="submit" class="w-full py-4 px-6 rounded-xl bg-[#DC2626] hover:bg-[#B91C1C] text-white font-extrabold text-base shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:scale-[1.005] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer border border-red-400/30">
+                                    <span>Mesajı Gönder / Demo İsteyin</span>
+                                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 3. İNTERAKTİF GOOGLE MAPS / HARİTA BÖLÜMÜ (DOĞRU ADRES İŞARETLENMİŞ)       -->
+        <!-- ========================================================================= -->
+        <section id="harita-bolumu" class="py-16 bg-white border-b border-slate-200/85">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                    <div class="space-y-2">
+                        <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-3.5 py-1.5 rounded-full border border-red-100">
+                            LOKASYONUMUZ
+                        </span>
+                        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+                            Ofisimizi <span class="text-[#1E3A8A]">Ziyaret Edin</span>
+                        </h2>
+                        <p class="text-sm text-slate-600">
+                            Yakuplu Mah. Yakuplu Cad. Ceylan Rezidans A Blok Daire: 157-158 Beylikdüzü / İstanbul adresindeki ofisimize kahve içmeye bekliyoruz.
+                        </p>
+                    </div>
+
+                    <a href="https://maps.google.com/?q=Yakuplu+Mahallesi+Yakuplu+Caddesi+Ceylan+Rezidans+Beylikduzu+Istanbul" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#DC2626] hover:bg-[#B91C1C] text-white font-bold text-sm shadow-md transition-all self-start md:self-auto">
+                        <i data-lucide="navigation" class="w-4 h-4"></i>
+                        <span>Yol Tarifi Al</span>
+                    </a>
+                </div>
+
+                <!-- Canlı Harita Konteyneri (Doğru İşaretlenmiş Konum) -->
+                <div class="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200 h-[450px] w-full bg-slate-100">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.892055743452!2d28.665!3d41.005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b55c1b525f053f%3A0x0!2zWWFrdXxsdSBNYWguLCBZYWt1cGx1IENhZC4sIEhleWxpZGrDvHpcdS_EsHN0YW5idWw!5e0!3m2!1str!2str!4v1710000000000!5m2!1str!2str" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Compiturk Bilgisayar Tam Ofis Konumu"
+                        class="w-full h-full">
+                    </iframe>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 4. HIZLI DESTEK & SIKÇA SORULAN SORULAR (SEO FAQ - HTML5 ACCORDION)       -->
+        <!-- ========================================================================= -->
+        <section id="iletisim-faq" class="py-16 bg-[#F8FAFC]">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                
+                <div class="text-center space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Sıkça Sorulan <span class="text-[#DC2626]">Sorular</span></h2>
+                    <p class="text-sm text-slate-600">İletişim, demo talepleri ve destek süreçleri hakkında merak edilenler.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Soru 1 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                            <span>DİA ERP demo talebim ne kadar sürede karşılanır?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Demo talebiniz bize ulaştıktan sonra müşteri temsilcimiz aynı iş günü içinde (genellikle 1-2 saat içinde) sizi arayarak işletmenizin ihtiyaçlarına göre online veya yüz yüze demo randevunuzu planlamaktadır.
+                        </p>
+                    </details>
+
+                    <!-- Soru 2 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                            <span>Uzaktan teknik destek hizmetiniz var mı?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Destek aboneliği bulunan veya aktif DİA ERP müşterilerimiz için AnyDesk / TeamViewer gibi güvenli uzak bağlantı araçlarıyla anında uzaktan teknik destek ve yardım hizmeti sunmaktayız.
+                        </p>
+                    </details>
+
+                    <!-- Soru 3 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                            <span>İstanbul dışındaki şirketlere de hizmet veriyor musunuz?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Kesinlikle. Türkiye'nin 81 ilindeki kurumsal firmalara, üretim tesislerine ve bayilere DİA ERP, e-ticaret entegrasyonları ve uzaktan IT altyapı danışmanlık hizmetlerini başarıyla sağlamaktayız.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-footer"></div>
+
+    <!-- SCRIPT ÇAĞRILARI -->
+    <script src="../js/components.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

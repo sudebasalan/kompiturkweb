@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurumsal Yazılım Lisanslama & Danışmanlık Çözümleri | Compiturk</title>
+    <meta name="description" content="Microsoft 365, Windows Server, SQL Server ve kurumsal antivirüs lisanslarınızı yasal mevzuata uyumlu, en uygun maliyetlerle yapılandırın. Compiturk.">
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#DC2626',
+                        brandRedDark: '#B91C1C',
+                        brandNavy: '#0F172A',
+                        brandTechBlue: '#0EA5E9',
+                        brandSlate: '#334155',
+                        brandIce: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
+
+    <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-header"></div>
+
+    <!-- MAIN İÇERİK BAŞLANGICI -->
+    <main class="flex-grow">
+
+        <!-- ========================================================================= -->
+        <!-- 1. HERO / BANNER SECTION (TEKNOLOJİK KOYU LACİVERT ARKA PLAN)           -->
+        <!-- ========================================================================= -->
+        <section id="module-hero" class="w-full bg-gradient-to-r from-[#0F172A] via-[#1E3A8A] to-[#0F172A] text-white py-16 lg:py-24 relative overflow-hidden z-20">
+            <!-- Arka Plan Vektörel Desen & Mavi/Yeşil Aksan İşıltılar -->
+            <div class="absolute inset-0 bg-[radial-gradient(rgba(14,165,233,0.15)_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#0EA5E9]/20 rounded-full blur-[130px] pointer-events-none"></div>
+            <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#DC2626]/20 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+                    <!-- SOL KOLON: İÇERİK VE VURGULAR (Col-span-7) -->
+                    <div class="lg:col-span-7 space-y-6 text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#0EA5E9] font-bold text-xs sm:text-sm tracking-wide">
+                            <span class="w-2 h-2 rounded-full bg-[#0EA5E9] animate-pulse"></span>
+                            <span class="text-white">YAZILIM LİSANSLAMA & OPTİMİZASYON</span>
+                        </div>
+
+                        <!-- TEK H1 BAŞLIĞI -->
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                            Kurumsal Yazılım Lisanslama & <br class="hidden sm:inline" />
+                            <span class="text-[#0EA5E9]">Danışmanlık Çözümleri</span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl">
+                            Microsoft 365, Windows Server, SQL Server, Kurumsal Antivirüs ve Firewall lisanslarınızı yasal mevzuatlara tam uyumlu, en uygun maliyetlerle yapılandırıyoruz.
+                        </p>
+
+                        <!-- İkonlu Vurgu Maddeleri -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/15">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-[#0EA5E9] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="cloud" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Microsoft 365 & Bulut Uzmanlığı
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Kurumsal Antivirüs & Endpoint
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-blue-300 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="scale" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Yasal Denetim & Optimizasyon
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SAĞ KOLON: GÖRSEL KARTI & FORM KUTUSU (Col-span-5) -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <!-- Yazılım Lisanslama Görsel / Tech Banner Kartı -->
+                        <div class="bg-slate-900/80 backdrop-blur-md rounded-2xl p-6 border border-slate-700 shadow-xl flex items-center gap-5">
+                            <div class="w-16 h-16 rounded-xl bg-[#0EA5E9]/20 border border-[#0EA5E9]/40 text-[#0EA5E9] flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="key-round" class="w-8 h-8"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <h3 class="text-sm font-bold text-white uppercase tracking-wider">Yasal & Esnek Kurumsal Lisanslar</h3>
+                                <p class="text-xs text-slate-400">Şirketinizin büyüklüğüne uygun CSP ve toplu lisanslama modelleriyle maliyetleri düşürün, denetim risklerini ortadan kaldırın.</p>
+                            </div>
+                        </div>
+
+                        <!-- Beyaz Form Kutusu -->
+                        <div class="bg-white rounded-2xl p-6 sm:p-8 text-slate-900 shadow-2xl border-2 border-[#DC2626]/40 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#0F1D38] via-[#0EA5E9] to-[#DC2626]"></div>
+
+                            <div class="border-b border-slate-100 pb-4 mb-5 pt-1">
+                                <h2 class="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
+                                    <i data-lucide="sparkles" class="w-6 h-6 text-[#DC2626]"></i>
+                                    Lisanslama Keşif & Teklif Alın
+                                </h2>
+                                <p class="text-xs text-slate-500 mt-1">
+                                    Yazılım envanteriniz ve lisans ihtiyaçlarınız için hemen bilgilerinizi bırakın, uzmanımız arasın.
+                                </p>
+                            </div>
+
+                            <form action="#" method="POST" class="space-y-4" onsubmit="event.preventDefault();">
+                                <div class="space-y-1">
+                                    <label for="fullname" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        Ad Soyad <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="text" id="fullname" name="fullname" required placeholder="Örn: Ahmet Yılmaz" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="space-y-1">
+                                        <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Telefon <span class="text-[#DC2626]">*</span>
+                                        </label>
+                                        <input type="tel" id="phone" name="phone" required placeholder="05XX XXX XX XX" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    </div>
+
+                                    <div class="space-y-1">
+                                        <label for="company" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Şirket Adı
+                                        </label>
+                                        <input type="text" id="company" name="company" placeholder="Firma Ünvanı" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    </div>
+                                </div>
+
+                                <div class="space-y-1">
+                                    <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        E-Posta Adresi <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" required placeholder="ahmet@sirketiniz.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                </div>
+
+                                <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-[#DC2626] hover:bg-[#b91c1c] text-white font-extrabold text-base shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:scale-[1.005] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer border border-red-400/30">
+                                    <span>Hemen Bilgi & Teklif İsteyin</span>
+                                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+
+                                <p class="text-[11px] text-center text-slate-400 mt-2 flex items-center justify-center gap-1">
+                                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
+                                    Verileriniz KVKK kapsamında %100 güvende tutulmaktadır.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 2. YAZILIM LİSANSLAMA YETENEKLERİ (3x2 GRID KARTLAR)                      -->
+        <!-- ========================================================================= -->
+        <section id="lisanslama-ozellikler" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-black tracking-widest text-[#0F172A] uppercase bg-slate-200 px-3.5 py-1.5 rounded-full border border-slate-300">
+                        YASAL VE MALİYET OPTİMİZE LİSANSLAR
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Yazılım Lisanslama <span class="text-[#1E3A8A]">Yetenekleri</span>
+                    </h2>
+                    <p class="text-base text-slate-600 font-normal">
+                        Microsoft, sunucu, antivirüs ve firewall lisans ihtiyaçlarınızda doğru modelleme ve bütçe optimizasyonu.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+
+                    <!-- Kart 1: Microsoft 365 & Office Lisanslama -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0EA5E9] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-sky-50 text-[#0EA5E9] flex items-center justify-center group-hover:bg-[#0EA5E9] group-hover:text-white transition-colors">
+                                <i data-lucide="cloud" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#0EA5E9] transition-colors">Microsoft 365 & Office Lisanslama</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Exchange kurumsal e-posta, Teams, SharePoint ve Office masaüstü uygulamalarının kurumsal bulut lisans yönetimi ve desteği.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 2: Sunucu ve Veritabanı Lisanslama -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#1E3A8A] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-blue-50 text-[#1E3A8A] flex items-center justify-center group-hover:bg-[#1E3A8A] group-hover:text-white transition-colors">
+                                <i data-lucide="database" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#1E3A8A] transition-colors">Sunucu & Veritabanı Lisanslama</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Windows Server, SQL Server Core / CAL ve sanallaştırma lisanslarının karmaşık kurallara göre hatasız hesaplanıp temin edilmesi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 3: Kurumsal Antivirüs Lisansları -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-red-50 text-[#DC2626] flex items-center justify-center group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                                <i data-lucide="shield-check" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Kurumsal Antivirüs Lisansları</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                ESET, Kaspersky ve Sophos gibi önde gelen endpoint güvenlik çözümlerinin merkezi konsollu kurumsal lisanslanması.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 4: Firewall & Ağ Güvenlik Lisansları -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                                <i data-lucide="shield" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Firewall & Ağ Güvenlik Lisansları</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Fortinet, Sophos ve SonicWall UTM cihazlarının yıllık güvenlik abonelikleri, imza güncellemeleri ve lisans yenileme takibi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 5: Lisans Danışmanlığı & Denetim -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-purple-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                                <i data-lucide="scale" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-purple-600 transition-colors">Lisans Danışmanlığı & Denetim</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                BSA ve Microsoft lisans denetimlerine (Audit) önceden hazırlık yapılması, yazılım envanterinin çıkarılması ve kaçak risklerinin sıfırlanması.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 6: Esnek CSP & Toplu Lisanslama -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-cyan-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                                <i data-lucide="Layers" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-cyan-600 transition-colors">Esnek CSP & Toplu Lisanslama</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Aylık/Yıllık esnek ödeme modelleriyle (Cloud Solution Provider) personel sayınıza göre artırıp azaltabileceğiniz ekonomik lisans planlaması.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 3. NEDEN COMPITURK LİSANSLAMA? (LACİVERT & KIRMIZI ACCENT BÖLÜMÜ)         -->
+        <!-- ========================================================================= -->
+        <section id="neden-compiturk-lisans" class="py-16 lg:py-24 bg-[#0F172A] text-white">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-white font-bold text-xs border border-white/20">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-[#0EA5E9]"></i>
+                            YASAL UYUM & MALİYET TASARRUFU
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                            Neden Compiturk <br />
+                            Lisanslama Hizmetleri?
+                        </h2>
+                        <p class="text-slate-300 text-base leading-relaxed">
+                            Yasal yaptırım ve ağır ceza risklerini ortadan kaldıran, atıl ve kullanılmayan lisans maliyetlerini engelleyerek bütçenizi optimize eden profesyonel yazılım danışmanlığı.
+                        </p>
+                        <div class="space-y-3 text-sm font-semibold text-white">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0EA5E9]"></i>
+                                <span>Lisans denetimlerine tam hazır envanter yapısıyla cezai yaptırımlardan korunun</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0EA5E9]"></i>
+                                <span>İhtiyacınızdan fazla lisans ödemesi yapmadan doğru modelleme ile bütçe tasarrufu sağlayın</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0EA5E9]"></i>
+                                <span>Yenileme tarihlerini tek merkezden takip eden proaktif lisans yönetim hizmeti alın</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sağ Taraf İstatistik Paneli -->
+                    <div class="bg-slate-900 text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-slate-800 space-y-6">
+                        <div class="border-b border-slate-800 pb-5">
+                            <div class="text-4xl font-black text-[#0EA5E9]">%100</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Yasal Mevzuat & BSA Uyumluluğu</div>
+                            <p class="text-xs text-slate-400 mt-1">Şirketinizdeki tüm yazılımlar faturalı, orijinal ve yasal güvence altındadır.</p>
+                        </div>
+
+                        <div>
+                            <div class="text-4xl font-black text-[#DC2626]">Sıfır Risk</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Kaçak Yazılım & Ceza Riski</div>
+                            <p class="text-xs text-slate-400 mt-1">Doğru kalibrasyon ile gereksiz lisans maliyetleri engellenir, açıklar kapatılır.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 4. 4 ADIMDA LİSANSLAMA DANIŞMANLIĞI SÜRECİ                                -->
+        <!-- ========================================================================= -->
+        <section id="lisans-adimlari" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider bg-slate-200 px-3.5 py-1.5 rounded-full border border-slate-300">
+                        SİSTEMATİK DANIŞMANLIK AKIŞI
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        4 Adımda Lisanslama <span class="text-[#1E3A8A]">Danışmanlığı Süreci</span>
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        Yazılım envanterinizi yasal ve ekonomik hale getirmek için izlediğimiz adımlar.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+
+                    <!-- Adım 1 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0EA5E9] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-sky-50 text-[#0EA5E9] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="search" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#0EA5E9] transition-colors">01</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Envanter & Kullanıcı Analizi</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Şirketinizdeki mevcut bilgisayarlar, sunucular ve aktif kullanıcı sayıları detaylı olarak envantere alınır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 2 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#1E3A8A] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#1E3A8A] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="calculator" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#1E3A8A] transition-colors">02</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">En Uygun Modelin Seçimi</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                CSP, Open License veya bulut abonelik modelleri arasından bütçenize en uygun optimum plan belirlenir.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 3 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-purple-600 transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="key-round" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-purple-600 transition-colors">03</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Aktivasyon & Yetkilendirme</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Lisans anahtarları temin edilerek Microsoft 365, sunucu ve antivirüs panellerinizde aktif hale getirilir.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 4 -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-emerald-500/80 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="calendar-check" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-emerald-500">04</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Yenileme Takibi & Yönetim</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Yıllık yenileme tarihleri proaktif olarak takip edilir; süresi dolacak abonelikler zamanında güncellenir.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 5. BİRLİKTE KULLANABİLECEĞİNİZ DİĞER IT ÇÖZÜMLERİMİZ                      -->
+        <!-- ========================================================================= -->
+        <section id="tamamlayici-cozumler" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                        Birlikte Kullanabileceğiniz <span class="text-[#1E3A8A]">Diğer IT Çözümlerimiz</span>
+                    </h2>
+                    <p class="text-sm text-slate-600">Yazılım lisanslamanızı tamamlayan ve altyapınızı güçlendiren diğer IT hizmetlerimiz.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Çözüm 1 -->
+                    <a href="sunucu-kurulumu.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#1E3A8A] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#1E3A8A] flex items-center justify-center mb-4 group-hover:bg-[#1E3A8A] group-hover:text-white transition-colors">
+                            <i data-lucide="server" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#1E3A8A] transition-colors">Sunucu Kurulumu</h3>
+                        <p class="text-xs text-slate-500 mt-1">Yüksek performanslı kurumsal sunucu ve sanallaştırma.</p>
+                    </a>
+
+                    <!-- Çözüm 2 -->
+                    <a href="guvenlik-duvari.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-red-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-red-50 text-red-600 flex items-center justify-center mb-4 group-hover:bg-red-600 group-hover:text-white transition-colors">
+                            <i data-lucide="shield" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-red-600 transition-colors">Güvenlik Duvarı (Firewall)</h3>
+                        <p class="text-xs text-slate-500 mt-1">Ağ trafiğini koruyan UTM güvenlik duvarı sistemleri.</p>
+                    </a>
+
+                    <!-- Çözüm 3 -->
+                    <a href="yedekleme-cozumleri.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <i data-lucide="database-backup" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Yedekleme Çözümleri</h3>
+                        <p class="text-xs text-slate-500 mt-1">Otomatik bulut ve lokal veri yedekleme mimarileri.</p>
+                    </a>
+
+                    <!-- Çözüm 4 -->
+                    <a href="../index.html#it-hizmetler" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-purple-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center mb-4 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i data-lucide="globe" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-purple-600 transition-colors">Hosting & Domain</h3>
+                        <p class="text-xs text-slate-500 mt-1">Kurumsal web barındırma ve domain tescil hizmetleri.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 6. SIKÇA SORULAN SORULAR (SEO FAQ - HTML5 ACCORDION)                     -->
+        <!-- ========================================================================= -->
+        <section id="faq" class="py-16 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                
+                <div class="text-center space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Sıkça Sorulan <span class="text-[#1E3A8A]">Sorular</span></h2>
+                    <p class="text-sm text-slate-600">Kurumsal yazılım lisanslama ve danışmanlık çözümleri hakkında merak edilenler.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Soru 1 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>Microsoft 365 lisanslarında aylık ve yıllık ödeme arasındaki farklar nelerdir?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Yıllık taahhütlü Microsoft 365 lisansları aylık ödemelere kıyasla daha ekonomik fiyat avantajı sunar. Aylık esnek modelde ise kullanıcı sayınızı yıl içinde dilediğiniz gibi esnetebilir (artırıp azaltabilir), ancak birim maliyet biraz daha yüksek olur. Şirketinizin personel sirkülasyonuna göre en karlı modeli birlikte seçiyoruz.
+                        </p>
+                    </details>
+
+                    <!-- Soru 2 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>SQL Server ve Windows Server lisanslamasında CAL mantığı nasıl hesaplanır?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Sunucu lisanslamalarında sunucunun işlemci çekirdek (Core) sayısına göre ana lisans alınır. CAL (Client Access License) ise sunucuya erişim sağlayacak her bir kullanıcı (User CAL) veya cihaz (Device CAL) için ayrıca alınması yasal bir zorunluluktur. DİA ERP kullanan firmalarda kullanıcı bazlı CAL hesaplaması titizlikle yapılmalıdır.
+                        </p>
+                    </details>
+
+                    <!-- Soru 3 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>Şirketlerde lisanssız yazılım kullanımının cezai ve yasal yaptırımları nelerdir?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Türkiye'de Fikir ve Sanat Eserleri Kanunu gereği ticari işletmelerde korsan/lisanssız yazılım kullanımı ağır para cezaları, ticari itibarsızlık ve yöneticiler için yasal soruşturma/hapis cezası riskleri doğurur. Kurumsal lisanslama danışmanlığımız ile bu riskleri %100 sıfırlıyoruz.
+                        </p>
+                    </details>
+
+                    <!-- Soru 4 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>Eski alınan kutu/OEM lisanslar yeni bilgisayarlara devredilebilir mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            OEM (cihazla birlikte gelen) lisanslar sadece alındığı ilk bilgisayarda ömür boyu kalır, başka cihaza taşınamaz. Kutu (Retail) lisanslar ise yasal olarak başka bir cihaza transfer edilebilir. Toplu kurumsal lisanslarda ise hak devir kuralları farklıdır. Uzmanlarımız mevcut envanterinizi inceleyerek size bilgi verir.
+                        </p>
+                    </details>
+
+                    <!-- Soru 5 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>Lisans yenileme dönemlerinde otomatik hatırlatma ve destek veriyor musunuz?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Compiturk Bilgisayar ile çalışan tüm müşterilerimizin yazılım lisans bitiş tarihleri CRM sistemimizde takip edilir. Sürenin dolmasına 30 gün kala size hatırlatma yapılır ve işlerinizin aksamaması için yenileme teklifiniz sunulur.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 7. MÜŞTERİ YORUMLARI & REFERANSLAR (3 KART)                                -->
+        <!-- ========================================================================= -->
+        <section id="referanslar" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Müşterilerimiz <span class="text-[#1E3A8A]">Ne Diyor?</span></h2>
+                    <p class="text-sm text-slate-600">Yazılım envanterini Compiturk ile optimize eden kurumsal firma yöneticilerinin görüşleri.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Yorum 1 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Microsoft lisans denetimi öncesinde Compiturk ekibiyle çalışarak tüm eksiklerimizi giderdik. Doğru lisanslama modelleri sayesinde hem yasal uyum sağladık hem de bütçemizde ciddi tasarruf elde ettik."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Hakan E.</span>
+                            <span class="text-xs text-slate-500 font-medium">Mali İşler Direktörü - Üretim</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 2 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Microsoft 365 bulut geçişimiz ve ESET kurumsal antivirüs lisanslarımızın yönetimi Compiturk tarafından yapılıyor. Yenileme zamanları kafamız hiç ağrımıyor, her şey otomatik takip ediliyor."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Tuğba S.</span>
+                            <span class="text-xs text-slate-500 font-medium">İK ve İdari İşler Müdürü</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 3 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "SQL Server ve Windows Server Core lisanslamamızdaki karmaşık CAL hesaplamalarını bizim için netleştirdiler. Profesyonel danışmanlık hizmetleri için teşekkür ederiz."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Volkan K.</span>
+                            <span class="text-xs text-slate-500 font-medium">Bilgi İşlem Sorumlusu - Lojistik</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 8. BLOG YAZILARIMIZ (3 KART)                                              -->
+        <!-- ========================================================================= -->
+        <section id="blog" class="py-16 bg-[#F8FAFC]">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Lisanslama & IT <span class="text-[#1E3A8A]">Rehberi & Makaleler</span></h2>
+                    <p class="text-sm text-slate-600">Yazılım envanteri ve kurumsal lisans optimizasyonuna dair uzman içeriklerimiz.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Makale 1 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#1E3A8A] uppercase tracking-wider bg-blue-50 px-2.5 py-1 rounded-md">LİSANS AUDIT</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#1E3A8A] transition-colors line-clamp-2">
+                                Kurumsal Şirketlerde Lisans Denetimlerine (Audit) Hazırlık Rehberi
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                BSA ve Microsoft denetim bildirimleri alındığında şirketin yapması gereken yasal hazırlıklar ve envanter yönetimi.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 2 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#0EA5E9] uppercase tracking-wider bg-sky-50 px-2.5 py-1 rounded-md">MICROSOFT 365</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#0EA5E9] transition-colors line-clamp-2">
+                                Microsoft 365 Lisans Paketleri Karşılaştırması: Hangi Paket Şirketiniz İçin Uygun?
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Business Basic, Standard ve Premium planları arasındaki farklar ile şirket boyutuna göre doğru paket seçimi.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 3 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded-md">ANTİVİRÜS GÜVENLİĞİ</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2">
+                                Orijinal Yazılım Ve Kurumsal Antivirüs Kullanımının Siber Güvenliğe Etkisi
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Korsan yazılımların getirdiği güvenlik açıkları, zararlı yazılım riskleri ve orijinal yazılımın sunduğu güvenceler.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-footer"></div>
+
+    <!-- SCRIPT ÇAĞRILARI -->
+    <script src="../js/components.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

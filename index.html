@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compiturk Bilgisayar | DİA Yazılım Çözüm Ortağı</title>
+    <title>Compiturk Bilgisayar | Yazılım, DİA ERP ve IT Çözümleri</title>
+
     <!-- Google Fonts: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons -->
+
+    <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Swiper.js CSS (Hero Slider İçin) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <script>
         tailwind.config = {
             theme: {
@@ -17,10 +24,8 @@
                     colors: {
                         brandRed: '#DC2626',
                         brandNavy: '#0F172A',
-                        brandAnthracite: '#1E293B',
+                        brandSlate: '#64748b',
                         brandIce: '#F8FAFC',
-                        brandSlate: '#334155',
-                        brandCyan: '#0EA5E9',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -30,10 +35,21 @@
         }
     </script>
     <style>
-        .nav-link-hover {
+        .mega-menu {
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(15px) translateX(-50%);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .group:hover .mega-menu {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0) translateX(-50%);
+        }
+        .nav-link-underline {
             position: relative;
         }
-        .nav-link-hover::after {
+        .nav-link-underline::after {
             content: '';
             position: absolute;
             width: 0;
@@ -43,175 +59,1986 @@
             background-color: #DC2626;
             transition: width 0.3s ease;
         }
-        .nav-link-hover:hover::after {
+        .nav-link-underline:hover::after {
             width: 100%;
         }
-        .mega-menu {
-            display: none;
-            opacity: 0;
-            transform: translateY(10px);
+
+        /* Swiper Özel Pagination Stil Özelleştirmesi */
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: #cbd5e1;
+            opacity: 1;
+            border-radius: 9999px;
             transition: all 0.3s ease;
         }
-        .group:hover .mega-menu {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
+        .swiper-pagination-bullet-active {
+            width: 28px;
+            background: #DC2626;
         }
     </style>
 </head>
-<body class="font-sans antialiased bg-white">
+<body class="font-sans antialiased text-brandNavy bg-white">
 
-    <!-- TOP-BAR -->
-    <div class="bg-brandRed text-white py-2.5 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs md:text-sm font-medium">
-            <!-- Sol İçerik (İletişim & SEO Bağlantıları) -->
-            <address class="flex flex-wrap justify-center md:justify-start items-center gap-4 md:gap-6 not-italic">
-                <a href="https://maps.google.com" target="_blank" class="flex items-center gap-1.5 hover:text-white/80 transition-colors">
-                    <i data-lucide="map-pin" class="w-4 h-4"></i>
-                    <span>Beylikdüzü, İSTANBUL</span>
-                </a>
-                <a href="mailto:destek@compiturk.com.tr" class="flex items-center gap-1.5 hover:text-white/80 transition-colors">
-                    <i data-lucide="mail" class="w-4 h-4"></i>
-                    <span>destek@compiturk.com.tr</span>
-                </a>
-                <a href="tel:+902128733537" class="flex items-center gap-1.5 hover:text-white/80 transition-colors">
-                    <i data-lucide="phone" class="w-4 h-4"></i>
-                    <span>+90 (212) 873 35 37</span>
-                </a>
-                <a href="https://wa.me/902128733537" target="_blank" class="flex items-center gap-1.5 bg-white/10 px-2 py-1 rounded-md hover:bg-white/20 transition-all">
-                    <i data-lucide="message-circle" class="w-4 h-4"></i>
-                    <span>WhatsApp Destek</span>
-                </a>
-            </address>
+    <!-- ========================================== -->
+    <!-- 1. ÜST BİLGİ ÇUBUĞU (TOP-BAR)              -->
+    <!-- ========================================== -->
+    <div id="global-header"></div>
 
-            <!-- Sağ İçerik (Sosyal Medya) -->
-            <div class="hidden md:flex items-center gap-4 border-l border-white/20 ml-6 pl-6">
-                <a href="#" class="hover:scale-110 transition-transform"><i data-lucide="facebook" class="w-4 h-4"></i></a>
-                <a href="#" class="hover:scale-110 transition-transform"><i data-lucide="instagram" class="w-4 h-4"></i></a>
-                <a href="#" class="hover:scale-110 transition-transform"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+    <!-- ========================================== -->
+    <!-- MAIN İÇERİK BAŞLANGICI                     -->
+    <!-- ========================================== -->
+    <main>
+        
+        <!-- ========================================== -->
+        <!-- 2. MODÜL: HERO SECTION / BANNER SLIDER     -->
+        <!-- ========================================== -->
+        <section id="hero" class="relative bg-slate-50 border-b border-slate-200/80 overflow-hidden">
+            <!-- Teknolojik Grid Pattern Arka Plan Deseni -->
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-60 pointer-events-none"></div>
+
+            <div class="max-w-[1440px] mx-auto relative z-10">
+                <!-- Swiper Container -->
+                <div class="swiper hero-slider py-8 lg:py-16">
+                    <div class="swiper-wrapper">
+
+                        <!-- SLIDE 1: DİA ERP -->
+                        <div class="swiper-slide px-4 sm:px-6 lg:px-8">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                                <div class="lg:col-span-6 space-y-6 text-left">
+                                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100/80 border border-orange-200 text-[#E77F18] font-bold text-xs sm:text-sm tracking-wide">
+                                        <span class="w-2 h-2 rounded-full bg-[#E77F18] animate-pulse"></span>
+                                        DİA ERP İSTANBUL YETKİLİ ÇÖZÜM ORTAĞI
+                                    </div>
+
+                                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight leading-[1.15]">
+                                        İşletmenizin <br class="hidden sm:inline" />
+                                        <span class="text-[#E77F18] relative inline-block">Bulut ERP</span> Dönüşüm Ortağı
+                                    </h1>
+
+                                    <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-xl">
+                                        Türkiye'nin en gelişmiş bulut ERP yazılımı DİA ile finans, stok, e-fatura ve üretim süreçlerinizi mekan bağımsız güvenle yönetin.
+                                    </p>
+
+                                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                                        <a href="iletisim/iletisim.html" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#E77F18] hover:bg-[#d47213] text-white font-bold text-sm sm:text-base shadow-lg shadow-orange-500/20 hover:scale-[1.02] transition-all">
+                                            <i data-lucide="sparkles" class="w-5 h-5"></i>
+                                            Ücretsiz Demo İste
+                                        </a>
+                                        <a href="dia-erp/dia-on-muhasebe.html" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#245BA7] hover:bg-[#1d4a88] text-white font-bold text-sm sm:text-base shadow-lg shadow-blue-600/20 hover:scale-[1.02] transition-all">
+                                            DİA'yı Keşfet
+                                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="lg:col-span-6 relative">
+                                    <div class="relative mx-auto max-w-lg lg:max-w-none rounded-2xl bg-white p-3 shadow-2xl border border-slate-200/80 group">
+                                        <div class="relative overflow-hidden rounded-xl bg-slate-100 aspect-[16/10] flex flex-col items-center justify-center border-2 border-dashed border-slate-300">
+                                            <img src="images/dia-erp-dashboard.webp" alt="DİA Cloud ERP Bulut Yazılım Arayüzü" class="w-full h-full object-cover rounded-xl" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-6\'><i data-lucide=\'monitor\' class=\'w-12 h-12 text-[#245BA7] mx-auto mb-2 opacity-80\'></i><p class=\'text-sm font-bold text-slate-700\'>DİA ERP Dashboard Ekran Görseli</p><p class=\'text-xs text-slate-400 mt-1\'>Önerilen Boyut: 1200x750px (WebP / PNG)</p></div>';" />
+                                        </div>
+                                        <div class="absolute -bottom-4 -left-4 bg-white/95 backdrop-blur-md p-3.5 rounded-xl border border-slate-200 shadow-xl hidden sm:flex items-center gap-3">
+                                            <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#245BA7] flex items-center justify-center font-bold">
+                                                <i data-lucide="cloud" class="w-6 h-6"></i>
+                                            </div>
+                                            <div>
+                                                <div class="text-xs font-bold text-slate-900">%100 Bulut ERP Teknolojisi</div>
+                                                <div class="text-[11px] text-slate-500">Her yerden kesintisiz erişim</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 2: KENDİ YAZILIM ÇÖZÜMLERİMİZ -->
+                        <div class="swiper-slide px-4 sm:px-6 lg:px-8">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                                <div class="lg:col-span-6 space-y-6 text-left">
+                                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-100/80 border border-red-200 text-[#DC2626] font-bold text-xs sm:text-sm tracking-wide">
+                                        <i data-lucide="code-2" class="w-4 h-4"></i>
+                                        GELİŞMİŞ B2B YAZILIM ÇÖZÜMLERİ
+                                    </div>
+
+                                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight leading-[1.15]">
+                                        13+ Yerli Yazılım ve <br class="hidden sm:inline" />
+                                        <span class="text-[#DC2626]">Özel Entegrasyon</span> Mimarisi
+                                    </h2>
+
+                                    <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-xl">
+                                        Ahtapot WMS Depo, Pazaryeri Entegrasyonu, Mobil B2B Bayi Portalı ve Sanal POS çözümlerimizle iş süreçlerinizi hızlandırın.
+                                    </p>
+
+                                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                                        <a href="#yazilim-cozumleri" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#DC2626] hover:bg-[#B91C1C] text-white font-bold text-sm sm:text-base shadow-lg shadow-red-600/20 hover:scale-[1.02] transition-all">
+                                            Yazılım Çözümlerimiz
+                                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="lg:col-span-6 relative">
+                                    <div class="relative mx-auto max-w-lg lg:max-w-none rounded-2xl bg-white p-3 shadow-2xl border border-slate-200/80">
+                                        <div class="relative overflow-hidden rounded-xl bg-slate-100 aspect-[16/10] flex flex-col items-center justify-center border-2 border-dashed border-slate-300">
+                                            <img src="images/kompiturk-entegrasyon-ekosistemi.webp" alt="Kompiturk B2B ve Pazaryeri Entegrasyonları" class="w-full h-full object-cover rounded-xl" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-6\'><i data-lucide=\'layers\' class=\'w-12 h-12 text-[#DC2626] mx-auto mb-2 opacity-80\'></i><p class=\'text-sm font-bold text-slate-700\'>Kompiturk B2B & Entegrasyon Görseli</p><p class=\'text-xs text-slate-400 mt-1\'>Önerilen Boyut: 1200x750px (WMS / B2B Vektörü)</p></div>';" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 3: IT ALTYAPI & DESTEK -->
+                        <div class="swiper-slide px-4 sm:px-6 lg:px-8">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                                <div class="lg:col-span-6 space-y-6 text-left">
+                                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100/80 border border-blue-200 text-[#245BA7] font-bold text-xs sm:text-sm tracking-wide">
+                                        <i data-lucide="shield-check" class="w-4 h-4"></i>
+                                        KURUMSAL IT & SİBER GÜVENLİK
+                                    </div>
+
+                                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight leading-[1.15]">
+                                        Kesintisiz ve Güvenli <br class="hidden sm:inline" />
+                                        <span class="text-[#245BA7]">IT Altyapı</span> Desteği
+                                    </h2>
+
+                                    <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-xl">
+                                        Sunucu kurulumu, UTM Firewall güvenlik duvarı, 5651 loglama ve otomatik bulut yedekleme çözümleriyle şirket verilerinizi güvenceye alın.
+                                    </p>
+
+                                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                                        <a href="it-altyapi/sunucu-kurulumu.html" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#245BA7] hover:bg-[#1d4a88] text-white font-bold text-sm sm:text-base shadow-lg shadow-blue-600/20 hover:scale-[1.02] transition-all">
+                                            IT Çözümlerini İnceleyin
+                                            <i data-lucide="server" class="w-5 h-5"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="lg:col-span-6 relative">
+                                    <div class="relative mx-auto max-w-lg lg:max-w-none rounded-2xl bg-white p-3 shadow-2xl border border-slate-200/80">
+                                        <div class="relative overflow-hidden rounded-xl bg-slate-100 aspect-[16/10] flex flex-col items-center justify-center border-2 border-dashed border-slate-300">
+                                            <img src="images/it-altyapi-sunucu.webp" alt="Kurumsal IT Sunucu ve Firewall Sistemleri" class="w-full h-full object-cover rounded-xl" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-6\'><i data-lucide=\'server\' class=\'w-12 h-12 text-[#245BA7] mx-auto mb-2 opacity-80\'></i><p class=\'text-sm font-bold text-slate-700\'>IT Sunucu & Ağ Görseli</p><p class=\'text-xs text-slate-400 mt-1\'>Önerilen Boyut: 1200x750px (Sunucu Odası / Güvenlik)</p></div>';" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 4: KURUMSAL KİMLİK & ÖDÜL TÖRENİ -->
+                        <div class="swiper-slide px-4 sm:px-6 lg:px-8">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                                <div class="lg:col-span-6 space-y-6 text-left">
+                                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100/80 border border-amber-200 text-amber-800 font-bold text-xs sm:text-sm tracking-wide">
+                                        <i data-lucide="award" class="w-4 h-4 text-[#E77F18]"></i>
+                                        GÜVEN, TECRÜBE & BAŞARI
+                                    </div>
+
+                                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight leading-[1.15]">
+                                        Başarılarımızı <br class="hidden sm:inline" />
+                                        <span class="text-[#E77F18]">Değerli Müşterilerimizle</span> Büyütüyoruz
+                                    </h2>
+
+                                    <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-xl">
+                                        DİA ERP İstanbul Yetkili Çözüm Ortaklığı başarı ödüllerimiz, 15+ yıllık tecrübemiz ve uzman mühendis kadromuz ile her zaman yanınızdayız.
+                                    </p>
+
+                                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                                        <a href="kurumsal/hakkimizda.html" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#0F172A] hover:bg-[#1E293B] text-white font-bold text-sm sm:text-base shadow-lg hover:scale-[1.02] transition-all">
+                                            Hakkımızda & Kurumsal
+                                            <i data-lucide="users" class="w-5 h-5 text-[#E77F18]"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="lg:col-span-6 relative">
+                                    <div class="relative mx-auto max-w-lg lg:max-w-none rounded-2xl bg-white p-3 shadow-2xl border border-slate-200/80">
+                                        <div class="relative overflow-hidden rounded-xl bg-slate-100 aspect-[16/10] flex flex-col items-center justify-center border-2 border-dashed border-slate-300">
+                                            <img src="images/compiturk-odul-toreni.webp" alt="Compiturk DİA ERP Ödül Töreni ve Ekip" class="w-full h-full object-cover rounded-xl" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-6\'><i data-lucide=\'award\' class=\'w-12 h-12 text-[#E77F18] mx-auto mb-2 opacity-80\'></i><p class=\'text-sm font-bold text-slate-700\'>Ödül Töreni / Ekip Fotoğrafı Görseli</p><p class=\'text-xs text-slate-400 mt-1\'>Önerilen Boyut: 1200x750px (Etkinlik Fotoğrafı)</p></div>';" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Slider Kontrolleri (Pagination & Navigation) -->
+                    <div class="flex items-center justify-between pt-6 mt-4 border-t border-slate-200/60 max-w-7xl mx-auto px-4">
+                        <div class="swiper-pagination !relative !w-auto !bottom-0 flex items-center gap-1.5"></div>
+                        <div class="flex items-center gap-2">
+                            <button class="hero-prev w-10 h-10 rounded-xl bg-white border border-slate-200 text-slate-700 hover:bg-[#DC2626] hover:text-white hover:border-[#DC2626] flex items-center justify-center transition-all shadow-sm">
+                                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                            </button>
+                            <button class="hero-next w-10 h-10 rounded-xl bg-white border border-slate-200 text-slate-700 hover:bg-[#DC2626] hover:text-white hover:border-[#DC2626] flex items-center justify-center transition-all shadow-sm">
+                                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 3. MODÜL: HIZLI ERİŞİM KARTLARI VE İSTATİSTİK ŞERİDİ                     -->
+        <!-- ========================================================================= -->
+        <section id="cozumler-hizli-erisim" class="py-12 lg:py-16 bg-white border-b border-slate-200/80 relative z-20">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+                <!-- İSTATİSTİK SAYAÇ ŞERİDİ -->
+                <div class="bg-slate-900 text-white rounded-2xl p-6 lg:p-8 shadow-xl relative overflow-hidden">
+                    <div class="absolute -right-10 -top-10 w-40 h-40 bg-[#DC2626]/20 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-[#245BA7]/20 rounded-full blur-3xl pointer-events-none"></div>
+
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-slate-800 text-center lg:text-left">
+                        <div class="pt-4 sm:pt-0 sm:px-4 flex flex-col items-center lg:items-start justify-center">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="users" class="w-6 h-6 text-[#DC2626]"></i>
+                                <span class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">500+</span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-400 font-medium mt-1">Aktif Kurumsal Müşteri</p>
+                        </div>
+
+                        <div class="pt-4 sm:pt-0 sm:px-4 flex flex-col items-center lg:items-start justify-center">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="award" class="w-6 h-6 text-[#E77F18]"></i>
+                                <span class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">20+</span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-400 font-medium mt-1">Yıllık Sektörel Deneyim</p>
+                        </div>
+
+                        <div class="pt-4 sm:pt-0 sm:px-4 flex flex-col items-center lg:items-start justify-center">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="cpu" class="w-6 h-6 text-[#245BA7]"></i>
+                                <span class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">30+</span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-400 font-medium mt-1">Entegre Yazılım & IT Çözümü</p>
+                        </div>
+
+                        <div class="pt-4 sm:pt-0 sm:px-4 flex flex-col items-center lg:items-start justify-center">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="activity" class="w-6 h-6 text-emerald-500"></i>
+                                <span class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">%99.9</span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-400 font-medium mt-1">Kesintisiz Çalışma (Uptime)</p>
+                        </div>
+                    </div>
+                </div>
+<!-- YAZILIM ÇÖZÜMLERİMİZ -->
+<div class="space-y-4">
+    <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+            <span class="w-3 h-3 rounded-full bg-[#DC2626]"></span>
+            <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 uppercase tracking-tight">
+                Yazılım Çözümlerimiz
+            </h2>
         </div>
+        <span class="text-xs font-semibold text-slate-400 flex items-center gap-1 sm:hidden">
+            Sağa Kaydır <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </span>
     </div>
 
-    <!-- MAIN HEADER -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20 md:h-24">
-                
-                <!-- Sol Taraf: Logo ve İş Ortağı Rozeti -->
-                <div class="flex items-center gap-4 lg:gap-8">
-                    <a href="/" class="flex-shrink-0">
-                        <!-- Sade Logo Alanı -->
-                        <span class="text-2xl md:text-3xl font-extrabold text-brandNavy tracking-tight">
-                            COMPI<span class="text-brandRed">TURK</span>
-                        </span>
+    <div class="flex gap-4 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory scrollbar-none [mask-image:linear-gradient(to_right,white_95%,transparent_100%)]">
+        
+        <!-- 1. Pazaryeri Entegrasyonu -->
+        <a href="cozumler/pazaryeri-entegrasyonu.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#DC2626] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-[#DC2626] group-hover:text-white transition-all">
+                    <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-1">
+                    Pazaryeri Entegrasyonu
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Trendyol, N11, HB Otomasyonu
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#DC2626]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 2. Ahtapot WMS Depo -->
+        <a href="cozumler/ahtapot-depo-yonetimi.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#DC2626] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-amber-50 text-[#E77F18] flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-[#E77F18] group-hover:text-white transition-all">
+                    <i data-lucide="boxes" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-1">
+                    Ahtapot WMS Depo
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Barkodlu Akıllı Depo Yönetimi
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#DC2626]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 3. Depo Kurdu -->
+        <a href="cozumler/depo-kurdu.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#DC2626] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-orange-50 text-orange-600 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-orange-600 group-hover:text-white transition-all">
+                    <i data-lucide="scan-barcode" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-1">
+                    Depo Kurdu
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Hızlı El Terminali Sayımı
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#DC2626]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 4. Mobil B2B Portalı -->
+        <a href="cozumler/mobil-b2b-bayi-platformu.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#DC2626] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-blue-50 text-[#245BA7] flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-[#245BA7] group-hover:text-white transition-all">
+                    <i data-lucide="smartphone" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-1">
+                    Mobil B2B Portalı
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Bayi ve Saha Satış Platformu
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#DC2626]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 5. Mobil Sıcak Satış -->
+        <a href="cozumler/mobil-sıcak-satış.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#DC2626] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-rose-600 group-hover:text-white transition-all">
+                    <i data-lucide="flame" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-1">
+                    Mobil Sıcak Satış
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Anlık Araçta Fatura & Satış
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#DC2626]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 6. Kompiboss -->
+        <a href="cozumler/kompiboss.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#DC2626] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-slate-100 text-slate-800 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-slate-900 group-hover:text-white transition-all">
+                    <i data-lucide="user-cog" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-1">
+                    Kompiboss
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Patron Mobil Raporlama Paneli
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#DC2626]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 7. Kurumsal Mobil Uygulama -->
+        <a href="cozumler/kurumsal-mobil-uygulama.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#DC2626] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-sky-600 group-hover:text-white transition-all">
+                    <i data-lucide="app-window" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-1">
+                    Kurumsal Mobil Uygulama
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Özel iOS & Android Çözümleri
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#DC2626]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 8. Net Tahsilat POS -->
+        <a href="cozumler/net-tahsilat.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#DC2626] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all">
+                    <i data-lucide="credit-card" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-1">
+                    Net Tahsilat POS
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Online Ödeme ve Kredi Kartı
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#DC2626]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 9. Distribütör POS -->
+        <a href="cozumler/distributor-pos.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#DC2626] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-[#245BA7]/10 text-[#245BA7] flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-[#245BA7] group-hover:text-white transition-all">
+                    <i data-lucide="calculator" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-1">
+                    Distribütör POS
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Çoklu Banka Entegre POS
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#DC2626]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 10. XML Hub Veri Entegrasyonu -->
+        <a href="cozumler/xml-hub-entegrasyon.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#DC2626] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+                    <i data-lucide="network" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-1">
+                    XML Hub Entegrasyon
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Otomatik Ürün & Stok Aktarımı
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#DC2626]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 11. Logo Entegrasyonu -->
+        <a href="cozumler/logo-entegrasyon.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#DC2626] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-cyan-50 text-cyan-600 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-cyan-600 group-hover:text-white transition-all">
+                    <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-1">
+                    Logo Entegrasyonu
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Çift Yönlü ERP Senkronizasyonu
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#DC2626]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 12. Kargo Entegrasyonu -->
+        <a href="cozumler/kargo-entegrasyonu.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#DC2626] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-purple-600 group-hover:text-white transition-all">
+                    <i data-lucide="truck" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-1">
+                    Kargo Entegrasyonu
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Otomatik Fiş ve Kargo Takip
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#DC2626]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 13. Ozon Kargo -->
+        <a href="cozumler/ozon-kargo.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#DC2626] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-violet-50 text-violet-600 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-violet-600 group-hover:text-white transition-all">
+                    <i data-lucide="globe-2" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-1">
+                    Ozon Kargo
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Yurtdışı Pazaryeri Lojistiği
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#DC2626]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 14. Kantar Entegrasyonu -->
+        <a href="cozumler/kantar-entegrasyonu.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#DC2626] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-stone-100 text-stone-700 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-stone-800 group-hover:text-white transition-all">
+                    <i data-lucide="scale" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-1">
+                    Kantar Entegrasyonu
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Araç Tartım & Otomatik İrsaliye
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#DC2626]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 15. Ford Otosan -->
+        <a href="cozumler/ford-otosan.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#DC2626] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-blue-800 group-hover:text-white transition-all">
+                    <i data-lucide="factory" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-1">
+                    Ford Otosan
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Otomotiv Yan Sanayi Portalı
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#DC2626]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 16. Kalite Kontrol Arşiv -->
+        <a href="cozumler/kalite-kontrol-arsiv.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#DC2626] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-teal-50 text-teal-600 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-teal-600 group-hover:text-white transition-all">
+                    <i data-lucide="clipboard-check" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-1">
+                    Kalite Kontrol Arşiv
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Ürün Onay & Doküman Takibi
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#DC2626]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 17. PDKS Personel Takip -->
+        <a href="cozumler/pdks.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#DC2626] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-green-50 text-green-600 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-green-600 group-hover:text-white transition-all">
+                    <i data-lucide="user-check" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-1">
+                    PDKS Personel Takip
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Kartlı & Biyometrik Geçiş
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#DC2626]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+    </div>
+</div>
+
+                <!-- IT ALTYAPI & DESTEK -->
+                <!-- C. SATIR 2: IT ALTYAPI & DESTEK ÇÖZÜMLERİMİZ -->
+<div class="space-y-4 pt-4">
+    <!-- Kategori Başlığı -->
+    <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+            <span class="w-3 h-3 rounded-full bg-[#245BA7]"></span>
+            <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 uppercase tracking-tight">
+                IT Altyapı & Destek Çözümlerimiz
+            </h2>
+        </div>
+        <span class="text-xs font-semibold text-slate-400 flex items-center gap-1 sm:hidden">
+            Sağa Kaydır <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </span>
+    </div>
+
+    <!-- Yatay Kaydırılabilir Kart Konteyneri -->
+    <div class="flex gap-4 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory scrollbar-none [mask-image:linear-gradient(to_right,white_95%,transparent_100%)]">
+
+        <!-- 1. Sunucu Kurulumu -->
+        <a href="it-altyapi/sunucu-kurulumu.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#245BA7] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-blue-50 text-[#245BA7] flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-[#245BA7] group-hover:text-white transition-all">
+                    <i data-lucide="server" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors line-clamp-1">
+                    Sunucu Kurulumu
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Bulut ve Fiziksel Server
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#245BA7]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 2. UTM Güvenlik Duvarı -->
+        <a href="it-altyapi/guvenlik-duvari.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#245BA7] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-[#DC2626] group-hover:text-white transition-all">
+                    <i data-lucide="shield-alert" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors line-clamp-1">
+                    UTM Güvenlik Duvarı
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Firewall & Siber Güvenlik
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#245BA7]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 3. Yedekleme Çözümleri -->
+        <a href="it-altyapi/yedekleme-cozumleri.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#245BA7] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all">
+                    <i data-lucide="hard-drive-download" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors line-clamp-1">
+                    Yedekleme Çözümleri
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Otomatik Cloud Replikasyon
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#245BA7]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 4. Ağ Altyapısı -->
+        <a href="it-altyapi/ag-altyapisi.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#245BA7] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-cyan-50 text-cyan-600 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-cyan-600 group-hover:text-white transition-all">
+                    <i data-lucide="cable" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors line-clamp-1">
+                    Ağ Altyapısı
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Kablolama, Switch & AP
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#245BA7]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 5. Yazılım Lisanslama -->
+        <a href="it-altyapi/yazilim-lisanslama.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#245BA7] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-orange-50 text-[#E77F18] flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-[#E77F18] group-hover:text-white transition-all">
+                    <i data-lucide="file-check" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors line-clamp-1">
+                    Yazılım Lisanslama
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Microsoft OS & Antivirüs
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#245BA7]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 6. Hosting & Domain -->
+        <a href="it-altyapi/hosting-domain.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#245BA7] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-slate-200/80 text-slate-700 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-slate-800 group-hover:text-white transition-all">
+                    <i data-lucide="globe" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors line-clamp-1">
+                    Hosting & E-Posta
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Kurumsal E-Posta & Domain
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#245BA7]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 7. Donanım Desteği -->
+        <a href="it-altyapi/donanim-destegi.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#245BA7] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+                    <i data-lucide="cpu" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors line-clamp-1">
+                    Donanım Desteği
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    PC, Server & Çevre Birimleri
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#245BA7]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 8. Bilgisayar & Yazıcı Kiralama -->
+        <a href="it-altyapi/bilgisayar-yazici-kiralama.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#245BA7] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-violet-50 text-violet-600 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-violet-600 group-hover:text-white transition-all">
+                    <i data-lucide="monitor" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors line-clamp-1">
+                    Cihaz & Yazıcı Kiralama
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Kurumsal IT Kiralama
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#245BA7]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 9. Yazıcı Kurulumu -->
+        <a href="it-altyapi/yazici-kurulumu.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#245BA7] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-[#245BA7]/10 text-[#245BA7] flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-[#245BA7] group-hover:text-white transition-all">
+                    <i data-lucide="printer" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors line-clamp-1">
+                    Yazıcı Kurulumu
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Ağ & Fotokopi Yapılandırma
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#245BA7]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+        <!-- 10. Sarf Malzemeleri -->
+        <a href="it-altyapi/sarf-malzemeleri.html" class="snap-start flex-none w-[210px] sm:w-[230px] p-5 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#245BA7] hover:-translate-y-1.5 hover:shadow-xl transition-all group flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 rounded-lg bg-teal-50 text-teal-600 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-teal-600 group-hover:text-white transition-all">
+                    <i data-lucide="box" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors line-clamp-1">
+                    IT Sarf Malzemeleri
+                </h3>
+                <p class="text-xs text-slate-500 font-normal mt-1 leading-snug">
+                    Toner, Kartuş & Etiket
+                </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#245BA7]">
+                <span>İncele</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+
+    </div>
+</div>       </section>
+
+        <!-- ========================================================================= -->
+        <!-- 4. MODÜL: DİA YAZILIM / BULUT ERP ÇÖZÜMLERİ                              -->
+        <!-- ========================================================================= -->
+        <section id="dia-erp-solutions" class="py-16 lg:py-24 bg-[#0F1D38] text-white relative overflow-hidden z-20">
+            <div class="absolute -top-24 -left-24 w-96 h-96 bg-[#E77F18]/10 rounded-full blur-[120px] pointer-events-none"></div>
+            <div class="absolute top-1/2 -right-24 w-[500px] h-[500px] bg-[#245BA7]/15 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12 lg:space-y-16">
+                <div class="text-center max-w-3xl mx-auto space-y-4">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E77F18]/10 border border-[#E77F18]/30 text-[#E77F18] font-bold text-xs sm:text-sm tracking-wide">
+                        <span class="w-2 h-2 rounded-full bg-[#E77F18] animate-pulse"></span>
+                        DİA YAZILIM YETKİLİ İŞ VE ÇÖZÜM ORTAĞI
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+                        Türkiye'nin En Gelişmiş <br class="hidden sm:inline" />
+                        <span class="text-[#E77F18] relative inline-block">Bulut ERP</span> Platformu
+                    </h2>
+
+                    <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
+                        Satıştan muhasebeye, e-ticaretten personel yönetimine kadar tüm iş süreçlerinizi internetin olduğu her yerden tek platformda yönetin.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    <div class="lg:col-span-4 bg-[#162444] border border-[#245BA7]/30 rounded-2xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden group shadow-2xl">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-[#E77F18]/10 rounded-bl-full pointer-events-none"></div>
+
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-between gap-4">
+                                <div class="px-3.5 py-2 rounded-xl bg-white/95 border border-slate-200 shadow-md flex items-center justify-center">
+                                    <img src="images/dialogo.svg" alt="DİA Yazılım Yetkili Çözüm Ortağı Logo" class="h-8 w-auto object-contain" />
+                                </div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-[#E77F18] bg-[#0F1D38] px-3 py-1.5 rounded-full border border-[#E77F18]/30 flex-shrink-0">
+                                    Resmi Temsilci
+                                </span>
+                            </div>
+
+                            <div class="space-y-3">
+                                <h3 class="text-2xl font-bold text-white leading-snug">
+                                    İstanbul Yetkili Çözüm Ortağı <span class="text-[#E77F18]">Compiturk</span>
+                                </h3>
+                                <p class="text-sm text-slate-300 leading-relaxed">
+                                    Kompiturk olarak DİA ERP'nin en büyük yetkili ortaklarından biri olarak kurulum, eğitim, 7/24 destek ve +30 entegre çözüm ile işletmenizin dijital dönüşümüne liderlik ediyoruz.
+                                </p>
+                            </div>
+
+                            <ul class="space-y-3 pt-2 text-sm font-medium text-slate-200">
+                                <li class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-[#E77F18]/20 text-[#E77F18] flex items-center justify-center flex-shrink-0">
+                                        <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                                    </div>
+                                    <span>%100 Bulut Tabanlı & Güvenli</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-[#E77F18]/20 text-[#E77F18] flex items-center justify-center flex-shrink-0">
+                                        <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                                    </div>
+                                    <span>KVKK Uyumlu Güçlü Altyapı</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-[#E77F18]/20 text-[#E77F18] flex items-center justify-center flex-shrink-0">
+                                        <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                                    </div>
+                                    <span>Web, Tablet ve Mobil Erişim</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-[#E77F18]/20 text-[#E77F18] flex items-center justify-center flex-shrink-0">
+                                        <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                                    </div>
+                                    <span>Hızlı Kurulum & Sorunsuz Veri Taşıma</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="pt-8">
+                            <a href="/dia-erp" class="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-[#E77F18] hover:bg-[#d47213] text-white font-bold text-base shadow-lg shadow-[#E77F18]/20 hover:shadow-[#E77F18]/30 transition-all">
+                                <span>DİA ERP'yi Keşfet</span>
+                                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+                        <a href="dia-erp/dia-on-muhasebe.html" class="p-5 rounded-2xl bg-[#162444] border border-[#245BA7]/20 hover:border-[#E77F18] hover:-translate-y-1 hover:shadow-xl hover:shadow-[#E77F18]/10 transition-all group flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <div class="w-10 h-10 rounded-lg bg-[#E77F18]/10 text-[#E77F18] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E77F18] group-hover:text-white transition-all">
+                                    <i data-lucide="calculator" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-base font-bold text-white group-hover:text-[#E77F18] transition-colors">
+                                    Ön Muhasebe
+                                </h3>
+                                <p class="text-xs text-slate-300 font-normal leading-relaxed">
+                                    Cari hesap, fatura, irsaliye yönetimi
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-[#245BA7]/20 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-[#E77F18]">
+                                <span>Detayları İncele</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </a>
+
+                        <a href="dia-erp/dia-e-fatura.html" class="p-5 rounded-2xl bg-[#162444] border border-[#245BA7]/20 hover:border-[#E77F18] hover:-translate-y-1 hover:shadow-xl hover:shadow-[#E77F18]/10 transition-all group flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <div class="w-10 h-10 rounded-lg bg-[#245BA7]/20 text-[#245BA7] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#245BA7] group-hover:text-white transition-all">
+                                    <i data-lucide="file-text" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-base font-bold text-white group-hover:text-[#E77F18] transition-colors">
+                                    e-Fatura & e-İrsaliye
+                                </h3>
+                                <p class="text-xs text-slate-300 font-normal leading-relaxed">
+                                    GİB uyumlu elektronik belge
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-[#245BA7]/20 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-[#E77F18]">
+                                <span>Detayları İncele</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </a>
+
+                        <a href="dia-erp/dia-stok-depo.html" class="p-5 rounded-2xl bg-[#162444] border border-[#245BA7]/20 hover:border-[#E77F18] hover:-translate-y-1 hover:shadow-xl hover:shadow-[#E77F18]/10 transition-all group flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <div class="w-10 h-10 rounded-lg bg-[#E77F18]/10 text-[#E77F18] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E77F18] group-hover:text-white transition-all">
+                                    <i data-lucide="boxes" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-base font-bold text-white group-hover:text-[#E77F18] transition-colors">
+                                    Stok & Depo Yönetimi
+                                </h3>
+                                <p class="text-xs text-slate-300 font-normal leading-relaxed">
+                                    Barkodlu stok, lot/seri takibi
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-[#245BA7]/20 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-[#E77F18]">
+                                <span>Detayları İncele</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </a>
+
+                        <a href="dia-erp/dia-genel-muhasebe.html" class="p-5 rounded-2xl bg-[#162444] border border-[#245BA7]/20 hover:border-[#E77F18] hover:-translate-y-1 hover:shadow-xl hover:shadow-[#E77F18]/10 transition-all group flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <div class="w-10 h-10 rounded-lg bg-[#245BA7]/20 text-[#245BA7] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#245BA7] group-hover:text-white transition-all">
+                                    <i data-lucide="landmark" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-base font-bold text-white group-hover:text-[#E77F18] transition-colors">
+                                    Genel Muhasebe
+                                </h3>
+                                <p class="text-xs text-slate-300 font-normal leading-relaxed">
+                                    Mali tablolar, KDV ve beyanname
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-[#245BA7]/20 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-[#E77F18]">
+                                <span>Detayları İncele</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </a>
+
+                        <a href="dia-erp/dia-mobil-saha-satis.html" class="p-5 rounded-2xl bg-[#162444] border border-[#245BA7]/20 hover:border-[#E77F18] hover:-translate-y-1 hover:shadow-xl hover:shadow-[#E77F18]/10 transition-all group flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <div class="w-10 h-10 rounded-lg bg-[#E77F18]/10 text-[#E77F18] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E77F18] group-hover:text-white transition-all">
+                                    <i data-lucide="smartphone" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-base font-bold text-white group-hover:text-[#E77F18] transition-colors">
+                                    Mobil Saha Satış
+                                </h3>
+                                <p class="text-xs text-slate-300 font-normal leading-relaxed">
+                                    Rut, sipariş ve tahsilat yönetimi
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-[#245BA7]/20 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-[#E77F18]">
+                                <span>Detayları İncele</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </a>
+
+                        <a href="dia-erp/dia-uretim.html" class="p-5 rounded-2xl bg-[#162444] border border-[#245BA7]/20 hover:border-[#E77F18] hover:-translate-y-1 hover:shadow-xl hover:shadow-[#E77F18]/10 transition-all group flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <div class="w-10 h-10 rounded-lg bg-[#245BA7]/20 text-[#245BA7] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#245BA7] group-hover:text-white transition-all">
+                                    <i data-lucide="factory" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-base font-bold text-white group-hover:text-[#E77F18] transition-colors">
+                                    Üretim Yönetimi
+                                </h3>
+                                <p class="text-xs text-slate-300 font-normal leading-relaxed">
+                                    İş emri, reçete, maliyet analizi
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-[#245BA7]/20 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-[#E77F18]">
+                                <span>Detayları İncele</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </a>
+
+                        <a href="dia-erp/dia-crm-servis.html" class="p-5 rounded-2xl bg-[#162444] border border-[#245BA7]/20 hover:border-[#E77F18] hover:-translate-y-1 hover:shadow-xl hover:shadow-[#E77F18]/10 transition-all group flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <div class="w-10 h-10 rounded-lg bg-[#E77F18]/10 text-[#E77F18] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E77F18] group-hover:text-white transition-all">
+                                    <i data-lucide="wrench" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-base font-bold text-white group-hover:text-[#E77F18] transition-colors">
+                                    CRM & Servis
+                                </h3>
+                                <p class="text-xs text-slate-300 font-normal leading-relaxed">
+                                    Müşteri ilişkileri ve teknik servis takibi
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-[#245BA7]/20 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-[#E77F18]">
+                                <span>Detayları İncele</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </a>
+
+                        <a href="dia-erp/dia-e-ticaret-b2b.html" class="p-5 rounded-2xl bg-[#162444] border border-[#245BA7]/20 hover:border-[#E77F18] hover:-translate-y-1 hover:shadow-xl hover:shadow-[#E77F18]/10 transition-all group flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <div class="w-10 h-10 rounded-lg bg-[#245BA7]/20 text-[#245BA7] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#245BA7] group-hover:text-white transition-all">
+                                    <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-base font-bold text-white group-hover:text-[#E77F18] transition-colors">
+                                    E-Ticaret & B2B
+                                </h3>
+                                <p class="text-xs text-slate-300 font-normal leading-relaxed">
+                                    B2B, B2C ve pazaryeri entegrasyonu
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-[#245BA7]/20 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-[#E77F18]">
+                                <span>Detayları İncele</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </a>
+
+                        <a href="dia-erp/dia-restoran.html" class="p-5 rounded-2xl bg-[#162444] border border-[#245BA7]/20 hover:border-[#E77F18] hover:-translate-y-1 hover:shadow-xl hover:shadow-[#E77F18]/10 transition-all group flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <div class="w-10 h-10 rounded-lg bg-[#E77F18]/10 text-[#E77F18] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E77F18] group-hover:text-white transition-all">
+                                    <i data-lucide="utensils" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-base font-bold text-white group-hover:text-[#E77F18] transition-colors">
+                                    Otel / Restoran
+                                </h3>
+                                <p class="text-xs text-slate-300 font-normal leading-relaxed">
+                                    Masa, adisyon, mutfak ve otel
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-[#245BA7]/20 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-[#E77F18]">
+                                <span>Detayları İncele</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </a>
+
+                        <a href="dia-erp/dia-personel-ik.html" class="p-5 rounded-2xl bg-[#162444] border border-[#245BA7]/20 hover:border-[#E77F18] hover:-translate-y-1 hover:shadow-xl hover:shadow-[#E77F18]/10 transition-all group flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <div class="w-10 h-10 rounded-lg bg-[#245BA7]/20 text-[#245BA7] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#245BA7] group-hover:text-white transition-all">
+                                    <i data-lucide="users" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-base font-bold text-white group-hover:text-[#E77F18] transition-colors">
+                                    Personel & İK
+                                </h3>
+                                <p class="text-xs text-slate-300 font-normal leading-relaxed">
+                                    Bordro, izin, SGK işlemleri
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-[#245BA7]/20 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-[#E77F18]">
+                                <span>Detayları İncele</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </a>
+
+                        <a href="dia-erp/dia-perakende.html" class="p-5 rounded-2xl bg-[#162444] border border-[#245BA7]/20 hover:border-[#E77F18] hover:-translate-y-1 hover:shadow-xl hover:shadow-[#E77F18]/10 transition-all group flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <div class="w-10 h-10 rounded-lg bg-[#E77F18]/10 text-[#E77F18] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E77F18] group-hover:text-white transition-all">
+                                    <i data-lucide="building-2" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-base font-bold text-white group-hover:text-[#E77F18] transition-colors">
+                                    Demirbaş Takibi
+                                </h3>
+                                <p class="text-xs text-slate-300 font-normal leading-relaxed">
+                                    Sabit kıymet ve amortisman
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-[#245BA7]/20 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-[#E77F18]">
+                                <span>Detayları İncele</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </a>
+
+                        <a href="dia-erp/dia-surec-yonetimi.html" class="p-5 rounded-2xl bg-[#162444] border border-[#245BA7]/20 hover:border-[#E77F18] hover:-translate-y-1 hover:shadow-xl hover:shadow-[#E77F18]/10 transition-all group flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <div class="w-10 h-10 rounded-lg bg-[#245BA7]/20 text-[#245BA7] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#245BA7] group-hover:text-white transition-all">
+                                    <i data-lucide="kanban" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-base font-bold text-white group-hover:text-[#E77F18] transition-colors">
+                                    Görev & Süreç Yönetimi
+                                </h3>
+                                <p class="text-xs text-slate-300 font-normal leading-relaxed">
+                                    İş akışları ve görev takibi
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-[#245BA7]/20 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-[#E77F18]">
+                                <span>Detayları İncele</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 5. MODÜL: PORTFOLYO / REFERANS MARKA LOGOLARI                             -->
+        <!-- ========================================================================= -->
+        <section id="portfolio-brands" class="py-12 lg:py-16 bg-slate-50 border-y border-slate-200/80 relative overflow-hidden z-20">
+            <style>
+                @keyframes marquee-right {
+                    0% { transform: translateX(-50%); }
+                    100% { transform: translateX(0%); }
+                }
+                @keyframes marquee-left {
+                    0% { transform: translateX(0%); }
+                    100% { transform: translateX(-50%); }
+                }
+                .animate-marquee-right {
+                    display: flex;
+                    width: max-content;
+                    animation: marquee-right 35s linear infinite;
+                }
+                .animate-marquee-left {
+                    display: flex;
+                    width: max-content;
+                    animation: marquee-left 35s linear infinite;
+                }
+                .marquee-container:hover .animate-marquee-right,
+                .marquee-container:hover .animate-marquee-left {
+                    animation-play-state: paused;
+                }
+            </style>
+
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative">
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Güvenle Hizmet Verdiğimiz Markalar ve İş Ortaklarımız
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+                        Türkiye'nin öncü kurumları, dijital dönüşüm ve ERP süreçlerinde Compiturk tecrübesine güveniyor.
+                    </p>
+                </div>
+
+                <div class="relative space-y-4 pt-2 overflow-hidden marquee-container [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">
+                    <div class="overflow-hidden flex">
+                        <div class="animate-marquee-right flex gap-4 pr-4">
+                            <div class="w-40 sm:w-48 h-20 px-6 rounded-xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-[#DC2626] transition-all flex items-center justify-center grayscale hover:grayscale-0 group flex-shrink-0">
+                                <img src="images/references/referans-logo-01.svg" alt="Compiturk Referans Marka - 1" class="max-h-10 w-auto object-contain opacity-70 group-hover:opacity-100 transition-all" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xs font-bold text-slate-700 group-hover:text-[#DC2626]\'>REFERANS MARKA 1</span>';" />
+                            </div>
+                            <div class="w-40 sm:w-48 h-20 px-6 rounded-xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-[#245BA7] transition-all flex items-center justify-center grayscale hover:grayscale-0 group flex-shrink-0">
+                                <img src="images/references/referans-logo-02.svg" alt="Compiturk Referans Marka - 2" class="max-h-10 w-auto object-contain opacity-70 group-hover:opacity-100 transition-all" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xs font-bold text-slate-700 group-hover:text-[#245BA7]\'>REFERANS MARKA 2</span>';" />
+                            </div>
+                            <div class="w-40 sm:w-48 h-20 px-6 rounded-xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-[#E77F18] transition-all flex items-center justify-center grayscale hover:grayscale-0 group flex-shrink-0">
+                                <img src="images/references/referans-logo-03.svg" alt="Compiturk Referans Marka - 3" class="max-h-10 w-auto object-contain opacity-70 group-hover:opacity-100 transition-all" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xs font-bold text-slate-700 group-hover:text-[#E77F18]\'>REFERANS MARKA 3</span>';" />
+                            </div>
+                            <div class="w-40 sm:w-48 h-20 px-6 rounded-xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-[#DC2626] transition-all flex items-center justify-center grayscale hover:grayscale-0 group flex-shrink-0">
+                                <img src="images/references/referans-logo-04.svg" alt="Compiturk Referans Marka - 4" class="max-h-10 w-auto object-contain opacity-70 group-hover:opacity-100 transition-all" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xs font-bold text-slate-700 group-hover:text-[#DC2626]\'>REFERANS MARKA 4</span>';" />
+                            </div>
+                            <div class="w-40 sm:w-48 h-20 px-6 rounded-xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-[#245BA7] transition-all flex items-center justify-center grayscale hover:grayscale-0 group flex-shrink-0">
+                                <img src="images/references/referans-logo-05.svg" alt="Compiturk Referans Marka - 5" class="max-h-10 w-auto object-contain opacity-70 group-hover:opacity-100 transition-all" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xs font-bold text-slate-700 group-hover:text-[#245BA7]\'>REFERANS MARKA 5</span>';" />
+                            </div>
+                            <div class="w-40 sm:w-48 h-20 px-6 rounded-xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-[#E77F18] transition-all flex items-center justify-center grayscale hover:grayscale-0 group flex-shrink-0">
+                                <img src="images/references/referans-logo-06.svg" alt="Compiturk Referans Marka - 6" class="max-h-10 w-auto object-contain opacity-70 group-hover:opacity-100 transition-all" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xs font-bold text-slate-700 group-hover:text-[#E77F18]\'>REFERANS MARKA 6</span>';" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="overflow-hidden flex">
+                        <div class="animate-marquee-left flex gap-4 pr-4">
+                            <div class="w-40 sm:w-48 h-20 px-6 rounded-xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-[#245BA7] transition-all flex items-center justify-center grayscale hover:grayscale-0 group flex-shrink-0">
+                                <img src="images/references/referans-logo-07.svg" alt="Compiturk Referans Marka - 7" class="max-h-10 w-auto object-contain opacity-70 group-hover:opacity-100 transition-all" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xs font-bold text-slate-700 group-hover:text-[#245BA7]\'>REFERANS MARKA 7</span>';" />
+                            </div>
+                            <div class="w-40 sm:w-48 h-20 px-6 rounded-xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-[#E77F18] transition-all flex items-center justify-center grayscale hover:grayscale-0 group flex-shrink-0">
+                                <img src="images/references/referans-logo-08.svg" alt="Compiturk Referans Marka - 8" class="max-h-10 w-auto object-contain opacity-70 group-hover:opacity-100 transition-all" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xs font-bold text-slate-700 group-hover:text-[#E77F18]\'>REFERANS MARKA 8</span>';" />
+                            </div>
+                            <div class="w-40 sm:w-48 h-20 px-6 rounded-xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-[#DC2626] transition-all flex items-center justify-center grayscale hover:grayscale-0 group flex-shrink-0">
+                                <img src="images/references/referans-logo-09.svg" alt="Compiturk Referans Marka - 9" class="max-h-10 w-auto object-contain opacity-70 group-hover:opacity-100 transition-all" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xs font-bold text-slate-700 group-hover:text-[#DC2626]\'>REFERANS MARKA 9</span>';" />
+                            </div>
+                            <div class="w-40 sm:w-48 h-20 px-6 rounded-xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-[#245BA7] transition-all flex items-center justify-center grayscale hover:grayscale-0 group flex-shrink-0">
+                                <img src="images/references/referans-logo-10.svg" alt="Compiturk Referans Marka - 10" class="max-h-10 w-auto object-contain opacity-70 group-hover:opacity-100 transition-all" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xs font-bold text-slate-700 group-hover:text-[#245BA7]\'>REFERANS MARKA 10</span>';" />
+                            </div>
+                            <div class="w-40 sm:w-48 h-20 px-6 rounded-xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-[#E77F18] transition-all flex items-center justify-center grayscale hover:grayscale-0 group flex-shrink-0">
+                                <img src="images/references/referans-logo-11.svg" alt="Compiturk Referans Marka - 11" class="max-h-10 w-auto object-contain opacity-70 group-hover:opacity-100 transition-all" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xs font-bold text-slate-700 group-hover:text-[#E77F18]\'>REFERANS MARKA 11</span>';" />
+                            </div>
+                            <div class="w-40 sm:w-48 h-20 px-6 rounded-xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-[#DC2626] transition-all flex items-center justify-center grayscale hover:grayscale-0 group flex-shrink-0">
+                                <img src="images/references/referans-logo-12.svg" alt="Compiturk Referans Marka - 12" class="max-h-10 w-auto object-contain opacity-70 group-hover:opacity-100 transition-all" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xs font-bold text-slate-700 group-hover:text-[#DC2626]\'>REFERANS MARKA 12</span>';" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 6. MODÜL: DİĞER ÇÖZÜMLERİMİZ                                             -->
+        <!-- ========================================================================= -->
+        <section id="diger-cozumler" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80 relative overflow-hidden z-20">
+            <div class="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-50 pointer-events-none"></div>
+
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12 lg:space-y-16">
+                <div class="text-center max-w-3xl mx-auto space-y-4">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-100/80 border border-red-200 text-[#DC2626] font-bold text-xs sm:text-sm tracking-wide">
+                        <i data-lucide="blocks" class="w-4 h-4"></i>
+                        TAMAMLAYICI B2B YAZILIMLARI
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        Güçlü Altyapı, <span class="text-[#DC2626]">Kusursuz</span> Deneyim
+                    </h2>
+
+                    <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
+                        DİA ERP'nin en büyük yetkili bayilerinden biri olarak işletmenizin tüm ek ihtiyaçlarına yönelik kaliteli yazılım ve entegrasyon çözümleri sunuyoruz.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                    <a href="#oduyo-tahsilat" class="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl hover:border-[#DC2626] hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden">
+                        <div class="space-y-6">
+                            <div class="flex items-start justify-between gap-4">
+                                <div class="w-14 h-14 rounded-2xl bg-red-50 text-[#DC2626] flex items-center justify-center group-hover:bg-[#DC2626] group-hover:text-white transition-all duration-300 shadow-inner">
+                                    <i data-lucide="credit-card" class="w-7 h-7"></i>
+                                </div>
+                                <span class="text-xs font-extrabold uppercase tracking-wider text-[#DC2626] bg-red-50/80 border border-red-100 px-3 py-1.5 rounded-lg">
+                                    Tahsilat & POS
+                                </span>
+                            </div>
+
+                            <div class="space-y-3">
+                                <h3 class="text-2xl font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors flex items-center gap-2">
+                                    Ödüyo — Online & B2B Tahsilat Sistemleri
+                                </h3>
+                                <p class="text-sm text-slate-600 leading-relaxed font-normal">
+                                    DİA ERP ile %100 entegre çalışan Ödüyo altyapısı sayesinde müşterilerinizden linkle, SMS/E-mail ile veya B2B bayilerinizden Sanal POS üzerinden 7/24 güvenli tahsilat yapın. Otomatik cari hesap işleme ile zamandan tasarruf edin.
+                                </p>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="text-xs font-semibold text-slate-700 bg-slate-100 px-3 py-1 rounded-md border border-slate-200/60">Sanal POS Entegrasyonu</span>
+                                <span class="text-xs font-semibold text-slate-700 bg-slate-100 px-3 py-1 rounded-md border border-slate-200/60">Linkle Ödeme Al</span>
+                                <span class="text-xs font-semibold text-slate-700 bg-slate-100 px-3 py-1 rounded-md border border-slate-200/60">Otomatik Cari Eşleşme</span>
+                                <span class="text-xs font-semibold text-slate-700 bg-slate-100 px-3 py-1 rounded-md border border-slate-200/60">Çoklu Banka Taksit</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-5 border-t border-slate-100 flex items-center justify-between text-sm font-bold text-slate-800 group-hover:text-[#DC2626] transition-colors">
+                            <span>Ödüyo Çözümünü İnceleyin</span>
+                            <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center group-hover:bg-[#DC2626] group-hover:text-white transition-all">
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform"></i>
+                            </div>
+                        </div>
                     </a>
-                    <div class="hidden sm:flex items-center pl-4 border-l border-slate-200">
-                        <div class="flex flex-col">
-                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Yetkili</span>
-                            <span class="text-xs font-bold text-brandCyan">DİA Çözüm Ortağı</span>
+
+                    <a href="#entegra-entegrasyonu" class="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl hover:border-[#245BA7] hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden">
+                        <div class="space-y-6">
+                            <div class="flex items-start justify-between gap-4">
+                                <div class="w-14 h-14 rounded-2xl bg-blue-50 text-[#245BA7] flex items-center justify-center group-hover:bg-[#245BA7] group-hover:text-white transition-all duration-300 shadow-inner">
+                                    <i data-lucide="shopping-bag" class="w-7 h-7"></i>
+                                </div>
+                                <span class="text-xs font-extrabold uppercase tracking-wider text-[#245BA7] bg-blue-50/80 border border-blue-100 px-3 py-1.5 rounded-lg">
+                                    E-Ticaret Hub
+                                </span>
+                            </div>
+
+                            <div class="space-y-3">
+                                <h3 class="text-2xl font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors flex items-center gap-2">
+                                    Entegra — Pazaryeri & E-Ticaret Entegrasyonu
+                                </h3>
+                                <p class="text-sm text-slate-600 leading-relaxed font-normal">
+                                    Trendyol, Hepsiburada, Amazon, N11 ve e-ticaret sitelerinizi DİA ERP sisteminize anlık bağlayın. Stok, fiyat ve sipariş takibini tek ekrandan çift yönlü senkronizasyonla sıfır hatayla yönetin.
+                                </p>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="text-xs font-semibold text-slate-700 bg-slate-100 px-3 py-1 rounded-md border border-slate-200/60">Çift Yönlü Stok Takibi</span>
+                                <span class="text-xs font-semibold text-slate-700 bg-slate-100 px-3 py-1 rounded-md border border-slate-200/60">Otomatik Fatura Oluşturma</span>
+                                <span class="text-xs font-semibold text-slate-700 bg-slate-100 px-3 py-1 rounded-md border border-slate-200/60">Pazaryeri Entegrasyonu</span>
+                                <span class="text-xs font-semibold text-slate-700 bg-slate-100 px-3 py-1 rounded-md border border-slate-200/60">Anlık Sipariş Aktarımı</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-5 border-t border-slate-100 flex items-center justify-between text-sm font-bold text-slate-800 group-hover:text-[#245BA7] transition-colors">
+                            <span>Entegra Çözümünü İnceleyin</span>
+                            <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center group-hover:bg-[#245BA7] group-hover:text-white transition-all">
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#ozel-entegrasyonlar" class="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl hover:border-[#E77F18] hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden">
+                        <div class="space-y-6">
+                            <div class="flex items-start justify-between gap-4">
+                                <div class="w-14 h-14 rounded-2xl bg-amber-50 text-[#E77F18] flex items-center justify-center group-hover:bg-[#E77F18] group-hover:text-white transition-all duration-300 shadow-inner">
+                                    <i data-lucide="code-2" class="w-7 h-7"></i>
+                                </div>
+                                <span class="text-xs font-extrabold uppercase tracking-wider text-[#E77F18] bg-amber-50/80 border border-amber-100 px-3 py-1.5 rounded-lg">
+                                    Özel Geliştirme
+                                </span>
+                            </div>
+
+                            <div class="space-y-3">
+                                <h3 class="text-2xl font-bold text-slate-900 group-hover:text-[#E77F18] transition-colors">
+                                    Özel Entegrasyon & API Çözümleri
+                                </h3>
+                                <p class="text-sm text-slate-600 leading-relaxed font-normal">
+                                    İşletmenizin kullandığı özel dikey yazılımları, B2B portallarını ve harici sistemleri DİA ERP altyapısına bağlayan esnek API ve köprü çözümleri.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-5 border-t border-slate-100 flex items-center justify-between text-sm font-bold text-slate-800 group-hover:text-[#E77F18] transition-colors">
+                            <span>API Hizmetlerini İnceleyin</span>
+                            <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center group-hover:bg-[#E77F18] group-hover:text-white transition-all">
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#e-donusum-cozumleri" class="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl hover:border-emerald-600 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden">
+                        <div class="space-y-6">
+                            <div class="flex items-start justify-between gap-4">
+                                <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300 shadow-inner">
+                                    <i data-lucide="file-check-2" class="w-7 h-7"></i>
+                                </div>
+                                <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-600 bg-emerald-50/80 border border-emerald-100 px-3 py-1.5 rounded-lg">
+                                    GİB Uyumlu
+                                </span>
+                            </div>
+
+                            <div class="space-y-3">
+                                <h3 class="text-2xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">
+                                    E-Dönüşüm & Dijital Arşiv Çözümleri
+                                </h3>
+                                <p class="text-sm text-slate-600 leading-relaxed font-normal">
+                                    e-Fatura, e-İrsaliye, e-Müstahsil ve e-Arşiv süreçlerinizi yasal mevzuatlara %100 uyumlu ve hızlı bir şekilde dijitalleştirin.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-5 border-t border-slate-100 flex items-center justify-between text-sm font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">
+                            <span>E-Dönüşümü İnceleyin</span>
+                            <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-all">
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 7. MODÜL: SIKÇA SORULAN SORULAR (S.S.S. / FAQ)                           -->
+        <!-- ========================================================================= -->
+        <section id="sss-faq" class="py-16 lg:py-24 bg-slate-50 border-b border-slate-200/80 relative z-20">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12 lg:space-y-16">
+                <div class="text-center max-w-3xl mx-auto space-y-4">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-100/80 border border-red-200 text-[#DC2626] font-bold text-xs sm:text-sm tracking-wide">
+                        <i data-lucide="help-circle" class="w-4 h-4"></i>
+                        AKLINIZA TAKILANLAR
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        Sıkça Sorulan <span class="text-[#DC2626]">Sorular</span>
+                    </h2>
+
+                    <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
+                        DİA Bulut ERP, B2B yazılım entegrasyonlarımız ve IT altyapı süreçlerimiz hakkında merak ettiğiniz tüm cevaplar.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+                    <div class="flex flex-col gap-4 justify-between h-full">
+                        <details class="group bg-white rounded-2xl border border-slate-200/80 shadow-sm open:border-l-4 open:border-l-[#DC2626] transition-all duration-300 w-full">
+                            <summary class="flex items-center justify-between p-5 sm:p-6 cursor-pointer list-none select-none min-h-[80px]">
+                                <h3 class="text-base sm:text-lg font-bold text-slate-900 group-open:text-[#DC2626] transition-colors pr-4 leading-snug">
+                                    DİA ERP nedir ve işletmeme ne gibi avantajlar sağlar?
+                                </h3>
+                                <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 group-open:bg-red-50 group-open:text-[#DC2626] flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-open:rotate-180">
+                                    <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                                </div>
+                            </summary>
+                            <div class="px-5 pb-5 sm:px-6 sm:pb-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                                DİA, %100 bulut tabanlı çalışan, donanım ve sunucu maliyetlerini sıfırlayan gelişmiş bir ERP platformudur. Finans, stok, e-fatura, üretim ve CRM süreçlerinizi internetin olduğu her yerden güvenle yönetmenizi sağlar.
+                            </div>
+                        </details>
+
+                        <details class="group bg-white rounded-2xl border border-slate-200/80 shadow-sm open:border-l-4 open:border-l-[#DC2626] transition-all duration-300 w-full">
+                            <summary class="flex items-center justify-between p-5 sm:p-6 cursor-pointer list-none select-none min-h-[80px]">
+                                <h3 class="text-base sm:text-lg font-bold text-slate-900 group-open:text-[#DC2626] transition-colors pr-4 leading-snug">
+                                    DİA Bulut ERP için özel bir sunucu yatırımı yapmam gerekir mi?
+                                </h3>
+                                <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 group-open:bg-red-50 group-open:text-[#DC2626] flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-open:rotate-180">
+                                    <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                                </div>
+                            </summary>
+                            <div class="px-5 pb-5 sm:px-6 sm:pb-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                                Hayır. DİA %100 SaaS (Bulut) mimarisiyle çalıştığı için işletmenizde fiziksel sunucu, lisanslama veya yedekleme maliyeti oluşmaz. Tüm verileriniz yüksek güvenlikli bulut veri merkezlerinde saklanır.
+                            </div>
+                        </details>
+
+                        <details class="group bg-white rounded-2xl border border-slate-200/80 shadow-sm open:border-l-4 open:border-l-[#DC2626] transition-all duration-300 w-full">
+                            <summary class="flex items-center justify-between p-5 sm:p-6 cursor-pointer list-none select-none min-h-[80px]">
+                                <h3 class="text-base sm:text-lg font-bold text-slate-900 group-open:text-[#DC2626] transition-colors pr-4 leading-snug">
+                                    Pazaryeri (Trendyol, Hepsiburada, N11) entegrasyonlarınız DİA ile çift yönlü mü çalışır?
+                                </h3>
+                                <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 group-open:bg-red-50 group-open:text-[#DC2626] flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-open:rotate-180">
+                                    <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                                </div>
+                            </summary>
+                            <div class="px-5 pb-5 sm:px-6 sm:pb-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                                Evet. Gelir/gider, stok ve sipariş verileriniz DİA ERP ve pazaryeri mağazalarınız arasında anlık ve çift yönlü olarak senkronize edilir. Stok çakışmaları tamamen engellenir.
+                            </div>
+                        </details>
+
+                        <details class="group bg-white rounded-2xl border border-slate-200/80 shadow-sm open:border-l-4 open:border-l-[#DC2626] transition-all duration-300 w-full">
+                            <summary class="flex items-center justify-between p-5 sm:p-6 cursor-pointer list-none select-none min-h-[80px]">
+                                <h3 class="text-base sm:text-lg font-bold text-slate-900 group-open:text-[#DC2626] transition-colors pr-4 leading-snug">
+                                    Ahtapot WMS Depo Yönetimi ile stok hatalarını nasıl önlüyoruz?
+                                </h3>
+                                <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 group-open:bg-red-50 group-open:text-[#DC2626] flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-open:rotate-180">
+                                    <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                                </div>
+                            </summary>
+                            <div class="px-5 pb-5 sm:px-6 sm:pb-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                                El terminalleri ve barkod otomasyonu sayesinde mal kabulden sevkiyata, sayımdan lokasyon takibine kadar tüm depo süreçleriniz %100 doğru ve anlık olarak ERP sisteminize işlenir.
+                            </div>
+                        </details>
+
+                        <details class="group bg-white rounded-2xl border border-slate-200/80 shadow-sm open:border-l-4 open:border-l-[#DC2626] transition-all duration-300 w-full">
+                            <summary class="flex items-center justify-between p-5 sm:p-6 cursor-pointer list-none select-none min-h-[80px]">
+                                <h3 class="text-base sm:text-lg font-bold text-slate-900 group-open:text-[#DC2626] transition-colors pr-4 leading-snug">
+                                    Mobil B2B Bayi Portalı ile bayilerimizden nasıl sipariş toplayabiliriz?
+                                </h3>
+                                <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 group-open:bg-red-50 group-open:text-[#DC2626] flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-open:rotate-180">
+                                    <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                                </div>
+                            </summary>
+                            <div class="px-5 pb-5 sm:px-6 sm:pb-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                                Bayilerinize özel tanımlanan web ve mobil uygulama üzerinden bayileriniz 7/24 güncel stokları ve cari fiyatlarını görerek doğrudan sipariş verebilir, kredi kartı ile ödeme yapabilirler.
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="flex flex-col gap-4 justify-between h-full">
+                        <details class="group bg-white rounded-2xl border border-slate-200/80 shadow-sm open:border-l-4 open:border-l-[#DC2626] transition-all duration-300 w-full">
+                            <summary class="flex items-center justify-between p-5 sm:p-6 cursor-pointer list-none select-none min-h-[80px]">
+                                <h3 class="text-base sm:text-lg font-bold text-slate-900 group-open:text-[#DC2626] transition-colors pr-4 leading-snug">
+                                    Mevcut ERP veya muhasebe sistemimizdeki verileri DİA'ya aktarabilir miyiz?
+                                </h3>
+                                <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 group-open:bg-red-50 group-open:text-[#DC2626] flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-open:rotate-180">
+                                    <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                                </div>
+                            </summary>
+                            <div class="px-5 pb-5 sm:px-6 sm:pb-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                                Evet. Compiturk uzman mühendis ekibimiz, mevcut sistemlerinizdeki stok, cari, fiyat ve açılış bakiyelerinizi eksiksiz ve hızlı bir şekilde DİA ERP sistemine aktarır.
+                            </div>
+                        </details>
+
+                        <details class="group bg-white rounded-2xl border border-slate-200/80 shadow-sm open:border-l-4 open:border-l-[#DC2626] transition-all duration-300 w-full">
+                            <summary class="flex items-center justify-between p-5 sm:p-6 cursor-pointer list-none select-none min-h-[80px]">
+                                <h3 class="text-base sm:text-lg font-bold text-slate-900 group-open:text-[#DC2626] transition-colors pr-4 leading-snug">
+                                    Ödüyo ve Net Tahsilat ile Sanal POS ödemelerini nasıl topluyoruz?
+                                </h3>
+                                <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 group-open:bg-red-50 group-open:text-[#DC2626] flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-open:rotate-180">
+                                    <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                                </div>
+                            </summary>
+                            <div class="px-5 pb-5 sm:px-6 sm:pb-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                                Müşterilerinize tek tıkla SMS veya e-posta ile ödeme linki gönderebilir, tek ekrandan tüm bankaların taksit imkanlarını sunarak tahsilatlarınızı doğrudan cari hesaplarınıza işleyebilirsiniz.
+                            </div>
+                        </details>
+
+                        <details class="group bg-white rounded-2xl border border-slate-200/80 shadow-sm open:border-l-4 open:border-l-[#DC2626] transition-all duration-300 w-full">
+                            <summary class="flex items-center justify-between p-5 sm:p-6 cursor-pointer list-none select-none min-h-[80px]">
+                                <h3 class="text-base sm:text-lg font-bold text-slate-900 group-open:text-[#DC2626] transition-colors pr-4 leading-snug">
+                                    IT Altyapı, Firewall ve Sunucu kurulum desteği veriyor musunuz?
+                                </h3>
+                                <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 group-open:bg-red-50 group-open:text-[#DC2626] flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-open:rotate-180">
+                                    <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                                </div>
+                            </summary>
+                            <div class="px-5 pb-5 sm:px-6 sm:pb-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                                Evet. Kurumsal IT altyapı, UTM Firewall güvenlik duvarı, KVKK uyumlu otomatik yedekleme ve ağ kablolama projelerinizi uçtan uca kuruyor ve 7/24 teknik destek sağlıyoruz.
+                            </div>
+                        </details>
+
+                        <details class="group bg-white rounded-2xl border border-slate-200/80 shadow-sm open:border-l-4 open:border-l-[#DC2626] transition-all duration-300 w-full">
+                            <summary class="flex items-center justify-between p-5 sm:p-6 cursor-pointer list-none select-none min-h-[80px]">
+                                <h3 class="text-base sm:text-lg font-bold text-slate-900 group-open:text-[#DC2626] transition-colors pr-4 leading-snug">
+                                    E-Fatura ve e-Dönüşüm geçiş süreçleri ne kadar sürüyor?
+                                </h3>
+                                <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 group-open:bg-red-50 group-open:text-[#DC2626] flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-open:rotate-180">
+                                    <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                                </div>
+                            </summary>
+                            <div class="px-5 pb-5 sm:px-6 sm:pb-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                                GİB onaylı entegratör altyapımız ile e-Fatura, e-İrsaliye ve e-Arşiv süreçlerinizi saatler içinde aktif hale getiriyor, personelinize gerekli tüm eğitimi veriyoruz.
+                            </div>
+                        </details>
+
+                        <details class="group bg-white rounded-2xl border border-slate-200/80 shadow-sm open:border-l-4 open:border-l-[#DC2626] transition-all duration-300 w-full">
+                            <summary class="flex items-center justify-between p-5 sm:p-6 cursor-pointer list-none select-none min-h-[80px]">
+                                <h3 class="text-base sm:text-lg font-bold text-slate-900 group-open:text-[#DC2626] transition-colors pr-4 leading-snug">
+                                    Compiturk olarak satış sonrası destek ve eğitim hizmetleriniz nasıl işliyor?
+                                </h3>
+                                <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 group-open:bg-red-50 group-open:text-[#DC2626] flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-open:rotate-180">
+                                    <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                                </div>
+                            </summary>
+                            <div class="px-5 pb-5 sm:px-6 sm:pb-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                                DİA İstanbul Yetkili Çözüm Ortağı olarak, kurulum sonrası yerinde/uzaktan eğitim veriyor, özel destek hattımız ve canlı destek ekibimizle tüm süreçlerinizde kesintisiz yanınızda oluyoruz.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- MODÜL: KURUMSAL HAKKIMIZDA & 4 ADIMDA DİJİTAL DÖNÜŞÜM SÜRECİ             -->
+        <!-- ========================================================================= -->
+        <section id="hakkimizda-kurumsal" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80 relative overflow-hidden z-20">
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_75%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-40 pointer-events-none"></div>
+
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-20 lg:space-y-24">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                    <div class="lg:col-span-7 space-y-6 text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-100/80 border border-orange-200 text-[#E77F18] font-bold text-xs sm:text-sm tracking-wide">
+                            <i data-lucide="building-2" class="w-4 h-4"></i>
+                            BİZ KİMİZ?
+                        </div>
+
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                            DİA ERP Yetkili Bayisi ve <br class="hidden sm:inline" />
+                            <span class="text-[#245BA7]">Yazılım Şirketi</span>
+                        </h2>
+
+                        <div class="space-y-4 text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
+                            <p>
+                                Compiturk Bilgisayar olarak, 15 yılı aşkın sektör tecrübemizle kurumsal şirketlerin dijital dönüşüm süreçlerine mühendislik çözümleri sunuyoruz. DİA ERP İstanbul Yetkili Çözüm Ortağı unvanımızın yanı sıra, kendi mutfağımızda geliştirdiğimiz 13+ entegre yazılım ürünüyle işletmelerin tüm operasyonel ihtiyaçlarını tek çatı altında topluyoruz.
+                            </p>
+                            <p class="text-base">
+                                Pazaryeri entegrasyonlarından WMS depo yönetimine, mobil B2B bayi sistemlerinden online tahsilat çözümlerine kadar; ERP sisteminizi sıradan bir muhasebe yazılımı olmaktan çıkarıp uçtan uca dijital bir yönetim merkezine dönüştürüyoruz.
+                            </p>
+                        </div>
+
+                        <ul class="space-y-3 pt-2 text-sm sm:text-base font-semibold text-slate-800">
+                            <li class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-full bg-red-100 text-[#DC2626] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="check" class="w-4 h-4"></i>
+                                </div>
+                                <span>DİA ERP Yetkili Satış, Kurulum ve 7/24 Teknik Destek</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-full bg-blue-100 text-[#245BA7] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="check" class="w-4 h-4"></i>
+                                </div>
+                                <span>%100 Yerli ve Özgün B2B Yazılım Ekosistemi</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-full bg-amber-100 text-[#E77F18] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="check" class="w-4 h-4"></i>
+                                </div>
+                                <span>Terzi Usulü Özel API & Entegrasyon Geliştirme</span>
+                            </li>
+                        </ul>
+
+                        <div class="pt-4">
+                            <a href="#kurumsal-detay" class="inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-[#0F172A] hover:bg-[#1E293B] text-white font-bold text-sm sm:text-base shadow-lg shadow-slate-900/10 hover:scale-[1.02] transition-all group">
+                                <span>Kurumsal Profilimizi İnceleyin</span>
+                                <i data-lucide="arrow-right" class="w-5 h-5 text-[#E77F18] group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-5 items-stretch">
+                        <div class="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                            <div class="w-12 h-12 rounded-xl bg-red-50 text-[#DC2626] flex items-center justify-center mb-6 group-hover:bg-[#DC2626] group-hover:text-white transition-all">
+                                <i data-lucide="award" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight group-hover:text-[#DC2626] transition-colors">15+ Yıl</div>
+                                <p class="text-xs sm:text-sm font-semibold text-slate-500 mt-1">Sektörel Tecrübe & IT Uzmanlığı</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#245BA7] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 text-[#245BA7] flex items-center justify-center mb-6 group-hover:bg-[#245BA7] group-hover:text-white transition-all">
+                                <i data-lucide="users" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight group-hover:text-[#245BA7] transition-colors">500+</div>
+                                <p class="text-xs sm:text-sm font-semibold text-slate-500 mt-1">Aktif Kurumsal Müşteri</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#E77F18] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                            <div class="w-12 h-12 rounded-xl bg-amber-50 text-[#E77F18] flex items-center justify-center mb-6 group-hover:bg-[#E77F18] group-hover:text-white transition-all">
+                                <i data-lucide="code-2" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight group-hover:text-[#E77F18] transition-colors">13+</div>
+                                <p class="text-xs sm:text-sm font-semibold text-slate-500 mt-1">Geliştirilen Özel Entegrasyon Yazılımı</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-600 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-all">
+                                <i data-lucide="shield-check" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight group-hover:text-emerald-600 transition-colors">%99.9</div>
+                                <p class="text-xs sm:text-sm font-semibold text-slate-500 mt-1">Kesintisiz Bulut & IT Altyapı Desteği</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Orta Taraf: Navigasyon -->
-                <nav class="hidden lg:flex items-center gap-8">
-                    <a href="#" class="nav-link-hover text-sm font-semibold text-brandNavy">Ana Sayfa</a>
-                    
-                    <!-- Dropdown: DİA ERP -->
-                    <div class="relative group cursor-pointer">
-                        <div class="flex items-center gap-1 nav-link-hover text-sm font-semibold text-brandNavy">
-                            DİA ERP <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </div>
-                        <div class="absolute top-full left-0 w-48 pt-4 mega-menu">
-                            <div class="bg-white border border-slate-100 shadow-xl rounded-xl p-2">
-                                <a href="#" class="block px-4 py-2 text-sm hover:bg-brandIce rounded-lg transition-colors">DİA Bulut ERP</a>
-                                <a href="#" class="block px-4 py-2 text-sm hover:bg-brandIce rounded-lg transition-colors">E-Ticaret Çözümleri</a>
-                                <a href="#" class="block px-4 py-2 text-sm hover:bg-brandIce rounded-lg transition-colors">E-Devlet Entegrasyonu</a>
-                            </div>
-                        </div>
+                <div class="space-y-10 pt-6 border-t border-slate-200/80">
+                    <div class="text-center max-w-2xl mx-auto space-y-2">
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                            4 Adımda <span class="text-[#DC2626]">Dijital Dönüşüm Sürecimiz</span>
+                        </h3>
+                        <p class="text-sm sm:text-base text-slate-600 font-normal">
+                            İşletmenizin dijitalleşme yolculuğunu uçtan uca adım adım yönetiyoruz.
+                        </p>
                     </div>
 
-                    <!-- Mega Menu: Çözümlerimiz -->
-                    <div class="relative group cursor-pointer">
-                        <div class="flex items-center gap-1 nav-link-hover text-sm font-semibold text-brandNavy">
-                            Çözümlerimiz <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </div>
-                        <div class="absolute top-full left-1/2 -translate-x-1/2 w-[600px] pt-4 mega-menu">
-                            <div class="bg-white border border-slate-100 shadow-2xl rounded-2xl p-6 grid grid-cols-2 gap-6">
-                                <div>
-                                    <h4 class="font-bold text-brandRed mb-3 text-xs uppercase tracking-wider">Donanım & Teknik</h4>
-                                    <ul class="space-y-2">
-                                        <li><a href="#" class="text-sm text-brandSlate hover:text-brandCyan transition-colors">Sunucu Çözümleri</a></li>
-                                        <li><a href="#" class="text-sm text-brandSlate hover:text-brandCyan transition-colors">Network & Güvenlik</a></li>
-                                        <li><a href="#" class="text-sm text-brandSlate hover:text-brandCyan transition-colors">Bakım Anlaşmaları</a></li>
-                                    </ul>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+                        <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center font-bold">
+                                        <i data-lucide="search" class="w-5 h-5"></i>
+                                    </div>
+                                    <span class="text-2xl font-black text-[#DC2626]/30 group-hover:text-[#DC2626] transition-colors">01</span>
                                 </div>
-                                <div>
-                                    <h4 class="font-bold text-brandRed mb-3 text-xs uppercase tracking-wider">Yazılım Çözümleri</h4>
-                                    <ul class="space-y-2">
-                                        <li><a href="#" class="text-sm text-brandSlate hover:text-brandCyan transition-colors">Özel Yazılım Geliştirme</a></li>
-                                        <li><a href="#" class="text-sm text-brandSlate hover:text-brandCyan transition-colors">Sektörel Çözümler</a></li>
-                                        <li><a href="#" class="text-sm text-brandSlate hover:text-brandCyan transition-colors">Mobil Uygulamalar</a></li>
-                                    </ul>
+                                <div class="space-y-2">
+                                    <h4 class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Analiz</h4>
+                                    <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">İşletmenizin mevcut süreçlerini, ERP gereksinimlerini ve entegrasyon ihtiyaçlarını yerinde analiz ediyoruz.</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <a href="#" class="nav-link-hover text-sm font-semibold text-brandNavy">Hakkımızda</a>
-                    <a href="#" class="nav-link-hover text-sm font-semibold text-brandNavy">Blog</a>
-                    <a href="#" class="nav-link-hover text-sm font-semibold text-brandNavy">İletişim</a>
-                </nav>
-
-                <!-- Sağ Taraf: İletişim Kutusu & DİA Badge -->
-                <div class="flex items-center gap-6">
-                    <div class="hidden xl:flex items-center gap-3 bg-brandIce px-4 py-2 rounded-full border border-slate-100">
-                        <div class="bg-brandRed p-2 rounded-full text-white">
-                            <i data-lucide="phone-call" class="w-4 h-4 text-white"></i>
+                        <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#245BA7] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#245BA7] flex items-center justify-center font-bold">
+                                        <i data-lucide="layers" class="w-5 h-5"></i>
+                                    </div>
+                                    <span class="text-2xl font-black text-[#245BA7]/30 group-hover:text-[#245BA7] transition-colors">02</span>
+                                </div>
+                                <div class="space-y-2">
+                                    <h4 class="text-lg font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors">Çözüm Tasarımı</h4>
+                                    <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">DİA ERP altyapınız ve B2B yazılımlarımız ile işletmenize özel entegre mimariyi kurguluyoruz.</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="flex flex-col">
-                            <span class="text-[10px] text-brandSlate font-medium uppercase leading-none">Bizi Arayın!</span>
-                            <a href="tel:+902128733537" class="text-sm font-bold text-brandNavy hover:text-brandRed transition-colors tracking-tight">+90 (212) 873 35 37</a>
+
+                        <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#E77F18] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="w-10 h-10 rounded-lg bg-amber-50 text-[#E77F18] flex items-center justify-center font-bold">
+                                        <i data-lucide="cpu" class="w-5 h-5"></i>
+                                    </div>
+                                    <span class="text-2xl font-black text-[#E77F18]/30 group-hover:text-[#E77F18] transition-colors">03</span>
+                                </div>
+                                <div class="space-y-2">
+                                    <h4 class="text-lg font-bold text-slate-900 group-hover:text-[#E77F18] transition-colors">Uygulama</h4>
+                                    <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">Sistem kurulumlarını tamamlayarak mevcut verilerinizi kayıpsız bir şekilde yeni yapınıza aktarıyoruz.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-600 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
+                                        <i data-lucide="trending-up" class="w-5 h-5"></i>
+                                    </div>
+                                    <span class="text-2xl font-black text-emerald-600/30 group-hover:text-emerald-600 transition-colors">04</span>
+                                </div>
+                                <div class="space-y-2">
+                                    <h4 class="text-lg font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Destek & Büyüme</h4>
+                                    <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">7/24 teknik destek, canlı eğitimler ve sürekli güncellemelerle dijital yolculuğunuzda yanınızda oluyoruz.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
-                    <!-- Mobil Menü Butonu -->
-                    <button id="mobile-menu-btn" class="lg:hidden p-2 text-brandNavy">
-                        <i data-lucide="menu" class="w-8 h-8"></i>
-                    </button>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Mobil Menü (Drawer) -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 py-6 space-y-4 shadow-inner">
-            <a href="#" class="block font-semibold text-brandNavy">Ana Sayfa</a>
-            <div class="font-semibold text-brandNavy">DİA ERP</div>
-            <div class="font-semibold text-brandNavy pl-4 space-y-2 text-sm text-brandSlate">
-                <a href="#" class="block">DİA Bulut ERP</a>
-                <a href="#" class="block">E-Ticaret</a>
-            </div>
-            <a href="#" class="block font-semibold text-brandNavy">Hakkımızda</a>
-            <a href="#" class="block font-semibold text-brandNavy">İletişim</a>
-            <div class="pt-4 border-t border-slate-100">
-                <a href="tel:+902128733537" class="flex items-center gap-3 text-brandRed font-bold">
-                    <i data-lucide="phone" class="w-5 h-5"></i> +90 (212) 873 35 37
-                </a>
-            </div>
-        </div>
-    </header>
+        <!-- ========================================================================= -->
+        <!-- MODÜL: BLOG / GÜNCEL MAKALELER & TEKNOLOJİ REHBERİ                       -->
+        <!-- ========================================================================= -->
+        <section id="blog-posts" class="py-16 lg:py-24 bg-white border-b border-slate-200/80 relative z-20">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12 lg:space-y-16">
+                <div class="text-center max-w-3xl mx-auto space-y-4">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-100/80 border border-red-200 text-[#DC2626] font-bold text-xs sm:text-sm tracking-wide">
+                        <i data-lucide="newspaper" class="w-4 h-4"></i>
+                        GÜNCEL BİLGİLER & REHBERLER
+                    </div>
 
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        Güncel Makaleler & <span class="text-[#DC2626]">Teknoloji Rehberi</span>
+                    </h2>
+
+                    <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
+                        DİA Bulut ERP, B2B entegrasyonlar, e-ticaret ve IT altyapı dünyasından en son haberler ve rehber içerikler.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+                    <article class="bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:border-[#DC2626] hover:-translate-y-1.5 transition-all duration-300 group flex flex-col justify-between">
+                        <a href="#blog-bulut-erp-karsilastirma" class="flex flex-col h-full justify-between">
+                            <div>
+                                <div class="relative overflow-hidden bg-slate-100 aspect-[16/10]">
+                                    <img src="images/blog/bulut-erp-karsilastirma.webp" alt="Geleneksel ERP ve Bulut ERP Maliyet Karşılaştırması" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full flex flex-col items-center justify-center bg-slate-100 p-6 text-center\'><i data-lucide=\'cloud\' class=\'w-10 h-10 text-[#245BA7] mb-2 opacity-60\'></i><span class=\'text-xs font-bold text-slate-500\'>Bulut ERP Görseli (800x500px)</span></div>';" />
+                                    <span class="absolute top-4 left-4 bg-[#245BA7] text-white font-extrabold text-xs px-3 py-1.5 rounded-lg shadow-md">Bulut ERP</span>
+                                </div>
+
+                                <div class="p-6 space-y-3">
+                                    <div class="flex items-center gap-4 text-xs font-semibold text-slate-400">
+                                        <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i>20 Temmuz 2026</span>
+                                        <span>•</span>
+                                        <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i>5 dk okuma</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2 leading-snug">Geleneksel ERP mi, Bulut ERP mi? İşletmeler İçin Maliyet Karşılaştırması</h3>
+                                    <p class="text-slate-600 text-sm font-normal line-clamp-2 leading-relaxed">Fiziksel sunucu bağımlılığını ve yüksek lisans maliyetlerini ortadan kaldıran DİA Bulut ERP altyapısının işletmelere sağladığı esneklik ve güvenlik avantajlarını inceliyoruz.</p>
+                                </div>
+                            </div>
+
+                            <div class="px-6 pb-6 pt-2 border-t border-slate-100 flex items-center justify-between text-sm font-bold text-[#DC2626]">
+                                <span>Devamını Oku</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:border-[#245BA7] hover:-translate-y-1.5 transition-all duration-300 group flex flex-col justify-between">
+                        <a href="#blog-pazaryeri-stok-entegrasyonu" class="flex flex-col h-full justify-between">
+                            <div>
+                                <div class="relative overflow-hidden bg-slate-100 aspect-[16/10]">
+                                    <img src="images/blog/pazaryeri-stok-entegrasyonu.webp" alt="Pazaryeri ve DİA ERP Çift Yönlü Stok Entegrasyonu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full flex flex-col items-center justify-center bg-slate-100 p-6 text-center\'><i data-lucide=\'shopping-bag\' class=\'w-10 h-10 text-[#DC2626] mb-2 opacity-60\'></i><span class=\'text-xs font-bold text-slate-500\'>Pazaryeri Görseli (800x500px)</span></div>';" />
+                                    <span class="absolute top-4 left-4 bg-[#DC2626] text-white font-extrabold text-xs px-3 py-1.5 rounded-lg shadow-md">E-Ticaret Entegrasyonu</span>
+                                </div>
+
+                                <div class="p-6 space-y-3">
+                                    <div class="flex items-center gap-4 text-xs font-semibold text-slate-400">
+                                        <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i>15 Temmuz 2026</span>
+                                        <span>•</span>
+                                        <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i>4 dk okuma</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors line-clamp-2 leading-snug">Pazaryeri Satışlarında Stok Çakışmalarına Son: Çift Yönlü ERP Entegrasyonu</h3>
+                                    <p class="text-slate-600 text-sm font-normal line-clamp-2 leading-relaxed">Trendyol, Hepsiburada ve N11 mağazalarınızı DİA ERP ile anlık senkronize ederek hatalı gönderimleri ve cezalardan kaçınmanın yolları.</p>
+                                </div>
+                            </div>
+
+                            <div class="px-6 pb-6 pt-2 border-t border-slate-100 flex items-center justify-between text-sm font-bold text-[#245BA7]">
+                                <span>Devamını Oku</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:border-[#E77F18] hover:-translate-y-1.5 transition-all duration-300 group flex flex-col justify-between">
+                        <a href="#blog-wms-depo-otomasyonu" class="flex flex-col h-full justify-between">
+                            <div>
+                                <div class="relative overflow-hidden bg-slate-100 aspect-[16/10]">
+                                    <img src="images/blog/wms-depo-otomasyonu.webp" alt="Ahtapot WMS Depo Yönetimi ve Barkodlu Sevkiyat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full flex flex-col items-center justify-center bg-slate-100 p-6 text-center\'><i data-lucide=\'boxes\' class=\'w-10 h-10 text-[#E77F18] mb-2 opacity-60\'></i><span class=\'text-xs font-bold text-slate-500\'>WMS Depo Görseli (800x500px)</span></div>';" />
+                                    <span class="absolute top-4 left-4 bg-[#E77F18] text-white font-extrabold text-xs px-3 py-1.5 rounded-lg shadow-md">WMS & Depo</span>
+                                </div>
+
+                                <div class="p-6 space-y-3">
+                                    <div class="flex items-center gap-4 text-xs font-semibold text-slate-400">
+                                        <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i>10 Temmuz 2026</span>
+                                        <span>•</span>
+                                        <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i>6 dk okuma</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#E77F18] transition-colors line-clamp-2 leading-snug">Ahtapot WMS Depo Yönetimi İle Sıfır Hatalı Sevkiyat ve Barkod Otomasyonu</h3>
+                                    <p class="text-slate-600 text-sm font-normal line-clamp-2 leading-relaxed">El terminalleri ve lokasyon takibi ile depolama süreçlerinde hız ve verimliliği artırarak operasyonel maliyetleri nasıl düşürürsünüz?</p>
+                                </div>
+                            </div>
+
+                            <div class="px-6 pb-6 pt-2 border-t border-slate-100 flex items-center justify-between text-sm font-bold text-[#E77F18]">
+                                <span>Devamını Oku</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section> 
+
+        <!-- ========================================================================= -->
+        <!-- BÖLÜM 1: HIZLI TEKLİF & DEMO TALEP FORMU                                   -->
+        <!-- ========================================================================= -->
+        <section id="teklif-formu" class="w-full py-16 lg:py-24 bg-[#0F1D38] text-white relative overflow-hidden z-20">
+            <div class="absolute -top-24 -left-24 w-96 h-96 bg-[#DC2626]/20 rounded-full blur-[130px] pointer-events-none"></div>
+            <div class="absolute -bottom-24 -right-24 w-[500px] h-[500px] bg-[#DC2626]/15 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                    <div class="lg:col-span-5 space-y-8 text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#DC2626]/15 border border-[#DC2626]/40 text-[#DC2626] font-bold text-xs sm:text-sm tracking-wide">
+                            <span class="w-2 h-2 rounded-full bg-[#DC2626] animate-pulse"></span>
+                            HIZLI TEKLİF & DEMO
+                        </div>
+
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+                            Projenizi Birlikte <br class="hidden sm:inline" />
+                            <span class="text-[#DC2626]">Hayata Geçirelim</span>
+                        </h2>
+
+                        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
+                            DİA ERP demosu, B2B yazılım entegrasyonları veya IT altyapı ihtiyaçlarınız için formu doldurun; uzman ekibimiz en kısa sürede sizinle iletişime geçsin.
+                        </p>
+
+                        <div class="space-y-4 pt-2">
+                            <a href="tel:+902128733537" class="flex items-center gap-4 p-4 rounded-xl bg-[#162444] border border-slate-700/60 hover:border-[#DC2626] transition-all group">
+                                <div class="w-11 h-11 rounded-lg bg-[#DC2626]/20 text-[#DC2626] group-hover:bg-[#DC2626] group-hover:text-white flex items-center justify-center flex-shrink-0 transition-all">
+                                    <i data-lucide="phone" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs font-semibold text-slate-400">Telefon İletişim</div>
+                                    <div class="text-sm sm:text-base font-bold text-white">+90 (212) 873 35 37</div>
+                                </div>
+                            </a>
+
+                            <a href="mailto:destek@compiturk.com.tr" class="flex items-center gap-4 p-4 rounded-xl bg-[#162444] border border-slate-700/60 hover:border-[#DC2626] transition-all group">
+                                <div class="w-11 h-11 rounded-lg bg-[#DC2626]/20 text-[#DC2626] group-hover:bg-[#DC2626] group-hover:text-white flex items-center justify-center flex-shrink-0 transition-all">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs font-semibold text-slate-400">E-Posta Adresi</div>
+                                    <div class="text-sm sm:text-base font-bold text-white">destek@compiturk.com.tr</div>
+                                </div>
+                            </a>
+
+                            <div class="flex items-center gap-4 p-4 rounded-xl bg-[#162444] border border-slate-700/60">
+                                <div class="w-11 h-11 rounded-lg bg-[#DC2626]/20 text-[#DC2626] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs font-semibold text-slate-400">Merkez Ofis</div>
+                                    <div class="text-sm sm:text-base font-bold text-white">İstanbul, Türkiye</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7">
+                        <div class="bg-white rounded-2xl p-6 sm:p-8 lg:p-10 text-slate-900 shadow-2xl border-2 border-[#DC2626]/30 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#DC2626] via-[#E77F18] to-[#DC2626]"></div>
+
+                            <form action="#" method="POST" class="space-y-5 pt-2" onsubmit="event.preventDefault();">
+                                <div class="border-b border-slate-100 pb-4 mb-2">
+                                    <h3 class="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
+                                        <i data-lucide="sparkles" class="w-6 h-6 text-[#DC2626]"></i>
+                                        Ücretsiz Demo & Teklif Formu
+                                    </h3>
+                                    <p class="text-xs sm:text-sm text-slate-500 mt-1">
+                                        Lütfen bilgilerinizi eksiksiz doldurunuz. Ekibimiz en kısa sürede dönecektir.
+                                    </p>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="space-y-1.5">
+                                        <label for="fullname" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Ad Soyad <span class="text-[#DC2626]">*</span>
+                                        </label>
+                                        <input type="text" id="fullname" name="fullname" required placeholder="Örn: Ahmet Yılmaz" class="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    </div>
+
+                                    <div class="space-y-1.5">
+                                        <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Telefon Numarası <span class="text-[#DC2626]">*</span>
+                                        </label>
+                                        <input type="tel" id="phone" name="phone" required placeholder="05XX XXX XX XX" class="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    </div>
+                                </div>
+
+                                <div class="space-y-1.5">
+                                    <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        E-Posta Adresi <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" required placeholder="ahmet@sirketiniz.com" class="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                </div>
+
+                                <div class="space-y-1.5">
+                                    <label for="message" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        Mesajınız veya Notunuz
+                                    </label>
+                                    <textarea id="message" name="message" rows="3" placeholder="İşletmeniz, DİA ERP veya entegrasyon ihtiyaçlarınız hakkında kısa bilgi verebilirsiniz..." class="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all resize-none"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full py-4 px-8 rounded-xl bg-gradient-to-r from-[#DC2626] via-[#b91c1c] to-[#DC2626] hover:opacity-95 text-white font-extrabold text-base sm:text-lg shadow-xl shadow-red-600/30 hover:shadow-red-600/50 hover:scale-[1.005] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer border border-red-500/30">
+                                    <span>Hemen Teklif Alın / Demo İsteyin</span>
+                                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+
+                                <p class="text-[11px] text-center text-slate-400 mt-2 flex items-center justify-center gap-1">
+                                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
+                                    Verileriniz KVKK kapsamında %100 güvende tutulmaktadır.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================================================= -->
+    <!-- BÖLÜM 2: FULL-WIDTH TAM EKRAN FOOTER                                      -->
+    <!-- ========================================================================= -->
+    <div id="global-footer"></div>
+
+    <!-- Swiper.js JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Component Loader -->
+    <script src="js/components.js"></script>
+
+    <!-- JavaScript Başlatma Kodları -->
     <script>
-        // Lucide ikonlarını başlat
-        lucide.createIcons();
+        document.addEventListener("DOMContentLoaded", function() {
+            // Lucide İkonları Başlatma
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
 
-        // Mobil Menü Toggle
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+            // Mobil Menü Mantığı (Guarded Check)
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    document.body.classList.toggle('overflow-hidden');
+                });
+            }
 
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            // Hero Swiper Slider Başlatma
+            const heroSwiper = new Swiper('.hero-slider', {
+                loop: true,
+                observer: true,
+                observeParents: true,
+                autoplay: {
+                    delay: 6000,
+                    disableOnInteraction: false,
+                },
+                speed: 800,
+                spaceBetween: 30,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.hero-next',
+                    prevEl: '.hero-prev',
+                },
+            });
         });
     </script>
 </body>

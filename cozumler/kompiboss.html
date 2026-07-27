@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KompiBoss — Mobil Patron ve Üst Yönetim Ekranı | Compiturk</title>
+    <meta name="description" content="Şirketinizin anlık ciro, finans, kasa, banka, stok ve cari durumunu mekan bağımsız olarak akıllı telefonunuzdan 7/24 canlı izleyin. Compiturk.">
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#DC2626',
+                        brandRedDark: '#B91C1C',
+                        brandNavy: '#0F172A',
+                        brandSlate: '#334155',
+                        brandIce: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
+
+    <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-header"></div>
+
+    <!-- MAIN İÇERİK BAŞLANGICI -->
+    <main class="flex-grow">
+
+        <!-- ========================================================================= -->
+        <!-- 1. HERO / BANNER SECTION (LACİVERT & KIRMIZI VURGULU ARKA PLAN)           -->
+        <!-- ========================================================================= -->
+        <section id="module-hero" class="w-full bg-[#0F172A] text-white relative overflow-hidden py-16 lg:py-24 z-20">
+            <!-- Arka Plan Vektörel Desen & Kırmızı/Lacivert İşıltılar -->
+            <div class="absolute inset-0 bg-[radial-gradient(rgba(220,38,38,0.15)_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#DC2626]/20 rounded-full blur-[130px] pointer-events-none"></div>
+            <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#1E3A8A]/40 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+                    <!-- SOL KOLON: İÇERİK VE VURGULAR (Col-span-7) -->
+                    <div class="lg:col-span-7 space-y-6 text-left">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#DC2626] font-bold text-xs sm:text-sm tracking-wide">
+                                <span class="w-2 h-2 rounded-full bg-[#DC2626] animate-pulse"></span>
+                                <span class="text-white">⚡ DİA Entegre</span>
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-blue-300 font-bold text-xs sm:text-sm tracking-wide">
+                                <span>🧑‍💼 Mobil Çözümler</span>
+                            </span>
+                        </div>
+
+                        <!-- TEK H1 BAŞLIĞI -->
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                            KompiBoss — Mobil Patron <br class="hidden sm:inline" />
+                            <span class="text-[#DC2626]">Ekranı</span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl">
+                            Şirketinizin anlık ciro, finans, kasa, banka, stok ve cari durumunu mekan bağımsız olarak akıllı telefonunuzdan 7/24 canlı izleyin.
+                        </p>
+
+                        <!-- İkonlu Vurgu Maddeleri -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/15">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-[#DC2626] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="trending-up" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Anlık Ciro, Kasa & Banka Takibi
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="building-2" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Çoklu Şirket & Şube Konsolidasyonu
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-blue-300 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="bell-ring" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Akıllı Yönetici Mobil Bildirimleri
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SAĞ KOLON: ÖZEL GÖRSEL ALANI + FORM KUTUSU (Col-span-5) -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <!-- ÖZEL GÖRSEL ALANI (IMAGE PLACEHOLDER) -->
+                        <div class="relative rounded-2xl overflow-hidden bg-slate-800/50 border border-slate-700/60 p-6 shadow-2xl flex flex-col items-center justify-center text-center space-y-3">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-red-600/10 via-transparent to-blue-600/10 pointer-events-none"></div>
+                            <div class="w-16 h-16 rounded-2xl bg-red-600/20 border border-red-500/30 text-[#DC2626] flex items-center justify-center">
+                                <i data-lucide="layout-dashboard" class="w-8 h-8"></i>
+                            </div>
+                            <div class="space-y-1 relative z-10">
+                                <span class="text-xs font-bold uppercase tracking-widest text-slate-400">KompiBoss Dashboard ⇄ DİA ERP</span>
+                                <h3 class="text-lg font-bold text-white">Yönetici Kokpiti</h3>
+                                <p class="text-xs text-slate-400 max-w-sm">
+                                    Üst yönetim için özel tasarlanmış finansal özetler, grafikler ve canlı KPI göstergeleri.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Beyaz Form Kutusu -->
+                        <div class="bg-white rounded-2xl p-6 sm:p-8 text-slate-900 shadow-2xl border-2 border-[#DC2626]/40 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#0F1D38] via-[#DC2626] to-[#B91C1C]"></div>
+
+                            <div class="border-b border-slate-100 pb-4 mb-5 pt-1">
+                                <h2 class="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
+                                    <i data-lucide="sparkles" class="w-6 h-6 text-[#DC2626]"></i>
+                                    KompiBoss Demo & Teklif Alın
+                                </h2>
+                                <p class="text-xs text-slate-500 mt-1">
+                                    Mobil patron ekranı için hemen bilgilerinizi bırakın, uzmanımız arasın.
+                                </p>
+                            </div>
+
+                            <form action="#" method="POST" class="space-y-4" onsubmit="event.preventDefault();">
+                                <div class="space-y-1">
+                                    <label for="fullname" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        Ad Soyad <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="text" id="fullname" name="fullname" required placeholder="Örn: Ahmet Yılmaz" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="space-y-1">
+                                        <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Telefon <span class="text-[#DC2626]">*</span>
+                                        </label>
+                                        <input type="tel" id="phone" name="phone" required placeholder="05XX XXX XX XX" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    </div>
+
+                                    <div class="space-y-1">
+                                        <label for="company" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Şirket Adı
+                                        </label>
+                                        <input type="text" id="company" name="company" placeholder="Firma Ünvanı" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    </div>
+                                </div>
+
+                                <div class="space-y-1">
+                                    <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        E-Posta Adresi <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" required placeholder="ahmet@sirketiniz.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                </div>
+
+                                <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-[#DC2626] hover:bg-[#b91c1c] text-white font-extrabold text-base shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:scale-[1.005] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer border border-red-400/30">
+                                    <span>Hemen Bilgi & Teklif İsteyin</span>
+                                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+
+                                <p class="text-[11px] text-center text-slate-400 mt-2 flex items-center justify-center gap-1">
+                                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
+                                    Verileriniz KVKK kapsamında %100 güvende tutulmaktadır.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 2. KOMPIBOSS YETENEKLERİ (3x2 GRID KARTLAR)                               -->
+        <!-- ========================================================================= -->
+        <section id="kompiboss-ozellikler" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-black tracking-widest text-[#DC2626] uppercase bg-red-50 px-3.5 py-1.5 rounded-full border border-red-100">
+                        ÜST DÜZEY YÖNETİM YETENEKLERİ
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        KompiBoss <span class="text-[#DC2626]">Yetenekleri</span>
+                    </h2>
+                    <p class="text-base text-slate-600 font-normal">
+                        Patronların ve genel müdürlerin şirket finansını ve operasyonlarını cebinden anlık takip etmesini sağlayan akıllı ekranlar.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+
+                    <!-- Kart 1: Anlık Ciro ve Satış Analitiği -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-red-50 text-[#DC2626] flex items-center justify-center group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                                <i data-lucide="trending-up" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Anlık Ciro & Satış Analitiği</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Günlük, haftalık ve aylık satış rakamlarının, karlılık oranlarının ve şube bazlı performansların cepten canlı olarak takip edilmesi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 2: Nakit Akışı, Kasa ve Bankalar -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0F172A] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-slate-100 text-[#0F172A] flex items-center justify-center group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
+                                <i data-lucide="landmark" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors">Nakit Akışı, Kasa & Bankalar</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Tüm banka hesap bakiyelerinin, vadeli/vadesiz mevduatların ve kasadaki nakit durumunun anlık ve güncel olarak izlenmesi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 3: Cari Alacak / Borç Dengesi -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                                <i data-lucide="scale" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Cari Alacak / Borç Dengesi</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Geciken tahsilatların, en çok alacaklı olunan firmaların ve toplam cari risklerin yönetici ekranında net grafiklerle raporlanması.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 4: Akıllı Mobil Bildirimler -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                                <i data-lucide="bell-ring" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Akıllı Mobil Bildirimler</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Kritik tutarda satış, büyük bir tahsilat gerçekleştiğinde veya risk limiti aşıldığında yönetici telefonuna gelen anlık push bildirimleri.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 5: Stok Karlılık Grafiği -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-purple-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                                <i data-lucide="pie-chart" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-purple-600 transition-colors">Stok & Karlılık Grafiği</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                En çok satan ürün grupları, stok devir hızları ve kategorilere göre brüt karlılık verilerinin görsel ve anlaşılır sunumu.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 6: Çoklu Şirket Konsolidasyonu -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-cyan-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                                <i data-lucide="building-2" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-cyan-600 transition-colors">Çoklu Şirket Konsolidasyonu</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Farklı tüzel kişiliklere sahip grup şirketlerinin ve farklı şehirlerdeki şubelerin finansal verilerinin tek ekranda toplanıp konsolide edilmesi.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 3. NEDEN COMPITURK KOMPIBOSS? (KIRMIZI ACCENT BÖLÜMÜ)                     -->
+        <!-- ========================================================================= -->
+        <section id="neden-compiturk-kompiboss" class="py-16 lg:py-24 bg-[#DC2626] text-white">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-white font-bold text-xs border border-white/20">
+                            <i data-lucide="zap" class="w-4 h-4"></i>
+                            ÜST DÜZEY YÖNETİM AVANTAJLARI
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                            Neden Compiturk <br />
+                            KompiBoss Çözümü?
+                        </h2>
+                        <p class="text-red-100 text-base leading-relaxed">
+                            Rapor bekleme sürelerini tarihe gömen, stratejik kararların anlık verilere dayanarak hızla alınmasını sağlayan ve şirketinizin nabzını cebinizde tutan patron ekranı.
+                        </p>
+                        <div class="space-y-3 text-sm font-semibold text-white">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
+                                <span>Günlük raporlar için muhasebe birimini beklemeksizin tüm finansal verilere anında ulaşın</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
+                                <span>Grup şirketlerinizin ve şubelerinizin ciro ve karlılık durumunu tek ekrandan karşılaştırın</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
+                                <span>Akıllı bildirimlerle kritik durumlardan ve fırsatlardan derhal haberdar olun</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sağ Taraf İstatistik Paneli -->
+                    <div class="bg-[#0F172A] text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-red-500/30 space-y-6">
+                        <div class="border-b border-slate-800 pb-5">
+                            <div class="text-4xl font-black text-[#DC2626]">7 / 24</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Canlı Şirket Durum İzleme</div>
+                            <p class="text-xs text-slate-400 mt-1">Tatilde veya seyahatte olsanız bile şirketinizin finansal nabzı cebinizde atar.</p>
+                        </div>
+
+                        <div>
+                            <div class="text-4xl font-black text-white">%100</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">DİA ERP Gerçek Zamanlı Veri</div>
+                            <p class="text-xs text-slate-400 mt-1">Tüm rakamlar doğrudan muhasebe ve ERP altyapısından saniyesinde çekilir.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 4. 4 ADIMDA KURULUM SÜRECİ                                                -->
+        <!-- ========================================================================= -->
+        <section id="kompiboss-adimlari" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-3.5 py-1.5 rounded-full border border-red-100">
+                        HIZLI CANLIYA GEÇİŞ
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        4 Adımda Kurulum <span class="text-[#DC2626]">Süreci</span>
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        KompiBoss mobil patron ekranınızı devreye almak için izlediğimiz adımlar.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+
+                    <!-- Adım 1 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="key" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#DC2626] transition-colors">01</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">DİA ERP Bağlantı & Yetkiler</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                DİA ERP veri bağlantısı kurulur ve yalnızca üst yönetimin erişebileceği özel patron yetki profilleri tanımlanır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 2 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0F172A] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-slate-100 text-[#0F172A] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#0F172A] transition-colors">02</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Rapor & Grafik Yapılandırması</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Şirketinizin ihtiyaç duyduğu özel finansal özetler, ciro hedefleri ve grafik panelleri arayüze konumlandırılır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 3 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-600 transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="smartphone" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-amber-600 transition-colors">03</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Mobil Cihaz & Güvenlik</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Yönetici akıllı telefonlarına KompiBoss uygulaması kurulur, biyometrik kilit ve şifreli güvenlik protokolleri tanımlanır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 4 -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-emerald-500/80 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="rocket" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-emerald-500">04</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Canlı Veri Testleri & Kullanım</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Canlı veri testleri tamamlanarak patron ekranı üst yönetim kullanımına ve anlık takibe açılır.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 5. BİRLİKTE KULLANABİLECEĞİNİZ DİĞER ÇÖZÜMLERİMİZ                         -->
+        <!-- ========================================================================= -->
+        <section id="tamamlayici-cozumler" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                        Birlikte Kullanabileceğiniz <span class="text-[#DC2626]">Diğer Çözümlerimiz</span>
+                    </h2>
+                    <p class="text-sm text-slate-600">KompiBoss patron ekranınızı destekleyen diğer entegre DİA ve Compiturk yazılımları.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Çözüm 1 -->
+                    <a href="kurumsal-mobil-uygulama.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#DC2626] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center mb-4 group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                            <i data-lucide="smartphone" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Kurumsal Mobil Uygulama</h3>
+                        <p class="text-xs text-slate-500 mt-1">Saha satış ve sipariş toplama çözümleri.</p>
+                    </a>
+
+                    <!-- Çözüm 2 -->
+                    <a href="mobil-sicak-satis.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#0F172A] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-slate-100 text-[#0F172A] flex items-center justify-center mb-4 group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
+                            <i data-lucide="truck" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors">Mobil Sıcak Satış</h3>
+                        <p class="text-xs text-slate-500 mt-1">Araç içi dağıtım ve faturalama otomasyonu.</p>
+                    </a>
+
+                    <!-- Çözüm 3 -->
+                    <a href="net-tahsilat.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center mb-4 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                            <i data-lucide="credit-card" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Net Tahsilat</h3>
+                        <p class="text-xs text-slate-500 mt-1">SMS linki ile online ödeme ve cari bakiye kapama.</p>
+                    </a>
+
+                    <!-- Çözüm 4 -->
+                    <a href="pdks.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <i data-lucide="scan-face" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">PDKS & Personel Takip</h3>
+                        <p class="text-xs text-slate-500 mt-1">Yüz tanıma ve mobil konum bazlı mesai takibi.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 6. SIKÇA SORULAN SORULAR (SEO FAQ - HTML5 ACCORDION)                     -->
+        <!-- ========================================================================= -->
+        <section id="faq" class="py-16 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                
+                <div class="text-center space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Sıkça Sorulan <span class="text-[#DC2626]">Sorular</span></h2>
+                    <p class="text-sm text-slate-600">KompiBoss mobil patron ve üst yönetim ekranı hakkında merak ettiğiniz tüm yanıtlar.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Soru 1 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                            <span>KompiBoss verilerini DİA ERP'den anlık olarak mı çeker?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. KompiBoss, DİA ERP veritabanı ile canlı ve kesintisiz entegre çalışır. Kasaya giren bir nakit, kesilen bir fatura veya bankaya gelen havale saniyesinde yönetici ekranınızdaki tablolara ve grafiklere yansır.
+                        </p>
+                    </details>
+
+                    <!-- Soru 2 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                            <span>Birden fazla şirket ve şubenin verileri tek ekranda birleşir mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Çoklu şirket ve şube konsolidasyon desteği sayesinde grup şirketlerinize ait tüm finansal verileri ister ayrı ayrı inceleyebilir ister tek bir konsolide ciro/karlılık ekranında birleştirerek görebilirsiniz.
+                        </p>
+                    </details>
+
+                    <!-- Soru 3 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                            <span>Verilerin üst yönetim dışında görünmemesi için nasıl güvenlik önlemleri var?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            KompiBoss yüksek güvenlik standartlarına sahiptir. Uygulama açılışı Face ID / Parmak izi (biyometrik) korumasıyla başlar ve tüm veri transferleri 256-bit SSL şifreleme tünelleri üzerinden gerçekleştirilir. Yetkisiz kişilerin erişmesi imkansızdır.
+                        </p>
+                    </details>
+
+                    <!-- Soru 4 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                            <span>iOS ve Android cihazların her ikisinde de çalışır mı?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. KompiBoss hem Apple App Store (iPhone/iPad) hem de Google Play Store (Android telefon/tablet) üzerinden kolayca indirilebilen native mobil uygulamalara sahiptir.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 7. MÜŞTERİ YORUMLARI & REFERANSLAR (3 KART)                                -->
+        <!-- ========================================================================= -->
+        <section id="referanslar" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Müşterilerimiz <span class="text-[#DC2626]">Ne Diyor?</span></h2>
+                    <p class="text-sm text-slate-600">Şirketlerinin yönetimini cebinden KompiBoss ile gerçekleştiren patron ve genel müdürlerin görüşleri.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Yorum 1 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Seyahatte veya şirket dışında olduğumda günlük ciromuzu, banka bakiyelerimi ve tahsilat durumunu görmek için artık muhasebeyi arayıp rapor istemiyorum. KompiBoss sayesinde şirketimin nabzı saniyesinde cebimde."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Cengizhan B.</span>
+                            <span class="text-xs text-slate-500 font-medium">Yönetim Kurulu Başkanı - Holding</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 2 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "3 farklı şubemizin verilerini tek ekranda konsolide görmek kararlarımı çok hızlandırdı. Akıllı push bildirimleri sayesinde kritik tahsilatlardan anında haberim oluyor."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Ayla S.</span>
+                            <span class="text-xs text-slate-500 font-medium">Genel Müdür - Perakende Zinciri</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 3 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "DİA ERP ile doğrudan konuşan en iyi yönetici ekranı diyebilirim. Arayüzü son derece şık, sade ve anlaşılır. Compiturk ekibine bu harika çözümleri için teşekkür ederim."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Tarık K.</span>
+                            <span class="text-xs text-slate-500 font-medium">Şirket Ortağı - Toptan Dağıtım</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 8. BLOG YAZILARIMIZ (3 KART)                                              -->
+        <!-- ========================================================================= -->
+        <section id="blog" class="py-16 bg-[#F8FAFC]">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Yönetim & Vizyon <span class="text-[#DC2626]">Rehberi & Makaleler</span></h2>
+                    <p class="text-sm text-slate-600">Üst düzey yöneticiler ve şirket patronları için stratejik yönetim içeriklerimiz.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Makale 1 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded-md">STRATEJİK KARAR</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2">
+                                Üst Yöneticiler İçin Anlık Veri İle Karar Almanın Rekabetçi Faydaları
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Geleneksel haftalık raporlar yerine canlı verilerle karar almanın şirket çevikliğine ve karlılığa etkisi.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 2 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider bg-slate-100 px-2.5 py-1 rounded-md">KONSOLİDASYON</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors line-clamp-2">
+                                Çok Şubeli İşletmelerde Finansal Konsolidasyon Ve Mobil İzleme
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Farklı lokasyonlardaki şube verilerinin tek ekranda birleştirilerek şeffaf finansal kontrol sağlama yolları.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 3 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider bg-amber-50 px-2.5 py-1 rounded-md">NAKİT AKIŞI</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-amber-600 transition-colors line-clamp-2">
+                                Şirketlerde Nakit Akışı Ve Cari Risk Yönetiminde Mobil Dashboard Kullanımı
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Alacak ve borç dengesini cebinizden takip ederek finansal riskleri minimize etme stratejileri.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-footer"></div>
+
+    <!-- SCRIPT ÇAĞRILARI -->
+    <script src="../js/components.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

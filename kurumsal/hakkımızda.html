@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda & Kurumsal | Compiturk Bilgisayar</title>
+    <meta name="description" content="20 yılı aşkın tecrübemizle işletmelerin dijital dönüşüm süreçlerini DİA ERP entegre yazılımlar ve uçtan uca IT altyapı hizmetleriyle geleceğe taşıyoruz. Compiturk.">
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#DC2626',
+                        brandRedDark: '#B91C1C',
+                        brandNavy: '#0F172A',
+                        brandNavyLight: '#1E3A8A',
+                        brandSlate: '#334155',
+                        brandIce: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: 0.4 },
+                            '50%': { opacity: 0.8 },
+                        }
+                    },
+                    animation: {
+                        float: 'float 4s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-[#F8FAFC] min-h-screen flex flex-col">
+
+    <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-header"></div>
+
+    <!-- MAIN İÇERİK BAŞLANGICI -->
+    <main class="flex-grow">
+
+        <!-- ========================================================================= -->
+        <!-- 1. HERO / BANNER SECTION (LACİVERT & KIRMIZI VURGULU ARKA PLAN)           -->
+        <!-- ========================================================================= -->
+        <section id="module-hero" class="w-full bg-[#0F172A] text-white relative overflow-hidden py-16 lg:py-24 z-20">
+            <!-- Arka Plan Vektörel Desen & Kırmızı/Lacivert Işıltılar -->
+            <div class="absolute inset-0 bg-[radial-gradient(rgba(220,38,38,0.15)_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#DC2626]/20 rounded-full blur-[130px] animate-float pointer-events-none"></div>
+            <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#1E3A8A]/40 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+                    <!-- SOL KOLON: İÇERİK VE VURGULAR (Col-span-7) -->
+                    <div class="lg:col-span-7 space-y-6 text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#DC2626] font-bold text-xs sm:text-sm tracking-wide shadow-lg">
+                            <span class="w-2 h-2 rounded-full bg-[#DC2626] animate-pulse"></span>
+                            <span class="text-white">🏢 Kurumsal & Hakkımızda</span>
+                        </div>
+
+                        <!-- TEK H1 BAŞLIĞI -->
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                            Compiturk Bilgisayar — DİA ERP <br class="hidden sm:inline" />
+                            <span class="text-[#DC2626]">Yetkili Çözüm Ortağı & IT Uzmanı</span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl">
+                            20 yılı aşkın tecrübemizle, işletmelerin dijital dönüşüm süreçlerini DİA ERP entegre yazılımlar ve uçtan uca IT altyapı hizmetleriyle geleceğe taşıyoruz.
+                        </p>
+
+                        <!-- İkonlu Vurgu Maddeleri -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/15">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-[#DC2626] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="award" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    DİA ERP İstanbul Yetkili Çözüm Ortağı
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="users" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Uzman Mühendis & Yazılımcı Kadrosu
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-blue-300 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="headphones" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    7/24 Kesintisiz IT Destek Altyapısı
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SAĞ KOLON: ÖZEL GÖRSEL ALANI (Col-span-5) -->
+                    <div class="lg:col-span-5">
+                        <div class="relative rounded-2xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[300px] flex flex-col items-center justify-center text-slate-400 p-6 shadow-2xl">
+                            <!-- Placeholder içerisine sonradan <img src="images/hakkimizda-hero.jpg" alt="Compiturk Ekip ve Ofis" class="w-full h-auto rounded-2xl shadow-2xl"> eklenebilir -->
+                            <div class="absolute inset-0 bg-gradient-to-tr from-red-600/10 via-transparent to-blue-600/10 pointer-events-none"></div>
+                            <div class="w-16 h-16 rounded-2xl bg-[#DC2626]/20 border border-[#DC2626]/40 text-[#DC2626] flex items-center justify-center mb-3">
+                                <i data-lucide="image" class="w-8 h-8"></i>
+                            </div>
+                            <span class="text-sm font-bold text-slate-300 uppercase tracking-widest">GÖRSEL ALANI</span>
+                            <p class="text-xs text-slate-500 mt-1">İster img etiketini buraya ekleyin ister SVG kullanın</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 2. RAKAMLARLA COMPITURK (4 KARTLI STATİSTİK GRID)                         -->
+        <!-- ========================================================================= -->
+        <section id="stat-grid" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Kart 1 -->
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 text-center space-y-2 hover:border-[#DC2626] hover:shadow-lg transition-all group">
+                        <div class="text-4xl sm:text-5xl font-black text-[#DC2626] tracking-tight group-hover:scale-105 transition-transform">20+</div>
+                        <h3 class="font-bold text-slate-900 text-base">Yıllık Sektörel Tecrübe</h3>
+                        <p class="text-xs text-slate-500">B2B yazılım ve IT sektöründe köklü geçmiş.</p>
+                    </div>
+
+                    <!-- Kart 2 -->
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 text-center space-y-2 hover:border-[#1E3A8A] hover:shadow-lg transition-all group">
+                        <div class="text-4xl sm:text-5xl font-black text-[#1E3A8A] tracking-tight group-hover:scale-105 transition-transform">500+</div>
+                        <h3 class="font-bold text-slate-900 text-base">Tamamlanan ERP & IT Projesi</h3>
+                        <p class="text-xs text-slate-500">Yüzlerce başarılı kurumsal dijital dönüşüm.</p>
+                    </div>
+
+                    <!-- Kart 3 -->
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 text-center space-y-2 hover:border-emerald-600 hover:shadow-lg transition-all group">
+                        <div class="text-4xl sm:text-5xl font-black text-emerald-600 tracking-tight group-hover:scale-105 transition-transform">%99</div>
+                        <h3 class="font-bold text-slate-900 text-base">Müşteri Memnuniyet Oranı</h3>
+                        <p class="text-xs text-slate-500">Kesintisiz destek ve yüksek kaliteli hizmet anlayışı.</p>
+                    </div>
+
+                    <!-- Kart 4 -->
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 text-center space-y-2 hover:border-amber-600 hover:shadow-lg transition-all group">
+                        <div class="text-4xl sm:text-5xl font-black text-amber-600 tracking-tight group-hover:scale-105 transition-transform">7/24</div>
+                        <h3 class="font-bold text-slate-900 text-base">Kesintisiz Teknik Destek</h3>
+                        <p class="text-xs text-slate-500">SLA standartlarında hızlı ve yerinde müdahale.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 3. VİZYON, MİSYON VE DEĞERLERİMİZ (3 KARTLI GRID)                         -->
+        <!-- ========================================================================= -->
+        <section id="vizyon-misyon" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-3.5 py-1.5 rounded-full border border-red-100">
+                        KURUMSAL YAKLAŞIMIMIZ
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        Vizyon, Misyon ve <span class="text-[#1E3A8A]">Değerlerimiz</span>
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        Şirketimizi sektörün zirvesine taşıyan temel prensiplerimiz ve kurumsal felsefemiz.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Kart 1: Vizyonumuz -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-[#DC2626] transition-all space-y-4 flex flex-col justify-between group">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-red-50 text-[#DC2626] flex items-center justify-center group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                                <i data-lucide="eye" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Vizyonumuz</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Türkiye'nin en güvenilir DİA ERP ve IT çözümleri sağlayıcısı olmak; yenilikçi yazılım ve bulut teknolojileriyle işletmelerin dijital geleceğine liderlik etmek.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 2: Misyonumuz -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-[#1E3A8A] transition-all space-y-4 flex flex-col justify-between group">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-blue-50 text-[#1E3A8A] flex items-center justify-center group-hover:bg-[#1E3A8A] group-hover:text-white transition-colors">
+                                <i data-lucide="target" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#1E3A8A] transition-colors">Misyonumuz</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Karmaşık B2B iş süreçlerini akıllı yazılımlar ve özel entegrasyonlarla basitleştirip, işletmelerin operasyonel verimliliğini ve karlılığını maksimize etmek.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 3: Değerlerimiz -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-emerald-600 transition-all space-y-4 flex flex-col justify-between group">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                                <i data-lucide="shield-check" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Değerlerimiz</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Güvenilirlik, mutlak şeffaflık, 7/24 kesintisiz destek, müşteri odaklılık ve sürekli inovasyon ilkeleriyle her zaman iş ortaklarımızın yanındayız.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 4. KURUMSAL HİKAYEMİZ VE TEKNOLOJİ YAKLAŞIMIMIZ (METİN + GÖRSEL BÖLÜMü)   -->
+        <!-- ========================================================================= -->
+        <section id="kurumsal-hikaye" class="py-16 lg:py-24 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Sol Taraf: Detaylı SEO Metni -->
+                    <div class="lg:col-span-7 space-y-6 text-left">
+                        <div class="space-y-2">
+                            <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-3.5 py-1.5 rounded-full border border-red-100">
+                                BİZ KİMİZ?
+                            </span>
+                            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                                Kurumsal Hikayemiz ve <span class="text-[#1E3A8A]">Teknoloji Yaklaşımımız</span>
+                            </h2>
+                        </div>
+                        <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                            Compiturk Bilgisayar olarak, kurulduğumuz günden bu yana İstanbul ve çevresindeki yüzlerce kurumsal firmaya, kobiye ve üretim tesisine yazılım, donanım ve ağ altyapı çözümleri sunmaktayız. DİA ERP İstanbul yetkili çözüm ortağı unvanımızla, bulut tabanlı ERP çözümlerinin işletmelere katacağı gücün bilincindeyiz.
+                        </p>
+                        <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                            Yalnızca standart yazılımlar kurmakla kalmıyor; e-ticaret pazar yeri entegrasyonları, ağır tonajlı kantar otomasyonları, sektörel Ford servis yazılımları ve mobil depo yönetim sistemleri gibi katma değerli özel çözümler üretiyoruz. Uzman mühendis kadromuzla teknoloji yatırımlarınızı en yüksek verimlilikle yönetmenizi sağlıyoruz.
+                        </p>
+                    </div>
+
+                    <!-- Sağ Taraf: Görsel Placeholder Kutusu -->
+                    <div class="lg:col-span-5">
+                        <div class="relative rounded-2xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[300px] flex flex-col items-center justify-center text-slate-400 p-6 shadow-2xl">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-blue-600/10 via-transparent to-red-600/10 pointer-events-none"></div>
+                            <div class="w-16 h-16 rounded-2xl bg-blue-600/20 border border-blue-500/30 text-blue-400 flex items-center justify-center mb-3">
+                                <i data-lucide="image" class="w-8 h-8"></i>
+                            </div>
+                            <span class="text-sm font-bold text-slate-300 uppercase tracking-widest">GÖRSEL ALANI</span>
+                            <p class="text-xs text-slate-500 mt-1">Ofis veya teknoloji altyapısı görseli için</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 5. NEDEN COMPITURK? (KIRMIZI ACCENT BÖLÜMÜ)                               -->
+        <!-- ========================================================================= -->
+        <section id="neden-compiturk" class="py-16 lg:py-24 bg-[#0F172A] text-white border-b border-slate-800">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-white font-bold text-xs border border-white/20">
+                            <i data-lucide="zap" class="w-4 h-4 text-[#DC2626]"></i>
+                            FARK YARATAN YAKLAŞIMIMIZ
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                            Neden Compiturk <br />
+                            İle Çalışmalısınız?
+                        </h2>
+                        <p class="text-slate-300 text-base leading-relaxed">
+                            İşletmenize sadece standart bir yazılım sunmuyor, iş süreçlerinize özel entegrasyonlar geliştiriyor ve IT altyapınızı kesintisiz güvenceye alıyoruz.
+                        </p>
+                        <div class="space-y-3 text-sm font-semibold text-white">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-[#DC2626]"></i>
+                                <span>DİA ERP yetkili çözüm ortağı olarak resmi ve sertifikalı destek güvencesi</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-[#DC2626]"></i>
+                                <span>Sektörel özel projeler (Kantar, Ford, Logo Göçü, Pazar Yeri) için deneyimli yazılım ekibi</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
+                                <span>Donanım kiralama ve IT altyapı hizmetleriyle tek noktadan komple çözüm</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sağ Taraf İstatistik Paneli -->
+                    <div class="bg-slate-900 text-white p-8 sm:p-10 rounded-3xl shadow-2xl border-2 border-[#DC2626]/40 space-y-6">
+                        <div class="border-b border-slate-800 pb-5">
+                            <div class="text-4xl font-black text-[#DC2626]">Uçtan Uca</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Yazılım ve Donanım Entegrasyonu</div>
+                            <p class="text-xs text-slate-400 mt-1">Sunucunuzdan pazar yeri entegrasyonuna kadar tüm sistemleriniz tek elden yönetilir.</p>
+                        </div>
+
+                        <div>
+                            <div class="text-4xl font-black text-white">Uzman Kadro</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Sertifikalı DİA ERP Uzmanları</div>
+                            <p class="text-xs text-slate-400 mt-1">Karşılaştığınız tüm teknik sorunlarda anında profesyonel müdahale.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 6. BİZİMLE İLETİŞİME GEÇİN (CTA BANNER)                                   -->
+        <!-- ========================================================================= -->
+        <section id="cta-banner" class="py-16 lg:py-20 bg-[#DC2626] text-white relative overflow-hidden">
+            <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.2)_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
+                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+                    İşletmenizi Dijitalleştirmeye <br class="hidden sm:inline" /> Bugün Başlayın
+                </h2>
+                <p class="text-base sm:text-lg text-red-100 max-w-2xl mx-auto font-normal leading-relaxed">
+                    DİA ERP çözümleriyle tanışmak, işletmenize özel demo talep etmek veya IT altyapınızı güçlendirmek için hemen bizimle iletişime geçin.
+                </p>
+                <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
+                    <a href="iletisim.html" class="px-8 py-4 rounded-xl bg-white hover:bg-slate-100 text-[#DC2626] font-extrabold text-base shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-2">
+                        <span>Ücretsiz Keşif & Demo İsteyin</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    <a href="tel:02128733537" class="px-8 py-4 rounded-xl bg-black/20 hover:bg-black/30 border border-white/30 text-white font-extrabold text-base transition-all duration-300 flex items-center gap-2">
+                        <i data-lucide="phone" class="w-5 h-5"></i>
+                        <span>0212 873 35 37</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-footer"></div>
+
+    <!-- SCRIPT ÇAĞRILARI -->
+    <script src="../js/components.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

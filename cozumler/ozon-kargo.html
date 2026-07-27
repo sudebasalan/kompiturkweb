@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ozon — Ase Kargo & UMT Kargo Entegrasyonu | Compiturk</title>
+    <meta name="description" content="DİA ERP altyapınız ile Ase Kargo ve UMT Kargo sistemlerini entegre edin; otomatik kargo barkodu basımı ve takip eşleşmesini tek merkezden yönetin. Compiturk.">
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#DC2626',
+                        brandRedDark: '#B91C1C',
+                        brandNavy: '#0F172A',
+                        brandSlate: '#334155',
+                        brandIce: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
+
+    <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-header"></div>
+
+    <!-- MAIN İÇERİK BAŞLANGICI -->
+    <main class="flex-grow">
+
+        <!-- ========================================================================= -->
+        <!-- 1. HERO / BANNER SECTION (LACİVERT & KIRMIZI VURGULU ARKA PLAN)           -->
+        <!-- ========================================================================= -->
+        <section id="module-hero" class="w-full bg-[#0F172A] text-white py-16 lg:py-24 relative overflow-hidden z-20">
+            <!-- Arka Plan Vektörel Desen & Kırmızı/Lacivert İşıltılar -->
+            <div class="absolute inset-0 bg-[radial-gradient(rgba(220,38,38,0.15)_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#DC2626]/20 rounded-full blur-[130px] pointer-events-none"></div>
+            <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#1E3A8A]/40 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+                    <!-- SOL KOLON: İÇERİK VE VURGULAR (Col-span-7) -->
+                    <div class="lg:col-span-7 space-y-6 text-left">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#DC2626] font-bold text-xs sm:text-sm tracking-wide">
+                                <span class="w-2 h-2 rounded-full bg-[#DC2626] animate-pulse"></span>
+                                <span class="text-white">⚡ DİA Entegre</span>
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-blue-300 font-bold text-xs sm:text-sm tracking-wide">
+                                <span>📦 Lojistik & Kargo</span>
+                            </span>
+                        </div>
+
+                        <!-- TEK H1 BAŞLIĞI -->
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                            Ozon — Ase Kargo & UMT Kargo <br class="hidden sm:inline" />
+                            <span class="text-[#DC2626]">Entegrasyonu</span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl">
+                            DİA ERP altyapınız ile Ase Kargo ve UMT Kargo sistemlerini entegre edin; otomatik kargo barkodu basımı, kargo takip eşleşmesi ve SMS bildirimlerini tek merkezden yönetin.
+                        </p>
+
+                        <!-- İkonlu Vurgu Maddeleri -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/15">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-[#DC2626] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="truck" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Ase & UMT Kargo Tam Entegrasyonu
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="barcode" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Otomatik Barkod Basımı & Takip Eşleme
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-blue-300 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="bell-ring" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Müşteriye Anlık Durum Bilgilendirmesi
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SAĞ KOLON: DEMO & BİLGİ FORMU KUTUSU (Col-span-5) -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-white rounded-2xl p-6 sm:p-8 text-slate-900 shadow-2xl border-2 border-[#DC2626]/40 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#0F1D38] via-[#DC2626] to-[#B91C1C]"></div>
+
+                            <div class="border-b border-slate-100 pb-4 mb-5 pt-1">
+                                <h2 class="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
+                                    <i data-lucide="sparkles" class="w-6 h-6 text-[#DC2626]"></i>
+                                    Ozon Kargo Entegrasyonu Demo & Teklif Alın
+                                </h2>
+                                <p class="text-xs text-slate-500 mt-1">
+                                    Ase ve UMT kargo entegrasyonu için hemen bilgilerinizi bırakın, uzmanımız arasın.
+                                </p>
+                            </div>
+
+                            <form action="#" method="POST" class="space-y-4" onsubmit="event.preventDefault();">
+                                <div class="space-y-1">
+                                    <label for="fullname" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        Ad Soyad <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="text" id="fullname" name="fullname" required placeholder="Örn: Ahmet Yılmaz" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="space-y-1">
+                                        <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Telefon <span class="text-[#DC2626]">*</span>
+                                        </label>
+                                        <input type="tel" id="phone" name="phone" required placeholder="05XX XXX XX XX" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    </div>
+
+                                    <div class="space-y-1">
+                                        <label for="company" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Şirket Adı
+                                        </label>
+                                        <input type="text" id="company" name="company" placeholder="Firma Ünvanı" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    </div>
+                                </div>
+
+                                <div class="space-y-1">
+                                    <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        E-Posta Adresi <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" required placeholder="ahmet@sirketiniz.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                </div>
+
+                                <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-[#DC2626] hover:bg-[#b91c1c] text-white font-extrabold text-base shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:scale-[1.005] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer border border-red-400/30">
+                                    <span>Hemen Bilgi & Teklif İsteyin</span>
+                                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+
+                                <p class="text-[11px] text-center text-slate-400 mt-2 flex items-center justify-center gap-1">
+                                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
+                                    Verileriniz KVKK kapsamında %100 güvende tutulmaktadır.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 2. OZON KARGO ENTEGRASYON YETENEKLERİ (3x2 GRID KARTLAR)                  -->
+        <!-- ========================================================================= -->
+        <section id="ozon-kargo-ozellikler" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-black tracking-widest text-[#DC2626] uppercase bg-red-50 px-3.5 py-1.5 rounded-full border border-red-100">
+                        ASE & UMT KARGO OTOMASYONU
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Ozon Kargo Entegrasyon <span class="text-[#DC2626]">Yetenekleri</span>
+                    </h2>
+                    <p class="text-base text-slate-600 font-normal">
+                        Ase Kargo ve UMT Kargo operasyonlarınızı DİA ERP ile tam entegre eden gelişmiş sevkiyat yetenekleri.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+
+                    <!-- Kart 1: Otomatik Sipariş ve Kargo Bilgisi Aktarımı -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-red-50 text-[#DC2626] flex items-center justify-center group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                                <i data-lucide="folder-sync" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Otomatik Sipariş & Kargo Aktarımı</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                DİA ERP veya e-ticaret sistemlerinden onaylanan siparişlerin Ase ve UMT Kargo altyapılarına anında ve hatasız aktarılması.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 2: Tek Tıkla Kargo Barkodu ve Etiket Basımı -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0F172A] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-slate-100 text-[#0F172A] flex items-center justify-center group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
+                                <i data-lucide="printer" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors">Tek Tıkla Kargo Etiket Basımı</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Desi, ağırlık ve alıcı adres bilgilerini içeren resmi kargo etiketlerinin paketleme masasında saniyeler içinde otomatik üretilmesi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 3: Canlı Kargo Takip Numarası Eşleme -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                                <i data-lucide="barcode" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Canlı Takip Numarası Eşleme</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Kargo kabulünden hemen sonra oluşan resmi takip kodunun DİA ERP siparişine ve müşteri paneline otomatik olarak işlenmesi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 4: Müşteriye Otomatik SMS & Bilgilendirme -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                                <i data-lucide="message-square-text" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Müşteriye Otomatik SMS & Bildirim</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Paket kargoya verildiğinde ve alıcıya başarıyla teslim edildiğinde müşterinin cep telefonuna anlık bilgilendirme mesajı iletilmesi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 5: İade Kargo Operasyon Yönetimi -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-purple-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                                <i data-lucide="rotate-ccw" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-purple-600 transition-colors">İade Kargo Operasyon Yönetimi</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Müşterilerden geri gelen iade kargo paketlerinin kargo takip numaraları üzerinden takibi ve DİA ERP stoklarına hatasız işlenmesi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 6: Kapıda Ödeme & Tahsilat Takibi -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-cyan-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                                <i data-lucide="wallet" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-cyan-600 transition-colors">Kapıda Ödeme & Tahsilat Takibi</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Kapıda ödemeli kargo gönderilerinin teslimat ve nakit/kart tahsilat durumlarının Ase ve UMT verileriyle DİA ERP üzerinden izlenmesi.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 3. NEDEN COMPITURK OZON KARGO ENTEGRASYONU? (KIRMIZI ACCENT BÖLÜMÜ)       -->
+        <!-- ========================================================================= -->
+        <section id="neden-compiturk-ozon" class="py-16 lg:py-24 bg-[#DC2626] text-white">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-white font-bold text-xs border border-white/20">
+                            <i data-lucide="zap" class="w-4 h-4"></i>
+                            LOJİSTİK OTOMASYON AVANTAJLARI
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                            Neden Compiturk <br />
+                            Ozon Kargo Entegrasyonu?
+                        </h2>
+                        <p class="text-red-100 text-base leading-relaxed">
+                            Hatalı kargo gönderimlerini ve adres yanlışlıklarını sıfırlayan, paketleme operasyon hızını 4 katına çıkaran ve müşteri memnuniyetini doruğa ulaştıran profesyonel kargo köprüsü.
+                        </p>
+                        <div class="space-y-3 text-sm font-semibold text-white">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
+                                <span>Manuel adres ve kargo fişi yazma derdinden kurtulun, saniyeler içinde etiket basın</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
+                                <span>Ase ve UMT Kargo süreçlerini tek bir ekrandan DİA ERP tabanıyla tam senkronize yönetin</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
+                                <span>Müşterilerinize anlık kargo takip bilgileri ileterek destek maliyetlerinizi düşün</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sağ Taraf İstatistik Paneli -->
+                    <div class="bg-[#0F172A] text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-red-500/30 space-y-6">
+                        <div class="border-b border-slate-800 pb-5">
+                            <div class="text-4xl font-black text-[#DC2626]">4 Kat</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Paketleme & Etiketleme Hızında Artış</div>
+                            <p class="text-xs text-slate-400 mt-1">Barkod okutulduğu an Ase veya UMT kargo etiketi saniyeler içinde yazıcıdan çıkar.</p>
+                        </div>
+
+                        <div>
+                            <div class="text-4xl font-black text-white">%100</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">DİA ERP Entegrasyon Doğruluğu</div>
+                            <p class="text-xs text-slate-400 mt-1">Siparişten kargoya kadar tüm akış hatasız ve otomatik olarak tamamlanır.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 4. 4 ADIMDA ENTEGRASYON KURULUM SÜRECİ                                    -->
+        <!-- ========================================================================= -->
+        <section id="ozon-adimlari" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-3.5 py-1.5 rounded-full border border-red-100">
+                        HIZLI CANLIYA GEÇİŞ
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        4 Adımda Entegrasyon <span class="text-[#DC2626]">Kurulum Süreci</span>
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        Ase ve UMT kargo altyapınızı DİA ERP'ye bağlamak için izlediğimiz adımlar.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+
+                    <!-- Adım 1 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="key" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#DC2626] transition-colors">01</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Kargo API Bilgilerinin Bağlanması</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Ase Kargo ve UMT Kargo'dan temin ettiğiniz kurumsal API ve üye işyeri anahtarları sisteme tanımlanır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 2 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0F172A] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-slate-100 text-[#0F172A] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="git-merge" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#0F172A] transition-colors">02</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">DİA ERP Entegrasyon Eşleşmesi</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                DİA ERP sipariş ve stok modülleri ile kargo gönderim havuzu birbirine bağlanarak test edilir.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 3 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-600 transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="printer" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-amber-600 transition-colors">03</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Etiket Yazıcı Şablon Ayarları</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Paketleme masalarındaki barkod yazıcılar için Ase ve UMT kargo etiket şablonları konfigüre edilir.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 4 -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-emerald-500/80 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="rocket" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-emerald-500">04</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Canlı Sevkiyat Takibi</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Sistem canlıya alınarak otomatik barkod basımı ve müşteriye takip numarası bildirimleri başlatılır.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 5. BİRLİKTE KULLANABİLECEĞİNİZ DİĞER ÇÖZÜMLERİMİZ                         -->
+        <!-- ========================================================================= -->
+        <section id="tamamlayici-cozumler" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                        Birlikte Kullanabileceğiniz <span class="text-[#DC2626]">Diğer Çözümlerimiz</span>
+                    </h2>
+                    <p class="text-sm text-slate-600">Ozon kargo entegrasyonunuzu destekleyen diğer entegre DİA ve Compiturk yazılımları.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Çözüm 1 -->
+                    <a href="kargo-entegrasyonu.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#DC2626] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center mb-4 group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                            <i data-lucide="truck" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Kargo Entegrasyonu</h3>
+                        <p class="text-xs text-slate-500 mt-1">Yurtiçi ve global kargo firmaları ile tam entegrasyon.</p>
+                    </a>
+
+                    <!-- Çözüm 2 -->
+                    <a href="depo-kurdu.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#0F172A] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-slate-100 text-[#0F172A] flex items-center justify-center mb-4 group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
+                            <i data-lucide="tablet-smartphone" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors">Depo Kurdu</h3>
+                        <p class="text-xs text-slate-500 mt-1">El terminaliyle mal kabul ve hızlı sipariş toplama.</p>
+                    </a>
+
+                    <!-- Çözüm 3 -->
+                    <a href="ahtapot-depo-yonetimi.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center mb-4 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                            <i data-lucide="boxes" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Ahtapot Depo Yönetimi</h3>
+                        <p class="text-xs text-slate-500 mt-1">Adresli raf sistemi ve WMS depo otomasyonu.</p>
+                    </a>
+
+                    <!-- Çözüm 4 -->
+                    <a href="pazaryeri-entegrasyonu.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Pazar Yeri Entegrasyonu</h3>
+                        <p class="text-xs text-slate-500 mt-1">Trendyol ve Hepsiburada mağazalarınızı ERP'ye bağlayın.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 6. SIKÇA SORULAN SORULAR (SEO FAQ - HTML5 ACCORDION)                     -->
+        <!-- ========================================================================= -->
+        <section id="faq" class="py-16 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                
+                <div class="text-center space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Sıkça Sorulan <span class="text-[#DC2626]">Sorular</span></h2>
+                    <p class="text-sm text-slate-600">Ozon — Ase Kargo & UMT Kargo entegrasyonu hakkında merak ettiğiniz tüm yanıtlar.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Soru 1 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                            <span>Ozon entegrasyonu hem Ase Kargo hem UMT Kargo'yu aynı anda destekler mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Ozon entegrasyon modülümüz üzerinden hem Ase Kargo hem de UMT Kargo altyapılarını aynı panel üzerinden eşzamanlı olarak yönetebilir, siparişinize göre uygun kargo firmasını seçebilirsiniz.
+                        </p>
+                    </details>
+
+                    <!-- Soru 2 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                            <span>DİA ERP siparişleri onaylandığında kargo barkodu otomatik basılabilir mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Paketleme masasında sipariş barkodu okutulduğu an ilgili kargo firmasının (Ase veya UMT) resmi barkod etiketi saniyeler içinde doğrudan termal yazıcınızdan otomatik olarak basılır.
+                        </p>
+                    </details>
+
+                    <!-- Soru 3 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                            <span>Kargo takip numaraları müşteriye otomatik SMS olarak gönderilir mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Kargo barkodu oluşturulduğunda kargo firmasından gelen takip numarası sisteme işlenir ve müşterinizin cep telefonuna takip linkini içeren SMS otomatik olarak gönderilir.
+                        </p>
+                    </details>
+
+                    <!-- Soru 4 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                            <span>Kapıda ödemeli kargo gönderimlerinin tahsilat takibi yapılabilir mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Kapıda ödemeli (COD) olarak gönderilen kargoların Ase ve UMT Kargo tarafından yapılan tahsilatları ve hesap hareketleri DİA ERP finans modülü üzerinden eksiksiz izlenebilir.
+                        </p>
+                    </details>
+
+                    <!-- Soru 5 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                            <span>Kurulum süreci ne kadar zaman alır?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Kargo firmalarından API bilgierinin temin edilmesinin ardından Compiturk uzman ekibi tarafından entegrasyon, testler ve etiket şablon ayarları 1 ila 2 iş günü içinde tamamlanarak canlıya alınır.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 7. MÜŞTERİ YORUMLARI & REFERANSLAR (3 KART)                                -->
+        <!-- ========================================================================= -->
+        <section id="referanslar" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Müşterilerimiz <span class="text-[#DC2626]">Ne Diyor?</span></h2>
+                    <p class="text-sm text-slate-600">Ase ve UMT Kargo süreçlerini Ozon entegrasyonu ile otomatikleştiren firma yöneticilerinin görüşleri.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Yorum 1 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Ase Kargo ve UMT Kargo ile gönderilerimiz çok yoğundu. Eskiden her sipariş için kargo paneline girip adres yazıyorduk. Compiturk Ozon entegrasyonu sayesinde tek tuşla etiket çıkıyor, işimiz 4 kat hızlandı."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Kerem T.</span>
+                            <span class="text-xs text-slate-500 font-medium">Sevkiyat Müdürü - E-Ticaret</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 2 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Kargo takip numaralarının DİA ERP'ye otomatik işlenmesi ve müşterilere SMS gitmesi destek ekibimizin yükünü büyük ölçüde azalttı. Müşteri memnuniyetimiz tavan yaptı."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Selin A.</span>
+                            <span class="text-xs text-slate-500 font-medium">Operasyon Direktörü</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 3 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Compiturk ekibine hızlı kurulum ve profesyonel teknik destekleri için çok teşekkür ederiz. İade kargo takibi ve kapıda ödeme süreçlerimiz artık kusursuz işliyor."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Mert K.</span>
+                            <span class="text-xs text-slate-500 font-medium">Şirket Ortağı - Toptan Ticaret</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 8. BLOG YAZILARIMIZ (3 KART)                                              -->
+        <!-- ========================================================================= -->
+        <section id="blog" class="py-16 bg-[#F8FAFC]">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Kargo Otomasyonu <span class="text-[#DC2626]">Rehberi & Makaleler</span></h2>
+                    <p class="text-sm text-slate-600">Sevkiyat ve kargo operasyonlarınızı geliştirecek uzman içeriklerimiz.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Makale 1 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded-md">PAKETLEME HIZI</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2">
+                                E-Ticarette Kargo Paketleme Ve Etiketleme Hızını Artırmanın Yolları
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Otomatik kargo barkod yazıcı entegrasyonu ile sevkiyat bandındaki darboğazları ortadan kaldırma teknikleri.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 2 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider bg-slate-100 px-2.5 py-1 rounded-md">HATASIZ SEVKİYAT</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors line-clamp-2">
+                                Yanlış Adres Ve Hatalı Kargo Gönderimlerini Önleme Stratejileri
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                E-ticaret sipariş adreslerinin kargo firmalarına hatasız aktarılması ve iade maliyetlerinin düşürülmesi.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 3 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider bg-amber-50 px-2.5 py-1 rounded-md">MÜŞTERİ MEMNUNİYETİ</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-amber-600 transition-colors line-clamp-2">
+                                Kargo Entegrasyonlarının Müşteri Memnuniyeti Ve Operasyonel Maliyetlere Etkisi
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Otomatik SMS bildirimleri ve canlı takip eşleşmelerinin destek maliyetlerini düşürmedeki rolü.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-footer"></div>
+
+    <!-- SCRIPT ÇAĞRILARI -->
+    <script src="../js/components.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

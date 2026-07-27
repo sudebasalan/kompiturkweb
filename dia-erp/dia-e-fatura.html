@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DİA e-Fatura ve e-Dönüşüm Çözümleri | GİB Onaylı Bulut e-Fatura | Compiturk</title>
+    <meta name="description" content="GİB onaylı DİA e-Fatura, e-Arşiv, e-İrsaliye ve e-SMM çözümleri ile faturalaşma süreçlerinizi saniyeler içinde dijitale taşıyın. Compiturk Yetkili Çözüm Ortağı.">
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#DC2626',
+                        brandNavy: '#0F172A',
+                        brandSlate: '#64748b',
+                        brandIce: '#F8FAFC',
+                        diaBlue: '#245BA7',
+                        diaOrange: '#E77F18',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+     <style>
+        /* Mega Menu Tabancası & Animasyon Düzeltmesi */
+.mega-menu {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none; /* Gizliyken farenin algılamasını engeller */
+    transform: translateY(10px);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Sadece ilgili gruba gelindiğinde görünür ve tıklanabilir yap */
+.group:hover .mega-menu {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto; /* Açıldığında tıklanabilir yap */
+    transform: translateY(0);
+}
+    </style>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
+
+    <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-header"></div>
+
+    <!-- MAIN İÇERİK BAŞLANGICI -->
+    <main class="flex-grow">
+
+        <!-- ========================================================================= -->
+        <!-- 1. BÖLÜM: BANNER / HERO SECTION (TAM DİA MAVİSİ BG)                       -->
+        <!-- ========================================================================= -->
+        <section id="module-hero" class="w-full bg-[#245BA7] text-white py-16 lg:py-24 relative overflow-hidden z-20">
+            <!-- Arka Plan Vektörel Desen & Işıltılar -->
+            <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#E77F18]/20 rounded-full blur-[130px] pointer-events-none"></div>
+            <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#0F1D38]/40 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+                    <!-- SOL KOLON: İÇERİK VE VURGULAR (Col-span-7) -->
+                    <div class="lg:col-span-7 space-y-6 text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#E77F18] font-bold text-xs sm:text-sm tracking-wide">
+                            <span class="w-2 h-2 rounded-full bg-[#E77F18] animate-pulse"></span>
+                            <span class="text-white">GİB ONAYLI BULUT e-DÖNÜŞÜM</span>
+                        </div>
+
+                        <!-- TEK H1 BAŞLIĞI -->
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                            DİA e-Fatura ve <br class="hidden sm:inline" />
+                            <span class="text-[#E77F18]">e-Dönüşüm Çözümleri</span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-blue-100 font-normal leading-relaxed max-w-2xl">
+                            GİB onaylı DİA e-Fatura, e-Arşiv, e-İrsaliye ve e-Müstahsil çözümleri ile tüm faturalaşma süreçlerinizi saniyeler içinde dijitale taşıyın, kağıt ve kargo maliyetlerinize son verin.
+                        </p>
+
+                        <!-- İkonlu Vurgu Maddeleri -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/15">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-[#E77F18] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    GİB Onaylı Entegratör
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="cloud" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    %100 Bulut Güvencesi
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-blue-200 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="archive" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Sınırsız Güvenli Arşiv
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SAĞ KOLON: DEMO & BİLGİ FORMU KUTUSU (Col-span-5) -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-white rounded-2xl p-6 sm:p-8 text-slate-900 shadow-2xl border-2 border-[#E77F18]/40 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#245BA7] via-[#E77F18] to-[#DC2626]"></div>
+
+                            <div class="border-b border-slate-100 pb-4 mb-5 pt-1">
+                                <h2 class="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
+                                    <i data-lucide="sparkles" class="w-6 h-6 text-[#E77F18]"></i>
+                                    Ücretsiz e-Fatura Geçiş Desteği & Demo
+                                </h2>
+                                <p class="text-xs text-slate-500 mt-1">
+                                    e-Fatura ve e-Dönüşüm geçişiniz için bilgilerinizi bırakın, uzmanımız hemen arasın.
+                                </p>
+                            </div>
+
+                            <form action="#" method="POST" class="space-y-4" onsubmit="event.preventDefault();">
+                                <div class="space-y-1">
+                                    <label for="fullname" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        Ad Soyad <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="text" id="fullname" name="fullname" required placeholder="Örn: Ahmet Yılmaz" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 outline-none transition-all" />
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="space-y-1">
+                                        <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Telefon <span class="text-[#DC2626]">*</span>
+                                        </label>
+                                        <input type="tel" id="phone" name="phone" required placeholder="05XX XXX XX XX" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 outline-none transition-all" />
+                                    </div>
+
+                                    <div class="space-y-1">
+                                        <label for="company" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Şirket Adı
+                                        </label>
+                                        <input type="text" id="company" name="company" placeholder="Firma Ünvanı" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 outline-none transition-all" />
+                                    </div>
+                                </div>
+
+                                <div class="space-y-1">
+                                    <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        E-Posta Adresi <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" required placeholder="ahmet@sirketiniz.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 outline-none transition-all" />
+                                </div>
+
+                                <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-[#E77F18] hover:bg-[#d06f13] text-white font-extrabold text-base shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-[1.005] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer border border-orange-400/30">
+                                    <span>Geçiş Desteği & Demo İsteyin</span>
+                                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+
+                                <p class="text-[11px] text-center text-slate-400 mt-2 flex items-center justify-center gap-1">
+                                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
+                                    Verileriniz KVKK kapsamında %100 güvende tutulmaktadır.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 2. BÖLÜM: DİA E-DÖNÜŞÜM KAPSAMI (3x2 GRID KARTLAR)                       -->
+        <!-- ========================================================================= -->
+        <section id="e-donusum-kapsami" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-black tracking-widest text-[#245BA7] uppercase bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">
+                        EKSİKSİZ DİJİTAL BELGE EKOSİSTEMİ
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        DİA <span class="text-[#245BA7]">e-Dönüşüm</span> Kapsamı
+                    </h2>
+                    <p class="text-base text-slate-600 font-normal">
+                        Yasal mevzuatlara tam uyumlu e-fatura ve e-belge çözümleri ile tüm operasyonlarınızı tek merkezde toplayın.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+
+                    <!-- Kart 1: e-Fatura & e-Arşiv Fatura -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#245BA7] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-blue-50 text-[#245BA7] flex items-center justify-center group-hover:bg-[#245BA7] group-hover:text-white transition-colors">
+                                <i data-lucide="file-check-2" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors">e-Fatura & e-Arşiv Fatura</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Ticari ve temel e-fatura senaryolarında, mükellef olan veya olmayan müşterilerinize saniyeler içinde anında e-fatura ve e-arşiv faturası düzenleyip iletin.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 2: e-İrsaliye -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#E77F18] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-amber-50 text-[#E77F18] flex items-center justify-center group-hover:bg-[#E77F18] group-hover:text-white transition-colors">
+                                <i data-lucide="truck" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#E77F18] transition-colors">e-İrsaliye Çözümü</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Sevkiyat süreçlerinizde kağıtsız, anlık ve güvenli e-irsaliye takibi. Mal kabul ve depo çıkışlarında karekodlu dijital irsaliye rahatlığını yaşayın.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 3: e-SMM & e-Müstahsil -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-red-50 text-[#DC2626] flex items-center justify-center group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                                <i data-lucide="receipt" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">e-SMM & e-Müstahsil</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Serbest meslek makbuzlarınızı ve tarımsal ürün alımlarında düzenlenen e-müstahsil makbuzlarınızı yasal standartlarda elektronik ortamda hazırlayın.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 4: Toplu Fatura & İç İçe Entegrasyon -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                                <i data-lucide="layers" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Toplu Fatura & İç İçe Entegrasyon</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Muhasebe, pazaryeri ve stok modülleriyle otomatik eşleşme. Yüzlerce irsaliye veya siparişi tek tıkla toplu olarak e-faturaya dönüştürün.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 5: Sınırsız Güvenli Bulut Arşiv -->
+                    <div class="bg-[#162444] text-white p-8 rounded-2xl border border-slate-700 shadow-sm hover:shadow-xl hover:border-[#E77F18] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-[#E77F18]/20 text-[#E77F18] flex items-center justify-center group-hover:bg-[#E77F18] group-hover:text-white transition-colors">
+                                <i data-lucide="database" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-[#E77F18] transition-colors">Sınırsız Güvenli Bulut Arşiv</h3>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Kanuni olarak 10 yıl boyunca saklanması gereken tüm e-fatura ve e-arşiv kayıtlarınız DİA bulut sunucularında yedekli ve şifreli saklanır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 6: Mobil e-Fatura Hazırlama -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-indigo-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                <i data-lucide="smartphone" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">Mobil e-Fatura Hazırlama</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Müşterinizin yanındayken veya sahadayken cep telefonunuzdan ya da tabletinizden tek tıkla e-fatura kesme ve e-posta ile iletme rahatlığı.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 3. BÖLÜM: NEDEN BULUT TABANLI E-FATURA? (MALIYET & ZAMAN TASARRUFU)       -->
+        <!-- ========================================================================= -->
+        <section id="maliyet-tasarrufu" class="py-16 lg:py-24 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs">
+                            <i data-lucide="trending-down" class="w-4 h-4"></i>
+                            MALIYET KONTROLU & ÇEVRE DOSTU
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
+                            Neden Bulut Tabanlı <br />
+                            <span class="text-[#245BA7]">e-Fatura Sistemi?</span>
+                        </h2>
+                        <p class="text-slate-600 text-base leading-relaxed">
+                            Kağıt, baskı, zarf, kargo ve fiziksel arşiv klasörleme masraflarını %90 oranında azaltan doğa dostu dijitalleşme vizyonu. Faturalarınızı anında müşterinize ulaştırarak tahsilat süreçlerinizi hızlandırın.
+                        </p>
+                        <div class="space-y-3 text-sm font-semibold text-slate-800">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600"></i>
+                                <span>Kargo ve baskı maliyetlerinde %90'a varan doğrudan tasarruf</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600"></i>
+                                <span>Fatura kaybolma ve gecikme riski olmadan anında e-posta teslimatı</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600"></i>
+                                <span>Fiziksel depolama yerine bulutta şifreli ve yasal arşivleme</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sağ Taraf İstatistik Kutusu -->
+                    <div class="bg-[#0F1D38] text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-slate-800 space-y-6">
+                        <div class="border-b border-slate-800 pb-5">
+                            <div class="text-4xl font-black text-[#E77F18]">%90</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Daha Düşük Operasyon Maliyeti</div>
+                            <p class="text-xs text-slate-400 mt-1">Sürekli kağıt alma, yazıcı bakımı ve kargo gönderim maliyetlerine son verin.</p>
+                        </div>
+
+                        <div>
+                            <div class="text-4xl font-black text-[#245BA7]">3 Saniye</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Ortalama İletim Süresi</div>
+                            <p class="text-xs text-slate-400 mt-1">Düzenlediğiniz faturalar anında GİB ve alıcı müşterinizin sistemine ulaşır.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 4. BÖLÜM: 4 ADIMDA DİA E-FATURA'YA GEÇİŞ SÜRECİ                            -->
+        <!-- ========================================================================= -->
+        <section id="gecis-sureci" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-bold text-[#E77F18] uppercase tracking-wider bg-orange-500/10 px-3.5 py-1.5 rounded-full border border-orange-500/30">
+                        KOLAY DİJİTALLEŞME ADIMLARI
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        4 Adımda <span class="text-[#245BA7]">e-Fatura'ya Geçiş</span>
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        Compiturk uzman rehberliği ile e-fatura geçiş sürecinizi saatler içinde tamamlıyoruz.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+
+                    <!-- Adım 1 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#245BA7] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#245BA7] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="key-round" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#245BA7] transition-colors">01</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Mali Mühür / e-İmza</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Tüzel şirketler için Kamu SM Mali Mühür, şahıs firmaları için E-İmza temini gerçekleştirilir.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 2 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#E77F18] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-amber-50 text-[#E77F18] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="globe" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#E77F18] transition-colors">02</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">GİB & DİA Seçimi</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                GİB portalı üzerinden başvuru yapılır ve özel entegratör olarak GİB onaylı DİA seçilir.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 3 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="settings" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#DC2626] transition-colors">03</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Şablon & Tanımlar</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Şirketinize özel logolu e-fatura tasarımı DİA sisteminize aktarılır ve kullanıcı yetkileri tanımlanır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 4 -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-emerald-500/80 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-emerald-500">04</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Canlı Fatura Kesimi</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Kısa bir kullanıcı eğitiminin ardından e-fatura ve e-arşivlerinizi anında kesmeye başlayın.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 5. BÖLÜM: BİRLİKTE KULLANABİLECEĞİNİZ DİĞER ÇÖZÜMLERİMİZ                 -->
+        <!-- ========================================================================= -->
+        <section id="tamamlayici-cozumler" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                        Birlikte Kullanabileceğiniz <span class="text-[#DC2626]">Diğer Çözümlerimiz</span>
+                    </h2>
+                    <p class="text-sm text-slate-600">e-Fatura modülünüzü DİA ERP ekosistemi ile tam entegre çalıştırın.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Çözüm 1 -->
+                    <a href="dia-on-muhasebe.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#245BA7] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#245BA7] flex items-center justify-center mb-4 group-hover:bg-[#245BA7] group-hover:text-white transition-colors">
+                            <i data-lucide="calculator" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors">Ön Muhasebe</h3>
+                        <p class="text-xs text-slate-500 mt-1">Cari hesap, kasa, banka ve fatura takibi.</p>
+                    </a>
+
+                    <!-- Çözüm 2 -->
+                    <a href="dia-stok-depo.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#E77F18] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-amber-50 text-[#E77F18] flex items-center justify-center mb-4 group-hover:bg-[#E77F18] group-hover:text-white transition-colors">
+                            <i data-lucide="boxes" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#E77F18] transition-colors">Stok & Depo Yönetimi</h3>
+                        <p class="text-xs text-slate-500 mt-1">Barkodlu stok takibi ve otomatik düşüm.</p>
+                    </a>
+
+                    <!-- Çözüm 3 -->
+                    <a href="../index.html#other-solutions" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <i data-lucide="credit-card" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Net Tahsilat & POS</h3>
+                        <p class="text-xs text-slate-500 mt-1">Faturalar için online linkle ödeme toplama.</p>
+                    </a>
+
+                    <!-- Çözüm 4 -->
+                    <a href="../index.html#quick-services" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#DC2626] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center mb-4 group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Pazaryeri Entegrasyonu</h3>
+                        <p class="text-xs text-slate-500 mt-1">Trendyol ve N11 siparişlerini otomatik e-faturaya çevirin.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 6. BÖLÜM: SIKÇA SORULAN SORULAR (SEO FAQ - ACCORDION)                     -->
+        <!-- ========================================================================= -->
+        <section id="faq" class="py-16 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                
+                <div class="text-center space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Sıkça Sorulan <span class="text-[#245BA7]">Sorular</span></h2>
+                    <p class="text-sm text-slate-600">e-Fatura ve e-Dönüşüm süreçleri hakkında merak ettiğiniz tüm yanıtlar.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Soru 1 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                            <span>e-Fatura Mükellefi Olma Şartları Nelerdir?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Gelir İdaresi Başkanlığı (GİB) tarafından belirlenen yıllık ciro limitlerini aşan firmalar (e-ticaret, gayrimenkul, motorlu taşıt vb. sektörler için özel limitler geçerlidir) zorunlu olarak e-fatura sistemine geçer. Ayrıca cirosuna bakılmaksızın her işletme isteğe bağlı olarak gönüllü e-fatura mükellefi olabilir.
+                        </p>
+                    </details>
+
+                    <!-- Soru 2 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                            <span>Geleneksel Kağıt Fatura ile e-Fatura Arasındaki Farklar Nelerdir?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Hukuki geçerlilik açısından ikisi arasında hiçbir fark yoktur. Tek fark e-faturanın kağıda basılmaması, dijital ortamda şifreli XML formatında oluşturulup GİB üzerinden alıcıya ulaştırılması ve dijital arşivde saklanmasıdır.
+                        </p>
+                    </details>
+
+                    <!-- Soru 3 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                            <span>DİA e-Fatura Kullanmak İçin Özel Bir Sunucu Gerekir mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Hayır. DİA %100 bulut mimarisinde çalıştığı için işletmenizde sunucu, donanım veya özel lisans altyapısı kurmanız gerekmez. İnternet bağlantısı olan her cihazdan e-fatura kesebilirsiniz.
+                        </p>
+                    </details>
+
+                    <!-- Soru 4 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                            <span>Kesilen e-Faturalar Kaç Yıl Saklanır?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Türk Ticaret Kanunu ve Vergi Usul Kanunları gereğince kesilen e-fatura ve e-arşiv belgelerinin 10 yıl boyunca saklanması zorunludur. DİA e-Dönüşüm modülü faturalarınızı 10 yıl boyunca güvenli bulut arşivinde saklar.
+                        </p>
+                    </details>
+
+                    <!-- Soru 5 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                            <span>Cep Telefonundan e-Fatura Kesilebilir mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. DİA Mobil uygulaması (iOS ve Android) üzerinden sahadayken, toplantıdayken veya seyahatteyken cep telefonunuzdan saniyeler içinde e-fatura düzenleyebilir ve müşterinizin WhatsApp/e-posta adresine gönderebilirsiniz.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 7. BÖLÜM: MÜŞTERİ YORUMLARI & REFERANSLAR (3 KART)                        -->
+        <!-- ========================================================================= -->
+        <section id="referanslar" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Müşterilerimiz <span class="text-[#E77F18]">Ne Diyor?</span></h2>
+                    <p class="text-sm text-slate-600">DİA e-Fatura çözümü ile süreçlerini dijitalleştiren B2B firmalarının tecrübeleri.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Yorum 1 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Ayda ortalama 2.000 adet fatura kesen bir firmayız. DİA e-fatura modülüne geçtikten sonra kargo ve kağıt maliyetlerimiz tamamen bitti. Compiturk ekibinin geçiş sürecindeki desteği harikaydı."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Serkan M.</span>
+                            <span class="text-xs text-slate-500 font-medium">Muhasebe Müdürü - Toptan Gıda</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 2 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Mobil e-fatura kesme özelliği sayesinde saha ekibimiz teslimat anında müşterinin yanında irsaliye ve e-faturayı oluşturuyor. İş süreçlerimiz 3 kat hızlandı."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Elif Y.</span>
+                            <span class="text-xs text-slate-500 font-medium">Operasyon Yöneticisi - Lojistik</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 3 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "E-ticaret siparişlerimizin e-faturaları DİA üzerinden otomatik oluşup müşterilere e-posta ile gidiyor. Hata oranı sıfıra indi, muhasebe yükümüz yarı yarıya hafifledi."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Koray A.</span>
+                            <span class="text-xs text-slate-500 font-medium">Kurucu - E-Ticaret Tekstil</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 8. BÖLÜM: BLOG YAZILARIMIZ (3 KART)                                       -->
+        <!-- ========================================================================= -->
+        <section id="blog" class="py-16 bg-[#F8FAFC]">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">e-Dönüşüm <span class="text-[#245BA7]">Rehberi</span></h2>
+                    <p class="text-sm text-slate-600">e-Fatura ve dijitalleşme süreçlerinizi kolaylaştıracak uzman içeriklerimiz.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Makale 1 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#245BA7] uppercase tracking-wider bg-blue-50 px-2.5 py-1 rounded-md">E-FATURA AVANTAJLARI</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors line-clamp-2">
+                                e-Fatura Kullanmanın İşletmelere Sağladığı 7 Büyük Avantaj
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Hızlı tahsilat, sıfır kargo maliyeti ve bulut arşivleme ile operasyonel verimliliğinizi nasıl artırabilirsiniz?
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 2 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#E77F18] uppercase tracking-wider bg-amber-50 px-2.5 py-1 rounded-md">SEVKİYAT OTOMASYONU</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#E77F18] transition-colors line-clamp-2">
+                                e-İrsaliye Uygulamasına Geçişte Dikkat Edilmesi Gerekenler
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Mal sevkiyatlarında ceza yememek ve doğru barkod takibi yapmak için e-İrsaliye rehberimizi inceleyin.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 3 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded-md">BULUT GÜVENLİĞİ</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2">
+                                Dijital Arşivleme ve e-Dönüşümde Bulut Teknolojisinin Önemi
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                10 yıllık yasal saklama süresince fatura kayıplarını önleyen yüksek güvenlikli bulut saklama çözümleri.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-footer"></div>
+
+    <!-- SCRIPT ÇAĞRILARI -->
+    <script src="../js/components.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

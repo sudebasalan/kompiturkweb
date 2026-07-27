@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurumsal Güvenlik Duvarı (Firewall) & Siber Güvenlik Çözümleri | Compiturk</title>
+    <meta name="description" content="Şirket ağınızı ve ERP altyapınızı siber saldırılara, fidye virüslerine karşı Fortinet, Sophos ve SonicWall UTM Firewall çözümleriyle koruyun. Compiturk.">
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#DC2626',
+                        brandRedDark: '#B91C1C',
+                        brandNavy: '#0F172A',
+                        brandTechBlue: '#0EA5E9',
+                        brandCyberGreen: '#10B981',
+                        brandSlate: '#334155',
+                        brandIce: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
+
+    <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-header"></div>
+
+    <!-- MAIN İÇERİK BAŞLANGICI -->
+    <main class="flex-grow">
+
+        <!-- ========================================================================= -->
+        <!-- 1. HERO / BANNER SECTION (TEKNOLOJİK KOYU LACİVERT ARKA PLAN)           -->
+        <!-- ========================================================================= -->
+        <section id="module-hero" class="w-full bg-gradient-to-r from-[#0F172A] via-[#1E3A8A] to-[#0F172A] text-white py-16 lg:py-24 relative overflow-hidden z-20">
+            <!-- Arka Plan Vektörel Desen & Siber Yeşil/Mavi İşıltılar -->
+            <div class="absolute inset-0 bg-[radial-gradient(rgba(16,185,129,0.15)_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#10B981]/20 rounded-full blur-[130px] pointer-events-none"></div>
+            <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#DC2626]/20 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+                    <!-- SOL KOLON: İÇERİK VE VURGULAR (Col-span-7) -->
+                    <div class="lg:col-span-7 space-y-6 text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#10B981] font-bold text-xs sm:text-sm tracking-wide">
+                            <span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
+                            <span class="text-white">UTM FİREWALL & SİBER GÜVENLİK MERKEZİ</span>
+                        </div>
+
+                        <!-- TEK H1 BAŞLIĞI -->
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                            Kurumsal Güvenlik Duvarı (Firewall) & <br class="hidden sm:inline" />
+                            <span class="text-[#10B981]">Siber Güvenlik Çözümleri</span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl">
+                            Şirket ağınızı, kritik verilerinizi ve DİA ERP altyapınızı siber saldırılara, fidye virüslerine ve izinsiz sızmalara karşı UTM Firewall çözümleriyle koruma altına alıyoruz.
+                        </p>
+
+                        <!-- İkonlu Vurgu Maddeleri -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/15">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-[#10B981] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="shield" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Fortinet & Sophos UTM Kurulumu
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="file-check" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    5651 Yasal Loglama Uyumluluğu
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-blue-300 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="lock" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Şifreli SSL-VPN & 2FA Erişim
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SAĞ KOLON: GÖRSEL KARTI & FORM KUTUSU (Col-span-5) -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <!-- Siber Güvenlik Görsel / Tech Banner Kartı -->
+                        <div class="bg-slate-900/80 backdrop-blur-md rounded-2xl p-6 border border-slate-700 shadow-xl flex items-center gap-5">
+                            <div class="w-16 h-16 rounded-xl bg-[#10B981]/20 border border-[#10B981]/40 text-[#10B981] flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="shield-alert" class="w-8 h-8"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <h3 class="text-sm font-bold text-white uppercase tracking-wider">Advanced Threat Protection (ATP)</h3>
+                                <p class="text-xs text-slate-400">Sıfırıncı gün saldırılarına, zararlı yazılımlara ve dışarıdan gelebilecek yetkisiz erişim denemelerine karşı aktif savunma kalkanı.</p>
+                            </div>
+                        </div>
+
+                        <!-- Beyaz Form Kutusu -->
+                        <div class="bg-white rounded-2xl p-6 sm:p-8 text-slate-900 shadow-2xl border-2 border-[#DC2626]/40 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#0F1D38] via-[#10B981] to-[#DC2626]"></div>
+
+                            <div class="border-b border-slate-100 pb-4 mb-5 pt-1">
+                                <h2 class="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
+                                    <i data-lucide="sparkles" class="w-6 h-6 text-[#DC2626]"></i>
+                                    Firewall Keşif & Teklif Alın
+                                </h2>
+                                <p class="text-xs text-slate-500 mt-1">
+                                    Kurumsal ağ güvenliğiniz için hemen bilgilerinizi bırakın, uzmanımız arasın.
+                                </p>
+                            </div>
+
+                            <form action="#" method="POST" class="space-y-4" onsubmit="event.preventDefault();">
+                                <div class="space-y-1">
+                                    <label for="fullname" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        Ad Soyad <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="text" id="fullname" name="fullname" required placeholder="Örn: Ahmet Yılmaz" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="space-y-1">
+                                        <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Telefon <span class="text-[#DC2626]">*</span>
+                                        </label>
+                                        <input type="tel" id="phone" name="phone" required placeholder="05XX XXX XX XX" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    </div>
+
+                                    <div class="space-y-1">
+                                        <label for="company" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Şirket Adı
+                                        </label>
+                                        <input type="text" id="company" name="company" placeholder="Firma Ünvanı" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    </div>
+                                </div>
+
+                                <div class="space-y-1">
+                                    <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        E-Posta Adresi <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" required placeholder="ahmet@sirketiniz.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                </div>
+
+                                <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-[#DC2626] hover:bg-[#b91c1c] text-white font-extrabold text-base shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:scale-[1.005] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer border border-red-400/30">
+                                    <span>Hemen Bilgi & Teklif İsteyin</span>
+                                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+
+                                <p class="text-[11px] text-center text-slate-400 mt-2 flex items-center justify-center gap-1">
+                                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
+                                    Verileriniz KVKK kapsamında %100 güvende tutulmaktadır.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 2. GÜVENLİK DUVARI & AĞ GÜVENLİĞİ YETENEKLERİ (3x2 GRID KARTLAR)          -->
+        <!-- ========================================================================= -->
+        <section id="firewall-ozellikler" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-black tracking-widest text-[#0F172A] uppercase bg-slate-200 px-3.5 py-1.5 rounded-full border border-slate-300">
+                        KAPSAMLI SİBER SAVUNMA MİMARİSİ
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Güvenlik Duvarı & Ağ Güvenliği <span class="text-[#1E3A8A]">Yetenekleri</span>
+                    </h2>
+                    <p class="text-base text-slate-600 font-normal">
+                        Şirket ağınızı dış tehditlerden koruyan, yasal mevzuata uyumlu hale getiren ve internet trafiğinizi optimize eden gelişmiş çözümler.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+
+                    <!-- Kart 1: UTM Firewall Konfigürasyonu -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#10B981] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-[#10B981] flex items-center justify-center group-hover:bg-[#10B981] group-hover:text-white transition-colors">
+                                <i data-lucide="shield-check" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#10B981] transition-colors">UTM Firewall Konfigürasyonu</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                FortiGate, Sophos ve SonicWall cihazlarının konumlandırılması ve şirket politikalarına uygun özel kural mimarisinin kurulması.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 2: 5651 Yasal Loglama Çözümü -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#1E3A8A] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-blue-50 text-[#1E3A8A] flex items-center justify-center group-hover:bg-[#1E3A8A] group-hover:text-white transition-colors">
+                                <i data-lucide="file-clock" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#1E3A8A] transition-colors">5651 Yasal Loglama Çözümü</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                İnternet çıkışlarının yasal mevzuata tam uygun şekilde zaman damgalı ve imzalı olarak kayıt altında saklanması.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 3: Şifreli SSL-VPN ve Uç Nokta Güvenliği -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-red-50 text-[#DC2626] flex items-center justify-center group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                                <i data-lucide="lock" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Şifreli SSL-VPN & Uç Nokta Güvenliği</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Uzaktan çalışan personellerin şirket ağına ve DİA ERP sistemine 2FA (Çift aşamalı) doğrulamalı %100 güvenli bağlanması.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 4: Saldırı Önleme (IPS/IDS) & Anti-Ransomware -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-purple-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                                <i data-lucide="shield-alert" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-purple-600 transition-colors">Saldırı Önleme (IPS/IDS) & Anti-Ransomware</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Ağ üzerindeki şüpheli paketlerin, sızma denemelerinin ve şifreleme yapan fidye yazılımlarının anında tespit edilip engellenmesi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 5: Web & İçerik Filtreleme -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                                <i data-lucide="globe-lock" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Web & İçerik Filtreleme</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Zararlı, riskli ve iş dışı web sitelerine (sosyal medya, kumar, zararlı yazılım kaynakları) erişimin engellenerek veri sızıntılarının önlenmesi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 6: Bant Genişliği & Trafik Yönetimi (QoS) -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-cyan-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                                <i data-lucide="activity" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-cyan-600 transition-colors">Bant Genişliği & Trafik Yönetimi (QoS)</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                DİA ERP ve bulut sistemlere öncelikli internet hattı tahsis edilerek dosya indirme/video akışlarının iş operasyonlarını yavaşlatması önlenir.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 3. NEDEN COMPITURK SİBER GÜVENLİK? (LACİVERT & KIRMIZI ACCENT BÖLÜMÜ)     -->
+        <!-- ========================================================================= -->
+        <section id="neden-compiturk-firewall" class="py-16 lg:py-24 bg-[#0F172A] text-white">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-white font-bold text-xs border border-white/20">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-[#10B981]"></i>
+                            SİBER TEHDİT SAVUNMASI & YASAL UYUM
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                            Neden Compiturk <br />
+                            Siber Güvenlik Çözümleri?
+                        </h2>
+                        <p class="text-slate-300 text-base leading-relaxed">
+                            Siber tehditleri ve veri kayıplarını sıfırlayan, KVKK ve 5651 sayılı yasal yaptırımlara karşı şirketinizi koruma altına alan kurumsal firewall ve güvenlik altyapısı.
+                        </p>
+                        <div class="space-y-3 text-sm font-semibold text-white">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-[#10B981]"></i>
+                                <span>Fidye virüsü (Ransomware) ve sızma girişimlerine karşı çok katmanlı UTM koruması</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-[#10B981]"></i>
+                                <span>5651 kanununa tam uyumlu, otomatik zaman damgalı yasal loglama altyapısı</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-[#10B981]"></i>
+                                <span>Uzaktan çalışanlar için güvenli ve şifreli SSL-VPN tünelleri</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sağ Taraf İstatistik Paneli -->
+                    <div class="bg-slate-900 text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-slate-800 space-y-6">
+                        <div class="border-b border-slate-800 pb-5">
+                            <div class="text-4xl font-black text-[#10B981]">100%</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">5651 Yasal Mevzuat Uyumluluğu</div>
+                            <p class="text-xs text-slate-400 mt-1">İnternet erişim kayıtlarınız kanuni gereksinimlere uygun olarak eksiksiz saklanır.</p>
+                        </div>
+
+                        <div>
+                            <div class="text-4xl font-black text-[#DC2626]">7/24</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Saldırı İzleme & Alarm Mimarisi</div>
+                            <p class="text-xs text-slate-400 mt-1">Ağ trafiğiniz anlık olarak analiz edilerek şüpheli hareketler anında bloke edilir.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 4. 4 ADIMDA FİREWALL KURULUM SÜRECİ                                       -->
+        <!-- ========================================================================= -->
+        <section id="firewall-adimlari" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider bg-slate-200 px-3.5 py-1.5 rounded-full border border-slate-300">
+                        SİSTEMATİK GÜVENLİK AKIŞI
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        4 Adımda Firewall <span class="text-[#1E3A8A]">Kurulum Süreci</span>
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        Şirket ağınızı siber tehditlerden arındırmak için izlediğimiz mühendislik adımları.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+
+                    <!-- Adım 1 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#10B981] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-50 text-[#10B981] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="search" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#10B981] transition-colors">01</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Ağ Keşfi & Açık Analizi</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Mevcut internet ve yerel ağ topolojiniz incelenerek güvenlik açıkları ve dışarıya açık portlar tespit edilir.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 2 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#1E3A8A] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#1E3A8A] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="cpu" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#1E3A8A] transition-colors">02</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Donanım & Lisans Seçimi</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Şirket kullanıcı sayınıza ve hat hızınıza en uygun UTM Firewall cihazı seçilerek UTM lisansları aktive edilir.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 3 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#DC2626] transition-colors">03</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Kural & Loglama Yapısı</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Güvenlik politikaları, VPN tünelleri ve 5651 yasal loglama modülü cihaza tanımlanır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 4 -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-emerald-500/80 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="rocket" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-emerald-500">04</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Testler & 7/24 İzleme</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Sızma testleri yapılarak sistem canlıya alınır ve arka planda proaktif olarak izlenmeye başlanır.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 5. BİRLİKTE KULLANABİLECEĞİNİZ DİĞER IT ÇÖZÜMLERİMİZ                      -->
+        <!-- ========================================================================= -->
+        <section id="tamamlayici-cozumler" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                        Birlikte Kullanabileceğiniz <span class="text-[#1E3A8A]">Diğer IT Çözümlerimiz</span>
+                    </h2>
+                    <p class="text-sm text-slate-600">Güvenlik duvarınızı destekleyen ve siber dayanıklılığı artıran diğer IT hizmetlerimiz.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Çözüm 1 -->
+                    <a href="sunucu-kurulumu.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#1E3A8A] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#1E3A8A] flex items-center justify-center mb-4 group-hover:bg-[#1E3A8A] group-hover:text-white transition-colors">
+                            <i data-lucide="server" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#1E3A8A] transition-colors">Sunucu Kurulumu</h3>
+                        <p class="text-xs text-slate-500 mt-1">Yüksek performanslı kurumsal sunucu ve sanallaştırma.</p>
+                    </a>
+
+                    <!-- Çözüm 2 -->
+                    <a href="yedekleme-cozumleri.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <i data-lucide="database-backup" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Yedekleme Çözümleri</h3>
+                        <p class="text-xs text-slate-500 mt-1">Ransomware saldırılarına karşı güvenli veri yedekleme.</p>
+                    </a>
+
+                    <!-- Çözüm 3 -->
+                    <a href="ag-altyapisi.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-sky-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center mb-4 group-hover:bg-sky-600 group-hover:text-white transition-colors">
+                            <i data-lucide="network" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-sky-600 transition-colors">Ağ Altyapısı (Network)</h3>
+                        <p class="text-xs text-slate-500 mt-1">Güvenli switch ve yapısal kablolama sistemleri.</p>
+                    </a>
+
+                    <!-- Çözüm 4 -->
+                    <a href="../index.html#it-hizmetler" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-purple-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center mb-4 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i data-lucide="key-round" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-purple-600 transition-colors">Yazılım Lisanslama</h3>
+                        <p class="text-xs text-slate-500 mt-1">Kurumsal antivirüs ve işletim sistemi lisansları.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 6. SIKÇA SORULAN SORULAR (SEO FAQ - HTML5 ACCORDION)                     -->
+        <!-- ========================================================================= -->
+        <section id="faq" class="py-16 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                
+                <div class="text-center space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Sıkça Sorulan <span class="text-[#1E3A8A]">Sorular</span></h2>
+                    <p class="text-sm text-slate-600">Kurumsal güvenlik duvarı (Firewall) ve siber güvenlik çözümleri hakkında merak edilenler.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Soru 1 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>Şirketimiz için doğru Firewall kapasitesi ve cihazı nasıl seçilir?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Firewall seçimi; şirketteki eşzamanlı aktif kullanıcı sayısı, internet hat hızınız (Mbps), VPN üzerinden bağlanan personel sayısı ve aktif çalıştırılacak UTM servislerine (IPS, Antivirus, Web Filter) göre belirlenir. Uzman ekibimiz keşif yaparak işletmenize en uygun modeli önerir.
+                        </p>
+                    </details>
+
+                    <!-- Soru 2 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>5651 sayılı kanun kapsamındaki loglama zorunluluğu nedir?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            5651 sayılı kanun gereği, internet sağlayıcısı (kurum) olan işletmeler ağlarındaki tüm internet erişim loglarını zaman damgası ve kriptografik özetlerle (hash) en az 2 yıl boyunca eksiksiz saklamakla yükümlüdür. Kurduğumuz sistemler bu yasaya %100 uyumludur.
+                        </p>
+                    </details>
+
+                    <!-- Soru 3 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>Firewall cihazı kullanmak internet erişim hızını düşürür mü?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Doğru kapasitede seçilmiş ve optimize edilmiş bir UTM Firewall cihazı internet hızınızı düşürmez. Aksine, gereksiz reklam ve zararlı siteleri filtreleyerek hat kaynaklarının daha verimli kullanılmasını sağlar.
+                        </p>
+                    </details>
+
+                    <!-- Soru 4 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>Dışarıdaki çalışanlar için VPN bağlantısı nasıl güvenli hale getirilir?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Personellerin evden veya dışarıdan şirket ağına bağlanırken 2FA (İki aşamalı doğrulama - SMS veya Authenticator kodları) ile desteklenen SSL-VPN tünelleri kullanmasını sağlayarak yetkisiz erişim riskini ortadan kaldırıyoruz.
+                        </p>
+                    </details>
+
+                    <!-- Soru 5 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>Mevcut Firewall cihazımızın güncelleme ve kural optimizasyonunu yapıyor musunuz?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Bakım anlaşmalarımız kapsamında mevcut Firewall cihazlarınızın yazılım (firmware) güncellemeleri, güvenlik imzaları (signatures), açık port taramaları ve gereksiz kuralların temizlenmesi (optimizasyon) düzenli olarak yapılmaktadır.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 7. MÜŞTERİ YORUMLARI & REFERANSLAR (3 KART)                                -->
+        <!-- ========================================================================= -->
+        <section id="referanslar" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Müşterilerimiz <span class="text-[#1E3A8A]">Ne Diyor?</span></h2>
+                    <p class="text-sm text-slate-600">Şirket ağını Compiturk Firewall çözümleriyle güvenceye alan firmaların görüşleri.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Yorum 1 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Geçtiğimiz aylarda şirketimize yönelik gerçekleşen fidye virüsü saldırısı Compiturk'ün kurduğu Fortinet Firewall sayesinde henüz içeri sızamadan engellendi. Doğru yatırım yaptığımızı anladık."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Ahmet Ç.</span>
+                            <span class="text-xs text-slate-500 font-medium">Bilgi İşlem Müdürü - Dış Ticaret</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 2 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "5651 yasal loglama altyapımız sorunsuz şekilde kuruldu. Uzaktan çalışan 40 personelimizin SSL-VPN bağlantıları 2FA ile tam güvenlik altına alındı. Compiturk ekibine teşekkürler."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Zeynep T.</span>
+                            <span class="text-xs text-slate-500 font-medium">Operasyon Direktörü - Tekstil</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 3 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "DİA ERP sunucumuzun internet trafiğine öncelik veren QoS kuralları sayesinde yoğun saatlerde bile veri akışımızda en ufak bir yavaşlama olmuyor. Harika bir mühendislik hizmeti aldık."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Murat K.</span>
+                            <span class="text-xs text-slate-500 font-medium">Şirket Ortağı - Toptan Dağıtım</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 8. BLOG YAZILARIMIZ (3 KART)                                              -->
+        <!-- ========================================================================= -->
+        <section id="blog" class="py-16 bg-[#F8FAFC]">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Siber Güvenlik <span class="text-[#1E3A8A]">Rehberi & Makaleler</span></h2>
+                    <p class="text-sm text-slate-600">Ağ güvenliğinizi ve siber savunmanızı güçlendirecek uzman içeriklerimiz.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Makale 1 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded-md">RANSOMWARE KORUMASI</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2">
+                                B2B Şirketlerde Siber Saldırı Ve Fidye Virüslerinden Korunmanın 5 Yolu
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Kurumsal ağlarda sıfırıncı gün açıklarını kapatma ve UTM firewall koruma katmanlarını etkin yapılandırma rehberi.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 2 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#1E3A8A] uppercase tracking-wider bg-blue-50 px-2.5 py-1 rounded-md">YASAL LOGLAMA</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#1E3A8A] transition-colors line-clamp-2">
+                                5651 Sayılı Kanun Uyarınca İnternet Loglamasında Dikkat Edilmesi Gerekenler
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Şirketlerin yasal sorumlulukları, zaman damgası gereksinimleri ve log saklama süreçlerinde yasal uyumluluk.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 3 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#10B981] uppercase tracking-wider bg-emerald-50 px-2.5 py-1 rounded-md">AĞ PERFORMANSI</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#10B981] transition-colors line-clamp-2">
+                                UTM Firewall Kullanımının Şirket Ağ Performansına Ve Güvenliğine Etkisi
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                İçerik filtreleme ve QoS trafik önceliklendirme ile hem güvenliği sağlama hem de internet verimliliğini artırma.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-footer"></div>
+
+    <!-- SCRIPT ÇAĞRILARI -->
+    <script src="../js/components.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

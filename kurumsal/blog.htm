@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Teknoloji Rehberi | Compiturk Bilgisayar - DİA ERP, B2B ve IT Çözümleri</title>
+    <meta name="description" content="Compiturk Bilgisayar Blog: DİA ERP, B2B yazılımlar, depo otomasyonu, e-ticaret pazar yeri entegrasyonları ve IT altyapı çözümleri hakkında uzman rehberler.">
+    <meta name="keywords" content="DİA ERP rehberi, B2B yazılım, depo yönetimi WMS, pazar yeri entegrasyonu, firewall, IT altyapı">
+    <meta name="author" content="Compiturk Bilgisayar">
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#DC2626',
+                        brandRedDark: '#B91C1C',
+                        brandNavy: '#0F172A',
+                        brandNavyLight: '#1E3A8A',
+                        brandIce: '#F8FAFC',
+                        brandSlate: '#334155'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#F8FAFC] text-[#334155] font-sans antialiased min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+    <!-- GLOBAL HEADER (components.js tarafından doldurulur) -->
+    <div id="global-header"></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+
+        <!-- 1. HERO / BANNER SECTION -->
+        <section class="bg-[#0F172A] text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-800 relative overflow-hidden">
+            <!-- Arka Plan Efektleri -->
+            <div class="absolute top-0 right-1/4 w-96 h-96 bg-[#DC2626]/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-[#1E3A8A]/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto relative z-10 text-center space-y-6">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-xs sm:text-sm font-semibold text-red-400">
+                    <span>📰</span> Compiturk Blog & Teknoloji Haberleri
+                </div>
+
+                <!-- H1 Başlık -->
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight max-w-4xl mx-auto">
+                    DİA ERP, B2B Yazılımlar ve IT Altyapı Rehberi
+                </h1>
+
+                <!-- Açıklama Paragrafı -->
+                <p class="text-slate-300 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto leading-relaxed">
+                    İşletmenizi geleceğe taşıyacak kurumsal ERP çözümleri, e-ticaret pazar yeri entegrasyonları, mobil depo yönetimi ve siber güvenlik hakkında uzman makaleleri.
+                </p>
+
+                <!-- Arama Barı ve Filtre Butonları -->
+                <div class="pt-6 max-w-3xl mx-auto space-y-6">
+                    <!-- Arama Input'u -->
+                    <div class="relative flex items-center">
+                        <i data-lucide="search" class="w-5 h-5 absolute left-4 text-slate-400"></i>
+                        <input id="blog-search-input" type="text" placeholder="Blogda veya rehberlerde canlı ara... (Örn: DİA, Depo, Firewall)" class="w-full pl-12 pr-28 py-3.5 bg-slate-800/90 border border-slate-700 rounded-2xl text-white placeholder-slate-400 text-sm focus:outline-none focus:border-[#DC2626] focus:ring-1 focus:ring-[#DC2626] transition-all shadow-lg">
+                        <button id="blog-search-btn" type="button" class="absolute right-2 px-4 py-2 bg-[#DC2626] hover:bg-[#B91C1C] text-white text-xs sm:text-sm font-bold rounded-xl transition-colors">
+                            Ara
+                        </button>
+                    </div>
+
+                    <!-- Kategori Filtre Butonları -->
+                    <div class="flex flex-wrap justify-center gap-2 sm:gap-3 text-xs sm:text-sm">
+                        <button data-filter="all" class="filter-btn active-filter px-4 py-2 rounded-xl font-bold bg-[#DC2626] text-white shadow-md transition-all">Tümü</button>
+                        <button data-filter="dia-erp" class="filter-btn px-4 py-2 rounded-xl font-bold bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 border border-slate-700/60 transition-all">DİA ERP</button>
+                        <button data-filter="depo-lojistik" class="filter-btn px-4 py-2 rounded-xl font-bold bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 border border-slate-700/60 transition-all">Depo & Lojistik</button>
+                        <button data-filter="e-ticaret" class="filter-btn px-4 py-2 rounded-xl font-bold bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 border border-slate-700/60 transition-all">E-Ticaret Entegrasyonu</button>
+                        <button data-filter="it-altyapi" class="filter-btn px-4 py-2 rounded-xl font-bold bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 border border-slate-700/60 transition-all">IT Altyapı</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAIN CONTAINER -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+
+            <!-- 2. ÖNE ÇIKAN MAKALE (FEATURED POST) -->
+            <section id="featured-post-section" class="blog-item" data-category="dia-erp">
+                <div class="bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-8 shadow-xl shadow-slate-200/50 hover:shadow-2xl transition-shadow duration-300 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Sol Taraf: Görsel Placeholder -->
+                    <div class="lg:col-span-6 h-full min-h-[280px] sm:min-h-[320px]">
+                        <a href="2026-kurumsal-erp-secim-rehberi.html" class="block h-full group">
+                            <div class="relative rounded-2xl overflow-hidden bg-slate-800/50 border border-slate-700/60 h-full min-h-[280px] flex flex-col items-center justify-center text-slate-400 group-hover:border-[#DC2626] transition-colors p-6 text-center">
+                                <i data-lucide="image" class="w-12 h-12 mb-3 text-slate-500 group-hover:text-[#DC2626] transition-colors"></i>
+                                <span class="text-sm font-semibold text-slate-300">GÖRSEL ALANI</span>
+                                <span class="text-xs text-slate-500 mt-1">(Öne Çıkan Görsel / &lt;img&gt; veya SVG Ekleyebilirsiniz)</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sağ Taraf: İçerik -->
+                    <div class="lg:col-span-6 space-y-5">
+                        <div class="flex flex-wrap items-center gap-3 text-xs sm:text-sm font-semibold text-slate-500">
+                            <span class="bg-red-100 text-[#DC2626] px-3 py-1 rounded-full font-bold">Öne Çıkan Rehber</span>
+                            <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-4 h-4 text-slate-400"></i> 14 Mart 2026</span>
+                            <span class="flex items-center gap-1"><i data-lucide="clock" class="w-4 h-4 text-slate-400"></i> 8 dk okuma</span>
+                        </div>
+
+                        <h2 class="blog-title text-2xl sm:text-3xl font-black text-[#0F172A] leading-tight hover:text-[#DC2626] transition-colors">
+                            <a href="2026-kurumsal-erp-secim-rehberi.html">
+                                2026 Kurumsal ERP Seçim Rehberi: İşletmeniz İçin En Doğru Yazılımı Nasıl Seçersiniz?
+                            </a>
+                        </h2>
+
+                        <p class="blog-summary text-slate-600 text-sm sm:text-base leading-relaxed">
+                            Büyüyen KOBİ'ler ve kurumsal şirketler için ERP seçimi kritik bir yatırımdır. Bulut tabanlı mimari, e-fatura modülleri, stok-depo yönetimi ve DİA ERP entegrasyon süreçlerinin işletmenize sağlayacağı verimliliği adım adım inceledik.
+                        </p>
+
+                        <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-slate-200 border border-slate-300 flex items-center justify-center font-bold text-slate-700 text-sm">
+                                    CB
+                                </div>
+                                <div>
+                                    <span class="block text-sm font-bold text-[#0F172A]">Compiturk Editör Ekibi</span>
+                                    <span class="block text-xs text-slate-500">ERP & Kurumsal Yazılımlar</span>
+                                </div>
+                            </div>
+
+                            <a href="2026-kurumsal-erp-secim-rehberi.html" class="inline-flex items-center gap-2 px-6 py-3 bg-[#DC2626] hover:bg-[#B91C1C] text-white text-sm font-bold rounded-xl transition-all shadow-md hover:gap-3">
+                                Makaleyi Oku <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 3. BLOG MAKALELERİ GRID İÇERİĞİ -->
+            <section aria-label="Tüm Makaleler">
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-2xl font-black text-[#0F172A] flex items-center gap-2">
+                        <span class="w-2.5 h-7 bg-[#DC2626] rounded-full inline-block"></span>
+                        Rehberler ve Makaleler
+                    </h2>
+                </div>
+
+                <!-- SONUÇ BULUNAMADI UYARISI -->
+                <div id="no-results-msg" class="hidden bg-white border border-slate-200 rounded-3xl p-12 text-center space-y-4 my-8">
+                    <div class="w-16 h-16 bg-red-50 text-[#DC2626] rounded-full flex items-center justify-center mx-auto">
+                        <i data-lucide="search-x" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0F172A]">Aradığınız Kriterlere Uygun Makale Bulunamadı</h3>
+                    <p class="text-slate-500 text-sm max-w-md mx-auto">
+                        Lütfen farklı anahtar kelimeler deneyin veya filtre kategorilerini değiştirerek tekrar arama yapın.
+                    </p>
+                    <button id="reset-filters-btn" class="px-5 py-2.5 bg-[#DC2626] text-white font-bold text-sm rounded-xl hover:bg-[#B91C1C] transition-colors inline-flex items-center gap-2">
+                        <i data-lucide="rotate-ccw" class="w-4 h-4"></i> Filtreleri Sıfırla
+                    </button>
+                </div>
+
+                <!-- KARTLAR GRIDI -->
+                <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- KART 1: Depo & Lojistik -->
+                    <article class="blog-item bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-category="depo-lojistik">
+                        <div>
+                            <a href="depo-otomasyonu-ve-el-terminali-kullanimi.html" class="block">
+                                <div class="relative rounded-t-2xl overflow-hidden bg-slate-800/50 border-b border-slate-700/60 min-h-[220px] flex flex-col items-center justify-center text-slate-400 group-hover:bg-slate-800/70 transition-colors p-4 text-center">
+                                    <i data-lucide="image" class="w-10 h-10 mb-2 text-slate-500 group-hover:text-[#DC2626] transition-colors"></i>
+                                    <span class="text-xs font-semibold text-slate-300">GÖRSEL ALANI</span>
+                                    <span class="text-[11px] text-slate-500 mt-0.5">(&lt;img&gt; veya SVG ekleyebilirsiniz)</span>
+                                </div>
+                            </a>
+
+                            <div class="p-6 space-y-3">
+                                <div class="flex items-center justify-between text-xs font-semibold text-slate-500">
+                                    <span class="bg-slate-100 text-slate-700 px-2.5 py-1 rounded-lg">Depo & Lojistik</span>
+                                    <span>10 Mart 2026</span>
+                                </div>
+
+                                <h3 class="blog-title text-lg font-bold text-[#0F172A] group-hover:text-[#DC2626] transition-colors leading-snug">
+                                    <a href="depo-otomasyonu-ve-el-terminali-kullanimi.html">
+                                        Ahtapot WMS İle Depo Operasyonlarında El Terminali Kullanımı
+                                    </a>
+                                </h3>
+
+                                <p class="blog-summary text-slate-600 text-sm line-clamp-3 leading-relaxed">
+                                    Ahtapot Depo Yönetim Sistemi sayesinde mal kabul, raf adresleme, barkodlu toplama ve sevkiyat süreçlerinde insan hatasını sıfıra indirin.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-2 border-t border-slate-100/80 flex items-center justify-between text-xs font-bold">
+                            <span class="text-slate-500">5 dk okuma</span>
+                            <a href="depo-otomasyonu-ve-el-terminali-kullanimi.html" class="text-[#DC2626] hover:text-[#B91C1C] flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Devamını Oku <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- KART 2: E-Ticaret -->
+                    <article class="blog-item bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-category="e-ticaret">
+                        <div>
+                            <a href="e-ticaret-pazar-yeri-stok-senkronizasyonu.html" class="block">
+                                <div class="relative rounded-t-2xl overflow-hidden bg-slate-800/50 border-b border-slate-700/60 min-h-[220px] flex flex-col items-center justify-center text-slate-400 group-hover:bg-slate-800/70 transition-colors p-4 text-center">
+                                    <i data-lucide="image" class="w-10 h-10 mb-2 text-slate-500 group-hover:text-[#DC2626] transition-colors"></i>
+                                    <span class="text-xs font-semibold text-slate-300">GÖRSEL ALANI</span>
+                                    <span class="text-[11px] text-slate-500 mt-0.5">(&lt;img&gt; veya SVG ekleyebilirsiniz)</span>
+                                </div>
+                            </a>
+
+                            <div class="p-6 space-y-3">
+                                <div class="flex items-center justify-between text-xs font-semibold text-slate-500">
+                                    <span class="bg-slate-100 text-slate-700 px-2.5 py-1 rounded-lg">E-Ticaret Entegrasyonu</span>
+                                    <span>05 Mart 2026</span>
+                                </div>
+
+                                <h3 class="blog-title text-lg font-bold text-[#0F172A] group-hover:text-[#DC2626] transition-colors leading-snug">
+                                    <a href="e-ticaret-pazar-yeri-stok-senkronizasyonu.html">
+                                        Trendyol ve Hepsiburada Mağazalarında Stok Çakışmasını Önleme
+                                    </a>
+                                </h3>
+
+                                <p class="blog-summary text-slate-600 text-sm line-clamp-3 leading-relaxed">
+                                    Çoklu pazaryerinde satış yapan e-ticaret firmaları için anlık stok senkronizasyonu, pazar yeri entegrasyonu ve otomatik faturalandırma rehberi.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-2 border-t border-slate-100/80 flex items-center justify-between text-xs font-bold">
+                            <span class="text-slate-500">6 dk okuma</span>
+                            <a href="e-ticaret-pazar-yeri-stok-senkronizasyonu.html" class="text-[#DC2626] hover:text-[#B91C1C] flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Devamını Oku <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- KART 3: DİA ERP -->
+                    <article class="blog-item bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-category="dia-erp">
+                        <div>
+                            <a href="b2b-sanal-pos-ve-linkle-odeme.html" class="block">
+                                <div class="relative rounded-t-2xl overflow-hidden bg-slate-800/50 border-b border-slate-700/60 min-h-[220px] flex flex-col items-center justify-center text-slate-400 group-hover:bg-slate-800/70 transition-colors p-4 text-center">
+                                    <i data-lucide="image" class="w-10 h-10 mb-2 text-slate-500 group-hover:text-[#DC2626] transition-colors"></i>
+                                    <span class="text-xs font-semibold text-slate-300">GÖRSEL ALANI</span>
+                                    <span class="text-[11px] text-slate-500 mt-0.5">(&lt;img&gt; veya SVG ekleyebilirsiniz)</span>
+                                </div>
+                            </a>
+
+                            <div class="p-6 space-y-3">
+                                <div class="flex items-center justify-between text-xs font-semibold text-slate-500">
+                                    <span class="bg-slate-100 text-slate-700 px-2.5 py-1 rounded-lg">DİA ERP & Finans</span>
+                                    <span>28 Şubat 2026</span>
+                                </div>
+
+                                <h3 class="blog-title text-lg font-bold text-[#0F172A] group-hover:text-[#DC2626] transition-colors leading-snug">
+                                    <a href="b2b-sanal-pos-ve-linkle-odeme.html">
+                                        Ödüyo ve Net Tahsilat İle Şirketlerde Tahsilat Riskini Sıfırlama
+                                    </a>
+                                </h3>
+
+                                <p class="blog-summary text-slate-600 text-sm line-clamp-3 leading-relaxed">
+                                    Bayilerden ve müşterilerden kredi kartı, taksitli online ödeme ve SMS/Link ile güvenli tahsilat yapmanın avantajları ve DİA ERP entegrasyonu.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-2 border-t border-slate-100/80 flex items-center justify-between text-xs font-bold">
+                            <span class="text-slate-500">4 dk okuma</span>
+                            <a href="b2b-sanal-pos-ve-linkle-odeme.html" class="text-[#DC2626] hover:text-[#B91C1C] flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Devamını Oku <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- KART 4: IT Altyapı -->
+                    <article class="blog-item bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-category="it-altyapi">
+                        <div>
+                            <a href="utm-firewall-ve-siber-guvenlik.html" class="block">
+                                <div class="relative rounded-t-2xl overflow-hidden bg-slate-800/50 border-b border-slate-700/60 min-h-[220px] flex flex-col items-center justify-center text-slate-400 group-hover:bg-slate-800/70 transition-colors p-4 text-center">
+                                    <i data-lucide="image" class="w-10 h-10 mb-2 text-slate-500 group-hover:text-[#DC2626] transition-colors"></i>
+                                    <span class="text-xs font-semibold text-slate-300">GÖRSEL ALANI</span>
+                                    <span class="text-[11px] text-slate-500 mt-0.5">(&lt;img&gt; veya SVG ekleyebilirsiniz)</span>
+                                </div>
+                            </a>
+
+                            <div class="p-6 space-y-3">
+                                <div class="flex items-center justify-between text-xs font-semibold text-slate-500">
+                                    <span class="bg-slate-100 text-slate-700 px-2.5 py-1 rounded-lg">IT Altyapı</span>
+                                    <span>20 Şubat 2026</span>
+                                </div>
+
+                                <h3 class="blog-title text-lg font-bold text-[#0F172A] group-hover:text-[#DC2626] transition-colors leading-snug">
+                                    <a href="utm-firewall-ve-siber-guvenlik.html">
+                                        Şirket Verilerini Fidye Yazılımlarından Koruma: Firewall Rehberi
+                                    </a>
+                                </h3>
+
+                                <p class="blog-summary text-slate-600 text-sm line-clamp-3 leading-relaxed">
+                                    Ransomware ve siber korsan tehditlerine karşı UTM Firewall kurulumu, 5651 loglama kanunu ve sunucu güvenlik duvarı yapılandırma esasları.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-2 border-t border-slate-100/80 flex items-center justify-between text-xs font-bold">
+                            <span class="text-slate-500">7 dk okuma</span>
+                            <a href="utm-firewall-ve-siber-guvenlik.html" class="text-[#DC2626] hover:text-[#B91C1C] flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Devamını Oku <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- KART 5: DİA ERP -->
+                    <article class="blog-item bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-category="dia-erp">
+                        <div>
+                            <a href="ford-otosan-yedek-parca-entegrasyonu.html" class="block">
+                                <div class="relative rounded-t-2xl overflow-hidden bg-slate-800/50 border-b border-slate-700/60 min-h-[220px] flex flex-col items-center justify-center text-slate-400 group-hover:bg-slate-800/70 transition-colors p-4 text-center">
+                                    <i data-lucide="image" class="w-10 h-10 mb-2 text-slate-500 group-hover:text-[#DC2626] transition-colors"></i>
+                                    <span class="text-xs font-semibold text-slate-300">GÖRSEL ALANI</span>
+                                    <span class="text-[11px] text-slate-500 mt-0.5">(&lt;img&gt; veya SVG ekleyebilirsiniz)</span>
+                                </div>
+                            </a>
+
+                            <div class="p-6 space-y-3">
+                                <div class="flex items-center justify-between text-xs font-semibold text-slate-500">
+                                    <span class="bg-slate-100 text-slate-700 px-2.5 py-1 rounded-lg">DİA ERP & Otomotiv</span>
+                                    <span>12 Şubat 2026</span>
+                                </div>
+
+                                <h3 class="blog-title text-lg font-bold text-[#0F172A] group-hover:text-[#DC2626] transition-colors leading-snug">
+                                    <a href="ford-otosan-yedek-parca-entegrasyonu.html">
+                                        Otomotiv Servislerinde Otosan Portal ve DİA ERP Otomasyonu
+                                    </a>
+                                </h3>
+
+                                <p class="blog-summary text-slate-600 text-sm line-clamp-3 leading-relaxed">
+                                    Ford Otosan yetkili ve özel servislerinin yedek parça sipariş, stok sorgulama ve fatura süreçlerini DİA ERP üzerinden otomatik yönetme yöntemi.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-2 border-t border-slate-100/80 flex items-center justify-between text-xs font-bold">
+                            <span class="text-slate-500">5 dk okuma</span>
+                            <a href="ford-otosan-yedek-parca-entegrasyonu.html" class="text-[#DC2626] hover:text-[#B91C1C] flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Devamını Oku <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- KART 6: E-Ticaret -->
+                    <article class="blog-item bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-category="e-ticaret">
+                        <div>
+                            <a href="mobil-b2b-bayi-portali-avantajlari.html" class="block">
+                                <div class="relative rounded-t-2xl overflow-hidden bg-slate-800/50 border-b border-slate-700/60 min-h-[220px] flex flex-col items-center justify-center text-slate-400 group-hover:bg-slate-800/70 transition-colors p-4 text-center">
+                                    <i data-lucide="image" class="w-10 h-10 mb-2 text-slate-500 group-hover:text-[#DC2626] transition-colors"></i>
+                                    <span class="text-xs font-semibold text-slate-300">GÖRSEL ALANI</span>
+                                    <span class="text-[11px] text-slate-500 mt-0.5">(&lt;img&gt; veya SVG ekleyebilirsiniz)</span>
+                                </div>
+                            </a>
+
+                            <div class="p-6 space-y-3">
+                                <div class="flex items-center justify-between text-xs font-semibold text-slate-500">
+                                    <span class="bg-slate-100 text-slate-700 px-2.5 py-1 rounded-lg">E-Ticaret & Mobil B2B</span>
+                                    <span>02 Şubat 2026</span>
+                                </div>
+
+                                <h3 class="blog-title text-lg font-bold text-[#0F172A] group-hover:text-[#DC2626] transition-colors leading-snug">
+                                    <a href="mobil-b2b-bayi-portali-avantajlari.html">
+                                        Saha Satış Ekipleri ve Bayiler İçin Mobil B2B Platformu Kullanım Rehberi
+                                    </a>
+                                </h3>
+
+                                <p class="blog-summary text-slate-600 text-sm line-clamp-3 leading-relaxed">
+                                    Saha Plasiyerlerinin rutin ziyaretlerinde tablet/telefon üzerinden hızlı sipariş alması ve bayilerin 7/24 cari hesap bakiye takibi.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-2 border-t border-slate-100/80 flex items-center justify-between text-xs font-bold">
+                            <span class="text-slate-500">6 dk okuma</span>
+                            <a href="mobil-b2b-bayi-portali-avantajlari.html" class="text-[#DC2626] hover:text-[#B91C1C] flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Devamını Oku <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- GLOBAL FOOTER (components.js tarafından doldurulur) -->
+    <div id="global-footer"></div>
+
+    <!-- 5. İNTERAKTİF FİLTRELEME & ARAMA JAVASCRIPT KODU -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Lucide İkonlarını Başlat
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+
+            // Element Referansları
+            const searchInput = document.getElementById('blog-search-input');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const blogItems = document.querySelectorAll('.blog-item');
+            const noResultsMsg = document.getElementById('no-results-msg');
+            const resetFiltersBtn = document.getElementById('reset-filters-btn');
+            const paginationNav = document.getElementById('pagination-nav');
+
+            let currentCategory = 'all';
+
+            // Ana Filtreleme Mantığı
+            function filterPosts() {
+                const query = searchInput.value.toLowerCase().trim();
+                let visibleCount = 0;
+
+                blogItems.forEach(item => {
+                    const itemCategory = item.getAttribute('data-category');
+                    const titleText = item.querySelector('.blog-title') ? item.querySelector('.blog-title').textContent.toLowerCase() : '';
+                    const summaryText = item.querySelector('.blog-summary') ? item.querySelector('.blog-summary').textContent.toLowerCase() : '';
+
+                    // Kategori Eşleşmesi
+                    const matchesCategory = (currentCategory === 'all') || (itemCategory === currentCategory);
+                    
+                    // Arama Kelimesi Eşleşmesi (Başlık veya Özet içinde)
+                    const matchesQuery = (query === '') || titleText.includes(query) || summaryText.includes(query);
+
+                    if (matchesCategory && matchesQuery) {
+                        item.classList.remove('hidden');
+                        visibleCount++;
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+
+                // Sonuç Bulunamadı Mesajı ve Sayfalama Kontrolü
+                if (visibleCount === 0) {
+                    noResultsMsg.classList.remove('hidden');
+                    if (paginationNav) paginationNav.classList.add('hidden');
+                } else {
+                    noResultsMsg.classList.add('hidden');
+                    if (paginationNav) paginationNav.classList.remove('hidden');
+                }
+            }
+
+            // Kategori Butonları Tıklama Olayı
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Aktif Buton Sınıflarını Temizle
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-[#DC2626]', 'text-white', 'shadow-md');
+                        b.classList.add('bg-slate-800/80', 'text-slate-300', 'border', 'border-slate-700/60');
+                    });
+
+                    // Tıklanan Butonu Aktif Yap
+                    this.classList.remove('bg-slate-800/80', 'text-slate-300', 'border', 'border-slate-700/60');
+                    this.classList.add('bg-[#DC2626]', 'text-white', 'shadow-md');
+
+                    currentCategory = this.getAttribute('data-filter');
+                    filterPosts();
+                });
+            });
+
+            // Anlık (Live) Arama Girişi
+            searchInput.addEventListener('input', filterPosts);
+
+            // Filtreleri Sıfırla Butonu
+            if (resetFiltersBtn) {
+                resetFiltersBtn.addEventListener('click', function() {
+                    searchInput.value = '';
+                    currentCategory = 'all';
+                    
+                    // "Tümü" Butonunu Yeniden Aktif Yap
+                    filterBtns.forEach(b => {
+                        if (b.getAttribute('data-filter') === 'all') {
+                            b.click();
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+    
+    <!-- Dinamik Header ve Footer Yükleyici -->
+    <script src="../js/components.js"></script>
+</body>
+</html>

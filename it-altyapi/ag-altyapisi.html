@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurumsal Ağ Altyapısı & Yapısal Kablolama Çözümleri | Compiturk</title>
+    <meta name="description" content="Şirketinizin veri trafiğini, sunucu bağlantılarını ve DİA ERP altyapısını yüksek hızlı Cat6/Cat7, Fiber Optik kablolama ve akıllı Managed Switch çözümleriyle kuruyoruz. Compiturk.">
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#DC2626',
+                        brandRedDark: '#B91C1C',
+                        brandNavy: '#0F172A',
+                        brandTechBlue: '#0EA5E9',
+                        brandSlate: '#334155',
+                        brandIce: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
+
+    <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-header"></div>
+
+    <!-- MAIN İÇERİK BAŞLANGICI -->
+    <main class="flex-grow">
+
+        <!-- ========================================================================= -->
+        <!-- 1. HERO / BANNER SECTION (TEKNOLOJİK KOYU LACİVERT ARKA PLAN)           -->
+        <!-- ========================================================================= -->
+        <section id="module-hero" class="w-full bg-gradient-to-r from-[#0F172A] via-[#1E3A8A] to-[#0F172A] text-white py-16 lg:py-24 relative overflow-hidden z-20">
+            <!-- Arka Plan Vektörel Desen & Neon Ağ Mavisi İşıltılar -->
+            <div class="absolute inset-0 bg-[radial-gradient(rgba(14,165,233,0.15)_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#0EA5E9]/20 rounded-full blur-[130px] pointer-events-none"></div>
+            <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#DC2626]/20 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+                    <!-- SOL KOLON: İÇERİK VE VURGULAR (Col-span-7) -->
+                    <div class="lg:col-span-7 space-y-6 text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#0EA5E9] font-bold text-xs sm:text-sm tracking-wide">
+                            <span class="w-2 h-2 rounded-full bg-[#0EA5E9] animate-pulse"></span>
+                            <span class="text-white">YAPISAL KABLOLAMA & NETWORK ALTYAPISI</span>
+                        </div>
+
+                        <!-- TEK H1 BAŞLIĞI -->
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                            Kurumsal Ağ Altyapısı & <br class="hidden sm:inline" />
+                            <span class="text-[#0EA5E9]">Yapısal Kablolama Çözümleri</span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl">
+                            Şirketinizin veri trafiğini, sunucu bağlantılarını ve DİA ERP altyapısını yüksek hızlı Cat6/Cat7, Fiber Optik kablolama ve akıllı Managed Switch çözümleriyle uçtan uca kuruyoruz.
+                        </p>
+
+                        <!-- İkonlu Vurgu Maddeleri -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/15">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-[#0EA5E9] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="network" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Sertifikalı Cat6/Cat7 & Fiber Optik
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="sliders-horizontal" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Kabin Düzenleme & Patch Panel
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-blue-300 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="wifi" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Kesintisiz Wi-Fi & VLAN Yönetimi
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SAĞ KOLON: GÖRSEL KARTI & FORM KUTUSU (Col-span-5) -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <!-- Network Altyapısı Görsel / Tech Banner Kartı -->
+                        <div class="bg-slate-900/80 backdrop-blur-md rounded-2xl p-6 border border-slate-700 shadow-xl flex items-center gap-5">
+                            <div class="w-16 h-16 rounded-xl bg-[#0EA5E9]/20 border border-[#0EA5E9]/40 text-[#0EA5E9] flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="server-cog" class="w-8 h-8"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <h3 class="text-sm font-bold text-white uppercase tracking-wider">Gigabit & 10G Fiber Backbone</h3>
+                                <p class="text-xs text-slate-400">Veri paket iletiminde sıfır paket kaybı, yüksek hız ve departman bazlı izole VLAN mimarisiyle kusursuz network.</p>
+                            </div>
+                        </div>
+
+                        <!-- Beyaz Form Kutusu -->
+                        <div class="bg-white rounded-2xl p-6 sm:p-8 text-slate-900 shadow-2xl border-2 border-[#DC2626]/40 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#0F1D38] via-[#0EA5E9] to-[#DC2626]"></div>
+
+                            <div class="border-b border-slate-100 pb-4 mb-5 pt-1">
+                                <h2 class="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
+                                    <i data-lucide="sparkles" class="w-6 h-6 text-[#DC2626]"></i>
+                                    Ağ Altyapısı Keşif & Teklif Alın
+                                </h2>
+                                <p class="text-xs text-slate-500 mt-1">
+                                    Kablolama ve network projeleriniz için bilgilerinizi bırakın, uzmanımız arasın.
+                                </p>
+                            </div>
+
+                            <form action="#" method="POST" class="space-y-4" onsubmit="event.preventDefault();">
+                                <div class="space-y-1">
+                                    <label for="fullname" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        Ad Soyad <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="text" id="fullname" name="fullname" required placeholder="Örn: Ahmet Yılmaz" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="space-y-1">
+                                        <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Telefon <span class="text-[#DC2626]">*</span>
+                                        </label>
+                                        <input type="tel" id="phone" name="phone" required placeholder="05XX XXX XX XX" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    </div>
+
+                                    <div class="space-y-1">
+                                        <label for="company" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Şirket Adı
+                                        </label>
+                                        <input type="text" id="company" name="company" placeholder="Firma Ünvanı" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    </div>
+                                </div>
+
+                                <div class="space-y-1">
+                                    <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        E-Posta Adresi <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" required placeholder="ahmet@sirketiniz.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                </div>
+
+                                <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-[#DC2626] hover:bg-[#b91c1c] text-white font-extrabold text-base shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:scale-[1.005] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer border border-red-400/30">
+                                    <span>Hemen Bilgi & Teklif İsteyin</span>
+                                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+
+                                <p class="text-[11px] text-center text-slate-400 mt-2 flex items-center justify-center gap-1">
+                                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
+                                    Verileriniz KVKK kapsamında %100 güvende tutulmaktadır.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 2. AĞ ALTYAPISI VE KABLOLAMA YETENEKLERİ (3x2 GRID KARTLAR)               -->
+        <!-- ========================================================================= -->
+        <section id="network-ozellikler" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-black tracking-widest text-[#0F172A] uppercase bg-slate-200 px-3.5 py-1.5 rounded-full border border-slate-300">
+                        ENDÜSTRİYEL AĞ MİMARİSİ
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Ağ Altyapısı ve Kablolama <span class="text-[#1E3A8A]">Yetenekleri</span>
+                    </h2>
+                    <p class="text-base text-slate-600 font-normal">
+                        Ofis, plaza ve fabrikalarda veri iletişimini en üst seviyeye taşıyan profesyonel yapısal kablolama ve switch konfigürasyonları.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+
+                    <!-- Kart 1: Yapısal Kablolama -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0EA5E9] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-sky-50 text-[#0EA5E9] flex items-center justify-center group-hover:bg-[#0EA5E9] group-hover:text-white transition-colors">
+                                <i data-lucide="git-commit-horizontal" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#0EA5E9] transition-colors">Yapısal Kablolama</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Cat6, Cat7 ve Fiber Optik kablo hatlarının yönetmeliklere uygun çekilmesi, etiketlenmesi, tavalanması ve güvenli kanallanması.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 2: Sistem Kabini Düzenleme & Patch Panel -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#1E3A8A] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-blue-50 text-[#1E3A8A] flex items-center justify-center group-hover:bg-[#1E3A8A] group-hover:text-white transition-colors">
+                                <i data-lucide="server" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#1E3A8A] transition-colors">Sistem Kabini Düzenleme & Patch Panel</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Server kabinlerindeki karmaşık kablo yapısının düzenlenmesi, patch panel sonlandırmaları ve estetik etiketleme çözümleri.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 3: Managed Switch & VLAN Konfigürasyonu -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-red-50 text-[#DC2626] flex items-center justify-center group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                                <i data-lucide="sliders-horizontal" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Managed Switch & VLAN Konfigürasyonu</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Ağ trafiğini departman bazlı (Muhasebe, Üretim, Yönetim) izole ederek hızı artıran Layer 2/3 akıllı switch kurulumları.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 4: Kurumsal Wi-Fi & Access Point -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                                <i data-lucide="wifi" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Kurumsal Wi-Fi & Access Point</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Ofis ve fabrika genelinde kesintisiz dolaşım (roaming) sağlayan, yüksek kullanıcı kapasiteli sinyal odaklı Access Point altyapısı.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 5: Sinyal Testi ve Sertifikalandırma -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-purple-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                                <i data-lucide="file-check-2" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-purple-600 transition-colors">Sinyal Testi & Sertifikalandırma</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Çekilen hattın kalitesini, kayıplarını ve veri aktarım hızını kalibre eden Fluke test cihazı ölçümleri ve resmi belgelendirme.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 6: Ağ Teşhis ve Performans İyileştirme -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-cyan-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                                <i data-lucide="activity" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-cyan-600 transition-colors">Ağ Teşhis & Performans İyileştirme</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Mevcut ağdaki yavaşlama, paket kaybı, broadcast fırtınaları ve kopma sorunlarının profesyonel analiz cihazlarıyla tespiti ve bakımı.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 3. NEDEN COMPITURK AĞ ALTYAPISI? (LACİVERT & KIRMIZI ACCENT BÖLÜMÜ)       -->
+        <!-- ========================================================================= -->
+        <section id="neden-compiturk-network" class="py-16 lg:py-24 bg-[#0F172A] text-white">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-white font-bold text-xs border border-white/20">
+                            <i data-lucide="zap" class="w-4 h-4 text-[#0EA5E9]"></i>
+                            YÜKSEK HIZLI BAĞLANTI & KESİNTİSİZ TRAFİK
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                            Neden Compiturk <br />
+                            Ağ Altyapı Çözümleri?
+                        </h2>
+                        <p class="text-slate-300 text-base leading-relaxed">
+                            Ağ yavaşlıklarını, kopmaları ve veri iletim sorunlarını ortadan kaldıran, özellikle DİA ERP bulut sistemlerinin saniyesinde yanıt vermesini sağlayan endüstriyel kablolama ve switch mimarisi.
+                        </p>
+                        <div class="space-y-3 text-sm font-semibold text-white">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0EA5E9]"></i>
+                                <span>Fluke test sertifikalı Cat6/Cat7 altyapı ile gigabit hızında kayıpsız veri akışı</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0EA5E9]"></i>
+                                <span>Etiketli ve düzenli sistem kabinleri sayesinde arızalara anında müdahale imkanı</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0EA5E9]"></i>
+                                <span>VLAN mimarisi ile departmanlar arası izole ve güvenli ağ trafiği yönetimi</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sağ Taraf İstatistik Paneli -->
+                    <div class="bg-slate-900 text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-slate-800 space-y-6">
+                        <div class="border-b border-slate-800 pb-5">
+                            <div class="text-4xl font-black text-[#0EA5E9]">10 Gbps</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Fiber Optik Omurga Hızı</div>
+                            <p class="text-xs text-slate-400 mt-1">Katlar ve binalar arası yüksek hızlı fiber bağlantılarla sıfır gecikme.</p>
+                        </div>
+
+                        <div>
+                            <div class="text-4xl font-black text-[#DC2626]">10 Elektrik / Data</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Özenli Etiketleme & Düzen</div>
+                            <p class="text-xs text-slate-400 mt-1">Kabin içinde hangi kablonun nereye gittiği anlaşılan profesyonel işçilik.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 4. 4 ADIMDA AĞ ALTYAPISI KURULUM SÜRECİ                                   -->
+        <!-- ========================================================================= -->
+        <section id="network-adimlari" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider bg-slate-200 px-3.5 py-1.5 rounded-full border border-slate-300">
+                        SİSTEMATİK KURULUM AKIŞI
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        4 Adımda Ağ Altyapısı <span class="text-[#1E3A8A]">Kurulum Süreci</span>
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        Kurumsal network altyapınızı sıfırdan kurmak veya yenilemek için izlediğimiz adımlar.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+
+                    <!-- Adım 1 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0EA5E9] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-sky-50 text-[#0EA5E9] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="compass" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#0EA5E9] transition-colors">01</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Saha Keşfi & Metraj</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Ücretsiz saha keşfi yapılarak kablo metrajı, tavası geçiş güzergahları ve kabin lokasyonları planlanır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 2 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#1E3A8A] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#1E3A8A] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="git-commit-horizontal" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#1E3A8A] transition-colors">02</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Kablolama & Sonlandırma</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Yapısal kablolama hatları çekilir, kanal montajları yapılır ve patch panel sonlandırmaları titizlikle tamamlanır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 3 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-purple-600 transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="sliders" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-purple-600 transition-colors">03</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Switch & VLAN Konfigürasyonu</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Akıllı Managed Switch cihazları konfigüre edilerek VLAN grupları ve merkezi Wi-Fi erişim noktaları devreye alınır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 4 -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-emerald-500/80 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="rocket" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-emerald-500">04</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Fluke Testleri & Teslimat</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Fluke test raporları alınır, etiketli şemalar hazırlanarak ağ altyapısı sorunsuz şekilde canlı kullanıma sunulur.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 5. BİRLİKTE KULLANABİLECEĞİNİZ DİĞER IT ÇÖZÜMLERİMİZ                      -->
+        <!-- ========================================================================= -->
+        <section id="tamamlayici-cozumler" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                        Birlikte Kullanabileceğiniz <span class="text-[#1E3A8A]">Diğer IT Çözümlerimiz</span>
+                    </h2>
+                    <p class="text-sm text-slate-600">Ağ altyapınızı tamamlayan ve güvenliği en üst düzeye çıkaran diğer IT hizmetlerimiz.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Çözüm 1 -->
+                    <a href="sunucu-kurulumu.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#1E3A8A] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#1E3A8A] flex items-center justify-center mb-4 group-hover:bg-[#1E3A8A] group-hover:text-white transition-colors">
+                            <i data-lucide="server" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#1E3A8A] transition-colors">Sunucu Kurulumu</h3>
+                        <p class="text-xs text-slate-500 mt-1">Yüksek performanslı kurumsal sunucu ve sanallaştırma.</p>
+                    </a>
+
+                    <!-- Çözüm 2 -->
+                    <a href="guvenlik-duvari.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-red-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-red-50 text-red-600 flex items-center justify-center mb-4 group-hover:bg-red-600 group-hover:text-white transition-colors">
+                            <i data-lucide="shield" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-red-600 transition-colors">Güvenlik Duvarı (Firewall)</h3>
+                        <p class="text-xs text-slate-500 mt-1">Ağ trafiğini koruyan UTM güvenlik duvarı sistemleri.</p>
+                    </a>
+
+                    <!-- Çözüm 3 -->
+                    <a href="yedekleme-cozumleri.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <i data-lucide="database-backup" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Yedekleme Çözümleri</h3>
+                        <p class="text-xs text-slate-500 mt-1">Otomatik bulut ve lokal veri yedekleme mimarileri.</p>
+                    </a>
+
+                    <!-- Çözüm 4 -->
+                    <a href="../index.html#it-hizmetler" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-purple-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center mb-4 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i data-lucide="key-round" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-purple-600 transition-colors">Yazılım Lisanslama</h3>
+                        <p class="text-xs text-slate-500 mt-1">Kurumsal işletim sistemi ve network lisansları.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 6. SIKÇA SORULAN SORULAR (SEO FAQ - HTML5 ACCORDION)                     -->
+        <!-- ========================================================================= -->
+        <section id="faq" class="py-16 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                
+                <div class="text-center space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Sıkça Sorulan <span class="text-[#1E3A8A]">Sorular</span></h2>
+                    <p class="text-sm text-slate-600">Kurumsal ağ altyapısı ve yapısal kablolama çözümleri hakkında merak edilenler.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Soru 1 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>Cat6, Cat6A ve Cat7 kablolama arasındaki temel farklar nelerdir?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Cat6 kablolar 250 MHz'e kadar destek vererek 1 Gbps hız sunar. Cat6A ve Cat7 kablolar ise 500 MHz ila 600+ MHz frekans aralığında çalışarak 10 Gbps'ye kadar çok yüksek hızları uzun mesafelerde bile paket kaybı yaşamadan iletir. Yoğun veri trafiği olan modern ofisler ve fabrikalar için Cat6A/Cat7 önerilir.
+                        </p>
+                    </details>
+
+                    <!-- Soru 2 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>Büyük alanlarda Wi-Fi kopmalarını önlemek için nasıl bir altyapı kurulmalıdır?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Tek bir modem yerine, merkezi bir kontrolcüye bağlı birden fazla kurumsal Access Point (Ap) ile "Roaming" (Kesintisiz Dolaşım) destekli Wi-Fi altyapısı kurulmalıdır. Bu sayede personel ofis içinde yürürken bağlantısı kopmadan en yakın güçlü noktaya otomatik devredilir.
+                        </p>
+                    </details>
+
+                    <!-- Soru 3 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>Mevcut dağınık ve etiketsiz kabinimiz iş operasyonu durmadan düzenlenebilir mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Kabin düzenleme (Cabinet Clean-up) operasyonlarımızı genellikle mesai saatleri dışında veya hafta sonu planlayarak şirket içi internet ve DİA ERP akışınızın kesintiye uğramasını önlüyoruz.
+                        </p>
+                    </details>
+
+                    <!-- Soru 4 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>Fiber optik kablolama hangi mesafelerde ve durumlarda gereklidir?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Bakır kabloların standart mesafe sınırı 100 metredir. 100 metreyi aşan uzak binalar arası bağlantılarda, fabrikalarda veya elektromanyetik parazitin (motorlar, trafolar) çok yüksek olduğu endüstriyel ortamlarda sinyal kaybını önlemek için mutlaka Fiber Optik kablolama kullanılmalıdır.
+                        </p>
+                    </details>
+
+                    <!-- Soru 5 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>Ağ altyapı projelerinizde Fluke test raporu veriyor musunuz?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Kurulumu tamamlanan tüm data hatlarımız uluslararası standartlara göre Fluke kalibrasyon test cihazlarıyla test edilir ve proje bitiminde müşterimize detaylı sertifika raporu olarak sunulur.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 7. MÜŞTERİ YORUMLARI & REFERANSLAR (3 KART)                                -->
+        <!-- ========================================================================= -->
+        <section id="referanslar" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Müşterilerimiz <span class="text-[#1E3A8A]">Ne Diyor?</span></h2>
+                    <p class="text-sm text-slate-600">Ağ altyapılarını Compiturk ile yenileyen kurumsal firma yöneticilerinin görüşleri.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Yorum 1 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Fabrikamızdaki dağınık kablo yapısı ve sık yaşanan internet kopmaları işlerimizi aksatıyordu. Compiturk ekibi fiber omurga ve kabin düzenlemesi yaptıktan sonra ağımız tamamen kusursuz hale geldi."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Koray S.</span>
+                            <span class="text-xs text-slate-500 font-medium">Fabrika Müdürü - Metal Sanayi</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 2 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Yeni ofisimizin yapısal kablolaması ve VLAN switch konfigürasyonu hafta sonu hiç mesai kaybettirmeden tamamlandı. Fluke test raporlarını eksiksiz teslim aldık."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Beste N.</span>
+                            <span class="text-xs text-slate-500 font-medium">İdari İşler Müdürü - Mimarlık Ofisi</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 3 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "DİA ERP veri akışımız artık gigabit hızında ve çok stabil. Kabin içindeki o korkunç kablo karmaşası adeta sanat eserine döndü. Compiturk'e profesyonel işçilikleri için teşekkür ederiz."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Tamer G.</span>
+                            <span class="text-xs text-slate-500 font-medium">IT Sorumlusu - Toptan Dağıtım</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 8. BLOG YAZILARIMIZ (3 KART)                                              -->
+        <!-- ========================================================================= -->
+        <section id="blog" class="py-16 bg-[#F8FAFC]">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Network Altyapı <span class="text-[#1E3A8A]">Rehberi & Makaleler</span></h2>
+                    <p class="text-sm text-slate-600">Yapısal kablolama ve ağ performansı optimizasyonuna dair uzman içeriklerimiz.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Makale 1 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#1E3A8A] uppercase tracking-wider bg-blue-50 px-2.5 py-1 rounded-md">YAPISAL KABLOLAMA</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#1E3A8A] transition-colors line-clamp-2">
+                                Kurumsal Şirketlerde Yapısal Kablolama Standartları Ve Önemi
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Cat6/Cat7 ve fiber optik hatların doğru planlanmasının kurumsal ağ ömrüne ve hızına katkıları.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 2 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#0EA5E9] uppercase tracking-wider bg-sky-50 px-2.5 py-1 rounded-md">KAPSAMLI WI-FI</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#0EA5E9] transition-colors line-clamp-2">
+                                Ofis Ve Fabrikalarda Kesintisiz Wi-Fi Kapsama Alanı Oluşturma
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Kurumsal Access Point yerleşimi ve roaming teknolojisi ile ölü noktaları ortadan kaldırma rehberi.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 3 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded-md">SWITCH & VLAN</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2">
+                                Managed Switch Ve VLAN Kullanımının Ağ Güvenliğine Ve Hızına Etkisi
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Ağ trafiğini departmanlara bölerek broadcast fırtınalarını önleme ve performansı artırma teknikleri.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-footer"></div>
+
+    <!-- SCRIPT ÇAĞRILARI -->
+    <script src="../js/components.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurumsal Bilgisayar & Yazıcı Kiralama Çözümleri | Compiturk</title>
+    <meta name="description" content="Şirketinizin donanım ihtiyaçlarını yüksek satın alma maliyeti olmadan; avantajlı laptop, masaüstü, workstation ve yazıcı kiralama modellerimizle karşılıyoruz. Compiturk.">
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#DC2626',
+                        brandRedDark: '#B91C1C',
+                        brandNavy: '#0F172A',
+                        brandTechBlue: '#0EA5E9',
+                        brandSlate: '#334155',
+                        brandIce: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
+
+    <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-header"></div>
+
+    <!-- MAIN İÇERİK BAŞLANGICI -->
+    <main class="flex-grow">
+
+        <!-- ========================================================================= -->
+        <!-- 1. HERO / BANNER SECTION (TEKNOLOJİK KOYU LACİVERT ARKA PLAN)           -->
+        <!-- ========================================================================= -->
+        <section id="module-hero" class="w-full bg-gradient-to-r from-[#0F172A] via-[#1E3A8A] to-[#0F172A] text-white py-16 lg:py-24 relative overflow-hidden z-20">
+            <!-- Arka Plan Vektörel Desen & Mavi Aksan İşıltılar -->
+            <div class="absolute inset-0 bg-[radial-gradient(rgba(14,165,233,0.15)_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#0EA5E9]/20 rounded-full blur-[130px] pointer-events-none"></div>
+            <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#DC2626]/20 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+                    <!-- SOL KOLON: İÇERİK VE VURGULAR (Col-span-7) -->
+                    <div class="lg:col-span-7 space-y-6 text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#0EA5E9] font-bold text-xs sm:text-sm tracking-wide">
+                            <span class="w-2 h-2 rounded-full bg-[#0EA5E9] animate-pulse"></span>
+                            <span class="text-white">OPERASYONEL DONANIM KİRALAMA & OPEX</span>
+                        </div>
+
+                        <!-- TEK H1 BAŞLIĞI -->
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                            Kurumsal Bilgisayar & Yazıcı <br class="hidden sm:inline" />
+                            <span class="text-[#0EA5E9]">Kiralama Çözümleri</span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl">
+                            Şirketinizin donanım ihtiyaçlarını yüksek satın alma maliyeti olmadan; avantajlı laptop, masaüstü, workstation ve endüstriyel yazıcı kiralama modellerimizle karşılıyoruz.
+                        </p>
+
+                        <!-- İkonlu Vurgu Maddeleri -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/15">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-[#0EA5E9] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="laptop" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Esnek Dönemsel & Uzun Vadeli Kiralama
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="percent" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    %100 Vergi & Gider Avantajı (OpEx)
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-blue-300 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="wrench" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Toner, Bakım & Birebir Değişim Dahil
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SAĞ KOLON: GÖRSEL KARTI & FORM KUTUSU (Col-span-5) -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <!-- Donanım Kiralama Temalı Kart -->
+                        <div class="bg-slate-900/80 backdrop-blur-md rounded-2xl p-6 border border-slate-700 shadow-xl flex items-center gap-5">
+                            <div class="w-16 h-16 rounded-xl bg-[#0EA5E9]/20 border border-[#0EA5E9]/40 text-[#0EA5E9] flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="repeat" class="w-8 h-8"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <h3 class="text-sm font-bold text-white uppercase tracking-wider">Sermayenizi Şirket Büyütmeye Ayırın</h3>
+                                <p class="text-xs text-slate-400">Yüksek donanım bütçeleri ayırmak yerine operasyonel kiralama ile nakit akışınızı koruyun, tüm bakım ve değişimleri bize bırakın.</p>
+                            </div>
+                        </div>
+
+                        <!-- Beyaz Form Kutusu -->
+                        <div class="bg-white rounded-2xl p-6 sm:p-8 text-slate-900 shadow-2xl border-2 border-[#DC2626]/40 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#0F1D38] via-[#0EA5E9] to-[#DC2626]"></div>
+
+                            <div class="border-b border-slate-100 pb-4 mb-5 pt-1">
+                                <h2 class="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
+                                    <i data-lucide="sparkles" class="w-6 h-6 text-[#DC2626]"></i>
+                                    Kiralama Teklifi Alın
+                                </h2>
+                                <p class="text-xs text-slate-500 mt-1">
+                                    Bilgisayar ve yazıcı kiralama ihtiyaçlarınız için hemen bilgilerinizi bırakın, uzmanımız arasın.
+                                </p>
+                            </div>
+
+                            <form action="#" method="POST" class="space-y-4" onsubmit="event.preventDefault();">
+                                <div class="space-y-1">
+                                    <label for="fullname" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        Ad Soyad <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="text" id="fullname" name="fullname" required placeholder="Örn: Ahmet Yılmaz" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="space-y-1">
+                                        <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Telefon <span class="text-[#DC2626]">*</span>
+                                        </label>
+                                        <input type="tel" id="phone" name="phone" required placeholder="05XX XXX XX XX" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    </div>
+
+                                    <div class="space-y-1">
+                                        <label for="company" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Şirket Adı
+                                        </label>
+                                        <input type="text" id="company" name="company" placeholder="Firma Ünvanı" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    </div>
+                                </div>
+
+                                <div class="space-y-1">
+                                    <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        E-Posta Adresi <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" required placeholder="ahmet@sirketiniz.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                </div>
+
+                                <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-[#DC2626] hover:bg-[#b91c1c] text-white font-extrabold text-base shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:scale-[1.005] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer border border-red-400/30">
+                                    <span>Hemen Bilgi & Teklif İsteyin</span>
+                                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+
+                                <p class="text-[11px] text-center text-slate-400 mt-2 flex items-center justify-center gap-1">
+                                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
+                                    Verileriniz KVKK kapsamında %100 güvende tutulmaktadır.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 2. DONANIM KİRALAMA YETENEKLERİ (3x2 GRID KARTLAR)                        -->
+        <!-- ========================================================================= -->
+        <section id="kiralama-ozellikler" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-black tracking-widest text-[#0F172A] uppercase bg-slate-200 px-3.5 py-1.5 rounded-full border border-slate-300">
+                        ESNEK OPERASYONEL KİRALAMA MODELLERİ
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Donanım Kiralama <span class="text-[#1E3A8A]">Yetenekleri</span>
+                    </h2>
+                    <p class="text-base text-slate-600 font-normal">
+                        Satın alma maliyetlerini ortadan kaldıran, şirket bütçenize esneklik katan kurumsal donanım kiralama çözümleri.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+
+                    <!-- Kart 1: Kurumsal Laptop & PC Kiralama -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0EA5E9] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-sky-50 text-[#0EA5E9] flex items-center justify-center group-hover:bg-[#0EA5E9] group-hover:text-white transition-colors">
+                                <i data-lucide="laptop" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#0EA5E9] transition-colors">Kurumsal Laptop & PC Kiralama</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                12, 24 veya 36 aylık operasyonel kiralama ile şirket personeline her zaman en son teknoloji işlemci ve performans özelliklerine sahip cihazlar sağlama.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 2: Sayfa Başı Yönelimli Yazıcı Kiralama -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#1E3A8A] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-blue-50 text-[#1E3A8A] flex items-center justify-center group-hover:bg-[#1E3A8A] group-hover:text-white transition-colors">
+                                <i data-lucide="printer" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#1E3A8A] transition-colors">Sayfa Başı Yazıcı Kiralama</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Toner, sarf malzemesi değişimi, teknik servis ve bakımın kiralama bedeline dahil olduğu, çok işlevli kurumsal fotokopi ve yazıcı kiralama modeli.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 3: Workstation & Grafik Sunucu Kiralama -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-red-50 text-[#DC2626] flex items-center justify-center group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                                <i data-lucide="cpu" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Workstation & Grafik Sunucu Kiralama</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Mühendislik, mimarlık, 3D tasarım ve veri bilimi ekipleri için üst düzey GPU ve işlemci gücüne sahip yüksek performanslı iş istasyonu kiralama.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 4: Etkinlik & Fuar İçin Dönemsel Kiralama -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                                <i data-lucide="calendar-range" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Etkinlik & Fuar İçin Dönemsel Kiralama</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Şirket toplantıları, kongreler, fuarlar veya geçici projeler için ihtiyaç duyulan adetlerde haftalık veya aylık kısa vadeli esnek donanım kiralama.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 5: Sermaye Koruması & Vergi Avantajı -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-purple-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                                <i data-lucide="landmark" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-purple-600 transition-colors">Sermaye Koruması & Vergi Avantajı</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Toplu satın alma maliyeti yerine, ödenen kiralama faturalarının tamamını doğrudan gider (OpEx) yazarak vergi avantajı sağlama imkanı.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 6: Birebir Cihaz Değişim Garantisi -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-cyan-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                                <i data-lucide="shield-check" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-cyan-600 transition-colors">Birebir Cihaz Değişim Garantisi</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Sözleşme süresince arızalanan veya hasar gören kiralık donanımın vakit kaybetmeden muadili ile yerinde değiştirilerek iş akışının kesilmemesi.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 3. NEDEN COMPITURK KİRALAMA HİZMETLERİ? (LACİVERT & KIRMIZI ACCENT)       -->
+        <!-- ========================================================================= -->
+        <section id="neden-compiturk-kiralama" class="py-16 lg:py-24 bg-[#0F172A] text-white">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-white font-bold text-xs border border-white/20">
+                            <i data-lucide="zap" class="w-4 h-4 text-[#0EA5E9]"></i>
+                            NAKİT AKIŞI & BÜTÇE ESNEKLİĞİ
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                            Neden Compiturk <br />
+                            Donanım Kiralama Hizmetleri?
+                        </h2>
+                        <p class="text-slate-300 text-base leading-relaxed">
+                            Donanım eskitme maliyetini, bakım dertlerini ve toplu bütçe yükünü bitiren; şirketiniz için maksimum vergi avantajı ve operasyonel esneklik sağlayan kiralama modeli.
+                        </p>
+                        <div class="space-y-3 text-sm font-semibold text-white">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0EA5E9]"></i>
+                                <span>Yüksek sermaye harcamalarından kaçınarak nakit akışınızı koruyun</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0EA5E9]"></i>
+                                <span>Kiralama faturalarının tamamını gider göstererek vergi avantajı elde edin</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0EA5E9]"></i>
+                                <span>Arıza, bakım ve sarf malzemesi maliyetleriyle hiç uğraşmayın</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sağ Taraf İstatistik Paneli -->
+                    <div class="bg-slate-900 text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-slate-800 space-y-6">
+                        <div class="border-b border-slate-800 pb-5">
+                            <div class="text-4xl font-black text-[#0EA5E9]">%100 Gider</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">OpEx Vergi Avantajı</div>
+                            <p class="text-xs text-slate-400 mt-1">Demirbaş amortisman hesaplarıyla uğraşmadan kiralama bedelini doğrudan gider yazın.</p>
+                        </div>
+
+                        <div>
+                            <div class="text-4xl font-black text-[#DC2626]">Birebir Değişim</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Kesintisiz Donanım Güvencesi</div>
+                            <p class="text-xs text-slate-400 mt-1">Arıza durumunda anında yedek cihaz teminiyle projeleriniz yarım kalmaz.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 4. 4 ADIMDA KİRALAMA SÜRECİ                                               -->
+        <!-- ========================================================================= -->
+        <section id="kiralama-adimlari" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider bg-slate-200 px-3.5 py-1.5 rounded-full border border-slate-300">
+                        SİSTEMATİK KİRALAMA AKIŞI
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        4 Adımda Kiralama <span class="text-[#1E3A8A]">Süreci</span>
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        Şirketiniz için en uygun donanım kiralama paketini devreye almak izlediğimiz adımlar.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+
+                    <!-- Adım 1 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0EA5E9] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-sky-50 text-[#0EA5E9] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="search" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#0EA5E9] transition-colors">01</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">İhtiyaç & Kullanıcı Analizi</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Personel sayınız, departman yazılım ihtiyaçlarınız ve aylık baskı hacimleriniz analiz edilerek doğru cihazlar belirlenir.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 2 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#1E3A8A] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#1E3A8A] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="file-contract" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#1E3A8A] transition-colors">02</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Paket & Süre Belirleme</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Bütçenize en uygun kiralama süresi (12-36 ay) ve esnek ödeme planları netleştirilerek sözleşme yapılır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 3 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-purple-600 transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="truck" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-purple-600 transition-colors">03</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Kurulum & Adrese Teslim</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Cihazlar yazılımları, güvenlik ayarları ve kullanıcı tanımları yapılmış şekilde ofisinize teslim edilip kurulur.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 4 -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-emerald-500/80 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-emerald-500">04</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Kesintisiz Bakım & Destek</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Kiralama süresi boyunca tüm teknik destek, toner değişimi ve birebir cihaz değişim garantisi kesintisiz sürdürülür.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 5. BİRLİKTE KULLANABİLECEĞİNİZ DİĞER IT ÇÖZÜMLERİMİZ                      -->
+        <!-- ========================================================================= -->
+        <section id="tamamlayici-cozumler" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                        Birlikte Kullanabileceğiniz <span class="text-[#1E3A8A]">Diğer IT Çözümlerimiz</span>
+                    </h2>
+                    <p class="text-sm text-slate-600">Donanım kiralama altyapınızı tamamlayan ve verimliliği artıran diğer hizmetlerimiz.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Çözüm 1 -->
+                    <a href="donanim-destegi.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#1E3A8A] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#1E3A8A] flex items-center justify-center mb-4 group-hover:bg-[#1E3A8A] group-hover:text-white transition-colors">
+                            <i data-lucide="wrench" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#1E3A8A] transition-colors">Donanım Desteği</h3>
+                        <p class="text-xs text-slate-500 mt-1">SLA standartlarında yerinde ve hızlı teknik destek.</p>
+                    </a>
+
+                    <!-- Çözüm 2 -->
+                    <a href="sunucu-kurulumu.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-sky-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center mb-4 group-hover:bg-sky-600 group-hover:text-white transition-colors">
+                            <i data-lucide="server" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-sky-600 transition-colors">Sunucu Kurulumu</h3>
+                        <p class="text-xs text-slate-500 mt-1">Yüksek performanslı kurumsal sunucu çözümleri.</p>
+                    </a>
+
+                    <!-- Çözüm 3 -->
+                    <a href="yazilim-lisanslama.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-purple-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center mb-4 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i data-lucide="key-round" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-purple-600 transition-colors">Yazılım Lisanslama</h3>
+                        <p class="text-xs text-slate-500 mt-1">Kiralık cihazlar için Microsoft 365 ve antivirüs lisansları.</p>
+                    </a>
+
+                    <!-- Çözüm 4 -->
+                    <a href="yedekleme-cozumleri.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <i data-lucide="database-backup" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Yedekleme Çözümleri</h3>
+                        <p class="text-xs text-slate-500 mt-1">Kiralık bilgisayarlardaki verilerin güvenli yedeklenmesi.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 6. SIKÇA SORULAN SORULAR (SEO FAQ - HTML5 ACCORDION)                     -->
+        <!-- ========================================================================= -->
+        <section id="faq" class="py-16 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                
+                <div class="text-center space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Sıkça Sorulan <span class="text-[#1E3A8A]">Sorular</span></h2>
+                    <p class="text-sm text-slate-600">Kurumsal bilgisayar ve yazıcı kiralama çözümleri hakkında merak edilenler.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Soru 1 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>Bilgisayar kiralama faturaları vergiden düşülebilir mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Operasyonel kiralama faturalarının tamamı (KDV hariç tutar) şirketiniz tarafından doğrudan gider (OpEx) olarak muhasebeleştirilebilir ve vergiden düşülebilir. Demirbaş amortisman takibi gerektirmediği için finansal açıdan büyük avantaj sağlar.
+                        </p>
+                    </details>
+
+                    <!-- Soru 2 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>Yazıcı kiralamada toner ve kartuş giderleri kiralama fiyatına dahil midir?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Sayfa başı maliyetli veya paket yazıcı kiralama modellerimizde toner, sarf malzemesi değişimi, periyodik bakım ve arıza onarım hizmetleri tamamen kiralama bedeline dahildir. Ekstra kartuş masrafı yapmazsınız.
+                        </p>
+                    </details>
+
+                    <!-- Soru 3 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>Kiraladığımız cihazlar arızalanırsa ne kadar sürede değişim yapılıyor?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Kiralık cihazlarda yaşanan donanımsal arızalarda uzman teknisyenlerimiz yerinde müdahale eder. Yerinde çözülemeyen arızalarda ise iş akışınızın durmaması için derhal aynı veya üst model konsinye cihazla değişim yapılır.
+                        </p>
+                    </details>
+
+                    <!-- Soru 4 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>Minimum kiralama süresi ne kadardır?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Kurumsal uzun vadeli kiralamalarda minimum süre genellikle 12 aydır. Bunun yanı sıra fuarlar, kongreler ve geçici projeler için haftalık veya aylık kısa vadeli özel kiralama seçeneklerimiz de bulunmaktadır.
+                        </p>
+                    </details>
+
+                    <!-- Soru 5 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>Kiralama süresi sonunda cihazları satın alma veya yenileme opsiyonu var mı?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Sözleşme süresi sonunda dileyen müşterilerimiz cihazları çok uygun kalıntı değerlerle satın alabilir veya sözleşmeyi yenileyerek en son model yeni nesil cihazlarla donanımlarını güncelleyebilir.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 7. MÜŞTERİ YORUMLARI & REFERANSLAR (3 KART)                                -->
+        <!-- ========================================================================= -->
+        <section id="referanslar" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Müşterilerimiz <span class="text-[#1E3A8A]">Ne Diyor?</span></h2>
+                    <p class="text-sm text-slate-600">Donanım parkını Compiturk kiralama modelleri ile yenileyen kurumsal firma yöneticilerinin görüşleri.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Yorum 1 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Yeni açılan şubemiz için 30 adet laptop ve çok işlevli yazıcı kiraladık. Toplu satın alma maliyetinden kurtulduk ve faturaları doğrudan gider gösterdik. Compiturk kiralama modeli bütçemizi çok rahatlattı."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Can S.</span>
+                            <span class="text-xs text-slate-500 font-medium">Finans Direktörü - Hizmet Sektörü</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 2 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Yazıcı kiralamasında sayfa başı maliyet sistemiyle toner derdi tamamen bitti. Cihaz arızalandığında hemen gelip değiştiriyorlar. Operasyonel olarak sıfır dert."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Deniz A.</span>
+                            <span class="text-xs text-slate-500 font-medium">İdari İşler Sorumlusu - Toptan Ticaret</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 3 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Düzenlediğimiz büyük bir fuar organizasyonu için 3 haftalığına 15 adet notebook kiraladık. Kurulum dahil her şey eksiksiz yapıldı. Esnek çözümleri için teşekkürler."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Gökhan B.</span>
+                            <span class="text-xs text-slate-500 font-medium">Proje Yöneticisi - Organizasyon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 8. BLOG YAZILARIMIZ (3 KART)                                              -->
+        <!-- ========================================================================= -->
+        <section id="blog" class="py-16 bg-[#F8FAFC]">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Kiralama & Finans <span class="text-[#1E3A8A]">Rehberi & Makaleler</span></h2>
+                    <p class="text-sm text-slate-600">Kurumsal donanım kiralama modelleri ve bütçe yönetimine dair uzman içeriklerimiz.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Makale 1 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#1E3A8A] uppercase tracking-wider bg-blue-50 px-2.5 py-1 rounded-md">OPEX VS CAPEX</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#1E3A8A] transition-colors line-clamp-2">
+                                Kurumsal Şirketlerde Donanım Satın Alma Ve Kiralama (OpEx vs CapEx) Karşılaştırması
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Sermaye harcamalarını azaltarak operasyonel kiralama modeliyle vergi ve nakit akışı avantajı elde etme yöntemleri.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 2 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#0EA5E9] uppercase tracking-wider bg-sky-50 px-2.5 py-1 rounded-md">YAZICI MALİYETİ</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#0EA5E9] transition-colors line-clamp-2">
+                                Sayfa Başı Maliyetli Yazıcı Kiralamanın Şirket Bütçelerine Sağladığı Tasarruf
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Kartuş ve toner masraflarını tarihe gömen sayfa başı kiralama anlaşmalarının finansal avantajları.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 3 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded-md">PROJE KİRALAMA</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2">
+                                Geçici Proje Ve Fuarlarda Donanım Kiralamanın Operasyonel Faydaları
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Kısa vadeli etkinliklerde cihaz satın alma maliyetiyle uğraşmadan esnek kiralama modelleri ile çözüm üretme.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-header"></div>
+
+    <!-- SCRIPT ÇAĞRILARI -->
+    <script src="../js/components.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

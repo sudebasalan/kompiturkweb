@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML Hub — XML Entegrasyon Çözümü | Tedarikçi XML Aktarımı | Compiturk</title>
+    <meta name="description" content="Tedarikçilerinizden gelen sınırsız XML veri akışını DİA ERP ve e-ticaret sistemlerinizle tam entegre yönetin; ürün, stok ve fiyat güncellemelerini otomatize edin. Compiturk.">
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#DC2626',
+                        brandRedDark: '#B91C1C',
+                        brandNavy: '#0F172A',
+                        brandSlate: '#334155',
+                        brandIce: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
+
+    <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-header"></div>
+
+    <!-- MAIN İÇERİK BAŞLANGICI -->
+    <main class="flex-grow">
+
+        <!-- ========================================================================= -->
+        <!-- 1. HERO / BANNER SECTION (LACİVERT & KIRMIZI VURGULU ARKA PLAN)           -->
+        <!-- ========================================================================= -->
+        <section id="module-hero" class="w-full bg-[#0F172A] text-white py-16 lg:py-24 relative overflow-hidden z-20">
+            <!-- Arka Plan Vektörel Desen & Kırmızı/Lacivert İşıltılar -->
+            <div class="absolute inset-0 bg-[radial-gradient(rgba(220,38,38,0.15)_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#DC2626]/20 rounded-full blur-[130px] pointer-events-none"></div>
+            <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#1E3A8A]/40 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+                    <!-- SOL KOLON: İÇERİK VE VURGULAR (Col-span-7) -->
+                    <div class="lg:col-span-7 space-y-6 text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#DC2626] font-bold text-xs sm:text-sm tracking-wide">
+                            <span class="w-2 h-2 rounded-full bg-[#DC2626] animate-pulse"></span>
+                            <span class="text-white">SINIRSIZ TEDARİKÇİ XML OTOMASYONU</span>
+                        </div>
+
+                        <!-- TEK H1 BAŞLIĞI -->
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                            XML Hub — XML Entegrasyon <br class="hidden sm:inline" />
+                            <span class="text-[#DC2626]">Çözümü</span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl">
+                            Tedarikçilerinizden gelen sınırsız XML veri akışını DİA ERP ve e-ticaret sistemlerinizle tam entegre yönetin; ürün, stok, fiyat ve varyant güncellemelerini otomatize edin.
+                        </p>
+
+                        <!-- İkonlu Vurgu Maddeleri -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/15">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-[#DC2626] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="database" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Sınırsız XML Import & Export
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="refresh-cw" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Otomatik Stok / Fiyat Eşleme
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-blue-300 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="percent" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Dinamik Kâr Marjı ve Kurallar
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SAĞ KOLON: DEMO & BİLGİ FORMU KUTUSU (Col-span-5) -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-white rounded-2xl p-6 sm:p-8 text-slate-900 shadow-2xl border-2 border-[#DC2626]/40 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#0F1D38] via-[#DC2626] to-[#B91C1C]"></div>
+
+                            <div class="border-b border-slate-100 pb-4 mb-5 pt-1">
+                                <h2 class="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
+                                    <i data-lucide="sparkles" class="w-6 h-6 text-[#DC2626]"></i>
+                                    XML Hub Demo & Teklif Alın
+                                </h2>
+                                <p class="text-xs text-slate-500 mt-1">
+                                    Tedarikçi XML entegrasyon ihtiyaçlarınız için hemen bilgilerinizi bırakın, uzmanımız arasın.
+                                </p>
+                            </div>
+
+                            <form action="#" method="POST" class="space-y-4" onsubmit="event.preventDefault();">
+                                <div class="space-y-1">
+                                    <label for="fullname" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        Ad Soyad <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="text" id="fullname" name="fullname" required placeholder="Örn: Ahmet Yılmaz" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="space-y-1">
+                                        <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Telefon <span class="text-[#DC2626]">*</span>
+                                        </label>
+                                        <input type="tel" id="phone" name="phone" required placeholder="05XX XXX XX XX" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    </div>
+
+                                    <div class="space-y-1">
+                                        <label for="company" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Şirket Adı
+                                        </label>
+                                        <input type="text" id="company" name="company" placeholder="Firma Ünvanı" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    </div>
+                                </div>
+
+                                <div class="space-y-1">
+                                    <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        E-Posta Adresi <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" required placeholder="ahmet@sirketiniz.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                </div>
+
+                                <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-[#DC2626] hover:bg-[#b91c1c] text-white font-extrabold text-base shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:scale-[1.005] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer border border-red-400/30">
+                                    <span>Hemen Bilgi & Teklif İsteyin</span>
+                                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+
+                                <p class="text-[11px] text-center text-slate-400 mt-2 flex items-center justify-center gap-1">
+                                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
+                                    Verileriniz KVKK kapsamında %100 güvende tutulmaktadır.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 2. XML HUB ENTEGRASYON YETENEKLERİ (3x2 GRID KARTLAR)                     -->
+        <!-- ========================================================================= -->
+        <section id="xml-hub-ozellikler" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-black tracking-widest text-[#DC2626] uppercase bg-red-50 px-3.5 py-1.5 rounded-full border border-red-100">
+                        AKILLI VERİ AKIŞI MİMARİSİ
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        XML Hub Entegrasyon <span class="text-[#DC2626]">Yetenekleri</span>
+                    </h2>
+                    <p class="text-base text-slate-600 font-normal">
+                        Yüzlerce tedarikçiden gelen farklı formatlardaki XML verilerini tek düzen kurallarla işleyen güçlü otomasyon.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+
+                    <!-- Kart 1: Çoklu XML İçe & Dışa Aktarımı -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-red-50 text-[#DC2626] flex items-center justify-center group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                                <i data-lucide="folder-sync" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Çoklu XML İçe & Dışa Aktarımı</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Sınırsız sayıda tedarikçi XML'ini okuma, verileri birleştirme ve kendi bayilerinize özel XML çıktısı (Export) oluşturma imkanı.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 2: Akıllı Kategori ve Marka Eşleme -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0F172A] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-slate-100 text-[#0F172A] flex items-center justify-center group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
+                                <i data-lucide="git-merge" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors">Akıllı Kategori & Marka Eşleme</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Farklı XML standartlarındaki kategori isimlerini DİA ERP ve web sitenizdeki ağaç yapısına otomatik eşleme yeteneği.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 3: Otomatik Stok ve Fiyat Güncelleme -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                                <i data-lucide="refresh-cw" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Otomatik Stok & Fiyat Güncelleme</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Zamanlanmış görevlerle tedarikçi stok ve fiyat değişikliklerini anlık olarak sisteme yansıtarak güncel kalın.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 4: Esnek Kâr Marjı ve Fiyat Tanımları -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                                <i data-lucide="percent" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Esnek Kâr Marjı & Fiyat Tanımları</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Tedarikçi, marka veya kategori bazında otomatik yüzde/tutar artışı uygulama ve KDV hesaplama kuralları oluşturun.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 5: Varyant ve Görsel Yönetimi -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-purple-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                                <i data-lucide="image-plus" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-purple-600 transition-colors">Varyant & Görsel Yönetimi</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Renk, beden, teknik detay varyantlarını ve ürünlerin yüksek çözünürlüklü görsellerini eksiksiz olarak sisteme aktarın.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 6: DİA ERP İle Çift Yönlü Entegrasyon -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-cyan-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                                <i data-lucide="cpu" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-cyan-600 transition-colors">DİA ERP Çift Yönlü Entegrasyon</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                XML'deki verileri saniyeler içinde DİA ERP stok kartlarına dönüştürün ve muhasebe tabanınızla tam uyumlu çalıştırın.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 3. NEDEN COMPITURK XML HUB? (KIRMIZI ACCENT BÖLÜMÜ)                       -->
+        <!-- ========================================================================= -->
+        <section id="neden-compiturk-xml" class="py-16 lg:py-24 bg-[#DC2626] text-white">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-white font-bold text-xs border border-white/20">
+                            <i data-lucide="zap" class="w-4 h-4"></i>
+                            B2B OTOMASYON AVANTAJLARI
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                            Neden Compiturk <br />
+                            XML Hub Çözümü?
+                        </h2>
+                        <p class="text-red-100 text-base leading-relaxed">
+                            Manuel veri girişi maliyetlerini tamamen sıfırlayan, hatalı fiyat ve stok satışlarının önüne geçen profesyonel XML otomasyonu ile iş gücünüzü katlayın.
+                        </p>
+                        <div class="space-y-3 text-sm font-semibold text-white">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
+                                <span>Binlerce ürünü manuel yükleme derdinden kurtulun, saniyeler içinde aktarın</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
+                                <span>Tedarikçi fiyat değişimlerini anında yakalayarak zarar etmeyin</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
+                                <span>Hatalı stok satışlarından kaynaklanan müşteri şikayetlerini ve cezaları önleyin</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sağ Taraf İstatistik Paneli -->
+                    <div class="bg-[#0F172A] text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-red-500/30 space-y-6">
+                        <div class="border-b border-slate-800 pb-5">
+                            <div class="text-4xl font-black text-[#DC2626]">Sınırsız</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Tedarikçi & Ürün İşleme Kapasitesi</div>
+                            <p class="text-xs text-slate-400 mt-1">Yüksek performanslı altyapı ile gigabaytlarca büyüklükteki XML dosyaları bile kolayca işlenir.</p>
+                        </div>
+
+                        <div>
+                            <div class="text-4xl font-black text-white">100%</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Zamanlanmış Otomatik Güncelleme</div>
+                            <p class="text-xs text-slate-400 mt-1">Arka planda çalışan cron servisleri ile stok ve fiyatlar her an güncel kalır.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 4. 4 ADIMDA XML ENTEGRASYON SÜRECİ                                        -->
+        <!-- ========================================================================= -->
+        <section id="xml-adimlari" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-3.5 py-1.5 rounded-full border border-red-100">
+                        SİSTEMATİK KURULUM AKIŞI
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        4 Adımda <span class="text-[#DC2626]">XML Entegrasyon Süreci</span>
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        Tedarikçi veri akışınızı 4 adımda tamamen otomatik hale getiriyoruz.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+
+                    <!-- Adım 1 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="link" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#DC2626] transition-colors">01</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Tedarikçi XML Bağlantısı</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Tedarikçilerinizden temin ettiğiniz XML / JSON bağlantılinkleri sisteme tanımlanır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 2 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0F172A] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-slate-100 text-[#0F172A] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="git-merge" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#0F172A] transition-colors">02</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Haritalama & Eşleme</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Kategori ağaçları, marka eşleştirmeleri ve beden/renk varyant parametreleri birbirine bağlanır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 3 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-600 transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="percent" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-amber-600 transition-colors">03</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Fiyat ve Kâr Marjı</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Tedarikçi maliyetleri üzerine uygulanacak kâr oranları ve yuvarlama kuralları sisteme işlenir.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 4 -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-emerald-500/80 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="clock" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-emerald-500">04</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Otomatik Cron Başlatma</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Güncelleme sıklıkları (saatlik/günlük) ayarlanarak arka plan otomasyonu canlıya alınır.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 5. BİRLİKTE KULLANABİLECEĞİNİZ DİĞER ÇÖZÜMLERİMİZ                         -->
+        <!-- ========================================================================= -->
+        <section id="tamamlayici-cozumler" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                        Birlikte Kullanabileceğiniz <span class="text-[#DC2626]">Diğer Çözümlerimiz</span>
+                    </h2>
+                    <p class="text-sm text-slate-600">XML Hub altyapınızı destekleyen diğer entegre DİA ve Compiturk yazılımları.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Çözüm 1 -->
+                    <a href="pazaryeri-entegrasyonu.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#DC2626] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center mb-4 group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Pazar Yeri Entegrasyonu</h3>
+                        <p class="text-xs text-slate-500 mt-1">XML ile gelen ürünleri Trendyol ve Hepsiburada'ya aktarın.</p>
+                    </a>
+
+                    <!-- Çözüm 2 -->
+                    <a href="../dia-erp/dia-e-ticaret-b2b.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#0F172A] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-slate-100 text-[#0F172A] flex items-center justify-center mb-4 group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
+                            <i data-lucide="globe" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors">Mobil B2B Bayi Platformu</h3>
+                        <p class="text-xs text-slate-500 mt-1">Bayileriniz için özel bayi portalı ve sipariş yönetimi.</p>
+                    </a>
+
+                    <!-- Çözüm 3 -->
+                    <a href="../dia-erp/dia-stok-depo.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center mb-4 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                            <i data-lucide="boxes" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Ahtapot Depo Yönetimi</h3>
+                        <p class="text-xs text-slate-500 mt-1">Gelen XML ürünlerini depoda barkodlu raflama.</p>
+                    </a>
+
+                    <!-- Çözüm 4 -->
+                    <a href="../dia-erp/dia-e-donusum.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <i data-lucide="truck" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Kargo Entegrasyonu</h3>
+                        <p class="text-xs text-slate-500 mt-1">Sipariş kargo etiketlerinin otomatik basımı.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 6. SIKÇA SORULAN SORULAR (SEO FAQ - HTML5 ACCORDION)                     -->
+        <!-- ========================================================================= -->
+        <section id="faq" class="py-16 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                
+                <div class="text-center space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Sıkça Sorulan <span class="text-[#DC2626]">Sorular</span></h2>
+                    <p class="text-sm text-slate-600">XML Hub entegrasyon çözümü hakkında merak ettiğiniz tüm yanıtlar.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Soru 1 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                            <span>Aynı anda kaç farklı tedarikçi XML'i sisteme bağlanabilir?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Sistemde herhangi bir sayısal sınırlama yoktur. İstediğiniz kadar farklı tedarikçiden gelen XML, JSON veya CSV veri akışını aynı anda sisteme bağlayabilir ve tek havuzdan yönetebilirsiniz.
+                        </p>
+                    </details>
+
+                    <!-- Soru 2 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                            <span>XML stok ve fiyat güncellemeleri ne kadar sürede bir çalışır?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Güncelleme sıklıkları tamamen sizin tercihlerinize göre ayarlanır. İsterseniz saat başı, isterseniz günde birkaç kez veya tedarikçinizin veri akış sıklığına göre otomatik cron görevleri tanımlayabilirsiniz.
+                        </p>
+                    </details>
+
+                    <!-- Soru 3 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                            <span>Tedarikçi XML'indeki ürün görselleri ve açıklamaları otomatik çekilir mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. XML dosyası içerisinde yer alan ürün başlıkları, detaylı açıklamalar, teknik özellikler ve resim URL'leri sistem tarafından otomatik olarak çekilerek DİA ERP stok kartlarına işlenir.
+                        </p>
+                    </details>
+
+                    <!-- Soru 4 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                            <span>Oluşturulan XML çıktıları bayilere ve e-ticaret sitelerine dağıtılabilir mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. XML Hub modülü sadece içe aktarım (Import) değil, aynı zamanda dışa aktarım (Export) özelliğine de sahiptir. Kendi stok ve özel fiyatlarınızla bayilerinize XML bayilik linki üretebilirsiniz.
+                        </p>
+                    </details>
+
+                    <!-- Soru 5 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                            <span>Farklı XML formatları (Custom XML, RSS, JSON) destekleniyor mu?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Tedarikçinizin sunduğu özel yapılı (Custom) XML şemaları, standart RSS beslemeleri veya JSON formatındaki tüm veri yapıları esnek haritalama sihirbazımız ile kolayca sisteme uyarlanır.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 7. MÜŞTERİ YORUMLARI & REFERANSLAR (3 KART)                                -->
+        <!-- ========================================================================= -->
+        <section id="referanslar" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Müşterilerimiz <span class="text-[#DC2626]">Ne Diyor?</span></h2>
+                    <p class="text-sm text-slate-600">Tedarikçi XML operasyonlarını Compiturk XML Hub ile otomatikleştiren firmaların görüşleri.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Yorum 1 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "12 farklı ana tedarikçiden XML alıyoruz. Her birinin yapısı farklıydı. Compiturk XML Hub sayesinde tüm bu karmaşayı tek ekranda birleştirdik. Stok güncellemelerimiz artık tamamen otomatik."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Kaan E.</span>
+                            <span class="text-xs text-slate-500 font-medium">E-Ticaret Direktörü - Yapı Market</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 2 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Esnek kâr marjı kuralları ve otomatik fiyatlandırma özelliği sayesinde döviz kurlarındaki değişimleri anında satış fiyatlarımıza yansıtabiliyoruz. Çok büyük bir operasyonel yükten kurtulduk."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Sibel D.</span>
+                            <span class="text-xs text-slate-500 font-medium">Genel Müdür - Tekstil E-Ticaret</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 3 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "DİA ERP ile çift yönlü entegrasyonu kusursuz çalışıyor. Tedarikçi XML'inden gelen ürünler doğrudan ERP stok kartlarına dönüşüyor. Compiturk ekibine profesyonel destekleri için teşekkür ederiz."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Mert A.</span>
+                            <span class="text-xs text-slate-500 font-medium">Operasyon Müdürü - Elektronik Toptan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 8. BLOG YAZILARIMIZ (3 KART)                                              -->
+        <!-- ========================================================================= -->
+        <section id="blog" class="py-16 bg-[#F8FAFC]">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">XML Entegrasyon <span class="text-[#DC2626]">Rehberi & Makaleler</span></h2>
+                    <p class="text-sm text-slate-600">Tedarikçi veri akışınızı ve e-ticaret otomasyonunuzu geliştirecek uzman içeriklerimiz.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Makale 1 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded-md">ÇOKLU XML YÖNETİMİ</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2">
+                                E-Ticarette Çoklu XML Yönetimi İle Stok Riskini Sıfırlama
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Farklı tedarikçilerden gelen stok verilerini tek havuzda eriterek tükenen ürünleri anında satıştan kaldırma yöntemleri.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 2 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider bg-slate-100 px-2.5 py-1 rounded-md">FİYATLANDIRMA</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors line-clamp-2">
+                                Otomatik Kâr Marjı ve Fiyat Kuralları Nasıl Yapılandırılır?
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Tedarikçi alış fiyatları üzerinden dinamik kâr oranları hesaplama ve kategori bazlı iskonto uygulama kuralları.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 3 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider bg-amber-50 px-2.5 py-1 rounded-md">ENTEGRASYON HATLARI</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-amber-600 transition-colors line-clamp-2">
+                                Tedarikçi XML Entegrasyonlarında Sık Yapılan 5 Kritik Hata
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Yanlış kategori eşlemeleri, karakter kodlama sorunları ve zamanlanmış görev hatalarının önüne geçme rehberi.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-footer"></div>
+
+    <!-- SCRIPT ÇAĞRILARI -->
+    <script src="../js/components.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

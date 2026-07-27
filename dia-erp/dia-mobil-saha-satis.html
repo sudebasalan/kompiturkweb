@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DİA Mobil Saha Satış Yönetimi Programı | Plasiyer & Rut Takip | Compiturk</title>
+    <meta name="description" content="DİA Mobil Saha Satış Yazılımı ile sıcak/soğuk satış, rut planlama, mobil tahsilat ve araç stok yönetimini tablet ve akıllı telefonlardan anlık yönetin. Compiturk Yetkili Çözüm Ortağı.">
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#DC2626',
+                        brandNavy: '#0F172A',
+                        brandSlate: '#64748b',
+                        brandIce: '#F8FAFC',
+                        diaBlue: '#245BA7',
+                        diaOrange: '#E77F18',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Mega Menu Tabancası & Animasyon Düzeltmesi */
+.mega-menu {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none; /* Gizliyken farenin algılamasını engeller */
+    transform: translateY(10px);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Sadece ilgili gruba gelindiğinde görünür ve tıklanabilir yap */
+.group:hover .mega-menu {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto; /* Açıldığında tıklanabilir yap */
+    transform: translateY(0);
+}
+    </style>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
+
+    <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-header"></div>
+
+    <!-- MAIN İÇERİK BAŞLANGICI -->
+    <main class="flex-grow">
+
+        <!-- ========================================================================= -->
+        <!-- 1. BÖLÜM: BANNER / HERO SECTION (TAM DİA MAVİSİ BG)                       -->
+        <!-- ========================================================================= -->
+        <section id="module-hero" class="w-full bg-[#245BA7] text-white py-16 lg:py-24 relative overflow-hidden z-20">
+            <!-- Arka Plan Vektörel Desen & Işıltılar -->
+            <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#E77F18]/20 rounded-full blur-[130px] pointer-events-none"></div>
+            <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#0F1D38]/40 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+                    <!-- SOL KOLON: İÇERİK VE VURGULAR (Col-span-7) -->
+                    <div class="lg:col-span-7 space-y-6 text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#E77F18] font-bold text-xs sm:text-sm tracking-wide">
+                            <span class="w-2 h-2 rounded-full bg-[#E77F18] animate-pulse"></span>
+                            <span class="text-white">DİA BULUT ERP MODÜLÜ</span>
+                        </div>
+
+                        <!-- TEK H1 BAŞLIĞI -->
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                            DİA Mobil Saha Satış <br class="hidden sm:inline" />
+                            <span class="text-[#E77F18]">Yönetimi Programı</span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-blue-100 font-normal leading-relaxed max-w-2xl">
+                            Saha satış ekibinizin sıcak ve soğuk satış süreçlerini, rut planlarını, tahsilat ve sipariş operasyonlarını cep telefonu ve tabletlerden anlık olarak yönetin.
+                        </p>
+
+                        <!-- İkonlu Vurgu Maddeleri -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/15">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-[#E77F18] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="smartphone" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    iOS ve Android Uyumlu
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Anlık Konum & Rut Takibi
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-blue-200 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="wifi-off" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Online / Offline Çalışma Modu
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SAĞ KOLON: DEMO & BİLGİ FORMU KUTUSU (Col-span-5) -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-white rounded-2xl p-6 sm:p-8 text-slate-900 shadow-2xl border-2 border-[#E77F18]/40 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#245BA7] via-[#E77F18] to-[#DC2626]"></div>
+
+                            <div class="border-b border-slate-100 pb-4 mb-5 pt-1">
+                                <h2 class="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
+                                    <i data-lucide="sparkles" class="w-6 h-6 text-[#E77F18]"></i>
+                                    Saha Satış Yazılımı Ücretsiz Demo
+                                </h2>
+                                <p class="text-xs text-slate-500 mt-1">
+                                    Saha ekiplerinizi dijitalleştirmek için bilgilerinizi bırakın, uzmanımız hemen ulaşsın.
+                                </p>
+                            </div>
+
+                            <form action="#" method="POST" class="space-y-4" onsubmit="event.preventDefault();">
+                                <div class="space-y-1">
+                                    <label for="fullname" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        Ad Soyad <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="text" id="fullname" name="fullname" required placeholder="Örn: Ahmet Yılmaz" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 outline-none transition-all" />
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="space-y-1">
+                                        <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Telefon <span class="text-[#DC2626]">*</span>
+                                        </label>
+                                        <input type="tel" id="phone" name="phone" required placeholder="05XX XXX XX XX" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 outline-none transition-all" />
+                                    </div>
+
+                                    <div class="space-y-1">
+                                        <label for="company" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Şirket Adı
+                                        </label>
+                                        <input type="text" id="company" name="company" placeholder="Firma Ünvanı" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 outline-none transition-all" />
+                                    </div>
+                                </div>
+
+                                <div class="space-y-1">
+                                    <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        E-Posta Adresi <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" required placeholder="ahmet@sirketiniz.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 outline-none transition-all" />
+                                </div>
+
+                                <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-[#E77F18] hover:bg-[#d06f13] text-white font-extrabold text-base shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-[1.005] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer border border-orange-400/30">
+                                    <span>Hemen Bilgi & Demo İsteyin</span>
+                                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+
+                                <p class="text-[11px] text-center text-slate-400 mt-2 flex items-center justify-center gap-1">
+                                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
+                                    Verileriniz KVKK kapsamında %100 güvende tutulmaktadır.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 2. BÖLÜM: SAHA SATIŞINIZI GÜÇLENDİREN ÖZELLİKLER (3x2 GRID KARTLAR)       -->
+        <!-- ========================================================================= -->
+        <section id="saha-satis-ozellikler" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-black tracking-widest text-[#245BA7] uppercase bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">
+                        SAHA OTOMASYON GÜCÜ
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Saha Satışınızı <span class="text-[#245BA7]">Güçlendiren Özellikler</span>
+                    </h2>
+                    <p class="text-base text-slate-600 font-normal">
+                        Plasiyerlerinizi saha şartlarında hızlandıran, hataları sıfırlayan ve merkezle tam uyumlu modül yetenekleri.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+
+                    <!-- Kart 1: Rut ve Ziyaret Planlama -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#245BA7] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-blue-50 text-[#245BA7] flex items-center justify-center group-hover:bg-[#245BA7] group-hover:text-white transition-colors">
+                                <i data-lucide="route" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors">Rut ve Ziyaret Planlama</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Plasiyer bazlı günlük, haftalık veya aylık müşteri ziyaret rotaları oluşturun. GPS konumu doğrulama ile saha ekiplerinizin müşteri ziyaret süreçlerini harita üzerinden izleyin.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 2: Sıcak & Soğuk Satış -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#E77F18] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-amber-50 text-[#E77F18] flex items-center justify-center group-hover:bg-[#E77F18] group-hover:text-white transition-colors">
+                                <i data-lucide="shopping-cart" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#E77F18] transition-colors">Sıcak & Soğuk Satış</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Müşteri başında anında sipariş alın (soğuk satış) veya araçtaki stoktan doğrudan irsaliye/fatura keserek teslimat gerçekleştirin (sıcak satış). Araç depolarınızı canlı takip edin.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 3: Mobil Tahsilat & Nakit Akışı -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-red-50 text-[#DC2626] flex items-center justify-center group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                                <i data-lucide="banknote" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Mobil Tahsilat & Nakit Akışı</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Saha ekibiniz müşteri ziyaretinde anında nakit, çek, senet veya kredi kartı tahsilatı yapabilir. Kesilen makbuzlar eşzamanlı olarak merkeze ve cari ekstresine işlenir.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 4: Müşteri Risk ve Cari Takip -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                                <i data-lucide="shield-check" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Müşteri Risk ve Cari Takip</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Sahadayken müşterinin geçmiş borçlarını, bakiye durumunu, risk limitini ve hesap ekstresini anlık inceleyin. Limiti aşan müşterilere satış onay mekanizmaları kurgulayın.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 5: Bluetooth Yazıcı Entegrasyonu -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-indigo-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                <i data-lucide="printer" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">Bluetooth Yazıcı Entegrasyonu</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Araç tipi veya taşınabilir nokta matris / termal Bluetooth yazıcılardan bilgi fişi, irsaliye, fatura ve tahsilat makbuzu çıktılarını saniyeler içinde fiziksel olarak basın.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 6: Merkez ERP ile %100 Senkronizasyon -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-cyan-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                                <i data-lucide="refresh-cw" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-cyan-600 transition-colors">Merkez ERP ile %100 Senkronizasyon</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Sahadan girilen tüm sipariş, fatura ve tahsilatlar beklemeden DİA Merkez ERP sistemine işlenir. İnternet kesilse bile offline modda veriler kaybolmadan saklanır.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 3. BÖLÜM: NEDEN MOBİL SAHA SATIŞ KULLANMALISINIZ? (VERİMLİLİK & PERFORMANS)-->
+        <!-- ========================================================================= -->
+        <section id="saha-satis-verimlilik" class="py-16 lg:py-24 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-100 text-[#245BA7] font-bold text-xs">
+                            <i data-lucide="trending-up" class="w-4 h-4"></i>
+                            MAKSİMUM SAHA VERİMLİLİĞİ
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
+                            Neden Mobil Saha Satış <br />
+                            <span class="text-[#245BA7]">Yazılımı Kullanmalısınız?</span>
+                        </h2>
+                        <p class="text-slate-600 text-base leading-relaxed">
+                            Kağıt koçanlarıyla zaman kaybetme, hatalı ürün yazımı, merkeze telefonla sipariş iletme ve araçtaki stok eksiklikleri dönemi bitti. Plasiyerlerinize pratik bir mobil araç vererek cironuzu ve ziyaret sayılarınızı doğrudan katlayın.
+                        </p>
+                        <div class="space-y-3 text-sm font-semibold text-slate-800">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600"></i>
+                                <span>Hatalı veya mükerrer sipariş girişlerini tamamen engelleyin</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600"></i>
+                                <span>Araç içi stok açıklarını ve kayıp-kaçak oranlarını sıfırlayın</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600"></i>
+                                <span>Plasiyer bazlı günlük ziyaret ve ciro performanslarını anlık ölçün</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sağ Taraf İstatistik Paneli -->
+                    <div class="bg-[#0F1D38] text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-slate-800 space-y-6">
+                        <div class="border-b border-slate-800 pb-5">
+                            <div class="text-4xl font-black text-[#E77F18]">%40</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Daha Fazla Müşteri Ziyareti</div>
+                            <p class="text-xs text-slate-400 mt-1">Otomatik rut planlama ile zaman kaybı azalır, plasiyerler gün içinde daha çok nokta ziyaret eder.</p>
+                        </div>
+
+                        <div>
+                            <div class="text-4xl font-black text-[#245BA7]">0 Hata</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Sipariş & Fatura İşleme</div>
+                            <p class="text-xs text-slate-400 mt-1">Barkod okutma ve hazır fiyat listeleri sayesinde yanlış fiyat ve ürün seçimi ortadan kalkar.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 4. BÖLÜM: 4 ADIMDA SAHA SATIŞ SÜRECİNİZİ DİJİTALLEŞTİRİN                    -->
+        <!-- ========================================================================= -->
+        <section id="dijitallesme-adimlari" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-bold text-[#E77F18] uppercase tracking-wider bg-orange-500/10 px-3.5 py-1.5 rounded-full border border-orange-500/30">
+                        KOLAY KURULUM VE UYARLAMA
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        4 Adımda Saha Satışınızı <span class="text-[#245BA7]">Dijitalleştirin</span>
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        Compiturk mühendisliği ile saha operasyonunuzu adım adım canlıya alıyoruz.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+
+                    <!-- Adım 1 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#245BA7] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#245BA7] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="user-cog" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#245BA7] transition-colors">01</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Plasiyer Tanımları</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                DİA sisteminizde saha personeli yetkileri, özel fiyat listeleri ve depo eşleşmeleri tanımlanır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 2 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#E77F18] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-amber-50 text-[#E77F18] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#E77F18] transition-colors">02</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Rut ve Müşteri Grupları</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Müşterilerinize özel gün bazlı rut rotaları, bölge grupları ve ziyaret sıralamaları kurgulanır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 3 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="download" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#DC2626] transition-colors">03</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Uygulama Kurulumu</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                DİA Mobil uygulaması telefon/tabletlere yüklenir, Bluetooth yazıcı bağlantıları tamamlanır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 4 -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-emerald-500/80 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-emerald-500">04</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Sahada Canlı Satış</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Saha ekibiniz canlı ortama geçerek sipariş ve tahsilatlarını anlık merkeze aktarmaya başlar.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 5. BÖLÜM: BİRLİKTE KULLANABİLECEĞİNİZ DİĞER ÇÖZÜMLERİMİZ                 -->
+        <!-- ========================================================================= -->
+        <section id="tamamlayici-cozumler" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                        Birlikte Kullanabileceğiniz <span class="text-[#DC2626]">Diğer Çözümlerimiz</span>
+                    </h2>
+                    <p class="text-sm text-slate-600">Mobil saha satış modülünüzü entegre DİA yazılımları ile destekleyin.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Çözüm 1 -->
+                    <a href="dia-stok-depo.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#245BA7] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#245BA7] flex items-center justify-center mb-4 group-hover:bg-[#245BA7] group-hover:text-white transition-colors">
+                            <i data-lucide="boxes" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors">Stok & Depo Yönetimi</h3>
+                        <p class="text-xs text-slate-500 mt-1">Araç ve merkez depo stoklarını canlı takip edin.</p>
+                    </a>
+
+                    <!-- Çözüm 2 -->
+                    <a href="dia-on-muhasebe.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#E77F18] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-amber-50 text-[#E77F18] flex items-center justify-center mb-4 group-hover:bg-[#E77F18] group-hover:text-white transition-colors">
+                            <i data-lucide="calculator" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#E77F18] transition-colors">Ön Muhasebe</h3>
+                        <p class="text-xs text-slate-500 mt-1">Cari hesaplar, kasa ve banka hareketlerini otomatikleştirin.</p>
+                    </a>
+
+                    <!-- Çözüm 3 -->
+                    <a href="dia-e-donusum.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#DC2626] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center mb-4 group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                            <i data-lucide="file-text" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">e-Fatura & e-İrsaliye</h3>
+                        <p class="text-xs text-slate-500 mt-1">Sahada anında e-irsaliye ve e-fatura düzenleyin.</p>
+                    </a>
+
+                    <!-- Çözüm 4 -->
+                    <a href="../index.html#quick-services" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">B2B Bayi Portalı</h3>
+                        <p class="text-xs text-slate-500 mt-1">Bayilerinizin 7/24 kendi siparişlerini girmesini sağlayın.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 6. BÖLÜM: SIKÇA SORULAN SORULAR (SEO FAQ - ACCORDION)                     -->
+        <!-- ========================================================================= -->
+        <section id="faq" class="py-16 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                
+                <div class="text-center space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Sıkça Sorulan <span class="text-[#245BA7]">Sorular</span></h2>
+                    <p class="text-sm text-slate-600">DİA Mobil Saha Satış uygulaması hakkında merak ettiğiniz tüm yanıtlar.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Soru 1 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                            <span>DİA Mobil Saha Satış Uygulaması İnternet Olmayan Yerlerde Çalışır mı?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. DİA Mobil Saha Satış uygulaması gelişmiş offline çalışma moduna sahiptir. İnternet çekmeyen bodrum katlarda veya kırsal alanlarda alınan siparişler ve yapılan satışlar cihaza kaydedilir, internet bağlantısı sağlandığında otomatik olarak merkeze senkronize edilir.
+                        </p>
+                    </details>
+
+                    <!-- Soru 2 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                            <span>Plasiyerlerin Sahadaki Konumları ve Ziyaret Süreleri Takip Edilebilir mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. GPS entegrasyonu sayesinde plasiyerlerin müşteri yanında check-in/check-out yapması sağlanabilir. Ziyaret başlangıç ve bitiş süreleri ile gerçek müşteri konumu harita üzerinden merkez yönetimine raporlanır.
+                        </p>
+                    </details>
+
+                    <!-- Soru 3 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                            <span>Mobil Uygulama Hangi İşletim Sistemlerini Destekliyor?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            DİA Mobil uygulaması yerel (native) olarak tüm Android ve iOS (iPhone/iPad) işletim sistemli akıllı telefonlar, tabletler ve sanayi tipi endüstriyel el terminalleri ile tam uyumlu çalışır.
+                        </p>
+                    </details>
+
+                    <!-- Soru 4 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                            <span>Araç Depo ve Stok Sayımı Mobilden Yapılabilir mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Her satış aracına bir araç deposu tanımlanabilir. Plasiyerler sabah merkez depodan araç deposuna ürün transferini onaylar, gün içindeki sıcak satışlarda araç deposundan düşüm yapılır ve gün sonu kalan stok mobil cihaz üzerinden sayılabilir.
+                        </p>
+                    </details>
+
+                    <!-- Soru 5 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                            <span>Sahada Yazıcıdan Fatura Çıktısı Alınabilir mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Araçlardaki sabitleştirilmiş nokta matris yazıcılar veya plasiyerlerin belinde taşıdığı mobil Bluetooth termal yazıcılar aracılığıyla bilgi fişi, fatura, irsaliye ve tahsilat makbuzları anında çıktı olarak verilebilir.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 7. BÖLÜM: MÜŞTERİ YORUMLARI & REFERANSLAR (3 KART)                        -->
+        <!-- ========================================================================= -->
+        <section id="referanslar" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Müşterilerimiz <span class="text-[#E77F18]">Ne Diyor?</span></h2>
+                    <p class="text-sm text-slate-600">Saha satış ekiplerini DİA Mobil ile dijitalleştiren distribütör ve toptancıların tecrübeleri.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Yorum 1 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "12 plasiyerimiz sahada sıcak satış yapıyor. DİA Mobil öncesi araç stok uyumsuzlukları ve unutulan tahsilatlar büyük sorundu. Şimdi araç deposu ve cari bakiyeler saniyesinde merkeze akıyor."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Metin D.</span>
+                            <span class="text-xs text-slate-500 font-medium">Satış Direktörü - Gıda Dağıtım</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 2 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Rut planlama özelliği sayesinde plasiyerlerimizin ziyaret sıralaması disipline girdi. Sahada anında fatura basıp Bluetooth yazıcıdan müşteriye vermek profesyonelliğimizi çok artırdı."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Selin Y.</span>
+                            <span class="text-xs text-slate-500 font-medium">Genel Müdür Yardımcısı - Kozmetik A.Ş.</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 3 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Offline çalışma modunun kalitesi mükemmel. Şehirlerarası yollarda internet çekmediğinde dahi satış kesintisiz devam ediyor, internet gelince DİA merkez verileri anında güncelliyor."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Cemil B.</span>
+                            <span class="text-xs text-slate-500 font-medium">Operasyon Müdürü - Endüstriyel Ambalaj</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 8. BÖLÜM: BLOG YAZILARIMIZ (3 KART)                                       -->
+        <!-- ========================================================================= -->
+        <section id="blog" class="py-16 bg-[#F8FAFC]">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Saha Satış <span class="text-[#245BA7]">Rehberi & Makaleler</span></h2>
+                    <p class="text-sm text-slate-600">Saha satış operasyonlarınızı geliştirecek uzman rehberlerimiz.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Makale 1 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#245BA7] uppercase tracking-wider bg-blue-50 px-2.5 py-1 rounded-md">SAHA VERİMLİLİĞİ</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors line-clamp-2">
+                                Saha Satış Ekiplerinde Verimliliği %40 Artırmanın Yolları
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Doğru mobil yazılım kullanımı ve anlık stok erişimi ile plasiyer performansını yükseltme yöntemleri.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 2 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-[#E77F18] font-bold text-[#E77F18] uppercase tracking-wider bg-amber-50 px-2.5 py-1 rounded-md">SATIŞ STRATEJİSİ</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#E77F18] transition-colors line-clamp-2">
+                                Sıcak Satış ve Soğuk Satış Arasındaki Farklar Nelerdir?
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-[#E77F18]">
+                                İşletmenizin dağıtım modeline en uygun saha satış stratejisini belirleme ve mobil araçlarla destekleme.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 3 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded-md">ROTA OPTİMİZASYONU</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2">
+                                Mobil Rut Planlama İle Zaman ve Yakıt Tasarrufu Sağlama
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Akıllı lokasyon ve rota yönetimi ile saha araçlarının yakıt giderlerini ve zaman kayıplarını en aza indirin.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-footer"></div>
+
+    <!-- SCRIPT ÇAĞRILARI -->
+    <script src="../js/components.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

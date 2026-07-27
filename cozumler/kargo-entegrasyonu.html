@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kargo Entegrasyonu — Otomatik Barkod & Takip Çözümü | Compiturk</title>
+    <meta name="description" content="Türkiye'nin önde gelen kargo firmaları ile DİA ERP ve e-ticaret altyapınızı entegre edin; otomatik kargo barkodu basımı ve takip eşleşmesini tek panelden yönetin. Compiturk.">
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#DC2626',
+                        brandRedDark: '#B91C1C',
+                        brandNavy: '#0F172A',
+                        brandSlate: '#334155',
+                        brandIce: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
+
+    <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-header"></div>
+
+    <!-- MAIN İÇERİK BAŞLANGICI -->
+    <main class="flex-grow">
+
+        <!-- ========================================================================= -->
+        <!-- 1. HERO / BANNER SECTION (LACİVERT & KIRMIZI VURGULU ARKA PLAN)           -->
+        <!-- ========================================================================= -->
+        <section id="module-hero" class="w-full bg-[#0F172A] text-white py-16 lg:py-24 relative overflow-hidden z-20">
+            <!-- Arka Plan Vektörel Desen & Kırmızı/Lacivert İşıltılar -->
+            <div class="absolute inset-0 bg-[radial-gradient(rgba(220,38,38,0.15)_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#DC2626]/20 rounded-full blur-[130px] pointer-events-none"></div>
+            <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#1E3A8A]/40 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+                    <!-- SOL KOLON: İÇERİK VE VURGULAR (Col-span-7) -->
+                    <div class="lg:col-span-7 space-y-6 text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#DC2626] font-bold text-xs sm:text-sm tracking-wide">
+                            <span class="w-2 h-2 rounded-full bg-[#DC2626] animate-pulse"></span>
+                            <span class="text-white">ÇOKLU KARGO FİRMASI OTOMASYONU</span>
+                        </div>
+
+                        <!-- TEK H1 BAŞLIĞI -->
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                            Kargo Entegrasyonu — Otomatik <br class="hidden sm:inline" />
+                            <span class="text-[#DC2626]">Barkod & Takip Çözümü</span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl">
+                            Türkiye'nin önde gelen kargo firmaları ile DİA ERP ve e-ticaret altyapınızı entegre edin; otomatik kargo barkodu basımı, kargo takip eşleşmesi ve SMS bildirimlerini tek panelden yönetin.
+                        </p>
+
+                        <!-- İkonlu Vurgu Maddeleri -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/15">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-[#DC2626] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="truck" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Tüm Kargo Firmaları İle Tam Entegre
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="barcode" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Otomatik Kargo Barkodu & Seri Basım
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-blue-300 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="bell-ring" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Müşteriye Anlık SMS ve Takip
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SAĞ KOLON: DEMO & BİLGİ FORMU KUTUSU (Col-span-5) -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-white rounded-2xl p-6 sm:p-8 text-slate-900 shadow-2xl border-2 border-[#DC2626]/40 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#0F1D38] via-[#DC2626] to-[#B91C1C]"></div>
+
+                            <div class="border-b border-slate-100 pb-4 mb-5 pt-1">
+                                <h2 class="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
+                                    <i data-lucide="sparkles" class="w-6 h-6 text-[#DC2626]"></i>
+                                    Kargo Entegrasyonu Demo & Teklif
+                                </h2>
+                                <p class="text-xs text-slate-500 mt-1">
+                                    Kargo otomasyon çözümlerimiz için hemen bilgilerinizi bırakın, uzmanımız arasın.
+                                </p>
+                            </div>
+
+                            <form action="#" method="POST" class="space-y-4" onsubmit="event.preventDefault();">
+                                <div class="space-y-1">
+                                    <label for="fullname" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        Ad Soyad <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="text" id="fullname" name="fullname" required placeholder="Örn: Ahmet Yılmaz" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="space-y-1">
+                                        <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Telefon <span class="text-[#DC2626]">*</span>
+                                        </label>
+                                        <input type="tel" id="phone" name="phone" required placeholder="05XX XXX XX XX" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    </div>
+
+                                    <div class="space-y-1">
+                                        <label for="company" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Şirket Adı
+                                        </label>
+                                        <input type="text" id="company" name="company" placeholder="Firma Ünvanı" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    </div>
+                                </div>
+
+                                <div class="space-y-1">
+                                    <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        E-Posta Adresi <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" required placeholder="ahmet@sirketiniz.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                </div>
+
+                                <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-[#DC2626] hover:bg-[#b91c1c] text-white font-extrabold text-base shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:scale-[1.005] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer border border-red-400/30">
+                                    <span>Hemen Bilgi & Teklif İsteyin</span>
+                                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+
+                                <p class="text-[11px] text-center text-slate-400 mt-2 flex items-center justify-center gap-1">
+                                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
+                                    Verileriniz KVKK kapsamında %100 güvende tutulmaktadır.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 2. DESTEKLENEN KARGO VE LOJİSTİK FİRMALARI (GRID CARDS)                   -->
+        <!-- ========================================================================= -->
+        <section id="desteklenen-kargolar" class="py-16 lg:py-20 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <span class="text-xs font-black tracking-widest text-[#DC2626] uppercase bg-red-50 px-3.5 py-1.5 rounded-full border border-red-100">
+                        GENİŞ KARGO AĞI
+                    </span>
+                    <h2 class="text-3xl font-extrabold text-slate-900">
+                        Desteklenen <span class="text-[#DC2626]">Kargo ve Lojistik Firmaları</span>
+                    </h2>
+                    <p class="text-sm text-slate-600">Türkiye'nin en yaygın kargo ve sevkiyat servisleriyle doğrudan API entegrasyonu.</p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-9 gap-4 text-center">
+                    <!-- Yurtiçi Kargo -->
+                    <div class="bg-slate-50 hover:bg-red-50/50 p-6 rounded-2xl border border-slate-200 hover:border-red-500 transition-all flex flex-col items-center justify-center gap-3 group">
+                        <div class="w-12 h-12 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center font-black group-hover:scale-110 transition-transform">YK</div>
+                        <span class="text-xs font-bold text-slate-800">Yurtiçi Kargo</span>
+                    </div>
+
+                    <!-- MNG Kargo -->
+                    <div class="bg-slate-50 hover:bg-red-50/50 p-6 rounded-2xl border border-slate-200 hover:border-red-500 transition-all flex flex-col items-center justify-center gap-3 group">
+                        <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-black group-hover:scale-110 transition-transform">MNG</div>
+                        <span class="text-xs font-bold text-slate-800">MNG Kargo</span>
+                    </div>
+
+                    <!-- Aras Kargo -->
+                    <div class="bg-slate-50 hover:bg-red-50/50 p-6 rounded-2xl border border-slate-200 hover:border-red-500 transition-all flex flex-col items-center justify-center gap-3 group">
+                        <div class="w-12 h-12 rounded-xl bg-red-100 text-[#DC2626] flex items-center justify-center font-black group-hover:scale-110 transition-transform">ARAS</div>
+                        <span class="text-xs font-bold text-slate-800">Aras Kargo</span>
+                    </div>
+
+                    <!-- Sürat Kargo -->
+                    <div class="bg-slate-50 hover:bg-red-50/50 p-6 rounded-2xl border border-slate-200 hover:border-red-500 transition-all flex flex-col items-center justify-center gap-3 group">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-black group-hover:scale-110 transition-transform">SRT</div>
+                        <span class="text-xs font-bold text-slate-800">Sürat Kargo</span>
+                    </div>
+
+                    <!-- PTT Kargo -->
+                    <div class="bg-slate-50 hover:bg-red-50/50 p-6 rounded-2xl border border-slate-200 hover:border-red-500 transition-all flex flex-col items-center justify-center gap-3 group">
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-black group-hover:scale-110 transition-transform">PTT</div>
+                        <span class="text-xs font-bold text-slate-800">PTT Kargo</span>
+                    </div>
+
+                    <!-- UPS Kargo -->
+                    <div class="bg-slate-50 hover:bg-red-50/50 p-6 rounded-2xl border border-slate-200 hover:border-red-500 transition-all flex flex-col items-center justify-center gap-3 group">
+                        <div class="w-12 h-12 rounded-xl bg-amber-200 text-amber-900 flex items-center justify-center font-black group-hover:scale-110 transition-transform">UPS</div>
+                        <span class="text-xs font-bold text-slate-800">UPS Kargo</span>
+                    </div>
+
+                    <!-- Hepsijet -->
+                    <div class="bg-slate-50 hover:bg-red-50/50 p-6 rounded-2xl border border-slate-200 hover:border-red-500 transition-all flex flex-col items-center justify-center gap-3 group">
+                        <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center font-black group-hover:scale-110 transition-transform">HJ</div>
+                        <span class="text-xs font-bold text-slate-800">Hepsijet</span>
+                    </div>
+
+                    <!-- Trendyol Express -->
+                    <div class="bg-slate-50 hover:bg-red-50/50 p-6 rounded-2xl border border-slate-200 hover:border-red-500 transition-all flex flex-col items-center justify-center gap-3 group">
+                        <div class="w-12 h-12 rounded-xl bg-orange-200 text-orange-900 flex items-center justify-center font-black group-hover:scale-110 transition-transform">TEX</div>
+                        <span class="text-xs font-bold text-slate-800">Trendyol Express</span>
+                    </div>
+
+                    <!-- Kolay Gelsin -->
+                    <div class="bg-slate-50 hover:bg-red-50/50 p-6 rounded-2xl border border-slate-200 hover:border-red-500 transition-all flex flex-col items-center justify-center gap-3 group">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-100 text-cyan-800 flex items-center justify-center font-black group-hover:scale-110 transition-transform">KG</div>
+                        <span class="text-xs font-bold text-slate-800">Kolay Gelsin</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 3. KARGO ENTEGRASYON YETENEKLERİ (3x2 GRID KARTLAR)                       -->
+        <!-- ========================================================================= -->
+        <section id="kargo-ozellikler" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-black tracking-widest text-[#DC2626] uppercase bg-red-50 px-3.5 py-1.5 rounded-full border border-red-100">
+                        SEVKİYAT OTOMASYON YETENEKLERİ
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Kargo Entegrasyon <span class="text-[#DC2626]">Yetenekleri</span>
+                    </h2>
+                    <p class="text-base text-slate-600 font-normal">
+                        Paketleme ve kargo çıkış süreçlerinizde insan hatalarını önleyen, hızı ve müşteri memnuniyetini artıran akıllı modül.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+
+                    <!-- Kart 1: Otomatik Kargo Barkodu Basımı -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-red-50 text-[#DC2626] flex items-center justify-center group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                                <i data-lucide="printer" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Otomatik Kargo Barkodu Basımı</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                DİA ERP veya e-ticaretten gelen siparişler için ilgili kargo firmasının desi ve adres barkodunun saniyeler içinde seri şekilde basılması.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 2: Otomatik Kargo Takip No Eşleme -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0F172A] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-slate-100 text-[#0F172A] flex items-center justify-center group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
+                                <i data-lucide="barcode" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors">Otomatik Kargo Takip No Eşleme</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Kargo kuryesi kolideki barkodu okuttuğu an oluşan takip numarasının DİA ERP'ye ve müşteri paneline otomatik olarak aktarılması.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 3: Müşteriye Otomatik SMS ve E-Posta Bildirimi -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                                <i data-lucide="message-square-text" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Otomatik SMS & E-Posta Bildirimi</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Kargo çıkışı yapıldığında ve paket teslim edildiğinde müşteriye kargo takip linkini içeren otomatik bilgilendirme mesajı gönderilmesi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 4: Akıllı Kargo Firması Seçimi ve Rotalama -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                                <i data-lucide="route" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Akıllı Kargo Seçimi & Rotalama</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Desi, il/ilçe veya kargo firması fiyat anlaşmalarınıza göre siparişi en avantajlı ve uygun kargo firmasına otomatik atama.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 5: Toplu Etiket Basımı ve Kapıda Ödeme Takibi -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-purple-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                                <i data-lucide="layers" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-purple-600 transition-colors">Toplu Etiket Basımı & Kapıda Ödeme</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Yüzlerce sipariş kargo etiketini tek tıkla toplu basma ve kapıda ödemeli (COD) kargoların tahsilat bakiyelerini ERP'den izleme.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 6: İade Kargo Süreç Yönetimi -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-cyan-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                                <i data-lucide="rotate-ccw" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-cyan-600 transition-colors">İade Kargo Süreç Yönetimi</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Müşteri iade kargo kodlarının takibi ve depoya fiziksel olarak giren iade ürünlerin DİA ERP stoklarına otomatik işlenmesi.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 4. NEDEN COMPITURK KARGO ENTEGRASYONU? (KIRMIZI ACCENT BÖLÜMÜ)            -->
+        <!-- ========================================================================= -->
+        <section id="neden-compiturk-kargo" class="py-16 lg:py-24 bg-[#DC2626] text-white">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-white font-bold text-xs border border-white/20">
+                            <i data-lucide="zap" class="w-4 h-4"></i>
+                            LOJİSTİK OTOMASYON AVANTAJLARI
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                            Neden Compiturk <br />
+                            Kargo Entegrasyonu?
+                        </h2>
+                        <p class="text-red-100 text-base leading-relaxed">
+                            Manuel adres ve kargo yazım hatalarını %100 engelleyen, paketleme hattındaki yığılmaları bitiren ve kargo maliyetlerinizi optimize eden kurumsal sevkiyat çözümü.
+                        </p>
+                        <div class="space-y-3 text-sm font-semibold text-white">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
+                                <span>Yanlış adres veya eksik bilgi yazımından kaynaklanan kargo iadelerini önleyin</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
+                                <span>Paketleme istasyonunda kargo etiket basım hızını 4 katına çıkarın</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
+                                <span>Müşterilerinize otomatik kargo takip bilgisi ileterek destek yükünüzü hafifletin</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sağ Taraf İstatistik Paneli -->
+                    <div class="bg-[#0F172A] text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-red-500/30 space-y-6">
+                        <div class="border-b border-slate-800 pb-5">
+                            <div class="text-4xl font-black text-[#DC2626]">4 Kat</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Paketleme & Etiketleme Hızı</div>
+                            <p class="text-xs text-slate-400 mt-1">Barkod okutulduğu an kargo etiketi saniyeler içinde yazıcıdan çıkarılır.</p>
+                        </div>
+
+                        <div>
+                            <div class="text-4xl font-black text-white">%100</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Otomatik Takip No & SMS Eşleşmesi</div>
+                            <p class="text-xs text-slate-400 mt-1">Müşteriye kargo bilgisi anında iletilir, kargo süreçleri şeffaf yönetilir.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 5. 4 ADIMDA KARGO ENTEGRASYON SÜRECİ                                      -->
+        <!-- ========================================================================= -->
+        <section id="kargo-adimlari" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-3.5 py-1.5 rounded-full border border-red-100">
+                        HIZLI CANLIYA GEÇİŞ
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        4 Adımda Kargo <span class="text-[#DC2626]">Entegrasyon Süreci</span>
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        Sevkiyat operasyonunuzu tamamen otomatikleştirmek için izlediğimiz adımlar.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+
+                    <!-- Adım 1 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="key" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#DC2626] transition-colors">01</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Kargo API Bağlantısı</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Anlaşmalı olduğunuz kargo firmalarından alınan web servis API bilgileri sisteme tanımlanır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 2 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0F172A] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-slate-100 text-[#0F172A] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="git-merge" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#0F172A] transition-colors">02</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">ERP & Sipariş Eşleşmesi</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                DİA ERP ve e-ticaret sitelerinden gelen sipariş modülü ile kargo çıkış havuzu birbirine bağlanır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 3 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-600 transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="printer" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-amber-600 transition-colors">03</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Etiket Yazıcı Ayarları</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Paketleme masalarındaki barkod yazıcılar (Zebra, Argox vb.) kargo şablonlarına göre ayarlanır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 4 -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-emerald-500/80 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="rocket" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-emerald-500">04</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Otomatik Barkod & Takip</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Sistem canlıya alınarak otomatik barkod basımı ve müşteriye takip numarası SMS gönderimi başlatılır.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 6. BİRLİKTE KULLANABİLECEĞİNİZ DİĞER ÇÖZÜMLERİMİZ                         -->
+        <!-- ========================================================================= -->
+        <section id="tamamlayici-cozumler" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                        Birlikte Kullanabileceğiniz <span class="text-[#DC2626]">Diğer Çözümlerimiz</span>
+                    </h2>
+                    <p class="text-sm text-slate-600">Kargo entegrasyonunuzu destekleyen diğer entegre DİA ve Compiturk yazılımları.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Çözüm 1 -->
+                    <a href="pazaryeri-entegrasyonu.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#DC2626] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center mb-4 group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Pazar Yeri Entegrasyonu</h3>
+                        <p class="text-xs text-slate-500 mt-1">Trendyol ve Hepsiburada siparişlerinin kargo çıkışı.</p>
+                    </a>
+
+                    <!-- Çözüm 2 -->
+                    <a href="ahtapot-depo-yonetimi.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#0F172A] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-slate-100 text-[#0F172A] flex items-center justify-center mb-4 group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
+                            <i data-lucide="boxes" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors">Ahtapot Depo Yönetimi</h3>
+                        <p class="text-xs text-slate-500 mt-1">El terminaliyle depoda toplanan ürünlerin kargo paketlemesi.</p>
+                    </a>
+
+                    <!-- Çözüm 3 -->
+                    <a href="mobil-b2b-bayi-platformu.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center mb-4 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                            <i data-lucide="smartphone" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Mobil B2B Bayi Platformu</h3>
+                        <p class="text-xs text-slate-500 mt-1">Bayilerin mobil siparişlerinin kargo süreçleri.</p>
+                    </a>
+
+                    <!-- Çözüm 4 -->
+                    <a href="xml-hub-entegrasyon.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <i data-lucide="database" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">XML Hub Entegrasyon</h3>
+                        <p class="text-xs text-slate-500 mt-1">Tedarikçi XML ürünlerinin kargo sevk otomasyonu.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 7. SIKÇA SORULAN SORULAR (SEO FAQ - HTML5 ACCORDION)                     -->
+        <!-- ========================================================================= -->
+        <section id="faq" class="py-16 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                
+                <div class="text-center space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Sıkça Sorulan <span class="text-[#DC2626]">Sorular</span></h2>
+                    <p class="text-sm text-slate-600">Kargo entegrasyon çözümü hakkında merak ettiğiniz tüm yanıtlar.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Soru 1 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                            <span>Kargo entegrasyonu hangi kargo firmalarını destekler?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Kargo entegrasyonumuz Yurtiçi Kargo, MNG Kargo, Aras Kargo, Sürat Kargo, PTT Kargo, UPS Kargo, Hepsijet, Trendyol Express ve Kolay Gelsin başta olmak üzere Türkiye'nin tüm önde gelen kargo ve lojistik firmaları ile tam entegre çalışır.
+                        </p>
+                    </details>
+
+                    <!-- Soru 2 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                            <span>Kargo takip numaraları DİA ERP sistemine otomatik kaydolur mu?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Paketleme masasında kargo barkodu yazdırıldığı an kargo firmasından gelen resmi takip numarası DİA ERP siparişine ve e-ticaret paneline saniyesinde otomatik olarak işlenir.
+                        </p>
+                    </details>
+
+                    <!-- Soru 3 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                            <span>Müşterilere kargo takip linki SMS ile otomatik gider mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Sipariş kargoya verildiğinde müşterinizin cep telefonuna kargo takip linkini içeren SMS veya e-posta otomatik olarak gönderilir, böylece kargo süreci şeffaf şekilde takip edilir.
+                        </p>
+                    </details>
+
+                    <!-- Soru 4 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                            <span>Birden fazla kargo firması aynı anda tek panelden yönetilebilir mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Farklı kargo firmalarıyla olan anlaşmalarınızı aynı ekran üzerinde yönetebilir, siparişin durumuna veya desi bilgisine göre dilediğiniz kargo firmasını seçebilirsiniz.
+                        </p>
+                    </details>
+
+                    <!-- Soru 5 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                            <span>Kapıda ödemeli kargo gönderimleri takip edilebilir mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Kapıda ödemeli (COD) gönderilen kargoların tahsilat tutarları kargo firmalarından gelen mutabakat verileriyle eşleştirilerek DİA ERP üzerinden sorunsuz şekilde takip edilir.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 7. MÜŞTERİ YORUMLARI & REFERANSLAR (3 KART)                                -->
+        <!-- ========================================================================= -->
+        <section id="referanslar" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Müşterilerimiz <span class="text-[#DC2626]">Ne Diyor?</span></h2>
+                    <p class="text-sm text-slate-600">Günlük kargo çıkışlarını Compiturk Kargo Entegrasyonu ile otomatikleştiren firmaların görüşleri.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Yorum 1 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Günde 500'den fazla kargo çıkışı yapıyoruz. Eskiden kargo fişlerini tek tek el ile yazıp kargo portalına giriyorduk. Şimdi barkod okutunca etiket çıkıyor ve takip no sisteme işleniyor. Paketleme hızımız 4 katına çıktı."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Tarık K.</span>
+                            <span class="text-xs text-slate-500 font-medium">Sevkiyat Müdürü - E-Ticaret</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 2 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Müşterilere kargo çıkışında otomatik SMS gitmesi destek ekibimizin yükünü inanılmaz hafifletti. 'Kargom nerede?' soruları %80 oranında azaldı. Compiturk ekibine teşekkürler."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Derya M.</span>
+                            <span class="text-xs text-slate-500 font-medium">Müşteri İlişkileri Yöneticisi</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 3 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Birden fazla kargo firmasıyla anlaşmalıyız. Desiye göre en uygun kargoyu seçip etiket basmak operasyonumuzu çok profesyonel bir seviyeye taşıdı."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Kerem A.</span>
+                            <span class="text-xs text-slate-500 font-medium">Operasyon Direktörü - Toptan Ticaret</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 8. BLOG YAZILARIMIZ (3 KART)                                              -->
+        <!-- ========================================================================= -->
+        <section id="blog" class="py-16 bg-[#F8FAFC]">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Kargo Otomasyonu <span class="text-[#DC2626]">Rehberi & Makaleler</span></h2>
+                    <p class="text-sm text-slate-600">Sevkiyat ve paketleme operasyonlarınızı geliştirecek uzman içeriklerimiz.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Makale 1 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded-md">PAKETLEME HIZI</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2">
+                                E-Ticarette Kargo Paketleme ve Etiketleme Hızını 4 Katına Çıkarmanın Yolları
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Otomatik kargo barkod yazıcı entegrasyonu ile sevkiyat bandındaki darboğazları ortadan kaldırma teknikleri.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 2 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider bg-slate-100 px-2.5 py-1 rounded-md">HATASIZ SEVKİYAT</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors line-clamp-2">
+                                Yanlış Adres Ve Hatalı Kargo Gönderimlerini Önleme Stratejileri
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                E-ticaret sipariş adreslerinin kargo firmalarına hatasız aktarılması ve iade maliyetlerinin düşürülmesi.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 3 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider bg-amber-50 px-2.5 py-1 rounded-md">ÇOKLU KARGO</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-amber-600 transition-colors line-clamp-2">
+                                Çoklu Kargo Firması Kullanımının Müşteri Memnuniyetine Ve Maliyetlere Etkisi
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Farklı kargo alternatifleri sunarak sevkiyat maliyetlerini optimize etme ve müşteri memnuniyetini artırma.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-footer"></div>
+
+    <!-- SCRIPT ÇAĞRILARI -->
+    <script src="../js/components.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

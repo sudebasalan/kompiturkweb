@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahtapot WMS İle Depo Operasyonlarında El Terminali Kullanımının 5 Kritik Faydası | Compiturk Bilgisayar Blog</title>
+    <meta name="description" content="Ahtapot WMS depo yönetim sistemi ve el terminali kullanımıyla depolarda sıfır hatalı sevkiyat, barkodlu raf adresi takibi ve anlık stok doğruluğu sağlama rehberi.">
+    <meta name="keywords" content="Ahtapot WMS, depo otomasyonu, el terminali kullanımı, barkodlu toplama, DİA ERP depo entegrasyonu, stok yönetimi">
+    <meta name="author" content="Compiturk Bilgisayar">
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#DC2626',
+                        brandRedDark: '#B91C1C',
+                        brandNavy: '#0F172A',
+                        brandNavyLight: '#1E3A8A',
+                        brandIce: '#F8FAFC',
+                        brandSlate: '#334155'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#F8FAFC] text-[#334155] font-sans antialiased min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+    <!-- GLOBAL HEADER (components.js tarafından doldurulur) -->
+    <div id="global-header"></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+
+        <!-- 1. BREADCRUMB (SEO NAVİGASYON) -->
+        <div class="bg-[#0F172A] border-b border-slate-800 py-3.5 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs sm:text-sm text-slate-400">
+                    <a href="../index.html" class="hover:text-white transition-colors flex items-center gap-1">
+                        <i data-lucide="home" class="w-3.5 h-3.5"></i> Anasayfa
+                    </a>
+                    <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+                    <a href="blog.htm" class="hover:text-white transition-colors">Blog</a>
+                    <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+                    <span class="text-slate-200 truncate font-medium">Depo Otomasyonu ve El Terminali Kullanımı</span>
+                </nav>
+            </div>
+        </div>
+
+        <!-- 2. MAKALE HERO & BAŞLIK BÖLÜMÜ -->
+        <section class="bg-[#0F172A] text-white pt-10 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+            <!-- Background Glows -->
+            <div class="absolute top-0 right-1/4 w-96 h-96 bg-[#DC2626]/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-[#1E3A8A]/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-4xl mx-auto relative z-10 space-y-6">
+                <!-- Meta Info & Category -->
+                <div class="flex flex-wrap items-center gap-3 text-xs sm:text-sm font-semibold text-slate-400">
+                    <span class="bg-[#DC2626] text-white px-3 py-1 rounded-full font-bold">Depo & Lojistik</span>
+                    <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-4 h-4"></i> 10 Mart 2026</span>
+                    <span>•</span>
+                    <span class="flex items-center gap-1"><i data-lucide="clock" class="w-4 h-4"></i> 5 dk okuma</span>
+                </div>
+
+                <!-- H1 Başlığı -->
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-white">
+                    Ahtapot WMS İle Depo Operasyonlarında El Terminali Kullanımının 5 Kritik Faydası
+                </h1>
+
+                <!-- Yazar Bilgisi -->
+                <div class="pt-4 border-t border-slate-800/80 flex items-center gap-4">
+                    <div class="w-11 h-11 rounded-full bg-[#1E3A8A] border border-slate-700 flex items-center justify-center font-black text-white text-sm">
+                        CB
+                    </div>
+                    <div>
+                        <span class="block text-sm font-bold text-white">Compiturk Teknik & ERP Uzman Kadrosu</span>
+                        <span class="block text-xs text-slate-400">WMS & Depo Otomasyon Çözümleri</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAIN READING CONTAINER -->
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20 space-y-12 pb-20">
+
+            <!-- 3. KAPAK GÖRSELİ CONTAINER'I -->
+            <div class="shadow-2xl rounded-2xl overflow-hidden">
+                <div class="relative rounded-2xl overflow-hidden bg-slate-800/90 border border-slate-700/80 min-h-[350px] sm:min-h-[420px] flex flex-col items-center justify-center text-slate-400 p-8 text-center">
+                    <i data-lucide="scan-barcode" class="w-16 h-16 mb-4 text-[#DC2626]"></i>
+                    <span class="text-base font-bold text-slate-200">GÖRSEL ALANI</span>
+                    <span class="text-xs text-slate-400 mt-1 max-w-md">(Makale Kapak Resmi — &lt;img src="images/blog/el-terminali-wms-depo.jpg" alt="El Terminali ve Depo Otomasyonu" class="w-full h-full object-cover"&gt; eklenebilir)</span>
+                </div>
+            </div>
+
+            <!-- 4. ZENGİN MAKALE İÇERİĞİ -->
+            <article class="bg-white rounded-3xl border border-slate-200/80 p-6 sm:p-10 shadow-lg shadow-slate-200/40 space-y-8 text-slate-700 leading-relaxed text-base sm:text-lg">
+                
+                <!-- Lead Text / Özet Giriş -->
+                <p class="text-xl sm:text-2xl font-semibold text-[#0F172A] leading-relaxed border-l-4 border-[#DC2626] pl-6 py-1 bg-red-50/40 rounded-r-2xl">
+                    Depo operasyonlarında yapılan tek bir yanlış ürün sevkiyatı; müşteri memnuniyetsizliği, gereksiz kargo maliyetleri ve iade süreçleriyle şirketlere büyük finansal kayıplar olarak geri döner. Ahtapot WMS ve endüstriyel el terminalleri entegrasyonu, depolardaki insan hatasını tamamen ortadan kaldırıyor.
+                </p>
+
+                <!-- İçindekiler Kutusu (Table of Contents) -->
+                <div class="bg-[#F8FAFC] border border-slate-200 rounded-2xl p-6 space-y-3">
+                    <div class="flex items-center gap-2 font-black text-[#0F172A] text-base uppercase tracking-wider">
+                        <i data-lucide="list" class="w-5 h-5 text-[#DC2626]"></i> İçindekiler
+                    </div>
+                    <ul class="space-y-2 text-sm font-semibold text-slate-600 pl-2">
+                        <li><a href="#section-1" class="hover:text-[#DC2626] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-[#DC2626]"></i> 1. Barkodlu Raf Adresleme İle Arama Zamanını Sıfırlama</a></li>
+                        <li><a href="#section-2" class="hover:text-[#DC2626] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-[#DC2626]"></i> 2. Yanlış Ürün ve Hatalı Adet Sevkiyatlarına Son</a></li>
+                        <li><a href="#section-3" class="hover:text-[#DC2626] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-[#DC2626]"></i> 3. Ahtapot WMS ve DİA ERP İle Anlık Stok Doğruluğu</a></li>
+                    </ul>
+                </div>
+
+                <!-- BÖLÜM 1 -->
+                <section id="section-1" class="space-y-4 pt-4">
+                    <h2 class="text-2xl sm:text-3xl font-black text-[#0F172A] tracking-tight">
+                        1. Barkodlu Raf Adresleme İle Arama Zamanını Sıfırlama
+                    </h2>
+                    <p>
+                        Geleneksel depolarda personelin hangi ürünün hangi koridorda veya rafta olduğunu hatırlamaya çalışması, toplama sürelerini %40'a varan oranlarda uzatır.
+                    </p>
+                    <p>
+                        <strong>Ahtapot WMS Depo Yönetim Sistemi</strong> sayesinde her raf, koridor ve kat barkodlanır. El terminali ekranında toplanacak ürünün tam lokasyonu (Örn: Koridor A - Raf 04 - Kat 2) adım adım gösterilir.
+                    </p>
+                    <ul class="list-disc pl-6 space-y-2 text-base font-medium text-slate-700">
+                        <li><strong>En Kısa Toplama Rotası:</strong> Sistem, personeli depo içerisinde en verimli rotadan yönlendirir.</li>
+                        <li><strong>Hızlı Personel Adaptasyonu:</strong> İşe yeni başlayan depo personeli bile lokasyon yönlendirmeleriyle ilk günden yüksek verimle çalışır.</li>
+                        <li><strong>Giriş-Çıkış Hızı:</strong> Mal kabul operasyonlarında ürünler anında ilgili rafla eşleştirilerek depolanır.</li>
+                    </ul>
+                </section>
+
+                <!-- ÖZEL VURGU KUTUSU (CALLOUT BOX) -->
+                <div class="bg-[#0F172A] text-white rounded-2xl p-6 sm:p-8 border-l-8 border-[#DC2626] shadow-xl space-y-3">
+                    <div class="flex items-center gap-3 text-red-400 font-bold text-sm uppercase tracking-wider">
+                        <i data-lucide="zap" class="w-5 h-5"></i> Saha İstatistiği
+                    </div>
+                    <p class="text-sm sm:text-base text-slate-200 leading-relaxed font-normal">
+                        "El terminali ve Ahtapot WMS kullanan işletmelerde günlük sipariş hazırlama ve paketleme kapasitesi ortalama 3 katına çıkmakta, hatalı kargo gönderim oranları ise %0.01 seviyesine gerilemektedir."
+                    </p>
+                </div>
+
+                <!-- BÖLÜM 2 -->
+                <section id="section-2" class="space-y-4 pt-4">
+                    <h2 class="text-2xl sm:text-3xl font-black text-[#0F172A] tracking-tight">
+                        2. Yanlış Ürün ve Hatalı Adet Sevkiyatlarına Son
+                    </h2>
+                    <p>
+                        Birbirine benzeyen ambalajlar veya renk varyantları insan gözünün en çok hata yaptığı alanlardır. El terminali ile yapılan okutmalarda yanliş ürün okutulduğunda sistem sesli ve görsel uyarı vererek toplama işlemini kilitler.
+                    </p>
+                    <p>
+                        Böylece doğru sipariş, doğru müşteri ve doğru kargo firması eşleşmesi sevkiyat alanından çıkmadan %100 doğrulanmış olur.
+                    </p>
+                </section>
+
+                <!-- BÖLÜM 3 -->
+                <section id="section-3" class="space-y-4 pt-4">
+                    <h2 class="text-2xl sm:text-3xl font-black text-[#0F172A] tracking-tight">
+                        3. Ahtapot WMS ve DİA ERP İle Anlık Stok Doğruluğu
+                    </h2>
+                    <p>
+                        Compiturk Bilgisayar güvencesiyle sunulan <a href="../cozumler/ahtapot-depo-yonetimi.html" class="text-[#DC2626] font-bold hover:underline">Ahtapot Depo Yönetimi</a>, arka planda DİA ERP sisteminizle çift yönlü canlı entegrasyon sağlar.
+                    </p>
+                    <p>
+                        El terminalinden okutularak düşülen veya kabul edilen her ürün, DİA ERP üzerindeki stok kartına ve irsaliye/fatura süreçlerine anında yansır. Gün sonu manuel stok sayımı ihtiyacı ortadan kalkar.
+                    </p>
+                </section>
+
+            </article>
+
+            <!-- 5. İLGİLİ ÇÖZÜM CTA BANNER'I (DÖNÜŞÜM KUTUSU) -->
+            <section aria-label="Aksiyon Çağrısı">
+                <div class="bg-gradient-to-r from-[#DC2626] to-[#B91C1C] rounded-3xl p-8 sm:p-10 text-white shadow-2xl space-y-6 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <div class="space-y-2 max-w-xl">
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider">Depo Otomasyonu</span>
+                        <h3 class="text-2xl sm:text-3xl font-black leading-tight">
+                            Deponuzda Sıfır Hatalı Sevkiyat Dönemini Ahtapot WMS İle Başlatın
+                        </h3>
+                        <p class="text-white/90 text-sm sm:text-base">
+                            Uzman ekibimiz deponuzu yerinde incelesin, ihtiyaçlarınıza özel Ahtapot WMS demo sunumunu gerçekleştirsin.
+                        </p>
+                    </div>
+                    <a href="../iletisim/iletisim.html" class="px-8 py-4 bg-[#0F172A] hover:bg-black text-white font-bold rounded-2xl shadow-xl hover:scale-105 transition-all text-sm whitespace-nowrap flex items-center gap-2">
+                        Ücretsiz Keşif & Demo <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 6. BENZER BLOG YAZILARI (3 KARTLI GRID) -->
+            <section aria-label="Benzer Makaleler" class="space-y-6 pt-6">
+                <h3 class="text-2xl font-black text-[#0F172A] flex items-center gap-2">
+                    <span class="w-2.5 h-7 bg-[#DC2626] rounded-full inline-block"></span>
+                    İlginizi Çekebilecek Diğer Rehberler
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <!-- Kart 1 -->
+                    <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-5 space-y-3">
+                            <span class="text-xs font-bold text-[#DC2626] bg-red-50 px-2.5 py-1 rounded-lg">DİA ERP</span>
+                            <h4 class="font-bold text-[#0F172A] group-hover:text-[#DC2626] transition-colors leading-snug text-base">
+                                <a href="2026-kurumsal-erp-secim-rehberi.html">
+                                    2026 Kurumsal ERP Seçim Rehberi: İşletmeniz İçin En Doğru Yazılım
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="px-5 pb-5 pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-500">
+                            <span>8 dk okuma</span>
+                            <a href="2026-kurumsal-erp-secim-rehberi.html" class="text-[#DC2626] flex items-center gap-1">Oku <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Kart 2 -->
+                    <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-5 space-y-3">
+                            <span class="text-xs font-bold text-[#DC2626] bg-red-50 px-2.5 py-1 rounded-lg">Tahsilat & POS</span>
+                            <h4 class="font-bold text-[#0F172A] group-hover:text-[#DC2626] transition-colors leading-snug text-base">
+                                <a href="b2b-sanal-pos-ve-linkle-odeme.html">
+                                    Ödüyo ve Net Tahsilat İle Şirketlerde Tahsilat Riskini Sıfırlama
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="px-5 pb-5 pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-500">
+                            <span>4 dk okuma</span>
+                            <a href="b2b-sanal-pos-ve-linkle-odeme.html" class="text-[#DC2626] flex items-center gap-1">Oku <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Kart 3 -->
+                    <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-5 space-y-3">
+                            <span class="text-xs font-bold text-[#DC2626] bg-red-50 px-2.5 py-1 rounded-lg">E-Ticaret</span>
+                            <h4 class="font-bold text-[#0F172A] group-hover:text-[#DC2626] transition-colors leading-snug text-base">
+                                <a href="e-ticaret-pazar-yeri-stok-senkronizasyonu.html">
+                                    Trendyol ve Hepsiburada Mağazalarında Stok Çakışmasını Önleme
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="px-5 pb-5 pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-500">
+                            <span>6 dk okuma</span>
+                            <a href="e-ticaret-pazar-yeri-stok-senkronizasyonu.html" class="text-[#DC2626] flex items-center gap-1">Oku <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- GLOBAL FOOTER (components.js tarafından doldurulur) -->
+    <div id="global-footer"></div>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Lucide İkonlarını Başlatma
+        document.addEventListener("DOMContentLoaded", function() {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    </script>
+    
+    <!-- Dinamik Header ve Footer Yükleyici (Alt klasör yapısına uygun olarak ../js/components.js) -->
+    <script src="../js/components.js"></script>
+</body>
+</html>

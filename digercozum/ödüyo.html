@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödüyo — Akıllı Ödeme, Sanal POS ve Tahsilat Entegrasyonu | Compiturk</title>
+    <meta name="description" content="DİA ERP ile tam entegre Ödüyo altyapısı sayesinde tüm bankaların sanal POS'larını tek merkezden yönetin, tahsilatlarınızı otomatize edin. Compiturk.">
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandNavy: '#0F172A',
+                        brandNavyLight: '#1E3A8A',
+                        brandBlue: '#0066FF',
+                        brandBlueLight: '#00D2FF',
+                        brandSky: '#0284C7',
+                        brandRed: '#DC2626',
+                        brandSlate: '#334155',
+                        brandIce: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
+
+    <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-header"></div>
+
+    <!-- MAIN İÇERİK BAŞLANGICI -->
+    <main class="flex-grow">
+
+        <!-- ========================================================================= -->
+        <!-- 1. HERO / BANNER SECTION (ÖDÜYO MAVİSİ & BEYAZ KUTU İLE NET GÖRÜNÜRLÜK)  -->
+        <!-- ========================================================================= -->
+        <section id="module-hero" class="w-full bg-gradient-to-r from-[#0047AB] via-[#0066FF] to-[#0284C7] text-white relative overflow-hidden py-16 lg:py-24 z-20">
+            <!-- Arka Plan Vektörel Desen & Parlak Işıltılar -->
+            <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.2)_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-white/10 rounded-full blur-[130px] pointer-events-none"></div>
+            <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-black/15 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+                    <!-- SOL KOLON: İÇERİK VE VURGULAR (Col-span-7) -->
+                    <div class="lg:col-span-7 space-y-6 text-left">
+                        <div class="inline-block bg-white p-3.5 rounded-2xl shadow-xl border border-white/80 mb-2">
+                            <img src="../images/logo.png" alt="Ödüyo Logo" class="h-12 w-auto object-contain">
+                        </div>
+
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-black/20 backdrop-blur-md border border-white/30 text-white font-bold text-xs sm:text-sm tracking-wide">
+                                <span class="w-2 h-2 rounded-full bg-[#00D2FF] animate-pulse"></span>
+                                <span>⚡ DİA Entegre</span>
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-black/20 backdrop-blur-md border border-white/30 text-white font-bold text-xs sm:text-sm tracking-wide">
+                                <span>💳 Finans & Tahsilat</span>
+                            </span>
+                        </div>
+
+                        <!-- TEK H1 BAŞLIĞI -->
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                            Ödüyo — Akıllı Ödeme, Sanal POS ve <br class="hidden sm:inline" />
+                            <span class="text-amber-300">Tahsilat Entegrasyonu</span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-blue-50 font-normal leading-relaxed max-w-2xl">
+                            DİA ERP ile tam entegre Ödüyo altyapısı sayesinde tüm bankaların sanal POS'larını tek merkezden yönetin; linkle ödeme ve mobil tahsilat süreçlerinizi en uygun oranlarla otomatize edin.
+                        </p>
+
+                        <!-- İkonlu Vurgu Maddeleri -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/20">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/20 border border-white/30 text-white flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="credit-card" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Tek Panelden Tüm Banka Sanal POS'ları
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/20 border border-white/30 text-white flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Link & SMS İle 3D Secure Güvenli Ödeme
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/20 border border-white/30 text-white flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="refresh-cw" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    DİA ERP Anlık Cari & Fiş Otomasyonu
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SAĞ KOLON: ÖZEL GÖRSEL ALANI + FORM KUTUSU (Col-span-5) -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <!-- ÖZEL GÖRSEL ALANI (IMAGE PLACEHOLDER) -->
+                        <div class="relative rounded-2xl overflow-hidden bg-slate-900/60 border border-white/20 p-6 shadow-2xl flex flex-col items-center justify-center text-center space-y-3 backdrop-blur-md">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-blue-600/20 via-transparent to-cyan-400/20 pointer-events-none"></div>
+                            <div class="w-16 h-16 rounded-2xl bg-white/20 border border-white/30 text-white flex items-center justify-center">
+                                <i data-lucide="wallet" class="w-8 h-8"></i>
+                            </div>
+                            <div class="space-y-1 relative z-10">
+                                <span class="text-xs font-bold uppercase tracking-widest text-blue-200">Ödüyo Platform ⇄ DİA ERP</span>
+                                <h3 class="text-lg font-bold text-white">Akıllı Tahsilat Ağ Geçidi</h3>
+                                <p class="text-xs text-slate-300 max-w-sm">
+                                    Tüm bankalarla tek sözleşme, en uygun komisyonlar ve anında cari kapama otomasyonu.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Beyaz Form Kutusu -->
+                        <div class="bg-white rounded-2xl p-6 sm:p-8 text-slate-900 shadow-2xl border-2 border-[#0066FF]/40 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#0F1D38] via-[#0066FF] to-[#00D2FF]"></div>
+
+                            <div class="border-b border-slate-100 pb-4 mb-5 pt-1">
+                                <h2 class="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
+                                    <i data-lucide="sparkles" class="w-6 h-6 text-[#0066FF]"></i>
+                                    Ödüyo Demo & Sanal POS Teklifi Alın
+                                </h2>
+                                <p class="text-xs text-slate-500 mt-1">
+                                    Ödüyo sanal POS ve tahsilat entegrasyonu için hemen bilgilerinizi bırakın, uzmanımız arasın.
+                                </p>
+                            </div>
+
+                            <form action="#" method="POST" class="space-y-4" onsubmit="event.preventDefault();">
+                                <div class="space-y-1">
+                                    <label for="fullname" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        Ad Soyad <span class="text-[#0066FF]">*</span>
+                                    </label>
+                                    <input type="text" id="fullname" name="fullname" required placeholder="Örn: Ahmet Yılmaz" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#0066FF] focus:ring-2 focus:ring-[#0066FF]/20 outline-none transition-all" />
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="space-y-1">
+                                        <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Telefon <span class="text-[#0066FF]">*</span>
+                                        </label>
+                                        <input type="tel" id="phone" name="phone" required placeholder="05XX XXX XX XX" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#0066FF] focus:ring-2 focus:ring-[#0066FF]/20 outline-none transition-all" />
+                                    </div>
+
+                                    <div class="space-y-1">
+                                        <label for="company" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Şirket Adı
+                                        </label>
+                                        <input type="text" id="company" name="company" placeholder="Firma Ünvanı" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#0066FF] focus:ring-2 focus:ring-[#0066FF]/20 outline-none transition-all" />
+                                    </div>
+                                </div>
+
+                                <div class="space-y-1">
+                                    <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        E-Posta Adresi <span class="text-[#0066FF]">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" required placeholder="ahmet@sirketiniz.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#0066FF] focus:ring-2 focus:ring-[#0066FF]/20 outline-none transition-all" />
+                                </div>
+
+                                <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-[#0066FF] hover:bg-[#0052cc] text-white font-extrabold text-base shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.005] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer border border-blue-400/30">
+                                    <span>Hemen Bilgi & Teklif İsteyin</span>
+                                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+
+                                <p class="text-[11px] text-center text-slate-400 mt-2 flex items-center justify-center gap-1">
+                                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
+                                    Verileriniz KVKK kapsamında %100 güvende tutulmaktadır.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 2. ÖDÜYO FİNANSAL YETENEKLERİ (3x2 GRID KARTLAR)                          -->
+        <!-- ========================================================================= -->
+        <section id="oduyo-ozellikler" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-black tracking-widest text-[#0066FF] uppercase bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">
+                        AKILLI ÖDEME MİMARİSİ
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Ödüyo Finansal <span class="text-[#0066FF]">Yetenekleri</span>
+                    </h2>
+                    <p class="text-base text-slate-600 font-normal">
+                        Şirketinizin tahsilat operasyonlarını hızlandıran, tüm banka POS'larını tek çatı altında toplayan gelişmiş özellikler.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+
+                    <!-- Kart 1: Tek Panelden Çoklu Sanal POS Yönetimi -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0066FF] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-blue-50 text-[#0066FF] flex items-center justify-center group-hover:bg-[#0066FF] group-hover:text-white transition-colors">
+                                <i data-lucide="layers" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#0066FF] transition-colors">Çoklu Sanal POS Yönetimi</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Tüm farklı bankaların sanal POS'larının ve ödeme kuruluşlarının tek bir güvenli panel üzerinden merkezi olarak çalıştırılması.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 2: Link ve SMS İle Ödeme Alımı -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0F172A] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-slate-100 text-[#0F172A] flex items-center justify-center group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
+                                <i data-lucide="link" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors">Link & SMS İle Ödeme Alımı</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Müşterilere SMS, e-posta veya sosyal medya üzerinden tek tıkla ödeme linki gönderip 3D Secure ile anında tahsilat yapma.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 3: DİA ERP Otomatik Fiş ve Cari Eşleşmesi -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                                <i data-lucide="refresh-cw" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">DİA ERP Otomatik Eşleşme</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Alınan tüm kredi kartı ödemelerinin DİA ERP sistemindeki ilgili cari hesaba ve banka/kasa fişlerine anında otomatik işlenmesi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 4: Tekrarlayan Ödeme ve Taksit Yönetimi -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                                <i data-lucide="calendar-range" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Tekrarlayan Ödeme & Taksit</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Düzenli aidat, abonelik ve sözleşmeli taksit ödemelerinin kayıtlı kartlardan otomatik zamanlanmış olarak tahsil edilmesi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 5: Mobil POS ve Saha Tahsilatı -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-purple-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                                <i data-lucide="smartphone" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-purple-600 transition-colors">Mobil POS & Saha Tahsilatı</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Saha satış ekiplerinin akıllı telefonları veya mobil terminaller üzerinden saniyeler içinde kredi kartı tahsilatı alabilmesi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 6: Avantajlı Komisyon Oranları -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-cyan-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                                <i data-lucide="percent" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-cyan-600 transition-colors">Avantajlı Komisyon Oranları</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Tüm bankalarla ayrı ayrı uğraşmadan tek sözleşme üzerinden en uygun komisyon oranlarıyla avantajlı çalışma imkanı.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 3. NEDEN COMPITURK ÖDÜYO ENTEGRASYONU? (ÖDÜYO MAVİ ACCENT BÖLÜMÜ)          -->
+        <!-- ========================================================================= -->
+        <section id="neden-compiturk-oduyo" class="py-16 lg:py-24 bg-[#0066FF] text-white">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-white font-bold text-xs border border-white/20">
+                            <i data-lucide="zap" class="w-4 h-4"></i>
+                            AKILLI TAHSİLAT AVANTAJLARI
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                            Neden Compiturk <br />
+                            Ödüyo Entegrasyonu?
+                        </h2>
+                        <p class="text-blue-100 text-base leading-relaxed">
+                            Tahsilat risklerini sıfırlayan, manuel muhasebe yükünü tamamen ortadan kaldıran ve şirketinizin nakit akışını en üst düzeye çıkaran DİA entegre finansal altyapı.
+                        </p>
+                        <div class="space-y-3 text-sm font-semibold text-white">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
+                                <span>Tüm bankaların sanal POS işlemlerini tek ekrandan yöneterek zamandan tasarruf edin</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
+                                <span>Alınan ödemeleri manuel muhasebe girişine gerek kalmadan doğrudan DİA ERP'ye işleyin</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
+                                <span>SMS ve linkle ödeme yöntemleriyle müşterilerinizin size saniyeler içinde borç kapatmasını sağlayın</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sağ Taraf İstatistik Paneli -->
+                    <div class="bg-[#0F172A] text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-blue-400/30 space-y-6">
+                        <div class="border-b border-slate-800 pb-5">
+                            <div class="text-4xl font-black text-[#00D2FF]">Tek Merkez</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Çoklu Banka Sanal POS Yönetimi</div>
+                            <p class="text-xs text-slate-400 mt-1">Farklı bankaların panellerine tek tek girmek tarih olur.</p>
+                        </div>
+
+                        <div>
+                            <div class="text-4xl font-black text-white">%100</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">DİA ERP Cari & Fiş Eşleşmesi</div>
+                            <p class="text-xs text-slate-400 mt-1">Tahsilat bittiği an muhasebe kayıtları otomatik olarak tamamlanır.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 4. 4 ADIMDA KURULUM SÜRECİ                                                -->
+        <!-- ========================================================================= -->
+        <section id="oduyo-adimlari" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-bold text-[#0066FF] uppercase tracking-wider bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">
+                        HIZLI CANLIYA GEÇİŞ
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        4 Adımda Kurulum <span class="text-[#0066FF]">Süreci</span>
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        Ödüyo akıllı tahsilat ve sanal POS entegrasyonunuzu devreye almak için izlediğimiz adımlar.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+
+                    <!-- Adım 1 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0066FF] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#0066FF] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="search" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#0066FF] transition-colors">01</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">POS & Komisyon Analizi</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Şirketinizin mevcut banka anlaşmaları ve sanal POS komisyon oranları analiz edilerek en avantajlı yapı planlanır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 2 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0F172A] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-slate-100 text-[#0F172A] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="git-merge" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#0F172A] transition-colors">02</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Ödüyo & DİA API Bağlantısı</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Ödüyo müşteri hesabınız aktifleştirilir ve DİA ERP ile güvenli API veri köprüsü kurulur.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 3 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-600 transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-amber-600 transition-colors">03</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Test Çekimleri & Güvenlik</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                3D Secure test ödemeleri yapılarak tahsilatların DİA ERP cari hesaplarına doğru işlediği doğrulanır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 4 -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-emerald-500/80 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="rocket" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-emerald-500">04</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Canlıya Geçiş & Otomasyon</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Sistem canlıya alınarak linkle ödeme ve otomatik cari kapama operasyonları başlatılır.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 5. BİRLİKTE KULLANABİLECEĞİNİZ DİĞER ÇÖZÜMLERİMİZ                         -->
+        <!-- ========================================================================= -->
+        <section id="tamamlayici-cozumler" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                        Birlikte Kullanabileceğiniz <span class="text-[#0066FF]">Diğer Çözümlerimiz</span>
+                    </h2>
+                    <p class="text-sm text-slate-600">Ödüyo entegrasyonunuzu destekleyen diğer entegre DİA ve Compiturk yazılımları.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Çözüm 1 -->
+                    <a href="net-tahsilat.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#0066FF] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#0066FF] flex items-center justify-center mb-4 group-hover:bg-[#0066FF] group-hover:text-white transition-colors">
+                            <i data-lucide="credit-card" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#0066FF] transition-colors">Net Tahsilat</h3>
+                        <p class="text-xs text-slate-500 mt-1">SMS linki ile online ödeme ve cari bakiye kapama.</p>
+                    </a>
+
+                    <!-- Çözüm 2 -->
+                    <a href="distributor-pos.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#0F172A] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-slate-100 text-[#0F172A] flex items-center justify-center mb-4 group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
+                            <i data-lucide="layers" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors">Distribütör POS</h3>
+                        <p class="text-xs text-slate-500 mt-1">Çoklu banka POS yönetimi ve akıllı yönlendirme.</p>
+                    </a>
+
+                    <!-- Çözüm 3 -->
+                    <a href="mobil-b2b-bayi-platformu.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center mb-4 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Mobil B2B Bayi Platformu</h3>
+                        <p class="text-xs text-slate-500 mt-1">Bayileriniz için sanal POS ile sipariş ve tahsilat.</p>
+                    </a>
+
+                    <!-- Çözüm 4 -->
+                    <a href="pdks.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <i data-lucide="scan-face" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">PDKS & Personel Takip</h3>
+                        <p class="text-xs text-slate-500 mt-1">Yüz tanıma ve mobil konum bazlı mesai takibi.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 6. SIKÇA SORULAN SORULAR (SEO FAQ - HTML5 ACCORDION)                     -->
+        <!-- ========================================================================= -->
+        <section id="faq" class="py-16 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                
+                <div class="text-center space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Sıkça Sorulan <span class="text-[#0066FF]">Sorular</span></h2>
+                    <p class="text-sm text-slate-600">Ödüyo akıllı ödeme ve sanal POS entegrasyonu hakkında merak ettiğiniz tüm yanıtlar.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Soru 1 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#0066FF] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#0066FF]">
+                            <span>Ödüyo üzerinden alınan ödemeler DİA ERP cari hesabına otomatik işlenir mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Ödüyo altyapısı üzerinden 3D Secure ile başarıyla gerçekleştirilen her tahsilat, DİA ERP'ye anlık olarak iletilir ve ilgili müşterinin cari hesabına, banka veya kasa fişine otomatik olarak işlenerek bakiye kapatılır.
+                        </p>
+                    </details>
+
+                    <!-- Soru 2 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#0066FF] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#0066FF]">
+                            <span>Tüm bankaların kredi kartlarına taksit imkanı sunuluyor mu?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Ödüyo entegrasyonu sayesinde anlaşmalı olduğunuz tüm Türk bankalarının (Bonus, Axess, Maximum, World, CardFinans vb.) kredi kartlarına tek çekim veya taksitli tahsilat imkanı sağlayabilirsiniz.
+                        </p>
+                    </details>
+
+                    <!-- Soru 3 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#0066FF] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#0066FF]">
+                            <span>Linkle ödeme sisteminde müşterinin üye olması gerekir mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Hayır. Müşterilerinize SMS veya e-posta ile gönderdiğiniz ödeme linkine tıkladıklarında herhangi bir üyelik veya şifre oluşturma zorunluluğu olmaksızın güvenli ödeme sayfasına yönlendirilirler.
+                        </p>
+                    </details>
+
+                    <!-- Soru 4 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#0066FF] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#0066FF]">
+                            <span>Komisyon oranları ve banka anlaşmaları süreci nasıl yürütülür?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Ödüyo iş ortaklığı sayesinde her bankayla ayrı ayrı sanal POS sözleşmesi yapma zahmetinden kurtulur, tek başvuru ve avantajlı kurumsal komisyon oranlarıyla hızlıca sanal POS sahibi olursunuz.
+                        </p>
+                    </details>
+
+                    <!-- Soru 5 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#0066FF] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#0066FF]">
+                            <span>Kurulum ne kadar sürer?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Ödüyo hesap aktivasyonu ve banka sanal POS tanımlarının tamamlanmasının ardından Compiturk uzman ekibi tarafından DİA ERP entegrasyonu ve test ödemeleri 1 ila 2 iş günü içinde tamamlanarak canlıya alınır.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 7. MÜŞTERİ YORUMLARI & REFERANSLAR (3 KART)                                -->
+        <!-- ========================================================================= -->
+        <section id="referanslar" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Müşterilerimiz <span class="text-[#0066FF]">Ne Diyor?</span></h2>
+                    <p class="text-sm text-slate-600">Tahsilat süreçlerini Compiturk Ödüyo entegrasyonu ile dijitalleştiren B2B firmalarının görüşleri.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Yorum 1 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Farklı bankaların sanal POS panellerini tek tek takip etmekten kurtulduk. Ödüyo ve DİA ERP entegrasyonu sayesinde gelen ödemeler muhasebe programımıza anında işleniyor. Nakit akışımız inanılmaz hızlandı."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Serkan M.</span>
+                            <span class="text-xs text-slate-500 font-medium">Mali İşler Direktörü - Toptan Ticaret</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 2 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Müşterilerimize SMS ile gönderdiğimiz ödeme linkleri sayesinde alacaklarımızı toplamak çok kolaylaştı. 3D Secure güvenliği ve düşük komisyon oranları harika bir avantaj."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Zeynep K.</span>
+                            <span class="text-xs text-slate-500 font-medium">Finans Yöneticisi - Üretim A.Ş.</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 3 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Compiturk ekibinin kurduğu Ödüyo entegrasyonu ile manuel dekont işleme devri kapandı. Tüm tahsilatlar otomatik eşleşiyor. Profesyonel hizmetleri için teşekkür ederiz."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Kerem D.</span>
+                            <span class="text-xs text-slate-500 font-medium">Şirket Ortağı - Dağıtım</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 8. BLOG YAZILARIMIZ (3 KART)                                              -->
+        <!-- ========================================================================= -->
+        <section id="blog" class="py-16 bg-[#F8FAFC]">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Finans & Tahsilat <span class="text-[#0066FF]">Rehberi & Makaleler</span></h2>
+                    <p class="text-sm text-slate-600">Sanal POS ve dijital tahsilat operasyonlarınızı geliştirecek uzman içeriklerimiz.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Makale 1 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#0066FF] uppercase tracking-wider bg-blue-50 px-2.5 py-1 rounded-md">NAKİT AKIŞI</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#0066FF] transition-colors line-clamp-2">
+                                B2B Şirketlerde Sanal POS Ve Linkle Ödeme Sistemlerinin Nakit Akışına Etkisi
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Tahsilat sürelerini kısaltarak şirket sermayesini güçlendiren dijital ödeme yöntemlerinin önemi.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 2 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider bg-slate-100 px-2.5 py-1 rounded-md">KOMİSYON MALİYETİ</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors line-clamp-2">
+                                Çoklu Banka POS Kullanımında Komisyon Maliyetlerini Optimize Etme Yolları
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Tek merkezli sanal POS altyapıları ile banka komisyon oranlarını en avantajlı seviyeye getirme rehberi.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 3 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider bg-emerald-50 px-2.5 py-1 rounded-md">OTOMATİK EŞLEŞME</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-emerald-600 transition-colors line-clamp-2">
+                                Otomatik Tahsilat Entegrasyonunun Muhasebe Ve Cari Takip Süreçlerine Faydaları
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Manuel dekont işleme yükünü bitiren ve cari hesapları hatasız kapatan ERP tahsilat otomasyonu.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-footer"></div>
+
+    <!-- SCRIPT ÇAĞRILARI -->
+    <script src="../js/components.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

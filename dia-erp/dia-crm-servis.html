@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DİA CRM ve Teknik Servis Yönetimi Programı | Müşteri & Servis Takip | Compiturk</title>
+    <meta name="description" content="DİA CRM ve Teknik Servis Yönetimi Yazılımı ile müşteri ilişkilerini, teklifleri, cihaz garanti takibini ve saha servis ekiplerini tek platformdan yönetin. Compiturk Yetkili Çözüm Ortağı.">
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#DC2626',
+                        brandNavy: '#0F172A',
+                        brandSlate: '#64748b',
+                        brandIce: '#F8FAFC',
+                        diaBlue: '#245BA7',
+                        diaOrange: '#E77F18',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Mega Menu Tabancası & Animasyon Düzeltmesi */
+.mega-menu {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none; /* Gizliyken farenin algılamasını engeller */
+    transform: translateY(10px);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Sadece ilgili gruba gelindiğinde görünür ve tıklanabilir yap */
+.group:hover .mega-menu {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto; /* Açıldığında tıklanabilir yap */
+    transform: translateY(0);
+}
+    </style>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
+
+    <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-header"></div>
+
+    <!-- MAIN İÇERİK BAŞLANGICI -->
+    <main class="flex-grow">
+
+        <!-- ========================================================================= -->
+        <!-- 1. BÖLÜM: BANNER / HERO SECTION (TAM DİA MAVİSİ BG)                       -->
+        <!-- ========================================================================= -->
+        <section id="module-hero" class="w-full bg-[#245BA7] text-white py-16 lg:py-24 relative overflow-hidden z-20">
+            <!-- Arka Plan Vektörel Desen & Işıltılar -->
+            <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#E77F18]/20 rounded-full blur-[130px] pointer-events-none"></div>
+            <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#0F1D38]/40 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+                    <!-- SOL KOLON: İÇERİK VE VURGULAR (Col-span-7) -->
+                    <div class="lg:col-span-7 space-y-6 text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#E77F18] font-bold text-xs sm:text-sm tracking-wide">
+                            <span class="w-2 h-2 rounded-full bg-[#E77F18] animate-pulse"></span>
+                            <span class="text-white">DİA BULUT ERP MODÜLÜ</span>
+                        </div>
+
+                        <!-- TEK H1 BAŞLIĞI -->
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                            DİA CRM ve Teknik Servis <br class="hidden sm:inline" />
+                            <span class="text-[#E77F18]">Yönetimi Programı</span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-blue-100 font-normal leading-relaxed max-w-2xl">
+                            Müşteri ilişkilerinizi, teklif ve fırsat süreçlerinizi, cihaz servis ve garanti takiplerini tek bir platformdan uçtan uca yönetin.
+                        </p>
+
+                        <!-- İkonlu Vurgu Maddeleri -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/15">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-[#E77F18] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="users" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Müşteri Sadakati & Potansiyel Fırsatlar
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="qr-code" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Cihaz Barkodlu Servis Takibi
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-blue-200 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="smartphone" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Saha Servis Mobil Uygulaması
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SAĞ KOLON: DEMO & BİLGİ FORMU KUTUSU (Col-span-5) -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-white rounded-2xl p-6 sm:p-8 text-slate-900 shadow-2xl border-2 border-[#E77F18]/40 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#245BA7] via-[#E77F18] to-[#DC2626]"></div>
+
+                            <div class="border-b border-slate-100 pb-4 mb-5 pt-1">
+                                <h2 class="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
+                                    <i data-lucide="sparkles" class="w-6 h-6 text-[#E77F18]"></i>
+                                    CRM & Servis Yazılımı Ücretsiz Demo
+                                </h2>
+                                <p class="text-xs text-slate-500 mt-1">
+                                    Servis ve müşteri süreçlerinizi dijitalleştirmek için bilgilerinizi bırakın, uzmanımız hemen arasın.
+                                </p>
+                            </div>
+
+                            <form action="#" method="POST" class="space-y-4" onsubmit="event.preventDefault();">
+                                <div class="space-y-1">
+                                    <label for="fullname" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        Ad Soyad <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="text" id="fullname" name="fullname" required placeholder="Örn: Ahmet Yılmaz" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 outline-none transition-all" />
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="space-y-1">
+                                        <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Telefon <span class="text-[#DC2626]">*</span>
+                                        </label>
+                                        <input type="tel" id="phone" name="phone" required placeholder="05XX XXX XX XX" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 outline-none transition-all" />
+                                    </div>
+
+                                    <div class="space-y-1">
+                                        <label for="company" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Şirket Adı
+                                        </label>
+                                        <input type="text" id="company" name="company" placeholder="Firma Ünvanı" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 outline-none transition-all" />
+                                    </div>
+                                </div>
+
+                                <div class="space-y-1">
+                                    <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        E-Posta Adresi <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" required placeholder="ahmet@sirketiniz.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 outline-none transition-all" />
+                                </div>
+
+                                <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-[#E77F18] hover:bg-[#d06f13] text-white font-extrabold text-base shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-[1.005] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer border border-orange-400/30">
+                                    <span>Hemen Bilgi & Demo İsteyin</span>
+                                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+
+                                <p class="text-[11px] text-center text-slate-400 mt-2 flex items-center justify-center gap-1">
+                                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
+                                    Verileriniz KVKK kapsamında %100 güvende tutulmaktadır.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 2. BÖLÜM: MÜŞTERİ VE SERVİS SÜREÇLERİNİ GÜÇLENDİREN ÖZELLİKLER (3x2 GRID)   -->
+        <!-- ========================================================================= -->
+        <section id="crm-servis-ozellikler" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-black tracking-widest text-[#245BA7] uppercase bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">
+                        UÇTAN UÇA SERVİS VE MÜŞTERİ YÖNETİMİ
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Müşteri ve Servis Süreçlerinizi <span class="text-[#245BA7]">Güçlendiren Özellikler</span>
+                    </h2>
+                    <p class="text-base text-slate-600 font-normal">
+                        Satış öncesinden teklif yönetimine, servis kabulden dijital faturaya kadar tüm zinciri tek merkezde birleştirin.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+
+                    <!-- Kart 1: Müşteri İlişkileri & Fırsat Yönetimi -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#245BA7] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-blue-50 text-[#245BA7] flex items-center justify-center group-hover:bg-[#245BA7] group-hover:text-white transition-colors">
+                                <i data-lucide="user-check" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors">Müşteri İlişkileri & Fırsat Yönetimi</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Satış potansiyellerini, görüşme geçmişini ve teklif süreçlerini anlık izleme olanağı sağlayarak fırsatları satışa dönüştürme oranlarınızı yükseltin.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 2: Cihaz & Garanti Takibi -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#E77F18] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-amber-50 text-[#E77F18] flex items-center justify-center group-hover:bg-[#E77F18] group-hover:text-white transition-colors">
+                                <i data-lucide="shield-check" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#E77F18] transition-colors">Cihaz & Garanti Takibi</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Seri no/barkod ile cihaz kabul, yedek parça değişimi ve garanti süresi kontrolü yaparak cihazların geçmiş müdahale kayıtlarını eksiksiz görün.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 3: Teknik Servis İş Emri Yönetimi -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-red-50 text-[#DC2626] flex items-center justify-center group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                                <i data-lucide="wrench" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Teknik Servis İş Emri Yönetimi</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Atanan teknisyenler, servis durum güncellemeleri ve SMS/E-Posta bilgilendirmeleri ile müşterilerinizi sürecin her adımında anlık bilgilendirin.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 4: Mobil Teknik Servis -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                                <i data-lucide="tablet" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Mobil Teknik Servis</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Saha ekiplerinin tablet/telefondan servis formu doldurması, müşteri imzası alması ve arızalı cihaz görsellerini anında kaydetmesini sağlayın.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 5: Periyodik Bakım & Sözleşme Takibi -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-indigo-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                <i data-lucide="calendar-clock" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">Periyodik Bakım & Sözleşme Takibi</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Sözleşmeli müşterilerin bakım zamanı geldiğinde otomatik anımsatma sistemiyle bakım anlaşmalarınızı eksiksiz yönetin.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 6: Fatura ve Muhasebe Entegrasyonu -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-cyan-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                                <i data-lucide="file-text" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-cyan-600 transition-colors">Fatura ve Muhasebe Entegrasyonu</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Servis formunun ve kullanılan yedek parçaların tek tıkla faturaya dönüştürülmesi sayesinde stok ve muhasebe kayıtlarınızı anında güncelleyin.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 3. BÖLÜM: NEDEN DİA CRM VE SERVİS YAZILIMI? (MÜŞTERİ MEMNUNİYETİ)          -->
+        <!-- ========================================================================= -->
+        <section id="crm-servis-verimlilik" class="py-16 lg:py-24 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-100 text-[#245BA7] font-bold text-xs">
+                            <i data-lucide="heart-handshake" class="w-4 h-4"></i>
+                            MÜŞTERİ MEMNUNİYETİ & KÂRLILIK
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
+                            Neden DİA CRM ve Servis <br />
+                            <span class="text-[#245BA7]">Yazılımı Kullanmalısınız?</span>
+                        </h2>
+                        <p class="text-slate-600 text-base leading-relaxed">
+                            Servis kaçırmayı önleyen, teknik ekip performansını ölçen ve müşteri sadakatini artıran B2B dönüşüm avantajları ile işletmenize değer katın.
+                        </p>
+                        <div class="space-y-3 text-sm font-semibold text-slate-800">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600"></i>
+                                <span>Geciken ve unutulan servis iş emirlerini tamamen ortadan kaldırın</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600"></i>
+                                <span>Yedek parça takibiyle stok kaçaklarını önleyin ve kârlılığı koruyun</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600"></i>
+                                <span>Müşteri memnuniyetini ve periyodik sözleşme yenileme oranlarını artırın</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sağ Taraf İstatistik Paneli -->
+                    <div class="bg-[#0F1D38] text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-slate-800 space-y-6">
+                        <div class="border-b border-slate-800 pb-5">
+                            <div class="text-4xl font-black text-[#E77F18]">%50</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Daha Hızlı Servis Kapatma Süresi</div>
+                            <p class="text-xs text-slate-400 mt-1">Mobil servis formu ve canlı iş emri takibi ile arıza süreçleri hızla çözüme ulaşır.</p>
+                        </div>
+
+                        <div>
+                            <div class="text-4xl font-black text-[#245BA7]">%100</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Cihaz & Garanti İzlenebilirliği</div>
+                            <p class="text-xs text-slate-400 mt-1">Seri numarası bazlı geçmiş servis kayıtları bulut sistemde güvenle saklanır.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 4. BÖLÜM: 4 ADIMDA TEKNİK SERVİS VE CRM SÜRECİ                            -->
+        <!-- ========================================================================= -->
+        <section id="servis-sureci-adimlari" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-bold text-[#E77F18] uppercase tracking-wider bg-orange-500/10 px-3.5 py-1.5 rounded-full border border-orange-500/30">
+                        SÜREÇ AKIŞI
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        4 Adımda Teknik Servis ve <span class="text-[#245BA7]">CRM Süreci</span>
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        İlk müşteri temasından faturalandırmaya kadar adım adım dijitalleştirilmiş servis yapısı.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+
+                    <!-- Adım 1 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#245BA7] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#245BA7] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="headset" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#245BA7] transition-colors">01</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Müşteri Talebi & Servis Kaydı</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Müşteri talebi alınır, arızalı cihaz kabulü seri numarasıyla sisteme işlenerek servis kaydı açılır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 2 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#E77F18] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-amber-50 text-[#E77F18] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="clipboard-list" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#E77F18] transition-colors">02</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Teknisyen Ataması & İş Emri</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Uygun teknisyen atanarak iş emri oluşturulur; durum güncellemeleri otomatik SMS/E-Posta ile bildirilir.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 3 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="wrench" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#DC2626] transition-colors">03</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Cihaz Onarımı & Parça Kullanımı</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Sahada veya atölyede cihaz onarımı gerçekleştirilir, kullanılan yedek parçalar iş emrine eklenir.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 4 -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-emerald-500/80 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-emerald-500">04</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Müşteri Onayı & Faturaya Dönüştürme</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Müşteriden dijital imza alınır; tamamlanan servis formu tek tıkla e-faturaya dönüştürülür.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 5. BÖLÜM: BİRLİKTE KULLANABİLECEĞİNİZ DİĞER ÇÖZÜMLERİMİZ                 -->
+        <!-- ========================================================================= -->
+        <section id="tamamlayici-cozumler" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                        Birlikte Kullanabileceğiniz <span class="text-[#DC2626]">Diğer Çözümlerimiz</span>
+                    </h2>
+                    <p class="text-sm text-slate-600">CRM & Servis modülünüzü diğer entegre DİA yazılımları ile güçlendirin.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Çözüm 1 -->
+                    <a href="dia-stok-depo.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#245BA7] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#245BA7] flex items-center justify-center mb-4 group-hover:bg-[#245BA7] group-hover:text-white transition-colors">
+                            <i data-lucide="boxes" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors">Stok & Depo Yönetimi</h3>
+                        <p class="text-xs text-slate-500 mt-1">Yedek parça ve malzeme stoklarını canlı takip edin.</p>
+                    </a>
+
+                    <!-- Çözüm 2 -->
+                    <a href="dia-on-muhasebe.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#E77F18] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-amber-50 text-[#E77F18] flex items-center justify-center mb-4 group-hover:bg-[#E77F18] group-hover:text-white transition-colors">
+                            <i data-lucide="calculator" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#E77F18] transition-colors">Ön Muhasebe Programı</h3>
+                        <p class="text-xs text-slate-500 mt-1">Cari hesaplar, kasa ve banka hareketlerini otomatikleştirin.</p>
+                    </a>
+
+                    <!-- Çözüm 3 -->
+                    <a href="dia-e-donusum.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#DC2626] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center mb-4 group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                            <i data-lucide="file-text" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">e-Fatura & e-İrsaliye</h3>
+                        <p class="text-xs text-slate-500 mt-1">Tamamlanan servisleri tek tıkla e-faturaya çevirin.</p>
+                    </a>
+
+                    <!-- Çözüm 4 -->
+                    <a href="dia-saha-satis.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <i data-lucide="smartphone" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Mobil Saha Satış</h3>
+                        <p class="text-xs text-slate-500 mt-1">Saha satış ve pazarlama ekiplerinizi mobil ortamdan izleyin.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 6. BÖLÜM: SIKÇA SORULAN SORULAR (SEO FAQ - ACCORDION)                     -->
+        <!-- ========================================================================= -->
+        <section id="faq" class="py-16 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                
+                <div class="text-center space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Sıkça Sorulan <span class="text-[#245BA7]">Sorular</span></h2>
+                    <p class="text-sm text-slate-600">DİA CRM & Teknik Servis çözümü hakkında merak ettiğiniz tüm yanıtlar.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Soru 1 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                            <span>DİA CRM ile Satış Fırsatları ve Teklifler Nasıl Takip Edilir?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Potansiyel müşteri adayları (lead) kaydedildikten sonra ilgili temsilciye atanır. Yapılan görüşme notları, hazırlanan teklifler ve revizyonlar tarih bazlı saklanır. Teklif onaylandığında tek tıkla sipariş veya faturaya dönüştürülebilir.
+                        </p>
+                    </details>
+
+                    <!-- Soru 2 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                            <span>Cihaz Garanti Süresi ve Seri Numarası Takibi Yapılabilir mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Her cihaz seri numarası veya barkod bilgisiyle sisteme kaydedilir. Cihazın garanti başlangıç/bitiş tarihleri, geçmiş servis işlemleri ve değiştirilen yedek parçalar geriye dönük sorgulanabilir.
+                        </p>
+                    </details>
+
+                    <!-- Soru 3 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                            <span>Saha Servis Ekibi Mobilden İşe Dair Görsel ve Müşteri İmzası Alabilir mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. DİA Mobil Servis uygulaması üzerinden saha teknisyenleri arızalı cihazın fotoğrafını ekleyebilir, işlem sonunda müşterinin ekrandan parmağıyla atacağı dijital imzayı kaydedebilir.
+                        </p>
+                    </details>
+
+                    <!-- Soru 4 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                            <span>Tamir Edilen Cihazlar İçin SMS İle Müşteriye Otomatik Bilgi Gider mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. SMS entegrasyonu sayesinde "Cihazınız teslim alındı", "Onarım tamamlandı, teslim alabilirsiniz" gibi aşama değişikliklerinde müşterilerinize otomatik bilgilendirme SMS'leri iletilir.
+                        </p>
+                    </details>
+
+                    <!-- Soru 5 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                            <span>Serviste Kullanılan Yedek Parçalar Stoktan Otomatik Düşer mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Servis formuna yedek parça eklendiğinde ve iş emri tamamlandığında, kullanılan malzemeler ilgili mobil araç deposundan veya merkez depodan otomatik düşülür.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 7. BÖLÜM: MÜŞTERİ YORUMLARI & REFERANSLAR (3 KART)                        -->
+        <!-- ========================================================================= -->
+        <section id="referanslar" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Müşterilerimiz <span class="text-[#E77F18]">Ne Diyor?</span></h2>
+                    <p class="text-sm text-slate-600">Teknik servis ve CRM süreçlerini DİA ile dijitalleştiren B2B firmaların görüşleri.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Yorum 1 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "İklimlendirme ve kombi servisi hizmeti veriyoruz. DİA Servis modülü öncesi saha teknisyenlerinin hangi cihazda ne parça değiştirdiğini takip edemiyorduk. Şimdi anlık tablet onayı ve SMS bilgilendirme ile müşteri memnuniyetimiz zirve yaptı."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Orhan T.</span>
+                            <span class="text-xs text-slate-500 font-medium">Servis Müdürü - Isıtma & Soğutma A.Ş.</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 2 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "CRM modülü ile potansiyel müşterilerimize verdiğimiz tekliflerin takibi kolaylaştı. Satış temsilcilerimizin görüşme notları tek yerde biriktiği için müşteri kaçırma derdimiz bitti. Compiturk ekibine teşekkür ederiz."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Merve S.</span>
+                            <span class="text-xs text-slate-500 font-medium">Satış Operasyon Yöneticisi - Endüstriyel Mutfak</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 3 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Medikal cihaz teknik servisinde seri numarası ve garanti takibi hayatidir. DİA ile hangi cihazın garantisinin ne zaman biteceğini ve geçmiş arıza kayıtlarını saniyesinde görüyoruz."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Bora K.</span>
+                            <span class="text-xs text-slate-500 font-medium">Genel Müdürü - Medikal Teknoloji</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 8. BÖLÜM: BLOG YAZILARIMIZ (3 KART)                                       -->
+        <!-- ========================================================================= -->
+        <section id="blog" class="py-16 bg-[#F8FAFC]">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">CRM & Servis <span class="text-[#245BA7]">Rehberi & Makaleler</span></h2>
+                    <p class="text-sm text-slate-600">Servis operasyonlarınızı ve müşteri ilişkilerinizi geliştirecek uzman içeriklerimiz.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Makale 1 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#245BA7] uppercase tracking-wider bg-blue-50 px-2.5 py-1 rounded-md">MÜŞTERİ SADAKATİ</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors line-clamp-2">
+                                Müşteri Memnuniyetini %50 Artıran CRM ve Servis Stratejileri
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Otomatik SMS bilgilendirmeleri ve şeffaf iş emri takibi ile müşteri bağlılığı oluşturma yöntemleri.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 2 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#E77F18] uppercase tracking-wider bg-amber-50 px-2.5 py-1 rounded-md">CİHAZ İZLENEBİLİRLİĞİ</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#E77F18] transition-colors line-clamp-2">
+                                Teknik Servis Operasyonlarında Seri No Takibinin Önemi
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Sahte garanti taleplerini önleme ve doğru yedek parça yönetimi için seri no otomasyonu.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 3 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded-md">SAHA YÖNETİMİ</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2">
+                                Saha Servis Ekiplerinde İş Emri Yönetimi Nasıl Yapılmalı?
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Mobil uygulamalar aracılığıyla teknisyen verimliliğini ve zaman yönetimini optimize etme yolları.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-footer"></div>
+
+    <!-- SCRIPT ÇAĞRILARI -->
+    <script src="../js/components.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

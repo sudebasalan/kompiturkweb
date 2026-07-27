@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurumsal Web Hosting, Domain & E-Posta Çözümleri | Compiturk</title>
+    <meta name="description" content="Şirketinizin web sitesini ve kurumsal e-postalarını yüksek hızlı NVMe SSD sunucularda, %99.9 Uptime garantisi ve SSL korumasıyla barındırıyoruz. Compiturk.">
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#DC2626',
+                        brandRedDark: '#B91C1C',
+                        brandNavy: '#0F172A',
+                        brandTechBlue: '#0EA5E9',
+                        brandSlate: '#334155',
+                        brandIce: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
+
+    <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-header"></div>
+
+    <!-- MAIN İÇERİK BAŞLANGICI -->
+    <main class="flex-grow">
+
+        <!-- ========================================================================= -->
+        <!-- 1. HERO / BANNER SECTION (TEKNOLOJİK KOYU LACİVERT ARKA PLAN)           -->
+        <!-- ========================================================================= -->
+        <section id="module-hero" class="w-full bg-gradient-to-r from-[#0F172A] via-[#1E3A8A] to-[#0F172A] text-white py-16 lg:py-24 relative overflow-hidden z-20">
+            <!-- Arka Plan Vektörel Desen & Bulut Mavi İşıltılar -->
+            <div class="absolute inset-0 bg-[radial-gradient(rgba(14,165,233,0.15)_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#0EA5E9]/20 rounded-full blur-[130px] pointer-events-none"></div>
+            <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#DC2626]/20 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+                    <!-- SOL KOLON: İÇERİK VE VURGULAR (Col-span-7) -->
+                    <div class="lg:col-span-7 space-y-6 text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#0EA5E9] font-bold text-xs sm:text-sm tracking-wide">
+                            <span class="w-2 h-2 rounded-full bg-[#0EA5E9] animate-pulse"></span>
+                            <span class="text-white">NVMe SSD CLOUD HOSTING & DOMAIN</span>
+                        </div>
+
+                        <!-- TEK H1 BAŞLIĞI -->
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                            Kurumsal Web Hosting, Domain & <br class="hidden sm:inline" />
+                            <span class="text-[#0EA5E9]">E-Posta Çözümleri</span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl">
+                            Şirketinizin web sitesini, kurumsal e-postalarını ve DİA ERP servislerini yüksek hızlı NVMe SSD sunucularda, %99.9 Uptime garantisi ve 256-bit SSL korumasıyla barındırıyoruz.
+                        </p>
+
+                        <!-- İkonlu Vurgu Maddeleri -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/15">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-[#0EA5E9] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="zap" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Yüksek Hızlı NVMe SSD Web Hosting
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="globe" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    .com.tr & Kurumsal Domain Tescili
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-blue-300 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Anti-Spam Korumalı Kurumsal E-Posta
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SAĞ KOLON: GÖRSEL KARTI & FORM KUTUSU (Col-span-5) -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <!-- Veri Merkezi & Bulut Hosting Temalı Kart -->
+                        <div class="bg-slate-900/80 backdrop-blur-md rounded-2xl p-6 border border-slate-700 shadow-xl flex items-center gap-5">
+                            <div class="w-16 h-16 rounded-xl bg-[#0EA5E9]/20 border border-[#0EA5E9]/40 text-[#0EA5E9] flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="server" class="w-8 h-8"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <h3 class="text-sm font-bold text-white uppercase tracking-wider">LiteSpeed & NVMe SSD Altyapısı</h3>
+                                <p class="text-xs text-slate-400">Standart web hostinglere göre kata kat daha hızlı yüklenen, DDoS korumalı ve %99.9 kesintisiz kurumsal barındırma.</p>
+                            </div>
+                        </div>
+
+                        <!-- Beyaz Form Kutusu -->
+                        <div class="bg-white rounded-2xl p-6 sm:p-8 text-slate-900 shadow-2xl border-2 border-[#DC2626]/40 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#0F1D38] via-[#0EA5E9] to-[#DC2626]"></div>
+
+                            <div class="border-b border-slate-100 pb-4 mb-5 pt-1">
+                                <h2 class="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
+                                    <i data-lucide="sparkles" class="w-6 h-6 text-[#DC2626]"></i>
+                                    Hosting & Domain Teklifi Alın
+                                </h2>
+                                <p class="text-xs text-slate-500 mt-1">
+                                    Web barındırma ve e-posta çözümlerimiz için hemen bilgilerinizi bırakın, uzmanımız arasın.
+                                </p>
+                            </div>
+
+                            <form action="#" method="POST" class="space-y-4" onsubmit="event.preventDefault();">
+                                <div class="space-y-1">
+                                    <label for="fullname" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        Ad Soyad <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="text" id="fullname" name="fullname" required placeholder="Örn: Ahmet Yılmaz" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="space-y-1">
+                                        <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Telefon <span class="text-[#DC2626]">*</span>
+                                        </label>
+                                        <input type="tel" id="phone" name="phone" required placeholder="05XX XXX XX XX" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    </div>
+
+                                    <div class="space-y-1">
+                                        <label for="company" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Şirket Adı
+                                        </label>
+                                        <input type="text" id="company" name="company" placeholder="Firma Ünvanı" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    </div>
+                                </div>
+
+                                <div class="space-y-1">
+                                    <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        E-Posta Adresi <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" required placeholder="ahmet@sirketiniz.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                </div>
+
+                                <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-[#DC2626] hover:bg-[#b91c1c] text-white font-extrabold text-base shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:scale-[1.005] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer border border-red-400/30">
+                                    <span>Hemen Bilgi & Teklif İsteyin</span>
+                                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+
+                                <p class="text-[11px] text-center text-slate-400 mt-2 flex items-center justify-center gap-1">
+                                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
+                                    Verileriniz KVKK kapsamında %100 güvende tutulmaktadır.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 2. HOSTING & DOMAIN YETENEKLERİ (3x2 GRID KARTLAR)                        -->
+        <!-- ========================================================================= -->
+        <section id="hosting-ozellikler" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-black tracking-widest text-[#0F172A] uppercase bg-slate-200 px-3.5 py-1.5 rounded-full border border-slate-300">
+                        YÜKSEK PERFORMANSLI BARINDIRMA
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Hosting & Domain <span class="text-[#1E3A8A]">Yetenekleri</span>
+                    </h2>
+                    <p class="text-base text-slate-600 font-normal">
+                        Web sitenizin hızını katlayan, kurumsal e-postalarınızı spamdan koruyan profesyonel barındırma altyapısı.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+
+                    <!-- Kart 1: Kurumsal Web Hosting -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0EA5E9] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-sky-50 text-[#0EA5E9] flex items-center justify-center group-hover:bg-[#0EA5E9] group-hover:text-white transition-colors">
+                                <i data-lucide="globe" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#0EA5E9] transition-colors">Kurumsal Web Hosting</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                LiteSpeed ve NVMe SSD altyapısı ile web sitelerinizin ışık hızında açılmasını ve yüksek ziyaretçi trafiğini kolayca karşılamasını sağlayın.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 2: Domain Tescili ve Yönetimi -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#1E3A8A] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-blue-50 text-[#1E3A8A] flex items-center justify-center group-hover:bg-[#1E3A8A] group-hover:text-white transition-colors">
+                                <i data-lucide="link" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#1E3A8A] transition-colors">Domain Tescili & Yönetimi</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                .com, .com.tr ve uluslararası domain tescili, DNS yönlendirmeleri ve alan adı hırsızlığına karşı alan adı koruma (Domain Lock) hizmeti.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 3: Kurumsal E-Posta Barındırma -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-red-50 text-[#DC2626] flex items-center justify-center group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                                <i data-lucide="mail-check" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Kurumsal E-Posta Barındırma</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Şirket adı uzantılı e-postalarınızın (isim@sirketiniz.com) spama düşmeden, yüksek kotalarla ve kesintisiz olarak tüm cihazlarda çalışması.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 4: SSL Sertifikası ve Siber Güvenlik -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                                <i data-lucide="shield-check" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">SSL Sertifikası & Siber Güvenlik</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                DV, OV ve EV SSL sertifika kurulumları ile web sitenizin HTTPS protokolüyle şifrelenmesi ve Google arama güvenliğinin sağlanması.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 5: VPS & Dedicated Sunucu Barındırma -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-purple-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                                <i data-lucide="server" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-purple-600 transition-colors">VPS & Dedicated Sunucu Barındırma</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Özel ERP yazılımları, yüksek trafikli e-ticaret siteleri ve büyük ölçekli projeler için özel sanal veya fiziksel sunucu kiralaması.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 6: Günlük Otomatik Yedekleme & DDoS Koruması -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-cyan-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                                <i data-lucide="shield-alert" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-cyan-600 transition-colors">Günlük Otomatik Yedek & DDoS Koruma</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Sitenizin ve e-postalarınızın her gün düzenli olarak yedeklenmesi ve gelişmiş DDoS koruma kalkanlarıyla siber saldırıların engellenmesi.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 3. NEDEN COMPITURK HOSTING HİZMETLERİ? (LACİVERT & KIRMIZI ACCENT)       -->
+        <!-- ========================================================================= -->
+        <section id="neden-compiturk-hosting" class="py-16 lg:py-24 bg-[#0F172A] text-white">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-white font-bold text-xs border border-white/20">
+                            <i data-lucide="zap" class="w-4 h-4 text-[#0EA5E9]"></i>
+                            KESİNTİSİZ PERFORMANS & ÜCRETSİZ TAŞIMA
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                            Neden Compiturk <br />
+                            Hosting & Domain Hizmetleri?
+                        </h2>
+                        <p class="text-slate-300 text-base leading-relaxed">
+                            E-posta kopmalarını ve web sitesi yavaşlıklarını tarihe gömen, mevcut sitenizi hiçbir veri kaybı ve kesinti yaşamadan tamamen ücretsiz taşıyan kurumsal barındırma çözümü.
+                        </p>
+                        <div class="space-y-3 text-sm font-semibold text-white">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0EA5E9]"></i>
+                                <span>Eski firmanızdaki tüm web dosyalarınızı ve maillerinizi uzmanlarımızla ücretsiz taşıyın</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0EA5E9]"></i>
+                                <span>Spam korumalı kurumsal e-posta altyapısı ile iletişiminiz asla kesilmesin</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0EA5E9]"></i>
+                                <span>%99.9 Uptime garantisi ile web siteniz 7/24 ziyaretçilere açık olsun</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sağ Taraf İstatistik Paneli -->
+                    <div class="bg-slate-900 text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-slate-800 space-y-6">
+                        <div class="border-b border-slate-800 pb-5">
+                            <div class="text-4xl font-black text-[#0EA5E9]">%99.9</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Kesintisiz Erişim Garantisi (Uptime)</div>
+                            <p class="text-xs text-slate-400 mt-1">Yüksek performanslı veri merkezi altyapımızla siteniz her zaman yayında.</p>
+                        </div>
+
+                        <div>
+                            <div class="text-4xl font-black text-[#DC2626]">Ücretsiz</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Profesyonel Site & Mail Taşıma</div>
+                            <p class="text-xs text-slate-400 mt-1">Hiçbir teknik detayla uğraşmadan tüm verileriniz eksiksiz olarak transfer edilir.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 4. 4 ADIMDA HOSTING TRANSFER SÜRECİ                                       -->
+        <!-- ========================================================================= -->
+        <section id="hosting-adimlari" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider bg-slate-200 px-3.5 py-1.5 rounded-full border border-slate-300">
+                        SİSTEMATİK TAŞIMA AKIŞI
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        4 Adımda Hosting <span class="text-[#1E3A8A]">Transfer Süreci</span>
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        Mevcut web ve e-posta altyapınızı Compiturk sunucularına sıfır kesinti ile taşımak için izlediğimiz adımlar.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+
+                    <!-- Adım 1 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0EA5E9] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-sky-50 text-[#0EA5E9] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="search" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#0EA5E9] transition-colors">01</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Ücretsiz Altyapı İncelemesi</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Mevcut hosting sağlayıcınızdaki web dosyalarınız, veritabanlarınız ve e-posta hesaplarınız analiz edilir.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 2 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#1E3A8A] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#1E3A8A] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="server" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#1E3A8A] transition-colors">02</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Yeni SSD Sunucu Hazırlığı</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Size özel yüksek performanslı NVMe SSD hosting paketi veya sunucu ortamı önceden yapılandırılır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 3 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-purple-600 transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="arrow-left-right" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-purple-600 transition-colors">03</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Kayıpsız Veri & Mail Transferi</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Tüm web verileri ve geçmiş e-posta arşivleriniz hiçbir veri kaybı yaşanmaksızın yeni sunucularımıza kopyalanır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 4 -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-emerald-500/80 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="rocket" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-emerald-500">04</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">SSL Kurulumu & Canlıya Geçiş</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                DNS yönlendirmeleri ve SSL sertifika kurulumu yapılarak siteniz kesintisiz şekilde yeni altyapıda yayına alınır.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 5. BİRLİKTE KULLANABİLECEĞİNİZ DİĞER IT ÇÖZÜMLERİMİZ                      -->
+        <!-- ========================================================================= -->
+        <section id="tamamlayici-cozumler" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                        Birlikte Kullanabileceğiniz <span class="text-[#1E3A8A]">Diğer IT Çözümlerimiz</span>
+                    </h2>
+                    <p class="text-sm text-slate-600">Hosting altyapınızı tamamlayan ve siber güvenliği artıran diğer IT hizmetlerimiz.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Çözüm 1 -->
+                    <a href="sunucu-kurulumu.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#1E3A8A] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#1E3A8A] flex items-center justify-center mb-4 group-hover:bg-[#1E3A8A] group-hover:text-white transition-colors">
+                            <i data-lucide="server" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#1E3A8A] transition-colors">Sunucu Kurulumu</h3>
+                        <p class="text-xs text-slate-500 mt-1">Yüksek performanslı kurumsal sunucu ve sanallaştırma.</p>
+                    </a>
+
+                    <!-- Çözüm 2 -->
+                    <a href="guvenlik-duvari.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-red-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-red-50 text-red-600 flex items-center justify-center mb-4 group-hover:bg-red-600 group-hover:text-white transition-colors">
+                            <i data-lucide="shield" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-red-600 transition-colors">Güvenlik Duvarı (Firewall)</h3>
+                        <p class="text-xs text-slate-500 mt-1">Web sitenizi ve sunucularınızı siber saldırılara karşı koruyun.</p>
+                    </a>
+
+                    <!-- Çözüm 3 -->
+                    <a href="yedekleme-cozumleri.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <i data-lucide="database-backup" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Yedekleme Çözümleri</h3>
+                        <p class="text-xs text-slate-500 mt-1">Otomatik bulut ve lokal veri yedekleme mimarileri.</p>
+                    </a>
+
+                    <!-- Çözüm 4 -->
+                    <a href="yazilim-lisanslama.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-purple-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center mb-4 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i data-lucide="key-round" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-purple-600 transition-colors">Yazılım Lisanslama</h3>
+                        <p class="text-xs text-slate-500 mt-1">Microsoft ve kurumsal yazılım lisans danışmanlığı.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 6. SIKÇA SORULAN SORULAR (SEO FAQ - HTML5 ACCORDION)                     -->
+        <!-- ========================================================================= -->
+        <section id="faq" class="py-16 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                
+                <div class="text-center space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Sıkça Sorulan <span class="text-[#1E3A8A]">Sorular</span></h2>
+                    <p class="text-sm text-slate-600">Kurumsal web hosting, domain ve e-posta barındırma çözümleri hakkında merak edilenler.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Soru 1 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>.com.tr alan adları artık belgesiz tescil edilebiliyor mu?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. BTK ve TRABİS düzenlemeleri sonrasında .com.tr uzantılı alan adları artık herhangi bir vergi levhası veya marka tescil belgesi ibraz etmeksizin ilk gelen alır prensibiyle belgesiz olarak hızlıca tescil edilebilmektedir. Alan adınızı markanızı korumak için hemen tescil edebilirsiniz.
+                        </p>
+                    </details>
+
+                    <!-- Soru 2 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>Mevcut web sitemiz ve mail adreslerimiz hiç kapanmadan taşınabilir mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Uzman mühendislerimiz taşıma işlemini öncelikle yeni sunucumuzda test yayını yaparak gerçekleştirir. Tüm dosyalar ve e-postalar eksiksiz aktarıldıktan sonra DNS yönlendirmesi yapılır ve taşıma süreci sıfır kesinti (zero-downtime) ile tamamlanır.
+                        </p>
+                    </details>
+
+                    <!-- Soru 3 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>E-postalarımızın spama düşmemesi için hangi SPF/DKIM ayarları yapılıyor?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            E-postalarınızın alıcı sunucular (Gmail, Outlook vb.) tarafından güvenilir olarak kabul edilmesi ve spam kutusuna düşmemesi için sunucularımızda SPF, DKIM, DMARC ve rDNS kayıtları profesyonelce yapılandırılır.
+                        </p>
+                    </details>
+
+                    <!-- Soru 4 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>Web hosting paketlerinde SSD disk performansı ne kadarlık hız farkı yaratır?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Geleneksel HDD diskli sunuculara göre en yeni nesil NVMe SSD disk altyapımız veri okuma/yazma hızlarında 10 kata varan performans artışı sağlar. Bu da web sitenizin milisaniyeler içinde açılmasına ve kullanıcı deneyiminin doruğa çıkmasına doğrudan etki eder.
+                        </p>
+                    </details>
+
+                    <!-- Soru 5 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#1E3A8A] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#1E3A8A]">
+                            <span>SSL sertifikası kullanmak Google arama sıralamalarını nasıl etkiler?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Google, HTTPS (SSL) protokolünü resmi bir SEO sıralama kriteri olarak kabul etmektedir. SSL sertifikası olmayan siteler tarayıcılarda "Güvenli Değil" uyarısı alırken, SSL'li siteler arama motorlarında daha güvenli algılanarak üst sıralara taşınır.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 7. MÜŞTERİ YORUMLARI & REFERANSLAR (3 KART)                                -->
+        <!-- ========================================================================= -->
+        <section id="referanslar" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Müşterilerimiz <span class="text-[#1E3A8A]">Ne Diyor?</span></h2>
+                    <p class="text-sm text-slate-600">Web ve e-posta altyapılarını Compiturk Hosting güvencesine taşıyan kurumsal firma yöneticilerinin görüşleri.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Yorum 1 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Eski hosting firmamızda e-postalarımız sürekli spama düşüyor ve web sitemiz yavaş açılıyordu. Compiturk NVMe SSD hostinge geçtikten sonra hızımız uçtu, maillerimiz anında teslim oluyor."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Canan T.</span>
+                            <span class="text-xs text-slate-500 font-medium">Kurumsal İletişim Müdürü</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 2 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Tüm web sitemizi ve 30 adet kurumsal mail adresimizi hiçbir kesinti yaşatmadan sıfır hatayla taşıdılar. Profesyonel destekleri için Compiturk ekibine çok teşekkür ederiz."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Sedat Ö.</span>
+                            <span class="text-xs text-slate-500 font-medium">Şirket Müdürü - E-Ticaret</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 3 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                ".com.tr domain tescilimizi ve SSL sertifikalarımızı tek merkezden yönetmek çok konforlu. Olası teknik sorularda anında muhatap bulabiliyoruz."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Berkay N.</span>
+                            <span class="text-xs text-slate-500 font-medium">Bilgi İşlem Sorumlusu</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 8. BLOG YAZILARIMIZ (3 KART)                                              -->
+        <!-- ========================================================================= -->
+        <section id="blog" class="py-16 bg-[#F8FAFC]">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Hosting & E-Posta <span class="text-[#1E3A8A]">Rehberi & Makaleler</span></h2>
+                    <p class="text-sm text-slate-600">Web sitenizi ve kurumsal e-posta performansınızı artıracak uzman içeriklerimiz.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Makale 1 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#1E3A8A] uppercase tracking-wider bg-blue-50 px-2.5 py-1 rounded-md">E-POSTA GÜVENLİĞİ</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#1E3A8A] transition-colors line-clamp-2">
+                                Kurumsal E-Posta Kullanımında Spama Düşmeyi Önlemenin 5 Altın Kuralı
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                SPF, DKIM, DMARC DNS ayarları ve kurumsal IP itibarı yönetimiyle maillerinizi güvenle alıcılara ulaştırma rehberi.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 2 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#0EA5E9] uppercase tracking-wider bg-sky-50 px-2.5 py-1 rounded-md">NVMe SSD & LITESPEED</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#0EA5E9] transition-colors line-clamp-2">
+                                NVMe SSD Ve LiteSpeed Teknolojisinin Web Site Hızına Ve SEO'ya Etkisi
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Yeni nesil disk ve önbellekleme teknolojilerinin Google Core Web Vitals ve arama sıralamalarına katkıları.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 3 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded-md">MARKA KORUMA</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2">
+                                Kurumsal Şirketler İçin .com.tr Domain Kaydı Ve Marka Koruma Stratejileri
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Belgesiz .com.tr dönemi sonrasında şirketlerin dijital varlıklarını ve marka haklarını koruma altına alma yöntemleri.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-footer"></div>
+
+    <!-- SCRIPT ÇAĞRILARI -->
+    <script src="../js/components.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

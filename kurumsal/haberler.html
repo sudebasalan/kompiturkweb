@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurumsal Haberler & Duyurular | Compiturk Bilgisayar</title>
+    <meta name="description" content="Compiturk Bilgisayar dünyasından en güncel gelişmeler, lansmanlar, DİA ERP güncellemeleri, fuar katılımları ve resmi e-Dönüşüm mevzuat duyuruları.">
+    <meta name="keywords" content="Compiturk haberler, DİA ERP duyuruları, e-fatura mevzuat duyuru, Ahtapot WMS haberler, B2B yazılım gelişmeleri">
+    <meta name="author" content="Compiturk Bilgisayar">
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#DC2626',
+                        brandRedDark: '#B91C1C',
+                        brandNavy: '#0F172A',
+                        brandNavyLight: '#1E3A8A',
+                        brandIce: '#F8FAFC',
+                        brandSlate: '#334155'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#F8FAFC] text-[#334155] font-sans antialiased min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+    <!-- GLOBAL HEADER (components.js tarafından doldurulur) -->
+    <div id="global-header"></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+
+        <!-- 1. HERO / BANNER SECTION -->
+        <section class="bg-[#0F172A] text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-800 relative overflow-hidden">
+            <!-- Arka Plan Efektleri -->
+            <div class="absolute top-0 right-1/4 w-96 h-96 bg-[#DC2626]/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-[#1E3A8A]/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto relative z-10 text-center space-y-6">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-xs sm:text-sm font-semibold text-red-400">
+                    <span>📢</span> Compiturk Duyuru & Etkinlik Merkezi
+                </div>
+
+                <!-- H1 Başlığı -->
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight max-w-4xl mx-auto">
+                    Haberler, Etkinlikler ve DİA ERP Duyuruları
+                </h1>
+
+                <!-- Açıklama Paragrafı -->
+                <p class="text-slate-300 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto leading-relaxed">
+                    Compiturk Bilgisayar dünyasından en güncel gelişmeler, lansmanlar, DİA ERP güncellemeleri ve resmi e-Dönüşüm mevzuat duyuruları.
+                </p>
+            </div>
+        </section>
+
+        <!-- MAIN CONTAINER -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+
+            <!-- 2. ÖNE ÇIKAN SON DUYURU (FEATURED NEWS CARD) -->
+            <section aria-label="Öne Çıkan Haber">
+                <div class="bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-8 shadow-xl shadow-slate-200/50 transition-all duration-300">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        
+                        <!-- Sol Taraf: Görsel Container -->
+                        <div class="lg:col-span-6 h-full min-h-[260px] sm:min-h-[300px]">
+                            <div class="relative rounded-2xl overflow-hidden bg-slate-800/50 border border-slate-700/60 h-full min-h-[260px] flex flex-col items-center justify-center text-slate-400 p-6 text-center">
+                                <i data-lucide="award" class="w-12 h-12 mb-3 text-[#DC2626]"></i>
+                                <span class="text-sm font-semibold text-slate-300">GÖRSEL ALANI</span>
+                                <span class="text-xs text-slate-500 mt-1">(&lt;img&gt; veya SVG ekleyebilirsiniz)</span>
+                            </div>
+                        </div>
+
+                        <!-- Sağ Taraf: İçerik -->
+                        <div class="lg:col-span-6 space-y-4">
+                            <div class="flex flex-wrap items-center gap-3 text-xs sm:text-sm font-semibold text-slate-500">
+                                <span class="bg-red-100 text-[#DC2626] px-3 py-1 rounded-full font-bold">Kurumsal Başarı</span>
+                                <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-4 h-4 text-slate-400"></i> 18 Temmuz 2026</span>
+                            </div>
+
+                            <h2 class="text-2xl sm:text-3xl font-black text-[#0F172A] leading-tight">
+                                Compiturk, DİA ERP İstanbul Yetkili Çözüm Ortaklığı Başarı Ödülünü Kazandı
+                            </h2>
+
+                            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                                Müşteri memnuniyeti, yüksek teknik destek performansı ve B2B entegrasyon projelerindeki uzmanlığımız sayesinde Compiturk Bilgisayar, 2026 DİA ERP Yetkili Çözüm Ortaklığı ödülüne layık görüldü.
+                            </p>
+
+                            <div class="pt-2">
+                                <button type="button" class="toggle-detail-btn inline-flex items-center gap-2 px-6 py-3 bg-[#DC2626] hover:bg-[#B91C1C] text-white text-sm font-bold rounded-xl transition-all shadow-md">
+                                    <span>Detayı Gör</span> <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- GİZLİ DETAY METNİ (AKORDİYON) -->
+                    <div class="detail-content hidden mt-6 pt-6 border-t border-slate-100 text-slate-700 leading-relaxed space-y-4 text-sm sm:text-base bg-slate-50/70 p-6 rounded-2xl border border-slate-200/60">
+                        <p class="font-semibold text-[#0F172A]">
+                            DİA Yazılım tarafından her yıl geleneksel olarak düzenlenen Yetkili Çözüm Ortakları Buluşması'nda Compiturk Bilgisayar büyük bir başarıya imza attı.
+                        </p>
+                        <p>
+                            İstanbul genelinde gerçekleştirdiğimiz başarılı DİA ERP uyarlama projeleri, Ahtapot WMS ve Mobil B2B platformu geliştirmelerimiz neticesinde şirketimiz "Yılın Başarılı Çözüm Ortağı" ödülünün sahibi oldu. Bu gururu bizlere yaşatan tüm değerli müşterilerimize ve özveriyle çalışan uzman kadromuza teşekkür ederiz.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. HABERLER GRID İÇERİĞİ (3 SÜTUN) -->
+            <section aria-label="Tüm Duyurular">
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-2xl font-black text-[#0F172A] flex items-center gap-2">
+                        <span class="w-2.5 h-7 bg-[#DC2626] rounded-full inline-block"></span>
+                        Güncel Duyurular ve Lansmanlar
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- KART 1 -->
+                    <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="relative rounded-t-2xl overflow-hidden bg-slate-800/50 border-b border-slate-700/60 min-h-[200px] flex flex-col items-center justify-center text-slate-400 p-4 text-center">
+                                <i data-lucide="smartphone" class="w-10 h-10 mb-2 text-slate-500"></i>
+                                <span class="text-xs font-semibold text-slate-300">GÖRSEL ALANI</span>
+                                <span class="text-[11px] text-slate-500 mt-0.5">(&lt;img&gt; veya SVG ekleyebilirsiniz)</span>
+                            </div>
+
+                            <div class="p-6 space-y-3">
+                                <div class="flex items-center justify-between text-xs font-semibold text-slate-500">
+                                    <span class="bg-slate-100 text-slate-700 px-2.5 py-1 rounded-lg">Ürün Güncellemesi</span>
+                                    <span>10 Temmuz 2026</span>
+                                </div>
+
+                                <h3 class="text-lg font-bold text-[#0F172A] leading-snug">
+                                    DİA ERP Mobil Saha Satış Modülüne Yeni Rut Planlama Özelliği Eklendi
+                                </h3>
+
+                                <p class="text-slate-600 text-sm line-clamp-3 leading-relaxed">
+                                    Saha plasiyerlerinin günlük ziyaretlerini GPS haritası üzerinden optimize eden akıllı rut planlama algoritması kullanıma sunuldu.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Alt Aksiyon & Gizli Detay -->
+                        <div class="px-6 pb-6 pt-2 border-t border-slate-100/80">
+                            <button type="button" class="toggle-detail-btn text-[#DC2626] hover:text-[#B91C1C] text-xs font-bold flex items-center gap-1 transition-all">
+                                <span>Detayı Gör</span> <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300"></i>
+                            </button>
+
+                            <div class="detail-content hidden mt-4 pt-4 border-t border-slate-100 text-slate-600 text-xs sm:text-sm space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-200/60">
+                                <p class="font-medium text-[#0F172A]">DİA Mobil Saha Satış v4.2 Güncelleme Notları:</p>
+                                <ul class="list-disc pl-4 space-y-1 text-slate-600">
+                                    <li>Plasiyerler için en kısa sürüş rotası otomasyonu.</li>
+                                    <li>Müşteri lokasyonunda zorunlu GPS Check-in özelliği.</li>
+                                    <li>Anlık sipariş ve tahsilat makbuzu oluşturma geliştirmeleri.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- KART 2 -->
+                    <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="relative rounded-t-2xl overflow-hidden bg-slate-800/50 border-b border-slate-700/60 min-h-[200px] flex flex-col items-center justify-center text-slate-400 p-4 text-center">
+                                <i data-lucide="file-text" class="w-10 h-10 mb-2 text-slate-500"></i>
+                                <span class="text-xs font-semibold text-slate-300">GÖRSEL ALANI</span>
+                                <span class="text-[11px] text-slate-500 mt-0.5">(&lt;img&gt; veya SVG ekleyebilirsiniz)</span>
+                            </div>
+
+                            <div class="p-6 space-y-3">
+                                <div class="flex items-center justify-between text-xs font-semibold text-slate-500">
+                                    <span class="bg-slate-100 text-slate-700 px-2.5 py-1 rounded-lg">Mevzuat Duyurusu</span>
+                                    <span>28 Haziran 2026</span>
+                                </div>
+
+                                <h3 class="text-lg font-bold text-[#0F172A] leading-snug">
+                                    GİB e-Fatura ve e-İrsaliye Geçiş Zorunluluğu Limitleri Açıklandı
+                                </h3>
+
+                                <p class="text-slate-600 text-sm line-clamp-3 leading-relaxed">
+                                    Gelir İdaresi Başkanlığı tarafından yayımlanan yeni tebliğe göre e-fatura ve e-irsaliye uygulamasına zorunlu geçiş yapacak sektörler netleşti.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Alt Aksiyon & Gizli Detay -->
+                        <div class="px-6 pb-6 pt-2 border-t border-slate-100/80">
+                            <button type="button" class="toggle-detail-btn text-[#DC2626] hover:text-[#B91C1C] text-xs font-bold flex items-center gap-1 transition-all">
+                                <span>Detayı Gör</span> <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300"></i>
+                            </button>
+
+                            <div class="detail-content hidden mt-4 pt-4 border-t border-slate-100 text-slate-600 text-xs sm:text-sm space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-200/60">
+                                <p class="font-medium text-[#0F172A]">E-Dönüşüm Rehberi & Geçiş Süreçleri:</p>
+                                <p>
+                                    Yeni tebliğ kapsamında ciro limitini aşan firmaların DİA e-Fatura ve e-İrsaliye entegrasyonlarını tamamlamaları gerekmektedir. Compiturk ekibi olarak geçiş sürecinde başvuru ve aktivasyon desteği sunmaktayız.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- KART 3 -->
+                    <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="relative rounded-t-2xl overflow-hidden bg-slate-800/50 border-b border-slate-700/60 min-h-[200px] flex flex-col items-center justify-center text-slate-400 p-4 text-center">
+                                <i data-lucide="package-check" class="w-10 h-10 mb-2 text-slate-500"></i>
+                                <span class="text-xs font-semibold text-slate-300">GÖRSEL ALANI</span>
+                                <span class="text-[11px] text-slate-500 mt-0.5">(&lt;img&gt; veya SVG ekleyebilirsiniz)</span>
+                            </div>
+
+                            <div class="p-6 space-y-3">
+                                <div class="flex items-center justify-between text-xs font-semibold text-slate-500">
+                                    <span class="bg-slate-100 text-slate-700 px-2.5 py-1 rounded-lg">Yazılım Lansmanı</span>
+                                    <span>15 Haziran 2026</span>
+                                </div>
+
+                                <h3 class="text-lg font-bold text-[#0F172A] leading-snug">
+                                    Ahtapot Depo Yönetim Sistemi v2.0 Yapay Zeka Destekli Toplama İle Yayında
+                                </h3>
+
+                                <p class="text-slate-600 text-sm line-clamp-3 leading-relaxed">
+                                    Yerli WMS çözümümüz Ahtapot Depo Yönetim Sistemi'nin v2.0 sürümü yayınlandı. Akıllı toplama rotası ve otomatize adresleme eklendi.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Alt Aksiyon & Gizli Detay -->
+                        <div class="px-6 pb-6 pt-2 border-t border-slate-100/80">
+                            <button type="button" class="toggle-detail-btn text-[#DC2626] hover:text-[#B91C1C] text-xs font-bold flex items-center gap-1 transition-all">
+                                <span>Detayı Gör</span> <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300"></i>
+                            </button>
+
+                            <div class="detail-content hidden mt-4 pt-4 border-t border-slate-100 text-slate-600 text-xs sm:text-sm space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-200/60">
+                                <p class="font-medium text-[#0F172A]">Ahtapot WMS v2.0 Yenilikleri:</p>
+                                <p>
+                                    Yeni sürümle birlikte el terminallerinde en kısa toplama rotası çıkarılmakta, barkod okutma adımlarında sesli yönlendirme desteği sunulmaktadır. DİA ERP ile anlık senkronizasyon performansı %50 artırılmıştır.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- KART 4 -->
+                    <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="relative rounded-t-2xl overflow-hidden bg-slate-800/50 border-b border-slate-700/60 min-h-[200px] flex flex-col items-center justify-center text-slate-400 p-4 text-center">
+                                <i data-lucide="users" class="w-10 h-10 mb-2 text-slate-500"></i>
+                                <span class="text-xs font-semibold text-slate-300">GÖRSEL ALANI</span>
+                                <span class="text-[11px] text-slate-500 mt-0.5">(&lt;img&gt; veya SVG ekleyebilirsiniz)</span>
+                            </div>
+
+                            <div class="p-6 space-y-3">
+                                <div class="flex items-center justify-between text-xs font-semibold text-slate-500">
+                                    <span class="bg-slate-100 text-slate-700 px-2.5 py-1 rounded-lg">Etkinlik & Fuar</span>
+                                    <span>02 Haziran 2026</span>
+                                </div>
+
+                                <h3 class="text-lg font-bold text-[#0F172A] leading-snug">
+                                    WIN EURASIA B2B Otomasyon ve Yazılım Fuarı'nda Compiturk Rüzgarı Esti
+                                </h3>
+
+                                <p class="text-slate-600 text-sm line-clamp-3 leading-relaxed">
+                                    Sektörün en büyük otomasyon fuarında DİA ERP çözümlerimiz, Mobil B2B platformumuz ve Ahtapot WMS sistemimiz yoğun ilgi gördü.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Alt Aksiyon & Gizli Detay -->
+                        <div class="px-6 pb-6 pt-2 border-t border-slate-100/80">
+                            <button type="button" class="toggle-detail-btn text-[#DC2626] hover:text-[#B91C1C] text-xs font-bold flex items-center gap-1 transition-all">
+                                <span>Detayı Gör</span> <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300"></i>
+                            </button>
+
+                            <div class="detail-content hidden mt-4 pt-4 border-t border-slate-100 text-slate-600 text-xs sm:text-sm space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-200/60">
+                                <p class="font-medium text-[#0F172A]">Fuar Detayları & Görüşmeler:</p>
+                                <p>
+                                    4 gün süren fuar boyunca 200'den fazla imalatçı ve toptancı firma yetkilisine canlı WMS ve ERP demoları sunuldu. Katılım sağlayan tüm ziyaretçilerimize teşekkür ederiz.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- KART 5 -->
+                    <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="relative rounded-t-2xl overflow-hidden bg-slate-800/50 border-b border-slate-700/60 min-h-[200px] flex flex-col items-center justify-center text-slate-400 p-4 text-center">
+                                <i data-lucide="shield-check" class="w-10 h-10 mb-2 text-slate-500"></i>
+                                <span class="text-xs font-semibold text-slate-300">GÖRSEL ALANI</span>
+                                <span class="text-[11px] text-slate-500 mt-0.5">(&lt;img&gt; veya SVG ekleyebilirsiniz)</span>
+                            </div>
+
+                            <div class="p-6 space-y-3">
+                                <div class="flex items-center justify-between text-xs font-semibold text-slate-500">
+                                    <span class="bg-slate-100 text-slate-700 px-2.5 py-1 rounded-lg">Teknik Duyuru</span>
+                                    <span>20 Mayıs 2026</span>
+                                </div>
+
+                                <h3 class="text-lg font-bold text-[#0F172A] leading-snug">
+                                    UTM Firewall Güvenlik Duvarı Güncellemeleri Hakkında Önemli Teknik Duyuru
+                                </h3>
+
+                                <p class="text-slate-600 text-sm line-clamp-3 leading-relaxed">
+                                    Kurumsal müşterilerimizin ağ güvenliğini sağlamak amacıyla UTM Firewall cihazlarına yeni fidye yazılımı koruma yaması yayınlandı.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Alt Aksiyon & Gizli Detay -->
+                        <div class="px-6 pb-6 pt-2 border-t border-slate-100/80">
+                            <button type="button" class="toggle-detail-btn text-[#DC2626] hover:text-[#B91C1C] text-xs font-bold flex items-center gap-1 transition-all">
+                                <span>Detayı Gör</span> <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300"></i>
+                            </button>
+
+                            <div class="detail-content hidden mt-4 pt-4 border-t border-slate-100 text-slate-600 text-xs sm:text-sm space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-200/60">
+                                <p class="font-medium text-[#0F172A]">Güvenlik Yaması Talimatları:</p>
+                                <p>
+                                    Bakım anlaşmalı IT altyapı müşterilerimizin cihaz güncellemeleri Compiturk teknik ekibi tarafından uzaktan tamamlanmıştır. Destek almak için destek@compiturk.com.tr adresine yazabilirsiniz.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- KART 6 -->
+                    <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="relative rounded-t-2xl overflow-hidden bg-slate-800/50 border-b border-slate-700/60 min-h-[200px] flex flex-col items-center justify-center text-slate-400 p-4 text-center">
+                                <i data-lucide="credit-card" class="w-10 h-10 mb-2 text-slate-500"></i>
+                                <span class="text-xs font-semibold text-slate-300">GÖRSEL ALANI</span>
+                                <span class="text-[11px] text-slate-500 mt-0.5">(&lt;img&gt; veya SVG ekleyebilirsiniz)</span>
+                            </div>
+
+                            <div class="p-6 space-y-3">
+                                <div class="flex items-center justify-between text-xs font-semibold text-slate-500">
+                                    <span class="bg-slate-100 text-slate-700 px-2.5 py-1 rounded-lg">İş Ortaklığı</span>
+                                    <span>10 Mayıs 2026</span>
+                                </div>
+
+                                <h3 class="text-lg font-bold text-[#0F172A] leading-snug">
+                                    Ödüyo & Compiturk Entegrasyonu İle Sanal POS Tahsilatlarında Yeni Dönem
+                                </h3>
+
+                                <p class="text-slate-600 text-sm line-clamp-3 leading-relaxed">
+                                    Ödüyo B2B Sanal POS sistemlerinin DİA ERP ile doğrudan entegre çalışmasını sağlayan yeni altyapımız ile bayi tahsilatları otomatikleşiyor.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Alt Aksiyon & Gizli Detay -->
+                        <div class="px-6 pb-6 pt-2 border-t border-slate-100/80">
+                            <button type="button" class="toggle-detail-btn text-[#DC2626] hover:text-[#B91C1C] text-xs font-bold flex items-center gap-1 transition-all">
+                                <span>Detayı Gör</span> <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300"></i>
+                            </button>
+
+                            <div class="detail-content hidden mt-4 pt-4 border-t border-slate-100 text-slate-600 text-xs sm:text-sm space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-200/60">
+                                <p class="font-medium text-[#0F172A]">Entegrasyon Özellikleri:</p>
+                                <p>
+                                    SMS veya WhatsApp üzerinden linkle yapılan tahsilatlar anında DİA ERP cari hesabına tahsilat fişi olarak işlenir. Manuel veri girişi zorunluluğu tamamen kalkar.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- GLOBAL FOOTER (components.js tarafından doldurulur) -->
+    <div id="global-footer"></div>
+
+    <!-- 4. SAYFA İÇİ İNTERAKTİF JAVASCRIPT KODU -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Lucide İkonlarını Başlat
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+
+            // Sayfa İçi Detay Göster/Gizle (Akordiyon Toggle) Mantığı
+            const toggleBtns = document.querySelectorAll('.toggle-detail-btn');
+
+            toggleBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Butonun bulunduğu ebeveyn kapsayıcıyı bul
+                    const container = this.closest('article') || this.closest('section') || this.parentElement.parentElement;
+                    const detailContent = container.querySelector('.detail-content');
+                    const icon = this.querySelector('[data-lucide="chevron-down"]');
+                    const textSpan = this.querySelector('span');
+
+                    if (detailContent) {
+                        const isHidden = detailContent.classList.contains('hidden');
+
+                        if (isHidden) {
+                            detailContent.classList.remove('hidden');
+                            if (textSpan) textSpan.textContent = 'Detayı Gizle';
+                            if (icon) icon.style.transform = 'rotate(180deg)';
+                        } else {
+                            detailContent.classList.add('hidden');
+                            if (textSpan) textSpan.textContent = 'Detayı Gör';
+                            if (icon) icon.style.transform = 'rotate(0deg)';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    
+    <!-- Dinamik Header ve Footer Yükleyici (Alt klasör yapısına uygun olarak ../js/components.js) -->
+    <script src="../js/components.js"></script>
+</body>
+</html>

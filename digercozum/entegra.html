@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entegra — Çoklu Pazar Yeri & E-Ticaret Entegrasyonu | Compiturk</title>
+    <meta name="description" content="DİA ERP altyapınız ile Trendyol, Hepsiburada, N11, Amazon ve e-ticaret sitelerinizi Entegra Bilişim güvencesiyle tek merkezden yönetin. Compiturk.">
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandNavy: '#0F172A',
+                        brandNavyLight: '#1E3A8A',
+                        brandEntegraBlue: '#003399',
+                        brandTurquoise: '#38BDF8',
+                        brandGreen: '#22C55E',
+                        brandAccentRed: '#EF4444',
+                        brandRed: '#DC2626',
+                        brandSlate: '#334155',
+                        brandIce: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
+
+    <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-header"></div>
+
+    <!-- MAIN İÇERİK BAŞLANGICI -->
+    <main class="flex-grow">
+
+        <!-- ========================================================================= -->
+        <!-- 1. HERO / BANNER SECTION (LACİVERT & ENTEGRA MAVİSİ ARKA PLAN)           -->
+        <!-- ========================================================================= -->
+        <section id="module-hero" class="w-full bg-[#0F172A] text-white relative overflow-hidden py-16 lg:py-24 z-20">
+            <!-- Arka Plan Vektörel Desen & Entegra Renkli Işıltılar -->
+            <div class="absolute inset-0 bg-[radial-gradient(rgba(56,189,248,0.15)_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#003399]/30 rounded-full blur-[130px] pointer-events-none"></div>
+            <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#22C55E]/15 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+                    <!-- SOL KOLON: İÇERİK VE VURGULAR (Col-span-7) -->
+                    <div class="lg:col-span-7 space-y-6 text-left">
+                        <div>
+                            <img src="../images/entegralogo.png" alt="Entegra Bilişim Logo" class="h-12 bg-white p-2 rounded-xl shadow-md mb-4 inline-block">
+                        </div>
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#38BDF8] font-bold text-xs sm:text-sm tracking-wide">
+                                <span class="w-2 h-2 rounded-full bg-[#38BDF8] animate-pulse"></span>
+                                <span class="text-white">⚡ DİA Entegre</span>
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-emerald-300 font-bold text-xs sm:text-sm tracking-wide">
+                                <span>🛒 E-Ticaret & Pazar Yeri</span>
+                            </span>
+                        </div>
+
+                        <!-- TEK H1 BAŞLIĞI -->
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                            Entegra — Çoklu Pazar Yeri & <br class="hidden sm:inline" />
+                            <span class="text-[#38BDF8]">E-Ticaret Entegrasyonu</span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl">
+                            DİA ERP altyapınız ile Trendyol, Hepsiburada, N11, Amazon ve e-ticaret sitelerinizi Entegra Bilişim güvencesiyle tek merkezden yönetin; stok, fiyat ve siparişlerinizi anlık senkronize edin.
+                        </p>
+
+                        <!-- İkonlu Vurgu Maddeleri -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/15">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-[#38BDF8] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="refresh-cw" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Çift Yönlü Stok & Fiyat Senkronizasyonu
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="file-text" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Otomatik Sipariş & e-Fatura Aktarımı
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-amber-300 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="tags" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Pazar Yeri Bazlı Esnek Fiyatlandırma
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SAĞ KOLON: ÖZEL GÖRSEL ALANI + FORM KUTUSU (Col-span-5) -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <!-- ÖZEL GÖRSEL ALANI (IMAGE PLACEHOLDER) -->
+                        <div class="relative rounded-2xl overflow-hidden bg-slate-800/50 border border-slate-700/60 p-6 shadow-2xl flex flex-col items-center justify-center text-center space-y-3">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-[#003399]/20 via-transparent to-[#38BDF8]/20 pointer-events-none"></div>
+                            <div class="w-16 h-16 rounded-2xl bg-[#003399]/30 border border-[#38BDF8]/40 text-[#38BDF8] flex items-center justify-center">
+                                <i data-lucide="shopping-bag" class="w-8 h-8"></i>
+                            </div>
+                            <div class="space-y-1 relative z-10">
+                                <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Entegra Bilişim ⇄ DİA ERP</span>
+                                <h3 class="text-lg font-bold text-white">Çoklu Pazar Yeri Konsolide Yönetimi</h3>
+                                <p class="text-xs text-slate-400 max-w-sm">
+                                    Tüm online mağazalarınızı tek panelden besleyen yüksek hızlı akıllı veri köprüsü.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Beyaz Form Kutusu -->
+                        <div class="bg-white rounded-2xl p-6 sm:p-8 text-slate-900 shadow-2xl border-2 border-[#003399]/40 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#0F1D38] via-[#003399] to-[#38BDF8]"></div>
+
+                            <div class="border-b border-slate-100 pb-4 mb-5 pt-1">
+                                <h2 class="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
+                                    <i data-lucide="sparkles" class="w-6 h-6 text-[#003399]"></i>
+                                    Entegra Demo & Teklif Alın
+                                </h2>
+                                <p class="text-xs text-slate-500 mt-1">
+                                    Pazar yeri ve e-ticaret entegrasyonu için hemen bilgilerinizi bırakın, uzmanımız arasın.
+                                </p>
+                            </div>
+
+                            <form action="#" method="POST" class="space-y-4" onsubmit="event.preventDefault();">
+                                <div class="space-y-1">
+                                    <label for="fullname" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        Ad Soyad <span class="text-[#003399]">*</span>
+                                    </label>
+                                    <input type="text" id="fullname" name="fullname" required placeholder="Örn: Ahmet Yılmaz" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#003399] focus:ring-2 focus:ring-[#003399]/20 outline-none transition-all" />
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="space-y-1">
+                                        <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Telefon <span class="text-[#003399]">*</span>
+                                        </label>
+                                        <input type="tel" id="phone" name="phone" required placeholder="05XX XXX XX XX" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#003399] focus:ring-2 focus:ring-[#003399]/20 outline-none transition-all" />
+                                    </div>
+
+                                    <div class="space-y-1">
+                                        <label for="company" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                            Şirket Adı
+                                        </label>
+                                        <input type="text" id="company" name="company" placeholder="Firma Ünvanı" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#003399] focus:ring-2 focus:ring-[#003399]/20 outline-none transition-all" />
+                                    </div>
+                                </div>
+
+                                <div class="space-y-1">
+                                    <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        E-Posta Adresi <span class="text-[#003399]">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" required placeholder="ahmet@sirketiniz.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#003399] focus:ring-2 focus:ring-[#003399]/20 outline-none transition-all" />
+                                </div>
+
+                                <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-[#003399] hover:bg-[#002266] text-white font-extrabold text-base shadow-lg shadow-blue-900/25 hover:shadow-blue-900/40 hover:scale-[1.005] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer border border-blue-400/30">
+                                    <span>Hemen Bilgi & Teklif İsteyin</span>
+                                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+
+                                <p class="text-[11px] text-center text-slate-400 mt-2 flex items-center justify-center gap-1">
+                                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
+                                    Verileriniz KVKK kapsamında %100 güvende tutulmaktadır.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 2. ENTEGRA E-TİCARET YETENEKLERİ (3x2 GRID KARTLAR)                       -->
+        <!-- ========================================================================= -->
+        <section id="entegra-ozellikler" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-black tracking-widest text-[#003399] uppercase bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">
+                        ÇOKLU PAZAR YERİ YETENEKLERİ
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Entegra E-Ticaret <span class="text-[#003399]">Yetenekleri</span>
+                    </h2>
+                    <p class="text-base text-slate-600 font-normal">
+                        Tüm pazar yerlerindeki operasyonlarınızı otomatikleştiren, hataları sıfırlayan gelişmiş e-ticaret modülleri.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+
+                    <!-- Kart 1: Anlık Stok ve Fiyat Senkronizasyonu -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#003399] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-blue-50 text-[#003399] flex items-center justify-center group-hover:bg-[#003399] group-hover:text-white transition-colors">
+                                <i data-lucide="refresh-cw" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#003399] transition-colors">Stok & Fiyat Senkronizasyonu</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                DİA ERP'deki stok güncellemelerinin ve fiyat değişimlerinin tüm pazar yerlerine saniyeler içinde hatasız yansıması.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 2: Otomatik Sipariş ve Fatura Aktarımı -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0F172A] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-slate-100 text-[#0F172A] flex items-center justify-center group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
+                                <i data-lucide="file-check-2" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors">Otomatik Sipariş & Fatura Aktarımı</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Pazar yerlerinden gelen siparişlerin DİA ERP'ye anında düşmesi ve e-Faturasının otomatik olarak üretilmesi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 3: Pazar Yeri Bazlı Özel Fiyatlandırma -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                                <i data-lucide="tags" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Pazar Yeri Bazlı Fiyatlandırma</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Trendyol, Hepsiburada, Amazon vb. platformlar için ayrı komisyon oranları ve kar marjlarıyla özel fiyat tanımlayabilme.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 4: Toplu Ürün Yükleme ve Varyant Yönetimi -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                                <i data-lucide="boxes" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Toplu Ürün & Varyant Yönetimi</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Renk, beden ve özellik içeren karmaşık ürün gruplarının pazar yerlerine tek tıkla hatasız açılması.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 5: Otomatik Kargo Barkodu Basımı -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-purple-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                                <i data-lucide="printer" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-purple-600 transition-colors">Otomatik Kargo Barkodu</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Siparişlerin kargo kampanya kodları ve etiketleriyle birlikte paketleme masasında otomatik olarak hazırlanması.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 6: Müşteri Soruları ve Mesaj Yönetimi -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-cyan-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                                <i data-lucide="message-square-text" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-cyan-600 transition-colors">Müşteri Soruları & Mesaj Yönetimi</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Farklı pazar yerlerinden gelen müşteri sorularının ve destek taleplerinin tek bir ortak panelden hızlıca yanıtlanması.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 3. NEDEN COMPITURK ENTEGRA ENTEGRASYONU? (ENTEGRA MAVİ ACCENT BÖLÜMÜ)     -->
+        <!-- ========================================================================= -->
+        <section id="neden-compiturk-entegra" class="py-16 lg:py-24 bg-[#003399] text-white">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-white font-bold text-xs border border-white/20">
+                            <i data-lucide="zap" class="w-4 h-4"></i>
+                            E-TİCARET OTOMASYON AVANTAJLARI
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                            Neden Compiturk <br />
+                            Entegra Entegrasyonu?
+                        </h2>
+                        <p class="text-blue-100 text-base leading-relaxed">
+                            Hatalı stoktan kaynaklı ceza ve mağaza kapatma risklerini sıfırlayan, e-ticaret operasyon hızını 5 katına çıkaran ve DİA ERP ile tam uyumlu çalışan B2B entegrasyon altyapısı.
+                        </p>
+                        <div class="space-y-3 text-sm font-semibold text-white">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
+                                <span>Stok tükenen ürünlerin pazar yerlerinde otomatik kapanmasıyla ceza puanı almaktan korunun</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
+                                <span>Yüzlerce siparişi tek ekrandan yöneterek paketleme ve sevkiyat kapasitenizi 5 katına çıkarın</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
+                                <span>DİA ERP altyapısıyla e-ticaret cirolarınızı ve kargo maliyetlerinizi kusursuz izleyin</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sağ Taraf İstatistik Paneli -->
+                    <div class="bg-[#0F172A] text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-blue-400/30 space-y-6">
+                        <div class="border-b border-slate-800 pb-5">
+                            <div class="text-4xl font-black text-[#38BDF8]">5 Kat</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">E-Ticaret Operasyon & Sevkiyat Hızı</div>
+                            <p class="text-xs text-slate-400 mt-1">Siparişten faturaya kadar tüm akış saniyeler içinde otomatik tamamlanır.</p>
+                        </div>
+
+                        <div>
+                            <div class="text-4xl font-black text-white">Sıfır Ceza</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Stok Çakışması & Tedarik Riski</div>
+                            <p class="text-xs text-slate-400 mt-1">Anlık çift yönlü senkronizasyon ile mağazalarınız her zaman güvendedir.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 4. 4 ADIMDA KURULUM SÜRECİ                                                -->
+        <!-- ========================================================================= -->
+        <section id="entegra-adimlari" class="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-bold text-[#003399] uppercase tracking-wider bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">
+                        HIZLI CANLIYA GEÇİŞ
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        4 Adımda Kurulum <span class="text-[#003399]">Süreci</span>
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        Entegra altyapınızı pazar yerlerine ve DİA ERP'ye bağlamak için izlediğimiz adımlar.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+
+                    <!-- Adım 1 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#003399] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#003399] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="search" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#003399] transition-colors">01</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Mağaza API & ERP Analizi</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Trendyol, Hepsiburada mağaza API bilgileri ve DİA ERP stok yapınız incelenerek entegrasyon kapsamı çıkarılır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 2 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0F172A] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-slate-100 text-[#0F172A] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="git-merge" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#0F172A] transition-colors">02</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Kategori & Ürün Eşleştirmesi</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Entegra paneli üzerinde pazar yeri kategorileri ile DİA ERP stok kartlarının eşleştirilmesi ve fiyat kuralları tanımlanır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 3 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-600 transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-amber-600 transition-colors">03</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Stok & Sipariş Test Senaryoları</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Test siparişleri gönderilerek stok düşüşlerinin ve e-fatura aktarımlarının doğruluğu kontrol edilir.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 4 -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-emerald-500/80 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="rocket" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-emerald-500">04</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Canlıya Geçiş & Senkronizasyon</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Sistem canlı ortama alınarak tüm pazar yerleri ile otomatik çift yönlü senkronizasyon başlatılır.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 5. BİRLİKTE KULLANABİLECEĞİNİZ DİĞER ÇÖZÜMLERİMİZ                         -->
+        <!-- ========================================================================= -->
+        <section id="tamamlayici-cozumler" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                        Birlikte Kullanabileceğiniz <span class="text-[#003399]">Diğer Çözümlerimiz</span>
+                    </h2>
+                    <p class="text-sm text-slate-600">Entegra entegrasyonunuzu destekleyen diğer entegre DİA ve Compiturk yazılımları.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Çözüm 1 -->
+                    <a href="pazaryeri-entegrasyonu.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#003399] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#003399] flex items-center justify-center mb-4 group-hover:bg-[#003399] group-hover:text-white transition-colors">
+                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#003399] transition-colors">Pazar Yeri Entegrasyonu</h3>
+                        <p class="text-xs text-slate-500 mt-1">Trendyol ve Hepsiburada mağaza yönetimi.</p>
+                    </a>
+
+                    <!-- Çözüm 2 -->
+                    <a href="xml-hub.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#0F172A] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-slate-100 text-[#0F172A] flex items-center justify-center mb-4 group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
+                            <i data-lucide="file-code" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors">XML Hub</h3>
+                        <p class="text-xs text-slate-500 mt-1">Tedarikçi XML entegrasyonu ve otomatik stok besleme.</p>
+                    </a>
+
+                    <!-- Çözüm 3 -->
+                    <a href="depo-kurdu.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center mb-4 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                            <i data-lucide="tablet-smartphone" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Depo Kurdu</h3>
+                        <p class="text-xs text-slate-500 mt-1">El terminaliyle e-ticaret sipariş toplama ve paketleme.</p>
+                    </a>
+
+                    <!-- Çözüm 4 -->
+                    <a href="kargo-entegrasyonu.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <i data-lucide="truck" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Kargo Entegrasyonu</h3>
+                        <p class="text-xs text-slate-500 mt-1">Yurtiçi ve global kargo firmaları ile otomatik barkod.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 6. SIKÇA SORULAN SORULAR (SEO FAQ - HTML5 ACCORDION)                     -->
+        <!-- ========================================================================= -->
+        <section id="faq" class="py-16 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                
+                <div class="text-center space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Sıkça Sorulan <span class="text-[#003399]">Sorular</span></h2>
+                    <p class="text-sm text-slate-600">Entegra çoklu pazar yeri ve e-ticaret entegrasyonu hakkında merak ettiğiniz tüm yanıtlar.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Soru 1 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#003399] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#003399]">
+                            <span>Entegra hangi yerli ve yabancı pazar yerlerini destekler?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Entegra; Trendyol, Hepsiburada, N11, Amazon Türkiye ve Global, Pazarama, Çiçeksepeti, ePttAVM gibi önde gelen tüm pazar yerlerinin yanı sıra Ticimax, IdeaSoft, Shopier, WooCommerce gibi popüler e-ticaret altyapılarını tam destekler.
+                        </p>
+                    </details>
+
+                    <!-- Soru 2 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#003399] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#003399]">
+                            <span>Pazar yerinde satılan bir ürünün stoğu DİA ERP'den anında düşer mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Herhangi bir pazar yerinden sipariş geldiği an Entegra bunu algılar; DİA ERP'deki stok miktarını düşer ve bu güncellenmiş stok değerini anında diğer tüm açık pazar yerlerindeki ilanlarınıza eş zamanlı yansıtır.
+                        </p>
+                    </details>
+
+                    <!-- Soru 3 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#003399] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#003399]">
+                            <span>Her pazar yeri için farklı fiyat ve komisyon tanımlanabilir mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet. Pazar yerlerinin komisyon kesintilerini göz önünde bulundurarak Trendyol için farklı, Hepsiburada için farklı fiyat çarpanları veya kar marjları tanımlayabilir, ürün fiyatlarını platform bazlı otomatik yönetebilirsiniz.
+                        </p>
+                    </details>
+
+                    <!-- Soru 4 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#003399] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#003399]">
+                            <span>Varyantlı (renk/beden) ürün takibi destekleniyor mu?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Kesinlikle. Giyim, ayakkabı veya çok seçenekli ürünlerinizde renk ve beden gibi varyant yapılı tüm stoklarınızı DİA ERP üzerinden pazar yerlerine hatasız aktarabilir ve ayrı ayrı stok takibi yapabilirsiniz.
+                        </p>
+                    </details>
+
+                    <!-- Soru 5 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#003399] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#003399]">
+                            <span>Entegrasyon ve kurulum ne kadar sürer?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Mağaza API bilgilerinizin ve DİA ERP kategori eşleştirmelerinin tamamlanmasının ardından Compiturk uzman ekibi tarafından entegrasyon testleri yapılarak 1 ila 3 iş günü içinde canlıya alınır.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 7. MÜŞTERİ YORUMLARI & REFERANSLAR (3 KART)                                -->
+        <!-- ========================================================================= -->
+        <section id="referanslar" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Müşterilerimiz <span class="text-[#003399]">Ne Diyor?</span></h2>
+                    <p class="text-sm text-slate-600">Pazar yeri operasyonlarını Compiturk Entegra entegrasyonu ile büyüten e-ticaret firmalarının görüşleri.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Yorum 1 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Trendyol, Hepsiburada ve N11 mağazalarımızda stok çakışması yüzünden sürekli ceza alıyorduk. Entegra ve DİA ERP köprüsü kurulduktan sonra bu sorun tamamen bitti. Siparişlerimiz saniyesinde muhasebeye düşüyor."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Emre Ç.</span>
+                            <span class="text-xs text-slate-500 font-medium">E-Ticaret Müdürü - Tekstil</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 2 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Binlerce çeşit varyantlı ürünümüzü tek panelden tüm pazar yerlerine hatasız açabildik. Pazar yeri bazlı fiyat farkı tanımlayabilmek kar marjımızı korumamızı sağladı."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Tuğçe D.</span>
+                            <span class="text-xs text-slate-500 font-medium">Şirket Ortağı - Kozmetik E-Ticaret</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 3 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Compiturk ekibinin kurduğu Entegra altyapısı sayesinde paketleme ve kargo etiketleme hızımız 5 katına çıktı. E-ticarette büyümek isteyen herkese tavsiye ederim."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Burak T.</span>
+                            <span class="text-xs text-slate-500 font-medium">Genel Müdür - Elektronik Mağazacılık</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 8. BLOG YAZILARIMIZ (3 KART)                                              -->
+        <!-- ========================================================================= -->
+        <section id="blog" class="py-16 bg-[#F8FAFC]">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">E-Ticaret & Pazar Yeri <span class="text-[#003399]">Rehberi & Makaleler</span></h2>
+                    <p class="text-sm text-slate-600">Çoklu pazar yeri satışlarınızı ve operasyonel verimliliğinizi artıracak uzman içeriklerimiz.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Makale 1 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#003399] uppercase tracking-wider bg-blue-50 px-2.5 py-1 rounded-md">STOK KONTROLÜ</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#003399] transition-colors line-clamp-2">
+                                Çoklu Pazar Yeri Satışlarında Stok Çakışmasını Ve Cezaları Önleme Yolları
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Anlık çift yönlü stok senkronizasyonu ile tükenen ürünlerin mağazalarda otomatik kapatılmasının önemi.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 2 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider bg-slate-100 px-2.5 py-1 rounded-md">OPERASYONEL HIZ</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors line-clamp-2">
+                                E-Ticarette Otomatik e-Fatura Ve Kargo Etiketi Kullanımının Operasyonel Hıza Etkisi
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Paketleme masalarında barkod okutarak saniyeler içinde kargo etiketi basma ve irsaliyeleme yöntemleri.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 3 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider bg-emerald-50 px-2.5 py-1 rounded-md">TEK PANEL YÖNETİMİ</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-emerald-600 transition-colors line-clamp-2">
+                                Entegra Bilişim Altyapısı İle Amazon Ve Trendyol Mağazalarını Tek Panelden Yönetme
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Farklı pazar yerlerindeki ürün ve siparişleri tek merkezden besleyerek iş yükünü minimize etme rehberi.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-footer"></div>
+
+    <!-- SCRIPT ÇAĞRILARI -->
+    <script src="../js/components.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

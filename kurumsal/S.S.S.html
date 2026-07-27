@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sıkça Sorulan Sorular (S.S.S.) | Compiturk Bilgisayar</title>
+    <meta name="description" content="DİA ERP, B2B yazılımlar, e-fatura entegrasyonu, Ahtapot WMS depo yönetimi ve IT altyapı hizmetleri hakkında sıkça sorulan sorular ve yanıtları.">
+    <meta name="keywords" content="Compiturk SSS, DİA ERP soruları, B2B yazılım SSS, e-fatura sss, WMS depo otomasyonu soru cevap, UTM firewall destek">
+    <meta name="author" content="Compiturk Bilgisayar">
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#DC2626',
+                        brandRedDark: '#B91C1C',
+                        brandNavy: '#0F172A',
+                        brandNavyLight: '#1E3A8A',
+                        brandIce: '#F8FAFC',
+                        brandSlate: '#334155'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#F8FAFC] text-[#334155] font-sans antialiased min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+    <!-- GLOBAL HEADER (components.js tarafından doldurulur) -->
+    <div id="global-header"></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+
+        <!-- 1. HERO / BANNER SECTION -->
+        <section class="bg-[#0F172A] text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-800 relative overflow-hidden">
+            <!-- Arka Plan Efektleri -->
+            <div class="absolute top-0 right-1/4 w-96 h-96 bg-[#DC2626]/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-[#1E3A8A]/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-4xl mx-auto relative z-10 text-center space-y-6">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-xs sm:text-sm font-semibold text-red-400">
+                    <span>❓</span> Compiturk Bilgi Merkezi
+                </div>
+
+                <!-- H1 Başlığı -->
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight">
+                    Sıkça Sorulan Sorular (S.S.S.)
+                </h1>
+
+                <!-- Açıklama Paragrafı -->
+                <p class="text-slate-300 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
+                    DİA ERP, B2B yazılım entegrasyonları, e-Dönüşüm süreçleri ve IT altyapı hizmetlerimiz hakkında merak ettiğiniz tüm soruların cevapları.
+                </p>
+
+                <!-- Canlı Soru Arama Kutusu -->
+                <div class="pt-4 max-w-2xl mx-auto relative flex items-center">
+                    <i data-lucide="search" class="w-5 h-5 absolute left-4 text-slate-400"></i>
+                    <input id="faq-search" type="text" placeholder="Aramak istediğiniz soruyu veya anahtar kelimeyi yazın... (Örn: DİA, Depo, Firewall)" class="w-full pl-12 pr-4 py-3.5 bg-slate-800/90 border border-slate-700 rounded-2xl text-white placeholder-slate-400 text-sm focus:outline-none focus:border-[#DC2626] focus:ring-1 focus:ring-[#DC2626] transition-all shadow-lg">
+                </div>
+            </div>
+        </section>
+
+        <!-- MAIN CONTAINER -->
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+
+            <!-- 2. KATEGORİ FİLTRE TABLARI -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-3 text-xs sm:text-sm font-bold">
+                <button data-category="all" class="faq-filter-btn active-tab px-4 py-2.5 rounded-xl bg-[#DC2626] text-white shadow-md transition-all">Tüm Sorular</button>
+                <button data-category="dia-erp" class="faq-filter-btn px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition-all">DİA ERP & Muhasebe</button>
+                <button data-category="e-ticaret" class="faq-filter-btn px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition-all">E-Ticaret Entegrasyonu</button>
+                <button data-category="depo-wms" class="faq-filter-btn px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition-all">Depo & WMS</button>
+                <button data-category="it-security" class="faq-filter-btn px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition-all">IT & Siber Güvenlik</button>
+            </div>
+
+            <!-- ARAMA / FİLTRE SONUÇ BULUNAMADI MESAJI -->
+            <div id="faq-no-results" class="hidden bg-white border border-slate-200 rounded-2xl p-8 text-center space-y-3 shadow-sm">
+                <i data-lucide="help-circle" class="w-10 h-10 text-[#DC2626] mx-auto"></i>
+                <h3 class="text-lg font-bold text-[#0F172A]">Aradığınız Kriterlere Uygun Soru Bulunamadı</h3>
+                <p class="text-slate-500 text-sm">Farklı bir kelime yazmayı deneyebilir veya teknik ekibimize doğrudan danışabilirsiniz.</p>
+            </div>
+
+            <!-- 3. S.S.S. AKORDİYON LİSTESİ -->
+            <div id="faq-accordion-list" class="space-y-4">
+
+                <!-- SORU 1 (DİA ERP) -->
+                <div class="faq-item bg-white border border-slate-200/90 rounded-2xl overflow-hidden shadow-sm hover:border-slate-300 transition-all" data-category="dia-erp">
+                    <button type="button" class="faq-toggle-btn w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+                        <span class="font-bold text-[#0F172A] text-base sm:text-lg flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-[#DC2626] flex-shrink-0"></span>
+                            DİA ERP bulut tabanlı bir yazılım mıdır, kurulum gerektirir mi?
+                        </span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-100/80 bg-slate-50/50">
+                        Evet, DİA ERP %100 bulut mimarisiyle çalışan gelişmiş bir kurumsal kaynak planlama sistemidir. Şirketinizde pahalı sunucu yatırımları veya özel donanım kurma zorunluluğu yoktur. İnternet erişimi olan her yerden web tarayıcısı veya mobil cihazlarınız üzerinden güvenle bağlanabilirsiniz.
+                    </div>
+                </div>
+
+                <!-- SORU 2 (DİA ERP & E-Dönüşüm) -->
+                <div class="faq-item bg-white border border-slate-200/90 rounded-2xl overflow-hidden shadow-sm hover:border-slate-300 transition-all" data-category="dia-erp">
+                    <button type="button" class="faq-toggle-btn w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+                        <span class="font-bold text-[#0F172A] text-base sm:text-lg flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-[#DC2626] flex-shrink-0"></span>
+                            e-Fatura, e-İrsaliye ve e-Arşiv süreçleri DİA ERP içinde nasıl işler?
+                        </span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-100/80 bg-slate-50/50">
+                        DİA ERP, GİB (Gelir İdaresi Başkanlığı) ile tam entegre olarak çalışır. Faturanız veya irsaliyeniz oluşturulduğu anda tek tıkla e-belgeye dönüştürülerek alıcıya ve GİB sistemine aktarılır. Ayrı bir özel entegratör paneli kullanmanıza gerek kalmaz.
+                    </div>
+                </div>
+
+                <!-- SORU 3 (E-Ticaret Entegrasyonu) -->
+                <div class="faq-item bg-white border border-slate-200/90 rounded-2xl overflow-hidden shadow-sm hover:border-slate-300 transition-all" data-category="e-ticaret">
+                    <button type="button" class="faq-toggle-btn w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+                        <span class="font-bold text-[#0F172A] text-base sm:text-lg flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-[#DC2626] flex-shrink-0"></span>
+                            Trendyol ve Hepsiburada pazaryeri satışlarında stoklar anlık güncellenir mi?
+                        </span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-100/80 bg-slate-50/50">
+                        Evet, Compiturk tarafından sunulan Pazaryeri ve Entegra Bilişim entegrasyon çözümleri sayesinde herhangi bir platformda satış gerçekleştiği an stok miktarınız tüm diğer pazaryerlerinde ve e-ticaret sitenizde milisaniyeler içinde anlık olarak düşürülür (overselling riski sıfırlanır).
+                    </div>
+                </div>
+
+                <!-- SORU 4 (Depo & WMS) -->
+                <div class="faq-item bg-white border border-slate-200/90 rounded-2xl overflow-hidden shadow-sm hover:border-slate-300 transition-all" data-category="depo-wms">
+                    <button type="button" class="faq-toggle-btn w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+                        <span class="font-bold text-[#0F172A] text-base sm:text-lg flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-[#DC2626] flex-shrink-0"></span>
+                            Ahtapot WMS Depo Yönetim Sistemi el terminalleriyle uyumlu mudur?
+                        </span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-100/80 bg-slate-50/50">
+                        Ahtapot WMS, Android tabanlı tüm endüstriyel el terminalleri ve barkod okuyucularla %100 uyumludur. Mal kabul, raf adresleme, barkodlu toplama, sayım ve kargo paketleme süreçleri el terminali üzerinden yönlendirilerek insani hatalar engellenir.
+                    </div>
+                </div>
+
+                <!-- SORU 5 (E-Ticaret & POS) -->
+                <div class="faq-item bg-white border border-slate-200/90 rounded-2xl overflow-hidden shadow-sm hover:border-slate-300 transition-all" data-category="e-ticaret">
+                    <button type="button" class="faq-toggle-btn w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+                        <span class="font-bold text-[#0F172A] text-base sm:text-lg flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-[#DC2626] flex-shrink-0"></span>
+                            Ödüyo ve Net Tahsilat ile SMS/Link üzerinden nasıl ödeme alınır?
+                        </span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-100/80 bg-slate-50/50">
+                        Bayilerinize veya müşterilerinize sistem üzerinden özel tutarlı güvenli ödeme linki SMS/e-posta yoluyla iletilir. Müşteri linke tıklayarak 3D Secure korumalı POS ekranına ulaşır ve taksitli/tek çekim ödemesini yapar. Ödeme yapıldığı an DİA ERP cari hesabına otomatik işlenir.
+                    </div>
+                </div>
+
+                <!-- SORU 6 (IT & Siber Güvenlik) -->
+                <div class="faq-item bg-white border border-slate-200/90 rounded-2xl overflow-hidden shadow-sm hover:border-slate-300 transition-all" data-category="it-security">
+                    <button type="button" class="faq-toggle-btn w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+                        <span class="font-bold text-[#0F172A] text-base sm:text-lg flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-[#DC2626] flex-shrink-0"></span>
+                            UTM Firewall kurulumu şirket verilerini fidye yazılımlarından korur mu?
+                        </span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-100/80 bg-slate-50/50">
+                        Evet, UTM Güvenlik Duvarı donanımları ağ geçidinde virüs taraması, zararlı web filtreleme, izinsiz sızma engelleme (IPS) ve şifreli VPN bağlantıları sağlayarak Ransomware (fidye yazılımı) ve dış siber korsan saldırılarını şirket sunucularınıza ulaşmadan engeller. Ayrıca 5651 yasal loglama zorunluluğunu karşılar.
+                    </div>
+                </div>
+
+                <!-- SORU 7 (IT & Siber Güvenlik) -->
+                <div class="faq-item bg-white border border-slate-200/90 rounded-2xl overflow-hidden shadow-sm hover:border-slate-300 transition-all" data-category="it-security">
+                    <button type="button" class="faq-toggle-btn w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+                        <span class="font-bold text-[#0F172A] text-base sm:text-lg flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-[#DC2626] flex-shrink-0"></span>
+                            Compiturk Bilgisayar kurumsal IT bakım ve teknik destek hizmeti sunuyor mu?
+                        </span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-100/80 bg-slate-50/50">
+                        Evet, periyodik IT bakım anlaşmaları kapsamında şirketlerin sunucu kurulumları, ağ altyapı takibi, bilgisayar/yazıcı kiralama, KVKK uyumlu otomatik yedekleme sistemleri ve 7/24 kesintisiz teknik destek hizmetlerini profesyonel kadromuzla sürdürmekteyiz.
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 4. İLETİŞİM & DESTEK CTA BANNER'I -->
+            <div class="bg-gradient-to-r from-[#DC2626] to-[#B91C1C] rounded-3xl p-8 sm:p-10 text-white shadow-2xl space-y-6 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div class="space-y-2 max-w-xl">
+                    <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider">Canlı Teknik Destek</span>
+                    <h3 class="text-2xl sm:text-3xl font-black leading-tight">
+                        Aradığınız Sorunun Cevabını Bulamadınız mı?
+                    </h3>
+                    <p class="text-white/90 text-sm sm:text-base">
+                        Teknik ekibimiz ve ERP uzmanlarımız tüm sorularınızı yanıtlamak ve canlı demo sunumu yapmak için hazır.
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+                    <a href="../iletisim/iletisim.html" class="w-full sm:w-auto px-6 py-3.5 bg-[#0F172A] hover:bg-black text-white font-bold rounded-xl shadow-lg transition-all text-sm text-center flex items-center justify-center gap-2">
+                        İletişime Geçin <i data-lucide="mail" class="w-4 h-4"></i>
+                    </a>
+                    <a href="https://wa.me/902128733537" target="_blank" rel="noopener" class="w-full sm:w-auto px-6 py-3.5 bg-white text-[#DC2626] hover:bg-slate-100 font-bold rounded-xl shadow-lg transition-all text-sm text-center flex items-center justify-center gap-2">
+                        WhatsApp Destek <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- GLOBAL FOOTER (components.js tarafından doldurulur) -->
+    <div id="global-footer"></div>
+
+    <!-- 5. İNTERAKTİF AKORDİYON & GELİŞMİŞ TÜRKÇE ARAMA JAVASCRIPT KODU -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Lucide İkonlarını Başlat
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+
+            const searchInput = document.getElementById('faq-search');
+            const filterBtns = document.querySelectorAll('.faq-filter-btn');
+            const faqItems = document.querySelectorAll('.faq-item');
+            const noResultsMsg = document.getElementById('faq-no-results');
+
+            let currentCategory = 'all';
+
+            // Türkçe Karakter Uyumlu Küçük Harf Çevirici
+            function toTurkishLowerCase(text) {
+                if (!text) return '';
+                return text.replace(/İ/g, 'i')
+                           .replace(/I/g, 'ı')
+                           .replace(/Ğ/g, 'ğ')
+                           .replace(/Ü/g, 'ü')
+                           .replace(/Ş/g, 'ş')
+                           .replace(/Ö/g, 'ö')
+                           .replace(/Ç/g, 'ç')
+                           .toLowerCase();
+            }
+
+            // 1. Akordiyon Açma/Kapama Fonksiyonu
+            faqItems.forEach(item => {
+                const btn = item.querySelector('.faq-toggle-btn');
+                const answer = item.querySelector('.faq-answer');
+                const icon = item.querySelector('.faq-icon');
+
+                btn.addEventListener('click', () => {
+                    const isHidden = answer.classList.contains('hidden');
+
+                    // Diğer açık cevapları kapat
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.querySelector('.faq-answer').classList.add('hidden');
+                            const otherIcon = otherItem.querySelector('.faq-icon');
+                            if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+                        }
+                    });
+
+                    // Tıklananı Değiştir
+                    if (isHidden) {
+                        answer.classList.remove('hidden');
+                        if (icon) icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        answer.classList.add('hidden');
+                        if (icon) icon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+
+            // 2. Canlı Filtreleme ve Arama Mantığı
+            function filterFAQ() {
+                const query = toTurkishLowerCase(searchInput ? searchInput.value.trim() : '');
+                let visibleCount = 0;
+
+                faqItems.forEach(item => {
+                    const itemCat = item.getAttribute('data-category');
+                    const questionBtn = item.querySelector('.faq-toggle-btn');
+                    const answerDiv = item.querySelector('.faq-answer');
+
+                    const questionText = questionBtn ? toTurkishLowerCase(questionBtn.textContent) : '';
+                    const answerText = answerDiv ? toTurkishLowerCase(answerDiv.textContent) : '';
+
+                    const matchesCategory = (currentCategory === 'all') || (itemCat === currentCategory);
+                    const matchesSearch = (query === '') || questionText.includes(query) || answerText.includes(query);
+
+                    if (matchesCategory && matchesSearch) {
+                        item.classList.remove('hidden');
+                        visibleCount++;
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+
+                if (noResultsMsg) {
+                    if (visibleCount === 0) {
+                        noResultsMsg.classList.remove('hidden');
+                    } else {
+                        noResultsMsg.classList.add('hidden');
+                    }
+                }
+            }
+
+            // 3. Kategori Butonları Tıklama Etkinliği
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-[#DC2626]', 'text-white', 'shadow-md');
+                        b.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+                    });
+
+                    this.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+                    this.classList.add('bg-[#DC2626]', 'text-white', 'shadow-md');
+
+                    currentCategory = this.getAttribute('data-category');
+                    filterFAQ();
+                });
+            });
+
+            // 4. Arama Girişi Etkinliği (Anlık Çalışır)
+            if (searchInput) {
+                searchInput.addEventListener('input', filterFAQ);
+            }
+        });
+    </script>
+    
+    <!-- Dinamik Header ve Footer Yükleyici -->
+    <script src="../js/components.js"></script>
+</body>
+</html>

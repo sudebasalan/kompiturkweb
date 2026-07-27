@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DİA Süreç Yönetimi ve İş Akış Programı | Compiturk Bilgisayar</title>
+    <meta name="description" content="DİA ERP Süreç Yönetimi Modülü ile şirketinizin tüm iş akışlarını, onay mekanizmalarını ve departmanlar arası operasyonları tek ekrandan dijitalleştirin.">
+    <meta name="keywords" content="DİA ERP süreç yönetimi, iş akışı otomasyonu, görev takibi, onay mekanizması, kurumsal süreç programı">
+    <meta name="author" content="Compiturk Bilgisayar">
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        diaOrange: '#E77F18',
+                        diaOrangeDark: '#D47213',
+                        diaBlue: '#245BA7',
+                        diaBlueDark: '#1D4A88',
+                        diaNavy: '#0F1D38',
+                        brandIce: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#F8FAFC] text-[#334155] font-sans antialiased min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+    <!-- GLOBAL HEADER (js/components.js tarafından doldurulur) -->
+    <div id="global-header"></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+
+        <!-- ========================================== -->
+        <!-- 1. HERO BANNER SECTION (MAVİ ZEMİN & FORM) -->
+        <!-- ========================================== -->
+        <section class="bg-[#245BA7] text-white py-12 lg:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+            <!-- Arka Plan Süsleme Işıltısı -->
+            <div class="absolute -top-24 -left-24 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-[1440px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- Sol Kolon: Başlık ve Açıklama -->
+                <div class="lg:col-span-7 space-y-6 text-left">
+                    <!-- Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/20 text-white font-bold text-xs sm:text-sm tracking-wide">
+                        <span class="w-2 h-2 rounded-full bg-[#E77F18] animate-pulse"></span>
+                        DİA BULUT ERP MODÜLÜ
+                    </div>
+
+                    <!-- H1 Başlık -->
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white">
+                        DİA Süreç ve İş Akış <br />
+                        <span class="text-[#E77F18]">Yönetimi Programı</span>
+                    </h1>
+
+                    <!-- Paragraf -->
+                    <p class="text-white/90 text-base sm:text-lg leading-relaxed max-w-2xl font-normal">
+                        İş süreçlerinizi; onay mekanizmaları, görev atamaları ve departman yetkileriyle entegre edin. Şirket büyüklüğünüz ne olursa olsun tüm iş akışlarınızı tek ekrandan yönetin.
+                    </p>
+
+                    <!-- Alt Yatay Özellik Rozetleri -->
+                    <div class="pt-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <div class="flex items-center gap-3 bg-white/10 border border-white/15 p-3 rounded-xl backdrop-blur-sm">
+                            <i data-lucide="cloud" class="w-6 h-6 text-[#E77F18] flex-shrink-0"></i>
+                            <div class="text-xs font-bold leading-tight">%100 Bulut Tabanlı & Güvenli</div>
+                        </div>
+                        <div class="flex items-center gap-3 bg-white/10 border border-white/15 p-3 rounded-xl backdrop-blur-sm">
+                            <i data-lucide="git-pull-request" class="w-6 h-6 text-emerald-400 flex-shrink-0"></i>
+                            <div class="text-xs font-bold leading-tight">Dinamik Onay Hiyerarşisi</div>
+                        </div>
+                        <div class="flex items-center gap-3 bg-white/10 border border-white/15 p-3 rounded-xl backdrop-blur-sm">
+                            <i data-lucide="bell-ring" class="w-6 h-6 text-amber-300 flex-shrink-0"></i>
+                            <div class="text-xs font-bold leading-tight">Mobil Onay & Anlık Bildirim</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sağ Kolon: Sağdaki Beyaz Form Kutusu (Ekran Görüntüsüyle Birebir Aynı) -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white rounded-3xl p-6 sm:p-8 text-slate-900 shadow-2xl border-4 border-white relative overflow-hidden">
+                        <!-- Form Üst Aksan Çizgisi -->
+                        <div class="absolute top-0 left-0 right-0 h-2 bg-[#E77F18]"></div>
+
+                        <div class="space-y-2 mb-6 text-left">
+                            <h3 class="text-2xl font-extrabold text-slate-900 flex items-center gap-2">
+                                <i data-lucide="sparkles" class="w-6 h-6 text-[#E77F18]"></i>
+                                Ücretsiz Demo & Bilgi Alın
+                            </h3>
+                            <p class="text-xs text-slate-500">
+                                Süreç yönetimi ihtiyaçlarınız için bilgilerinizi bırakın, uzmanımız hemen arasına.
+                            </p>
+                        </div>
+
+                        <form action="#" method="POST" class="space-y-4" onsubmit="event.preventDefault(); alert('Talebiniz alınmıştır.');">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-700 tracking-wider">AD SOYAD *</label>
+                                <input type="text" required placeholder="Örn: Ahmet Yılmaz" class="w-full mt-1.5 px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:bg-white focus:border-[#245BA7] outline-none transition-all" />
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-slate-700 tracking-wider">TELEFON *</label>
+                                    <input type="tel" required placeholder="05XX XXX XX XX" class="w-full mt-1.5 px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:bg-white focus:border-[#245BA7] outline-none transition-all" />
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-slate-700 tracking-wider">ŞİRKET ADI</label>
+                                    <input type="text" placeholder="Firma Ünvanı" class="w-full mt-1.5 px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:bg-white focus:border-[#245BA7] outline-none transition-all" />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-700 tracking-wider">E-POSTA ADRESİ *</label>
+                                <input type="email" required placeholder="ahmet@sirketiniz.com" class="w-full mt-1.5 px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:bg-white focus:border-[#245BA7] outline-none transition-all" />
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl bg-[#E77F18] hover:bg-[#D47213] text-white font-extrabold text-base shadow-lg shadow-orange-500/30 hover:scale-[1.01] transition-all flex items-center justify-center gap-2">
+                                <span>Hemen DİA Demosu İsteyin</span> <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 2. NEDEN DİA SÜREÇ YÖNETİMİ? (6'LI GRID)   -->
+        <!-- ========================================== -->
+        <section class="py-16 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="px-4 py-1.5 rounded-full bg-blue-100 text-[#245BA7] font-bold text-xs uppercase tracking-wider">
+                        AKILLI İŞ AKIŞ MİMARİSİ
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Neden DİA <span class="text-[#245BA7]">Süreç Takip</span> Programı?
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        Karmaşık operasyonel süreçleri sadeleştiren, kayıpları sıfırlayan ve hızı maksimuma çıkaran teknolojik altyapı.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Kart 1 -->
+                    <div class="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-50 text-[#245BA7] flex items-center justify-center">
+                            <i data-lucide="workflow" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Entegre Süreç Yönetimi</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Muhasebe, satın alma, e-fatura ve satış kanallarınızla uçtan uca entegrasyon kurun. Tek onay süreciyle tüm veri canlı güncellensin.
+                        </p>
+                    </div>
+
+                    <!-- Kart 2 (Öne Çıkarılmış Turuncu Kart) -->
+                    <div class="bg-white rounded-3xl p-8 border-2 border-[#E77F18] shadow-lg hover:shadow-2xl transition-all duration-300 space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-[#E77F18] text-white flex items-center justify-center">
+                            <i data-lucide="sliders" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#E77F18]">Verimli Onay Mekanizmaları</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Bütçe limitli ve çok kademeli onay zincirleri tanımlayın. Satın alma taleplerinden masraf izinlerine kadar tüm adımları izleyin.
+                        </p>
+                    </div>
+
+                    <!-- Kart 3 -->
+                    <div class="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center">
+                            <i data-lucide="sliders-horizontal" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Kullanım Kolaylığı</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Sürükle-bırak form tasarımları ve esnek şablonlar sayesinde şirketinize özel iş akış adımlarını zahmetsizce oluşturun.
+                        </p>
+                    </div>
+
+                    <!-- Kart 4 -->
+                    <div class="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                            <i data-lucide="line-chart" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Anlık Takip & Raporlar</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Hangi görevde ne kadar zaman harcandığını canlı KPI grafikleriyle analiz edin, darboğaz oluşturan adımları hemen tespit edin.
+                        </p>
+                    </div>
+
+                    <!-- Kart 5 (Öne Çıkarılmış Mavi Kart) -->
+                    <div class="bg-white rounded-3xl p-8 border-2 border-[#245BA7] shadow-lg hover:shadow-2xl transition-all duration-300 space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-[#245BA7] text-white flex items-center justify-center">
+                            <i data-lucide="bell" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#245BA7]">Mobil Bildirim & Uyarılar</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Geciken görevlerde otomatik e-posta ve SMS hatırlatmaları gönderin; onayları mobil uygulama üzerinden zaman kaybetmeden verin.
+                        </p>
+                    </div>
+
+                    <!-- Kart 6 -->
+                    <div class="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center">
+                            <i data-lucide="cloud" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Bulut Teknolojisi Avantajları</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            20 yıllık bulut tecrübesi ile donanım, sunucu bakımı ve versiyon güncelleme maliyeti sıfır. Tüm verileriniz güvende.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 3. MOBİL DİA ŞERİDİ (KOYU LACİVERT CTA)    -->
+        <!-- ========================================== -->
+        <section class="bg-[#0F1D38] text-white py-12 px-4 sm:px-6 lg:px-8 border-y border-slate-800">
+            <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6">
+                <div class="space-y-2 text-center lg:text-left">
+                    <span class="px-3.5 py-1 rounded-full bg-[#E77F18]/20 border border-[#E77F18]/40 text-[#E77F18] font-bold text-xs uppercase tracking-wider">
+                        ÖZGÜR MOBİL YÖNETİM
+                    </span>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-white">
+                        Özgür İş Akış Yönetimi İle İnternetin Olduğu Her Yer Ofisiniz!
+                    </h3>
+                </div>
+                <a href="../iletisim/iletisim.html" class="px-8 py-4 rounded-2xl bg-[#245BA7] hover:bg-[#1D4A88] text-white font-bold text-sm sm:text-base shadow-xl flex items-center gap-2 whitespace-nowrap transition-all hover:scale-105">
+                    <i data-lucide="smartphone" class="w-5 h-5"></i> Mobil DİA'yı Deneyimleyin
+                </a>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 4. DOĞA DOSTU / BULUT TABANLI DETAYI      -->
+        <!-- ========================================== -->
+        <section class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 font-bold text-xs uppercase tracking-wider">
+                        🌱 DOĞA DOSTU DİJİTALLEŞME
+                    </span>
+
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Neden Bulut Tabanlı <br />
+                        <span class="text-[#245BA7]">Süreç Yönetimi Programı?</span>
+                    </h2>
+
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        Kağıt, baskı, fiziksel arşiv ve onay kağıtlarını tamamen bitiren doğa dostu dijitalleşme vizyonu. DİA'nın bulut gücü sayesinde fiziksel sunucu yatırımlarından kurtulurken operasyonel hıza kavuşun.
+                    </p>
+
+                    <ul class="space-y-3 font-bold text-slate-800 text-sm sm:text-base">
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600"></i> Kağıtsız Ofis (Paperless Office) otomasyonu
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600"></i> ISO 27001 sertifikalı veri merkezlerinde yüksek güvenlikli koruma
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600"></i> Otomatik bulut yedeklemeleri ile sıfır veri kaybı riski
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="bg-[#F8FAFC] border border-slate-200 rounded-3xl p-8 shadow-xl space-y-6 text-center lg:text-left">
+                        <div>
+                            <div class="text-5xl font-black text-[#245BA7]">%100</div>
+                            <div class="text-base font-bold text-slate-900 mt-1">Sıfır Donanım Yatırımı</div>
+                            <p class="text-xs text-slate-500 mt-1">Ek bir sunucu, yedekleme ünitesi veya lisans anahtarı satın almanıza gerek kalmaz.</p>
+                        </div>
+                        <hr class="border-slate-200" />
+                        <div>
+                            <div class="text-5xl font-black text-[#E77F18]">20 Yıllık</div>
+                            <div class="text-base font-bold text-slate-900 mt-1">Bulut Teknolojisi Tecrübesi</div>
+                            <p class="text-xs text-slate-500 mt-1">Türkiye'nin en köklü bulut ERP altyapısı ile operasyonlarınız kesintisiz yürür.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 5. BİRLİKTE KULLANABİLECEĞİNİZ ÇÖZÜMLER    -->
+        <!-- ========================================== -->
+        <section class="py-16 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-3xl mx-auto space-y-2">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                        Birlikte Kullanabileceğiniz <span class="text-[#DC2626]">Diğer Çözümlerimiz</span>
+                    </h2>
+                    <p class="text-slate-600 text-sm">Süreç yönetimi modülünüzü diğer B2B çözümlerimizle güçlendirin.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <a href="dia-on-muhasebe.html" class="p-6 rounded-2xl bg-white border border-slate-200 hover:border-[#245BA7] shadow-sm hover:shadow-md transition-all">
+                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#245BA7] flex items-center justify-center mb-3"><i data-lucide="calculator" class="w-5 h-5"></i></div>
+                        <h3 class="font-bold text-slate-900 text-base">Ön Muhasebe</h3>
+                        <p class="text-xs text-slate-500 mt-1">Cari hesap, fatura ve nakit akışı takibi.</p>
+                    </a>
+
+                    <a href="dia-e-fatura.html" class="p-6 rounded-2xl bg-white border border-slate-200 hover:border-[#245BA7] shadow-sm hover:shadow-md transition-all">
+                        <div class="w-10 h-10 rounded-lg bg-red-50 text-red-500 flex items-center justify-center mb-3"><i data-lucide="file-text" class="w-5 h-5"></i></div>
+                        <h3 class="font-bold text-slate-900 text-base">e-Fatura & e-İrsaliye</h3>
+                        <p class="text-xs text-slate-500 mt-1">GİB uyumlu anlık dijital belge düzenleme.</p>
+                    </a>
+
+                    <a href="../cozumler/ahtapot-depo-yonetimi.html" class="p-6 rounded-2xl bg-white border border-slate-200 hover:border-[#245BA7] shadow-sm hover:shadow-md transition-all">
+                        <div class="w-10 h-10 rounded-lg bg-amber-50 text-[#E77F18] flex items-center justify-center mb-3"><i data-lucide="boxes" class="w-5 h-5"></i></div>
+                        <h3 class="font-bold text-slate-900 text-base">Ahtapot WMS</h3>
+                        <p class="text-xs text-slate-500 mt-1">El terminali ile gelişmiş depo otomasyonu.</p>
+                    </a>
+
+                    <a href="../cozumler/pazaryeri-entegrasyonu.html" class="p-6 rounded-2xl bg-white border border-slate-200 hover:border-[#245BA7] shadow-sm hover:shadow-md transition-all">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-3"><i data-lucide="shopping-bag" class="w-5 h-5"></i></div>
+                        <h3 class="font-bold text-slate-900 text-base">Pazaryeri Entegrasyonu</h3>
+                        <p class="text-xs text-slate-500 mt-1">Trendyol, Hepsiburada otomatik stok düşümü.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 6. SIKÇA SORULAN SORULAR (AKORDİYON)      -->
+        <!-- ========================================== -->
+        <section class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                <div class="text-center space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">
+                        Sıkça Sorulan <span class="text-[#245BA7]">Sorular</span>
+                    </h2>
+                    <p class="text-slate-600 text-sm">DİA Süreç Yönetimi hakkında merak ettiğiniz tüm yanıtlar.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <details class="group bg-[#F8FAFC] border border-slate-200 rounded-2xl p-5 open:bg-white transition-all">
+                        <summary class="font-bold text-slate-900 cursor-pointer flex justify-between items-center list-none">
+                            DİA Süreç Yönetimi ile hangi onay süreçleri kurgulanabilir?
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-sm text-slate-600 mt-3 pt-3 border-t border-slate-100 leading-relaxed">
+                            Satın alma talepleri, bütçe onayları, masraf ve izin formları, müşteri teklif değerlendirmeleri ve üretim iş emirleri dahil şirketinizdeki tüm adımları onay zincirine bağlayabilirsiniz.
+                        </p>
+                    </details>
+
+                    <details class="group bg-[#F8FAFC] border border-slate-200 rounded-2xl p-5 open:bg-white transition-all">
+                        <summary class="font-bold text-slate-900 cursor-pointer flex justify-between items-center list-none">
+                            Onay bekleyen süreçler için mobil bildirim gönderiliyor mu?
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-sm text-slate-600 mt-3 pt-3 border-t border-slate-100 leading-relaxed">
+                            Evet. DİA Mobil uygulaması üzerinden yöneticilere anlık push bildirim, e-posta veya SMS ile iletilir. İlgili yönetici doğrudan akıllı telefonundan tek tıkla onay verebilir.
+                        </p>
+                    </details>
+
+                    <details class="group bg-[#F8FAFC] border border-slate-200 rounded-2xl p-5 open:bg-white transition-all">
+                        <summary class="font-bold text-slate-900 cursor-pointer flex justify-between items-center list-none">
+                            Diğer DİA modülleriyle entegrasyon nasıl sağlanıyor?
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-sm text-slate-600 mt-3 pt-3 border-t border-slate-100 leading-relaxed">
+                            DİA Süreç Yönetimi modülü tek bir veritabanı üzerinde Ön Muhasebe, Stok, CRM ve Üretim modülleriyle %100 entegredir. Bir süreç onaylandığında ilgili muhasebe kaydı otomatik oluşur.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 7. MÜŞTERİLERİMİZ NE DİYOR? (MÜŞTERİ YORUMLARI) -->
+        <!-- ========================================== -->
+        <section class="py-16 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">
+                        Müşterilerimiz <span class="text-[#E77F18]">Ne Diyor?</span>
+                    </h2>
+                    <p class="text-slate-600 text-sm">DİA Süreç Yönetim modülünü kullanan B2B firmalarımızın deneyimleri.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+                        <div class="flex text-amber-400 gap-1"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                        <p class="text-slate-600 text-sm italic leading-relaxed">
+                            "Satın alma onay zincirlerini DİA Süreç Yönetimi'ne geçirdikten sonra onay bekleme sürelerimiz 3 günden 10 dakikaya düştü. Compiturk ekibine teşekkürler."
+                        </p>
+                        <div class="pt-2 border-t border-slate-100">
+                            <div class="font-bold text-slate-900 text-sm">Ahmet K.</div>
+                            <div class="text-xs text-slate-400">Genel Müdür - Kimya Sanayi</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+                        <div class="flex text-amber-400 gap-1"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                        <p class="text-slate-600 text-sm italic leading-relaxed">
+                            "Mobil onay özelliği harika. Yurt dışı seyahatlerindeyken bile acil bütçe ve izin onaylarını cep telefonumdan tek tıkla verebiliyorum."
+                        </p>
+                        <div class="pt-2 border-t border-slate-100">
+                            <div class="font-bold text-slate-900 text-sm">Sibel T.</div>
+                            <div class="text-xs text-slate-400">İnsan Kaynakları Direktörü - Lojistik A.Ş.</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+                        <div class="flex text-amber-400 gap-1"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                        <p class="text-slate-600 text-sm italic leading-relaxed">
+                            "Görev takip hatırlatmaları sayesinde departmanlar arası iş aksamaları bitti. Süreçlerin takibi artık çok daha kolay."
+                        </p>
+                        <div class="pt-2 border-t border-slate-100">
+                            <div class="font-bold text-slate-900 text-sm">Murat E.</div>
+                            <div class="text-xs text-slate-400">Operasyon Müdürü - Tekstil Toptan</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 8. BLOG / REHBER KARTLARI                  -->
+        <!-- ========================================== -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">
+                        Süreç Yönetimi <span class="text-[#245BA7]">Rehberi</span>
+                    </h2>
+                    <p class="text-slate-600 text-sm">İş süreçlerinizi iyileştirecek uzman içeriklerimiz.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <a href="../kurumsal/2026-kurumsal-erp-secim-rehberi.html" class="bg-[#F8FAFC] rounded-2xl p-6 border border-slate-200 hover:border-[#245BA7] shadow-sm transition-all space-y-3">
+                        <span class="px-3 py-1 rounded-full bg-blue-100 text-[#245BA7] font-bold text-[11px] uppercase">DİJİTAL DÖNÜŞÜM</span>
+                        <h3 class="font-bold text-slate-900 text-base leading-snug">Kurumsal İş Akış Otomasyonu Nasıl Kurgulanır?</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">Şirketlerdeki onay süreçlerini dijitalleştirmenin verimliliğe ve maliyete etkileri.</p>
+                    </a>
+
+                    <a href="../kurumsal/2026-kurumsal-erp-secim-rehberi.html" class="bg-[#F8FAFC] rounded-2xl p-6 border border-slate-200 hover:border-[#245BA7] shadow-sm transition-all space-y-3">
+                        <span class="px-3 py-1 rounded-full bg-orange-100 text-[#E77F18] font-bold text-[11px] uppercase">ONAY SÜREÇLERİ</span>
+                        <h3 class="font-bold text-slate-900 text-base leading-snug">Mobil Onay Sistemlerinin Yöneticilere Sağladığı Kolaylıklar</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">Mekan bağımsız onay mekanizmaları ile operasyonel gecikmeleri önleme yöntemleri.</p>
+                    </a>
+
+                    <a href="../kurumsal/2026-kurumsal-erp-secim-rehberi.html" class="bg-[#F8FAFC] rounded-2xl p-6 border border-slate-200 hover:border-[#245BA7] shadow-sm transition-all space-y-3">
+                        <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 font-bold text-[11px] uppercase">PERFORMANS</span>
+                        <h3 class="font-bold text-slate-900 text-base leading-snug">KPI Raporları İle Şirket Verimliliği Ölçümü</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">Görevlerin tamamlanma sürelerini canlı analiz ederek iş akışlarını iyileştirme.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER (components.js tarafından doldurulur) -->
+    <div id="global-footer"></div>
+
+    <!-- SCRIPTS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    </script>
+    
+    <!-- Dinamik Header ve Footer Yükleyici -->
+    <script src="../js/components.js"></script>
+</body>
+</html>
