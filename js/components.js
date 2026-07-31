@@ -91,7 +91,7 @@ function loadHeader() {
                 <!-- SOL: Kompiturk Logo -->
                 <div class="flex-shrink-0">
                     <a href="${p}index.html" title="Compiturk Bilgisayar Anasayfa">
-                        <img src="${p}images/kompiturk_logo.png" alt="Compiturk Logo" class="h-10 md:h-11 w-auto object-contain" />
+                        <img src="${p}images/komplogo.png" alt="Compiturk Bilgisayar Logo" class="h-9 w-auto object-contain" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-2xl font-black text-brandNavy tracking-tight\'>COMPITURK</span>';" />
                     </a>
                 </div>
 
@@ -99,79 +99,76 @@ function loadHeader() {
                 <nav class="hidden lg:flex items-center space-x-5 xl:space-x-8 h-full relative" aria-label="Ana Menü">
                     
                    <!-- 1. Yazılım Çözümleri (Mega Dropdown) -->
-<div class="relative group h-full flex items-center">
-    <a href="${p}cozumler/yazilimcozumleri.html" class="flex items-center gap-1 text-[13px] font-bold text-brandNavy hover:text-brandRed nav-link-underline transition-colors uppercase tracking-tight py-4">
-        Yazılım Çözümleri <i data-lucide="chevron-down" class="w-4 h-4 opacity-50 group-hover:rotate-180 transition-transform"></i>
-    </a>
-    <div class="absolute top-full left-1/2 -translate-x-1/2 pt-2 mega-menu w-[600px] z-50">
-        <div class="bg-white border border-slate-100 shadow-2xl rounded-2xl p-6">
-            <div class="grid grid-cols-2 gap-x-8 gap-y-4">
-                <a href="${p}cozumler/pazaryeri-entegrasyonu.html" class="group/item flex flex-col hover:bg-brandIce p-2 rounded-lg transition-all border border-transparent hover:border-slate-100">
-                    <span class="text-[13px] font-bold group-hover/item:text-brandRed">Pazar Yeri Entegrasyonu</span>
-                </a>
-                <a href="${p}cozumler/xml-hub-entegrasyon.html" class="group/item flex flex-col hover:bg-brandIce p-2 rounded-lg transition-all">
-                    <span class="text-[13px] font-bold group-hover/item:text-brandRed">XML Hub — XML Entegrasyonu</span>
-                </a>
-                <a href="${p}cozumler/mobil-b2b-bayi-platformu.html" class="group/item flex flex-col hover:bg-brandIce p-2 rounded-lg transition-all">
-                    <span class="text-[13px] font-bold group-hover/item:text-brandRed">Mobil B2B — Bayi Platformu</span>
-                </a>
-                <a href="${p}cozumler/ahtapot-depo-yonetimi.html" class="group/item flex flex-col hover:bg-brandIce p-2 rounded-lg transition-all">
-                    <span class="text-[13px] font-bold group-hover/item:text-brandRed">Ahtapot Depo Yönetimi</span>
-                </a>
-                <a href="${p}cozumler/net-tahsilat.html" class="group/item flex flex-col hover:bg-brandIce p-2 rounded-lg transition-all">
-                    <span class="text-[13px] font-bold group-hover/item:text-brandRed">Net Tahsilat</span>
-                </a>
-                <a href="${p}cozumler/distributor-pos.html" class="group/item flex flex-col hover:bg-brandIce p-2 rounded-lg transition-all">
-                    <span class="text-[13px] font-bold group-hover/item:text-brandRed">Distribütör POS</span>
-                </a>
-                <a href="${p}cozumler/kargo-entegrasyonu.html" class="group/item flex flex-col hover:bg-brandIce p-2 rounded-lg transition-all">
-                    <span class="text-[13px] font-bold group-hover/item:text-brandRed">Kargo Entegrasyonu</span>
-                </a>
-                <a href="${p}cozumler/pdks.html" class="group/item flex flex-col hover:bg-brandIce p-2 rounded-lg transition-all">
-                    <span class="text-[13px] font-bold group-hover/item:text-brandRed">PDKS</span>
-                </a>
-            </div>
-            <div class="mt-4 pt-3 border-t border-slate-100 flex justify-end">
-                <a href="${p}cozumler/yazilimcozumleri.html" class="text-[13px] font-black text-brandRed hover:underline flex items-center gap-1">
-                    → TÜM YAZILIM ÇÖZÜMLERİ
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-                  <!-- 2. IT Altyapı & Destek -->
-<div class="relative group h-full flex items-center">
-    <!-- Ana Başlık: Tıklandığında Doğrudan IT Altyapı Sayfasına Gider -->
-    <a href="${p}it-altyapi/itcozumleri.html" class="flex items-center gap-1 text-[13px] font-bold text-brandNavy hover:text-brandRed nav-link-underline transition-colors uppercase tracking-tight py-4">
-        IT Altyapı <i data-lucide="chevron-down" class="w-4 h-4 opacity-50 group-hover:rotate-180 transition-transform"></i>
-    </a>
+                   <div class="relative group h-full flex items-center">
+                       <a href="${p}cozumler/yazilimcozumleri.html" class="flex items-center gap-1 text-[13px] font-bold text-brandNavy hover:text-brandRed nav-link-underline transition-colors uppercase tracking-tight py-4">
+                           Yazılım Çözümleri <i data-lucide="chevron-down" class="w-4 h-4 opacity-50 group-hover:rotate-180 transition-transform"></i>
+                       </a>
+                       <div class="absolute top-full left-1/2 -translate-x-1/2 pt-2 mega-menu w-[600px] z-50">
+                           <div class="bg-white border border-slate-100 shadow-2xl rounded-2xl p-6">
+                               <div class="grid grid-cols-2 gap-x-8 gap-y-4">
+                                   <a href="${p}cozumler/pazaryeri-entegrasyonu.html" class="group/item flex flex-col hover:bg-brandIce p-2 rounded-lg transition-all border border-transparent hover:border-slate-100">
+                                       <span class="text-[13px] font-bold group-hover/item:text-brandRed">Pazar Yeri Entegrasyonu</span>
+                                   </a>
+                                   <a href="${p}cozumler/xml-hub-entegrasyon.html" class="group/item flex flex-col hover:bg-brandIce p-2 rounded-lg transition-all">
+                                       <span class="text-[13px] font-bold group-hover/item:text-brandRed">XML Hub — XML Entegrasyonu</span>
+                                   </a>
+                                   <a href="${p}cozumler/mobil-b2b-bayi-platformu.html" class="group/item flex flex-col hover:bg-brandIce p-2 rounded-lg transition-all">
+                                       <span class="text-[13px] font-bold group-hover/item:text-brandRed">Mobil B2B — Bayi Platformu</span>
+                                   </a>
+                                   <a href="${p}cozumler/ahtapot-depo-yonetimi.html" class="group/item flex flex-col hover:bg-brandIce p-2 rounded-lg transition-all">
+                                       <span class="text-[13px] font-bold group-hover/item:text-brandRed">Ahtapot Depo Yönetimi</span>
+                                   </a>
+                                   <a href="${p}cozumler/net-tahsilat.html" class="group/item flex flex-col hover:bg-brandIce p-2 rounded-lg transition-all">
+                                       <span class="text-[13px] font-bold group-hover/item:text-brandRed">Net Tahsilat</span>
+                                   </a>
+                                   <a href="${p}cozumler/distributor-pos.html" class="group/item flex flex-col hover:bg-brandIce p-2 rounded-lg transition-all">
+                                       <span class="text-[13px] font-bold group-hover/item:text-brandRed">Distribütör POS</span>
+                                   </a>
+                                   <a href="${p}cozumler/kargo-entegrasyonu.html" class="group/item flex flex-col hover:bg-brandIce p-2 rounded-lg transition-all">
+                                       <span class="text-[13px] font-bold group-hover/item:text-brandRed">Kargo Entegrasyonu</span>
+                                   </a>
+                                   <a href="${p}cozumler/pdks.html" class="group/item flex flex-col hover:bg-brandIce p-2 rounded-lg transition-all">
+                                       <span class="text-[13px] font-bold group-hover/item:text-brandRed">PDKS</span>
+                                   </a>
+                               </div>
+                               <div class="mt-4 pt-3 border-t border-slate-100 flex justify-end">
+                                   <a href="${p}cozumler/yazilimcozumleri.html" class="text-[13px] font-black text-brandRed hover:underline flex items-center gap-1">
+                                       → TÜM YAZILIM ÇÖZÜMLERİ
+                                   </a>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
 
-    <!-- Hover Edildiğinde Açılan Mega Menü -->
-    <div class="absolute top-full left-1/2 -translate-x-1/2 pt-2 mega-menu w-64 z-50">
-        <div class="bg-white border border-slate-100 shadow-2xl rounded-2xl py-3 px-2">
-            <!-- Öne Çıkan İlk 8 Hizmet -->
-            <a href="${p}it-altyapi/sunucu-kurulumu.html" class="block px-4 py-2 text-sm font-bold text-brandNavy hover:bg-brandIce hover:text-brandRed rounded-lg transition-all">Sunucu Kurulumu</a>
-            <a href="${p}it-altyapi/guvenlik-duvari.html" class="block px-4 py-2 text-sm font-bold text-brandNavy hover:bg-brandIce hover:text-brandRed rounded-lg transition-all">Güvenlik Duvarı</a>
-            <a href="${p}it-altyapi/yedekleme-cozumleri.html" class="block px-4 py-2 text-sm font-bold text-brandNavy hover:bg-brandIce hover:text-brandRed rounded-lg transition-all">Yedekleme Çözümleri</a>
-            <a href="${p}it-altyapi/ag-altyapisi.html" class="block px-4 py-2 text-sm font-bold text-brandNavy hover:bg-brandIce hover:text-brandRed rounded-lg transition-all">Ağ Altyapısı</a>
-            <a href="${p}it-altyapi/yazilim-lisanslama.html" class="block px-4 py-2 text-sm font-bold text-brandNavy hover:bg-brandIce hover:text-brandRed rounded-lg transition-all">Yazılım Lisanslama</a>
-            <a href="${p}it-altyapi/hosting-domain.html" class="block px-4 py-2 text-sm font-bold text-brandNavy hover:bg-brandIce hover:text-brandRed rounded-lg transition-all">Hosting & Domain</a>
-            <a href="${p}it-altyapi/bilgisayar-yazici-kiralama.html" class="block px-4 py-2 text-sm font-bold text-brandNavy hover:bg-brandIce hover:text-brandRed rounded-lg transition-all">Bilgisayar & Yazıcı Kiralama</a>
-            <a href="${p}it-altyapi/donanim-destegi.html" class="block px-4 py-2 text-sm font-bold text-brandNavy hover:bg-brandIce hover:text-brandRed rounded-lg transition-all">Donanım Desteği</a>
-            
-            <!-- Alt Çizgi ve Yönlendirme Linki -->
-            <div class="mt-2 pt-2 border-t border-slate-100 px-4">
-                <a href="${p}it-altyapi/itcozumleri.html" class="text-[12px] font-black text-brandRed hover:underline flex items-center justify-end gap-1">
-                    Diğer IT Altyapı Çözümleri →
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
+                   <!-- 2. IT Altyapı & Destek -->
+                   <div class="relative group h-full flex items-center">
+                       <a href="${p}it-altyapi/itcozumleri.html" class="flex items-center gap-1 text-[13px] font-bold text-brandNavy hover:text-brandRed nav-link-underline transition-colors uppercase tracking-tight py-4">
+                           IT Altyapı <i data-lucide="chevron-down" class="w-4 h-4 opacity-50 group-hover:rotate-180 transition-transform"></i>
+                       </a>
+
+                       <div class="absolute top-full left-1/2 -translate-x-1/2 pt-2 mega-menu w-64 z-50">
+                           <div class="bg-white border border-slate-100 shadow-2xl rounded-2xl py-3 px-2">
+                               <a href="${p}it-altyapi/sunucu-kurulumu.html" class="block px-4 py-2 text-sm font-bold text-brandNavy hover:bg-brandIce hover:text-brandRed rounded-lg transition-all">Sunucu Kurulumu</a>
+                               <a href="${p}it-altyapi/guvenlik-duvari.html" class="block px-4 py-2 text-sm font-bold text-brandNavy hover:bg-brandIce hover:text-brandRed rounded-lg transition-all">Güvenlik Duvarı</a>
+                               <a href="${p}it-altyapi/yedekleme-cozumleri.html" class="block px-4 py-2 text-sm font-bold text-brandNavy hover:bg-brandIce hover:text-brandRed rounded-lg transition-all">Yedekleme Çözümleri</a>
+                               <a href="${p}it-altyapi/ag-altyapisi.html" class="block px-4 py-2 text-sm font-bold text-brandNavy hover:bg-brandIce hover:text-brandRed rounded-lg transition-all">Ağ Altyapısı</a>
+                               <a href="${p}it-altyapi/yazilim-lisanslama.html" class="block px-4 py-2 text-sm font-bold text-brandNavy hover:bg-brandIce hover:text-brandRed rounded-lg transition-all">Yazılım Lisanslama</a>
+                               <a href="${p}it-altyapi/hosting-domain.html" class="block px-4 py-2 text-sm font-bold text-brandNavy hover:bg-brandIce hover:text-brandRed rounded-lg transition-all">Hosting & Domain</a>
+                               <a href="${p}it-altyapi/bilgisayar-yazici-kiralama.html" class="block px-4 py-2 text-sm font-bold text-brandNavy hover:bg-brandIce hover:text-brandRed rounded-lg transition-all">Bilgisayar & Yazıcı Kiralama</a>
+                               <a href="${p}it-altyapi/donanim-destegi.html" class="block px-4 py-2 text-sm font-bold text-brandNavy hover:bg-brandIce hover:text-brandRed rounded-lg transition-all">Donanım Desteği</a>
+                               
+                               <div class="mt-2 pt-2 border-t border-slate-100 px-4">
+                                   <a href="${p}it-altyapi/itcozumleri.html" class="text-[12px] font-black text-brandRed hover:underline flex items-center justify-end gap-1">
+                                       Diğer IT Altyapı Çözümleri →
+                                   </a>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
 
                     <!-- 3. DİA ERP -->
                     <div class="relative group h-full flex items-center">
-                        <a href="${p}dia-erp/dia-erp.html" class="flex items-center gap-1 text-[13px] font-bold text-brandRed hover:text-brandNavy nav-link-underline transition-colors uppercase tracking-tight py-4">
+                        <a href="${p}dia-erp/dia-yazilim-cozumleri.html" class="flex items-center gap-1 text-[13px] font-bold text-brandRed hover:text-brandNavy nav-link-underline transition-colors uppercase tracking-tight py-4">
                             DİA ERP <i data-lucide="chevron-down" class="w-4 h-4"></i>
                         </a>
                         <div class="absolute top-full right-[-220px] pt-2 mega-menu w-[780px] max-w-[90vw] z-50">
@@ -334,7 +331,7 @@ function loadFooter() {
   const p = getPrefix();
 
   const footerHTML = `
-  <footer id="main-footer" class="w-full bg-[#0B132B] text-slate-300 overflow-hidden">
+  <footer id="main-footer" class="w-full bg-[##99999e] text-slate-300 overflow-hidden">
     <div class="w-full !max-w-none !m-0 block bg-[#0B132B] text-slate-300 pt-16 pb-8 border-t-4 border-[#DC2626] relative z-20 mt-auto">
         
         <!-- İçeriklerin aşırı kenara yapışmaması için koruyucu iç container -->
@@ -348,7 +345,7 @@ function loadFooter() {
                     <!-- Logolar -->
                     <div class="flex items-center gap-4 flex-wrap">
                         <a href="${p}index.html" title="Compiturk Bilgisayar Anasayfa">
-                            <img src="${p}images/kompiturk_logo.png" alt="Compiturk Bilgisayar Logo" class="h-9 w-auto object-contain brightness-0 invert" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-2xl font-black text-white tracking-tight\'>COMPITURK</span>';" />
+                            <img src="${p}images/komplogo.png" alt="Compiturk Bilgisayar Logo" class="h-9 w-auto object-contain" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-2xl font-black text-white tracking-tight\'>COMPITURK</span>';" />
                         </a>
                         <div class="w-px h-6 bg-slate-700 hidden sm:block"></div>
                         <div class="px-3 py-1.5 rounded-lg bg-white/95 border border-slate-200 flex items-center justify-center">
@@ -360,24 +357,25 @@ function loadFooter() {
                     <p class="text-sm text-slate-400 font-normal leading-relaxed max-w-md">
                         Compiturk Bilgisayar; DİA ERP İstanbul Yetkili Çözüm Ortağı ve 13+ yerli B2B yazılım geliştiricisi olarak işletmelerin dijital altyapısını güçlendirir.
                     </p>
-<!-- Sosyal Medya İkon Kutuları -->
-<div class="flex items-center gap-3 pt-2">
-    <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/company/kompit%C3%BCrk-bilgisayar/?originalSubdomain=tr" target="_blank" rel="noopener" aria-label="LinkedIn Profili" class="w-10 h-10 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:bg-[#245BA7] hover:text-white hover:border-[#245BA7] flex items-center justify-center transition-all">
-        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.78a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26z"/>
-        </svg>
-    </a>
 
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/kompiturk/" target="_blank" rel="noopener" aria-label="Instagram Profili" class="w-10 h-10 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:bg-[#DC2626] hover:text-white hover:border-[#DC2626] flex items-center justify-center transition-all">
-        <svg class="w-4 h-4 fill-none stroke-current stroke-2 stroke-round join-round" viewBox="0 0 24 24">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-        </svg>
-    </a>
-</div>
+                    <!-- Sosyal Medya İkon Kutuları -->
+                    <div class="flex items-center gap-3 pt-2">
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/company/kompit%C3%BCrk-bilgisayar/?originalSubdomain=tr" target="_blank" rel="noopener" aria-label="LinkedIn Profili" class="w-10 h-10 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:bg-[#245BA7] hover:text-white hover:border-[#245BA7] flex items-center justify-center transition-all">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.78a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26z"/>
+                            </svg>
+                        </a>
+
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/kompiturk/" target="_blank" rel="noopener" aria-label="Instagram Profili" class="w-10 h-10 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:bg-[#DC2626] hover:text-white hover:border-[#DC2626] flex items-center justify-center transition-all">
+                            <svg class="w-4 h-4 fill-none stroke-current stroke-2 stroke-round join-round" viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- KOLON 2: YAZILIM ÇÖZÜMLERİ -->
@@ -392,10 +390,12 @@ function loadFooter() {
                         <li><a href="${p}cozumler/net-tahsilat.html" class="hover:text-white hover:translate-x-1 transition-all inline-block">Net Tahsilat & POS</a></li>
                         <li><a href="${p}cozumler/xml-hub-entegrasyon.html" class="hover:text-white hover:translate-x-1 transition-all inline-block">XML Hub Veri Bağlantısı</a></li>
                         <li><a href="${p}cozumler/pdks.html" class="hover:text-white hover:translate-x-1 transition-all inline-block">PDKS Personel Takip</a></li>
-                                    <a href="${p}cozumler/yazilimcozumleri.html" class="text-[13px] font-black text-white hover:underline flex items-center gap-1">
-                                        → TÜM YAZILIM ÇÖZÜMLERİ
-                                    </a>
-                        </ul>
+                        <li>
+                            <a href="${p}cozumler/yazilimcozumleri.html" class="text-[13px] font-black text-white hover:underline flex items-center gap-1 pt-1">
+                                → TÜM YAZILIM ÇÖZÜMLERİ
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
                 <!-- KOLON 3: DİA ERP MODÜLLERİ -->
@@ -404,16 +404,18 @@ function loadFooter() {
                         DİA ERP Modülleri
                     </h3>
                     <ul class="space-y-2.5 text-xs sm:text-sm text-slate-400">
-                        <li><a href="${p}dia-erp/dia-on-muhasaebe.html" class="hover:text-white hover:translate-x-1 transition-all inline-block">Ön Muhasebe</a></li>
+                        <li><a href="${p}dia-erp/dia-on-muhasebe.html" class="hover:text-white hover:translate-x-1 transition-all inline-block">Ön Muhasebe</a></li>
                         <li><a href="${p}dia-erp/dia-e-fatura.html" class="hover:text-white hover:translate-x-1 transition-all inline-block">e-Fatura & e-İrsaliye</a></li>
                         <li><a href="${p}dia-erp/dia-stok-depo.html" class="hover:text-white hover:translate-x-1 transition-all inline-block">Stok & Depo Yönetimi</a></li>
                         <li><a href="${p}dia-erp/dia-genel-muhasebe.html" class="hover:text-white hover:translate-x-1 transition-all inline-block">Genel Muhasebe</a></li>
                         <li><a href="${p}dia-erp/dia-mobil-saha-satis.html" class="hover:text-white hover:translate-x-1 transition-all inline-block">Mobil Saha Satış</a></li>
                         <li><a href="${p}dia-erp/dia-crm-servis.html" class="hover:text-white hover:translate-x-1 transition-all inline-block">CRM & Servis Yönetimi</a></li>
-                                    <a href="${p}index.html#dia-erp-solutions" class="text-[13px] font-black text-white hover:underline flex items-center gap-1">
-                                        → DİA ERP HAKKINDA DETAYLI BİLGİ
-                                    </a>
-                        </ul>
+                        <li>
+                            <a href="${p}index.html#dia-erp-solutions" class="text-[13px] font-black text-white hover:underline flex items-center gap-1 pt-1">
+                                → DİA ERP HAKKINDA DETAYLI BİLGİ
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
                 <!-- KOLON 4: IT ALTYAPI ÇÖZÜMLERİ -->
@@ -427,11 +429,12 @@ function loadFooter() {
                         <li><a href="${p}it-altyapi/yedekleme-cozumleri.html" class="hover:text-white hover:translate-x-1 transition-all inline-block">Otomatik Yedekleme</a></li>
                         <li><a href="${p}it-altyapi/ag-altyapisi.html" class="hover:text-white hover:translate-x-1 transition-all inline-block">Ağ & Kablolama</a></li>
                         <li><a href="${p}it-altyapi/yazilim-lisanslama.html" class="hover:text-white hover:translate-x-1 transition-all inline-block">Yazılım Lisanslama</a></li>
-                                    <a href="${p}it-altyapi/itcozumleri.html" class="text-[13px] font-black text-white hover:underline flex items-center gap-1">
-                                        → IT & ALTYAPI HAKKINDA DETAYLI BİLGİ 
-                                    </a>
-                                
-                        </ul>
+                        <li>
+                            <a href="${p}it-altyapi/itcozumleri.html" class="text-[13px] font-black text-white hover:underline flex items-center gap-1 pt-1">
+                                → IT & ALTYAPI HAKKINDA DETAYLI BİLGİ 
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
                 <!-- KOLON 5: KURUMSAL -->
@@ -456,17 +459,17 @@ function loadFooter() {
                 </div>
                 
                 <div class="flex flex-wrap justify-center gap-3 sm:gap-6 text-slate-400">
-                    <a  class="hover:text-slate-200 transition-colors">KVKK Aydınlatma Metni</a>
+                    <a class="hover:text-slate-200 transition-colors">KVKK Aydınlatma Metni</a>
                     <span>•</span>
-                    <a  class="hover:text-slate-200 transition-colors">Gizlilik Politikası</a>
+                    <a class="hover:text-slate-200 transition-colors">Gizlilik Politikası</a>
                     <span>•</span>
-                    <a  class="hover:text-slate-200 transition-colors">Çerez Politikası</a>
+                    <a class="hover:text-slate-200 transition-colors">Çerez Politikası</a>
                 </div>
             </div>
 
         </div>
     </div>
-  </footer>
+  </footer> 
   `;
   
   const footerElement = document.getElementById('global-footer');

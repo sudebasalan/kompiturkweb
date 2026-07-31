@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DİA ERP Çözümleri & Kurumsal Modülleri | Compiturk</title>
+    <meta name="description" content="Ön muhasebeden stok depoya, e-faturadan üretim ve restoran yönetimine kadar tüm operasyonlarınızı DİA'nın güvenli bulut altyapısıyla otomatize edin. Compiturk Yetkili Çözüm Ortağı.">
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Konfigürasyon Sabitleri (Resmi DİA ERP Renk Paleti) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#DC2626',
+                        brandNavy: '#0F172A',
+                        brandSlate: '#64748b',
+                        brandIce: '#F8FAFC',
+                        diaBlue: '#245BA7',
+                        diaOrange: '#E77F18',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
+
+    <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-header"></div>
+
+    <!-- MAIN İÇERİK BAŞLANGICI -->
+    <main class="flex-grow">
+
+        <!-- ========================================================================= -->
+        <!-- 1. BÖLÜM: BREADCRUMB (SEO NAVİGASYON)                                     -->
+        <!-- ========================================================================= -->
+        <nav aria-label="Breadcrumb" class="bg-slate-50 border-b border-slate-200/80 py-3.5 relative z-10">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                <ol class="flex items-center gap-2 text-xs font-semibold text-slate-500">
+                    <li>
+                        <a href="../index.html" class="hover:text-[#245BA7] transition-colors flex items-center gap-1.5">
+                            <i data-lucide="home" class="w-3.5 h-3.5"></i>
+                            <span>Anasayfa</span>
+                        </a>
+                    </li>
+                    <li class="text-slate-300">/</li>
+                    <li class="text-slate-800 font-bold tracking-tight">
+                        DİA ERP Çözümleri
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- ========================================================================= -->
+        <!-- 2. BÖLÜM: BANNER / HERO SECTION (DİA MAVİSİ & TURUNCU VURGULU HERO)       -->
+        <!-- ========================================================================= -->
+        <section id="module-hero" class="w-full bg-[#245BA7] text-white py-16 lg:py-24 relative overflow-hidden z-20">
+            <!-- Arka Plan Vektörel Desen & Işıltılar -->
+            <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#E77F18]/20 rounded-full blur-[130px] pointer-events-none"></div>
+            <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#0F1D38]/40 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+                    <!-- SOL KOLON: İÇERİK VE VURGULAR (Col-span-7) -->
+                    <div class="lg:col-span-7 space-y-6 text-left">
+                        
+                        <!-- Badge (Turuncu Vurgulu) -->
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#E77F18] font-bold text-xs sm:text-sm tracking-wide">
+                            <span class="w-2.5 h-2.5 rounded-full bg-[#E77F18] animate-pulse"></span>
+                            <span class="text-white">☁️ DİA ERP YETKİLİ ÇÖZÜM ORTAĞI — %100 BULUT ERP</span>
+                        </div>
+
+                        <!-- TEK H1 BAŞLIĞI -->
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                            DİA ERP İle İşletmenizin Tüm Süreçlerini <br class="hidden sm:inline" />
+                            <span class="text-[#E77F18]">Tek Merkezden Yönetin</span>
+                        </h1>
+
+                        <!-- Paragraf -->
+                        <p class="text-base sm:text-lg text-blue-100 font-normal leading-relaxed max-w-2xl">
+                            Ön muhasebeden stok depoya, e-faturadan üretim ve restoran yönetimine kadar tüm operasyonlarınızı DİA'nın güvenli bulut altyapısıyla otomatize edin.
+                        </p>
+
+                        <!-- İkonlu Vurgu Maddeleri -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/15">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-[#E77F18] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="cloud" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    %100 Bulut Mimari
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    %99.9 Kesintisiz Uptime
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-blue-200 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="layers" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Esnek Modüler Yapı
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Turuncu Buton -->
+                        <div class="pt-2">
+                            <a href="../iletisim.html" class="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-[#E77F18] hover:bg-[#d06f13] text-white font-extrabold text-sm shadow-lg shadow-orange-500/25 hover:scale-105 active:scale-95 transition-all">
+                                <span>Ücretsiz Demo İsteyin</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- SAĞ KOLON: LOGO.PNG VE DANIŞMANLIK KUTUSU (Col-span-5) -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-white rounded-2xl p-6 sm:p-8 text-slate-900 shadow-2xl border-2 border-[#E77F18]/40 relative overflow-hidden flex flex-col items-center text-center space-y-6">
+                            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#245BA7] via-[#E77F18] to-[#DC2626]"></div>
+
+                            <!-- GÜNCELLENEN LOGO.PNG ALANI -->
+                            <div class="bg-slate-50 border border-slate-100 p-6 rounded-2xl w-full flex items-center justify-center shadow-inner">
+                                <img src="../images/dialogo.svg" alt="Compiturk - DİA ERP Logo" class="max-h-16 w-auto object-contain" onerror="this.onerror=null; this.src='../logo.png';" />
+                            </div>
+
+                            <div class="space-y-2">
+                                <h2 class="text-xl font-black text-slate-900">Compiturk DİA Danışmanlığı</h2>
+                                <p class="text-xs text-slate-500 leading-relaxed">
+                                    İşletmenizin ihtiyaç duyduğu doğru ERP modüllerini birlikte belirleyelim, bulut dönüşümünüzü sıfır veri kaybı ile gerçekleştirelim.
+                                </p>
+                            </div>
+
+                            <a href="../iletisim/iletisim.html" class="w-full py-3.5 px-6 rounded-xl bg-[#245BA7] hover:bg-[#1d4b88] text-white font-extrabold text-sm shadow-md transition-all flex items-center justify-center gap-2">
+                                <i data-lucide="headset" class="w-4 h-4"></i>
+                                <span>Uzmanımızla Görüşün</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 3. BÖLÜM: DİA ERP MODÜLLERİ GRID KATALOĞU (3 SÜTUNLU B2B KARTLAR)         -->
+        <!-- ========================================================================= -->
+        <section id="dia-moduller" class="py-16 lg:py-24 bg-[#F8FAFC]">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+                <!-- Bölüm Başlığı -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200/80 pb-6">
+                    <div>
+                        <span class="text-xs font-black tracking-widest text-[#E77F18] uppercase bg-orange-50 px-3.5 py-1.5 rounded-full border border-orange-100 block w-fit mb-2">
+                            ESNEK MODÜLER YAPIDA YAZILIM AİLESİ
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                            DİA ERP <span class="text-[#245BA7]">Yazılım Modülleri</span>
+                        </h2>
+                    </div>
+                    <p class="text-sm text-slate-600 max-w-md">
+                        İhtiyacınıza uygun modülleri seçin, bulut sunucu avantajıyla dilediğiniz yerden erişin ve işletmeniz büyüdükçe lisans altyapınızı esnekçe ölçekleyin.
+                    </p>
+                </div>
+
+                <!-- 11 DİA ERP MODÜLÜ GRID (3 Kolonlu) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Modül 1: Ön Muhasebe -->
+                    <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#245BA7] transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                        <div class="p-6 space-y-4">
+                            <div class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
+                                <div class="text-center p-4">
+                                    <i data-lucide="calculator" class="w-10 h-10 text-[#245BA7] mx-auto mb-2 opacity-80"></i>
+                                    <span class="text-xs font-semibold text-slate-300 block">DİA ERP EKRAN GÖRÜNTÜSÜ</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-3 pt-2">
+                                <div class="w-10 h-10 rounded-xl bg-blue-50 text-[#245BA7] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="calculator" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-lg font-extrabold text-slate-900 group-hover:text-[#245BA7] transition-colors">Ön Muhasebe</h3>
+                            </div>
+                            
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Cari hesaplar, kasa-banka hareketleri, fatura, çek-senet ve nakit akışını buluttan, mekan bağımsız tam kontrol altında tutun.
+                            </p>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-2">
+                            <a href="dia-on-muhasebe.html" class="w-full inline-flex items-center justify-between px-4 py-3 rounded-xl bg-[#F8FAFC] hover:bg-[#245BA7] hover:text-white text-slate-700 text-xs font-bold transition-all group/btn">
+                                <span>Modülü İncele →</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Modül 2: Stok & Depo Yönetimi -->
+                    <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#E77F18] transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                        <div class="p-6 space-y-4">
+                            <div class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
+                                <div class="text-center p-4">
+                                    <i data-lucide="boxes" class="w-10 h-10 text-[#E77F18] mx-auto mb-2 opacity-80"></i>
+                                    <span class="text-xs font-semibold text-slate-300 block">DİA ERP EKRAN GÖRÜNTÜSÜ</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-3 pt-2">
+                                <div class="w-10 h-10 rounded-xl bg-amber-50 text-[#E77F18] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="boxes" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-lg font-extrabold text-slate-900 group-hover:text-[#E77F18] transition-colors">Stok & Depo Yönetimi</h3>
+                            </div>
+                            
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Sınırsız sayıda depo takibi, seri-lot, varyant, barkodlu el terminali entegrasyonu ile envanter kayıplarını sıfırlayın.
+                            </p>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-2">
+                            <a href="dia-stok-depo.html" class="w-full inline-flex items-center justify-between px-4 py-3 rounded-xl bg-[#F8FAFC] hover:bg-[#E77F18] hover:text-white text-slate-700 text-xs font-bold transition-all group/btn">
+                                <span>Modülü İncele →</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Modül 3: Mobil Saha Satış -->
+                    <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#245BA7] transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                        <div class="p-6 space-y-4">
+                            <div class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
+                                <div class="text-center p-4">
+                                    <i data-lucide="smartphone" class="w-10 h-10 text-[#245BA7] mx-auto mb-2 opacity-80"></i>
+                                    <span class="text-xs font-semibold text-slate-300 block">DİA ERP EKRAN GÖRÜNTÜSÜ</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-3 pt-2">
+                                <div class="w-10 h-10 rounded-xl bg-blue-50 text-[#245BA7] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="smartphone" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-lg font-extrabold text-slate-900 group-hover:text-[#245BA7] transition-colors">Mobil Saha Satış</h3>
+                            </div>
+                            
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Saha satış ekibinizin araçta anında fatura, sipariş, tahsilat ve rota takibini online/offline yapmasını sağlayın.
+                            </p>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-2">
+                            <a href="dia-mobil-saha-satis.html" class="w-full inline-flex items-center justify-between px-4 py-3 rounded-xl bg-[#F8FAFC] hover:bg-[#245BA7] hover:text-white text-slate-700 text-xs font-bold transition-all group/btn">
+                                <span>Modülü İncele →</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Modül 4: CRM & Servis Yönetimi -->
+                    <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#E77F18] transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                        <div class="p-6 space-y-4">
+                            <div class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
+                                <div class="text-center p-4">
+                                    <i data-lucide="headset" class="w-10 h-10 text-[#E77F18] mx-auto mb-2 opacity-80"></i>
+                                    <span class="text-xs font-semibold text-slate-300 block">DİA ERP EKRAN GÖRÜNTÜSÜ</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-3 pt-2">
+                                <div class="w-10 h-10 rounded-xl bg-amber-50 text-[#E77F18] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="headset" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-lg font-extrabold text-slate-900 group-hover:text-[#E77F18] transition-colors">CRM & Servis Yönetimi</h3>
+                            </div>
+                            
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Müşteri görüşmelerini, satış fırsatlarını, teknik servis kabul, yedek parça ve garanti süreçlerini entegre yönetin.
+                            </p>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-2">
+                            <a href="dia-crm-servis.html" class="w-full inline-flex items-center justify-between px-4 py-3 rounded-xl bg-[#F8FAFC] hover:bg-[#E77F18] hover:text-white text-slate-700 text-xs font-bold transition-all group/btn">
+                                <span>Modülü İncele →</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Modül 5: Süreç Yönetimi -->
+                    <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#245BA7] transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                        <div class="p-6 space-y-4">
+                            <div class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
+                                <div class="text-center p-4">
+                                    <i data-lucide="workflow" class="w-10 h-10 text-[#245BA7] mx-auto mb-2 opacity-80"></i>
+                                    <span class="text-xs font-semibold text-slate-300 block">DİA ERP EKRAN GÖRÜNTÜSÜ</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-3 pt-2">
+                                <div class="w-10 h-10 rounded-xl bg-blue-50 text-[#245BA7] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="workflow" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-lg font-extrabold text-slate-900 group-hover:text-[#245BA7] transition-colors">Süreç Yönetimi</h3>
+                            </div>
+                            
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Şirket içi görev atamaları, iş akış onayları ve operasyonel süreçlerin performansını izleyerek verim artırın.
+                            </p>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-2">
+                            <a href="dia-surec-yonetimi.html" class="w-full inline-flex items-center justify-between px-4 py-3 rounded-xl bg-[#F8FAFC] hover:bg-[#245BA7] hover:text-white text-slate-700 text-xs font-bold transition-all group/btn">
+                                <span>Modülü İncele →</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Modül 6: E-Ticaret & B2B -->
+                    <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#E77F18] transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                        <div class="p-6 space-y-4">
+                            <div class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
+                                <div class="text-center p-4">
+                                    <i data-lucide="shopping-cart" class="w-10 h-10 text-[#E77F18] mx-auto mb-2 opacity-80"></i>
+                                    <span class="text-xs font-semibold text-slate-300 block">DİA ERP EKRAN GÖRÜNTÜSÜ</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-3 pt-2">
+                                <div class="w-10 h-10 rounded-xl bg-amber-50 text-[#E77F18] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-lg font-extrabold text-slate-900 group-hover:text-[#E77F18] transition-colors">E-Ticaret & B2B</h3>
+                            </div>
+                            
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Bayileriniz için özel B2B sipariş portalı ve e-ticaret sitelerinizle çift yönlü anlık ERP senkronizasyonu.
+                            </p>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-2">
+                            <a href="dia-e-ticaret-b2b.html" class="w-full inline-flex items-center justify-between px-4 py-3 rounded-xl bg-[#F8FAFC] hover:bg-[#E77F18] hover:text-white text-slate-700 text-xs font-bold transition-all group/btn">
+                                <span>Modülü İncele →</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Modül 7: e-Fatura & e-İrsaliye -->
+                    <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#245BA7] transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                        <div class="p-6 space-y-4">
+                            <div class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
+                                <div class="text-center p-4">
+                                    <i data-lucide="receipt" class="w-10 h-10 text-[#245BA7] mx-auto mb-2 opacity-80"></i>
+                                    <span class="text-xs font-semibold text-slate-300 block">DİA ERP EKRAN GÖRÜNTÜSÜ</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-3 pt-2">
+                                <div class="w-10 h-10 rounded-xl bg-blue-50 text-[#245BA7] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="receipt" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-lg font-extrabold text-slate-900 group-hover:text-[#245BA7] transition-colors">e-Fatura & e-İrsaliye</h3>
+                            </div>
+                            
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                GİB ile tam uyumlu e-Fatura, e-Arşiv, e-İrsaliye ve e-Müstahsil belgelerinizi saniyeler içinde direkt kesin.
+                            </p>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-2">
+                            <a href="dia-e-fatura.html" class="w-full inline-flex items-center justify-between px-4 py-3 rounded-xl bg-[#F8FAFC] hover:bg-[#245BA7] hover:text-white text-slate-700 text-xs font-bold transition-all group/btn">
+                                <span>Modülü İncele →</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Modül 8: Genel Muhasebe -->
+                    <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#E77F18] transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                        <div class="p-6 space-y-4">
+                            <div class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
+                                <div class="text-center p-4">
+                                    <i data-lucide="file-text" class="w-10 h-10 text-[#E77F18] mx-auto mb-2 opacity-80"></i>
+                                    <span class="text-xs font-semibold text-slate-300 block">DİA ERP EKRAN GÖRÜNTÜSÜ</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-3 pt-2">
+                                <div class="w-10 h-10 rounded-xl bg-amber-50 text-[#E77F18] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="file-text" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-lg font-extrabold text-slate-900 group-hover:text-[#E77F18] transition-colors">Genel Muhasebe</h3>
+                            </div>
+                            
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Tek düzen hesap planı, yevmiye, bilanço, gelir tablosu ve e-defter süreçlerinizi resmi mevzuata uygun yürütün.
+                            </p>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-2">
+                            <a href="dia-genel-muhasebe.html" class="w-full inline-flex items-center justify-between px-4 py-3 rounded-xl bg-[#F8FAFC] hover:bg-[#E77F18] hover:text-white text-slate-700 text-xs font-bold transition-all group/btn">
+                                <span>Modülü İncele →</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Modül 9: Üretim Yönetimi -->
+                    <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#245BA7] transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                        <div class="p-6 space-y-4">
+                            <div class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
+                                <div class="text-center p-4">
+                                    <i data-lucide="factory" class="w-10 h-10 text-[#245BA7] mx-auto mb-2 opacity-80"></i>
+                                    <span class="text-xs font-semibold text-slate-300 block">DİA ERP EKRAN GÖRÜNTÜSÜ</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-3 pt-2">
+                                <div class="w-10 h-10 rounded-xl bg-blue-50 text-[#245BA7] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="factory" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-lg font-extrabold text-slate-900 group-hover:text-[#245BA7] transition-colors">Üretim Yönetimi</h3>
+                            </div>
+                            
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Ürün reçeteleri, iş emirleri, safha bazlı imalat takibi, hammadde ihtiyaç planlama ve maliyet analizi.
+                            </p>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-2">
+                            <a href="dia-uretim.html" class="w-full inline-flex items-center justify-between px-4 py-3 rounded-xl bg-[#F8FAFC] hover:bg-[#245BA7] hover:text-white text-slate-700 text-xs font-bold transition-all group/btn">
+                                <span>Modülü İncele →</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Modül 10: Restoran Yönetimi -->
+                    <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#E77F18] transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                        <div class="p-6 space-y-4">
+                            <div class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
+                                <div class="text-center p-4">
+                                    <i data-lucide="utensils" class="w-10 h-10 text-[#E77F18] mx-auto mb-2 opacity-80"></i>
+                                    <span class="text-xs font-semibold text-slate-300 block">DİA ERP EKRAN GÖRÜNTÜSÜ</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-3 pt-2">
+                                <div class="w-10 h-10 rounded-xl bg-amber-50 text-[#E77F18] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="utensils" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-lg font-extrabold text-slate-900 group-hover:text-[#E77F18] transition-colors">Restoran Yönetimi</h3>
+                            </div>
+                            
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Masa takibi, adisyon, mutfak ekranı entegrasyonu, dokunmatik POS ve paket servis süreçlerini uçtan uca yönetin.
+                            </p>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-2">
+                            <a href="dia-restoran.html" class="w-full inline-flex items-center justify-between px-4 py-3 rounded-xl bg-[#F8FAFC] hover:bg-[#E77F18] hover:text-white text-slate-700 text-xs font-bold transition-all group/btn">
+                                <span>Modülü İncele →</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Modül 11: Perakende & Mağaza -->
+                    <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#245BA7] transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                        <div class="p-6 space-y-4">
+                            <div class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
+                                <div class="text-center p-4">
+                                    <i data-lucide="store" class="w-10 h-10 text-[#245BA7] mx-auto mb-2 opacity-80"></i>
+                                    <span class="text-xs font-semibold text-slate-300 block">DİA ERP EKRAN GÖRÜNTÜSÜ</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-3 pt-2">
+                                <div class="w-10 h-10 rounded-xl bg-blue-50 text-[#245BA7] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="store" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-lg font-extrabold text-slate-900 group-hover:text-[#245BA7] transition-colors">Perakende & Mağaza</h3>
+                            </div>
+                            
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Hızlı kasa satışı, yazar kasa, terazi ve POS cihazları ile entegre mağazacılık çözümleri.
+                            </p>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-2">
+                            <a href="dia-perakende.html" class="w-full inline-flex items-center justify-between px-4 py-3 rounded-xl bg-[#F8FAFC] hover:bg-[#245BA7] hover:text-white text-slate-700 text-xs font-bold transition-all group/btn">
+                                <span>Modülü İncele →</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 4. BÖLÜM: B2B DÖNÜŞÜM CTA BANNER'I (DİA MAVİSİ ZEMİNLİ TURUNCU BUTONLU KUTU)-->
+        <!-- ========================================================================= -->
+        <section id="cta-banner" class="pb-16 lg:pb-24 bg-[#F8FAFC]">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-gradient-to-r from-[#0F172A] via-[#245BA7] to-[#0F172A] text-white rounded-3xl p-8 lg:p-14 shadow-2xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8 border border-white/10">
+                    
+                    <!-- Sol Taraf Metin -->
+                    <div class="space-y-4 text-center lg:text-left max-w-2xl">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E77F18]/20 text-[#E77F18] text-xs font-bold uppercase tracking-wider border border-[#E77F18]/30">
+                            <i data-lucide="sparkles" class="w-4 h-4"></i>
+                            <span>Compiturk DİA Danışmanlık Hizmetleri</span>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-snug">
+                            İşletmenize En Uygun DİA ERP Modüllerini Birlikte Belirleyelim — Ücretsiz Danışmanlık Ve Fiyat Teklifi Alın
+                        </h2>
+                        <p class="text-sm sm:text-base text-blue-100 font-normal leading-relaxed">
+                            Süreçlerinizi analiz edelim, ücretsiz demo gösterimi ile DİA'nın gücünü işletmenize taşıyalım. Hemen ücretsiz danışmanlık ve fiyat teklifi alın.
+                        </p>
+                    </div>
+
+                    <!-- Sağ Taraf DİA Turuncusu Teklif Butonu -->
+                    <div class="flex-shrink-0 w-full sm:w-auto">
+                        <a href="../iletisim.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#E77F18] hover:bg-[#d06f13] text-white font-extrabold py-4 px-8 rounded-xl shadow-xl hover:scale-105 active:scale-95 transition-all text-sm border border-orange-400/30">
+                            <span>Ücretsiz Danışmanlık Ve Fiyat Teklifi Alın</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-footer"></div>
+
+    <!-- SCRIPT ÇAĞRILARI -->
+    <script src="../js/components.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+</html>
