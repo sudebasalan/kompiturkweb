@@ -1,5 +1,5 @@
 /**
- * Compiturk IT Çözümleri - Ortak Canlı Temas & Teklif Modalı
+ * Kompiturk IT Çözümleri - Ortak Canlı Temas & Teklif Modalı
  * Tüm IT sayfalarında dinamik başlık ve Tailwind uyumlu arayüz sunar.
  */
 
@@ -35,7 +35,7 @@
                 <div class="space-y-2 mb-6">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-[#245BA7] text-xs font-bold uppercase tracking-wider">
                         <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
-                        <span>Compiturk Uzman Desteği</span>
+                        <span>Kompiturk Uzman Desteği</span>
                     </div>
                     <h3 class="text-xl font-extrabold text-slate-900 tracking-tight" id="it-modal-dynamic-title">
                         ${h1Heading} İçin Ücretsiz Keşif
