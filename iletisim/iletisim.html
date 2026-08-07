@@ -52,14 +52,14 @@
 
 <body class="font-sans antialiased text-slate-800 bg-[#F8FAFC] min-h-screen flex flex-col overflow-x-hidden">
 
-    <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <!-- GLOBAL HEADER BİLEŞENİ -->
     <div id="global-header"></div>
 
     <!-- MAIN İÇERİK BAŞLANGICI -->
     <main class="flex-grow">
 
         <!-- ========================================================================= -->
-        <!-- 1. HERO / BANNER SECTION (HAREKETLİ, CANLI VE AŞAĞIYA ÇAĞRI YAPAN TASARIM) -->
+        <!-- 1. HERO / BANNER SECTION -->
         <!-- ========================================================================= -->
         <section id="module-hero" class="w-full bg-[#0F172A] text-white relative overflow-hidden py-3 lg:py-3 z-20 border-b-4 border-[#DC2626]">
             <!-- Animasyonlu Arka Plan Işıltıları -->
@@ -75,31 +75,40 @@
 
                 <!-- TEK H1 BAŞLIĞI -->
                 <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
-                    İletişim & DİA ERP <br class="hidden sm:inline" />
-                    <span class="text-[#DC2626]">Destek Merkezi</span>
+                    KOMPİTÜRK ÇÖZÜM <br class="hidden sm:inline" />
+                    <span class="text-[#DC2626]">& DESTEK MERKEZİ</span>
                 </h1>
 
                 <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto">
-                    DİA ERP çözümleri, kurumsal IT altyapı hizmetleri, ücretsiz demo ve teknik destek talepleriniz için bize ulaşın. Aşağıdaki formu doldurun veya ofisimizi ziyaret edin!
+                    DİA ERP kurulumu, entegrasyonlar, ücretsiz demo talebi veya teknik destek ihtiyaçlarınız için 15+ yıllık deneyimli ekibimiz size özel çözümler sunmaya hazır. Formu doldurun, aynı gün içinde size dönüş yapalım.
                 </p>
 
                 <!-- Hızlı İletişim Rozetleri -->
-                <div class="flex flex-wrap items-center justify-center gap-4 pt-2 text-xs sm:text-sm font-bold text-slate-200">
+                <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-2 text-xs sm:text-sm font-bold text-slate-200">
+                    
                     <a href="tel:02128733537" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/25 border border-white/20 transition-all hover:scale-105">
                         <i data-lucide="phone" class="w-4 h-4 text-[#DC2626]"></i>
                         <span>0212 873 35 37</span>
                     </a>
+
+                    <!-- WhatsApp Yönlendirme Butonu -->
+                    <a href="https://wa.me/902128733537" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/40 text-emerald-300 transition-all hover:scale-105">
+                        <i data-lucide="message-square" class="w-4 h-4 text-emerald-400"></i>
+                        <span>WhatsApp Destek</span>
+                    </a>
+
                     <a href="mailto:destek@Kompiturk.com.tr" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/25 border border-white/20 transition-all hover:scale-105">
                         <i data-lucide="mail" class="w-4 h-4 text-sky-400"></i>
                         <span>destek@Kompiturk.com.tr</span>
                     </a>
+
                     <div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 border border-white/20">
                         <i data-lucide="map-pin" class="w-4 h-4 text-emerald-400"></i>
                         <span>Beylikdüzü, İstanbul</span>
                     </div>
                 </div>
 
-                <!-- Aşağıya Devam Edildiğini Gösteren Dikkat Çekici Gösterge (Aşağı Ok Sinyali) -->
+                <!-- Aşağı Ok Sinyali -->
                 <div class="pt-8 flex flex-col items-center justify-center space-y-2 opacity-90">
                     <span class="text-xs font-semibold tracking-widest uppercase text-slate-300">İletişim Formu ve Harita Aşağıdadır</span>
                     <div class="w-8 h-12 rounded-full border-2 border-white/40 flex items-start justify-center p-1">
@@ -110,13 +119,13 @@
         </section>
 
         <!-- ========================================================================= -->
-        <!-- 2. İLETİŞİM BİLGİLERİ VE FORUM ALANI (2 SÜTUNLU GRID LAYOUT)              -->
+        <!-- 2. İLETİŞİM BİLGİLERİ VE FORUM ALANI -->
         <!-- ========================================================================= -->
         <section id="iletisim-icerik" class="py-6 lg:py-10 bg-[#F8FAFC]">
             <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
 
-                    <!-- SOL SÜTUN: İLETİŞİM KARTLARI (Col-span-5) -->
+                    <!-- SOL SÜTUN: İLETİŞİM KARTLARI -->
                     <div class="lg:col-span-5 space-y-6">
                         <div class="space-y-2">
                             <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-3.5 py-1.5 rounded-full border border-red-100">
@@ -131,7 +140,7 @@
                         </div>
 
                         <div class="space-y-4">
-                            <!-- Kart 1: Güncellenmiş Tam Adres Bilgisi -->
+                            <!-- Kart 1: Adres Bilgisi -->
                             <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex items-start gap-4">
                                 <div class="w-12 h-12 rounded-xl bg-red-50 text-[#DC2626] flex items-center justify-center flex-shrink-0">
                                     <i data-lucide="map-pin" class="w-6 h-6"></i>
@@ -195,7 +204,7 @@
                         </div>
                     </div>
 
-                    <!-- SAĞ SÜTUN: B2B İLETİŞİM & DEMO TALEP FORMU (Col-span-7) -->
+                    <!-- SAĞ SÜTUN: FORM -->
                     <div class="lg:col-span-7">
                         <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-2xl border-t-4 border-[#DC2626] border-x border-b border-slate-200 relative">
                             <div class="absolute top-0 right-0 w-48 h-48 bg-red-50 rounded-bl-full pointer-events-none opacity-50"></div>
@@ -283,54 +292,53 @@
                 </div>
             </div>
         </section>
-
-        <!-- ========================================================================= -->
-        <!-- 3. İNTERAKTİF GOOGLE MAPS / HARİTA BÖLÜMÜ (DOĞRU ADRES İŞARETLENMİŞ)       -->
-        <!-- ========================================================================= -->
-        <section id="harita-bolumu" class="py-16 bg-white border-b border-slate-200/85">
-            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-                
-                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-                    <div class="space-y-2">
-                        <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-3.5 py-1.5 rounded-full border border-red-100">
-                            LOKASYONUMUZ
-                        </span>
-                        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
-                            Ofisimizi <span class="text-[#1E3A8A]">Ziyaret Edin</span>
-                        </h2>
-                        <p class="text-sm text-slate-600">
-                            Yakuplu Mah. Yakuplu Cad. Ceylan Rezidans A Blok Daire: 157-158 Beylikdüzü / İstanbul adresindeki ofisimize kahve içmeye bekliyoruz.
-                        </p>
-                    </div>
-
-                    <a href="https://maps.google.com/?q=Yakuplu+Mahallesi+Yakuplu+Caddesi+Ceylan+Rezidans+Beylikduzu+Istanbul" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#DC2626] hover:bg-[#B91C1C] text-white font-bold text-sm shadow-md transition-all self-start md:self-auto">
-                        <i data-lucide="navigation" class="w-4 h-4"></i>
-                        <span>Yol Tarifi Al</span>
-                    </a>
-                </div>
-
-                <!-- Canlı Harita Konteyneri (Doğru İşaretlenmiş Konum) -->
-                <div class="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200 h-[450px] w-full bg-slate-100">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.892055743452!2d28.665!3d41.005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b55c1b525f053f%3A0x0!2zWWFrdXxsdSBNYWguLCBZYWt1cGx1IENhZC4sIEhleWxpZGrDvHpcdS_EsHN0YW5idWw!5e0!3m2!1str!2str!4v1710000000000!5m2!1str!2str" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Kompiturk Bilgisayar Tam Ofis Konumu"
-                        class="w-full h-full">
-                    </iframe>
-                </div>
-
+<!-- ========================================================================= -->
+<!-- 3. İNTERAKTİF GOOGLE MAPS / HARİTA BÖLÜMÜ (DOĞRU NOKTA & TAM MERKEZLENMİŞ) -->
+<!-- ========================================================================= -->
+<section id="harita-bolumu" class="py-8 bg-white border-b border-slate-200/85">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div class="space-y-1">
+                <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-3 py-1 rounded-full border border-red-100">
+                    LOKASYONUMUZ
+                </span>
+                <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight">
+                    Ofisimizi <span class="text-[#1E3A8A]">Ziyaret Edin</span>
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-600">
+                    Yakuplu Mah. Yakuplu Cad. Ceylan Rezidans A Blok Daire: 157-158 Beylikdüzü / İstanbul
+                </p>
             </div>
-        </section>
+
+            <a href="https://maps.google.com/?q=Kompiturk+Bilgisayar+Yakuplu+Ceylan+Rezidans" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#DC2626] hover:bg-[#B91C1C] text-white font-bold text-xs sm:text-sm shadow-md transition-all self-start md:self-auto">
+                <i data-lucide="navigation" class="w-4 h-4"></i>
+                <span>Yol Tarifi Al</span>
+            </a>
+        </div>
+
+        <!-- Canlı Harita Konteyneri (Doğru Bina Tam Ortada) -->
+        <div class="relative rounded-2xl overflow-hidden shadow-md border border-slate-200 h-[280px] w-full bg-slate-100">
+            <iframe 
+                src="https://maps.google.com/maps?q=Kompiturk%20Bilgisayar%20Yakuplu%20Caddesi%20Ceylan%20Rezidans%20Beylikduzu&t=&z=16&ie=UTF8&iwloc=B&output=embed" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Kompiturk Bilgisayar Ofis Konumu"
+                class="w-full h-full">
+            </iframe>
+        </div>
+
+    </div>
+</section>
 
         <!-- ========================================================================= -->
-        <!-- 4. HIZLI DESTEK & SIKÇA SORULAN SORULAR (SEO FAQ - HTML5 ACCORDION)       -->
+        <!-- 4. HIZLI DESTEK & SIKÇA SORULAN SORULAR -->
         <!-- ========================================================================= -->
-        <section id="iletisim-faq" class="py-16 bg-[#F8FAFC]">
+        <section id="iletisim-faq" class="py-12 bg-[#F8FAFC]">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
                 
                 <div class="text-center space-y-2">
@@ -377,7 +385,7 @@
 
     </main>
 
-    <!-- GLOBAL FOOTER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <!-- GLOBAL FOOTER BİLEŞENİ -->
     <div id="global-footer"></div>
 
     <!-- SCRIPT ÇAĞRILARI -->

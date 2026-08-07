@@ -325,7 +325,7 @@ function loadHeader() {
                         </button>
                         <div class="absolute top-full left-1/2 -translate-x-1/2 pt-2 mega-menu w-52 z-50">
                             <div class="bg-white border border-slate-100 shadow-2xl rounded-2xl py-3 px-2">
-                                <a href="${p}kurumsal/hakkımızda.html" target ="_blank" class="flex items-center gap-3 px-4 py-2.5 hover:bg-brandIce rounded-lg group/sub">
+                                <a href="${p}kurumsal/hakkimizda.html" target ="_blank" class="flex items-center gap-3 px-4 py-2.5 hover:bg-brandIce rounded-lg group/sub">
                                     <i data-lucide="info" class="w-4 h-4 text-brandSlate group-hover/sub:text-brandRed"></i>
                                     <span class="text-sm font-bold">Hakkımızda</span>
                                 </a>
