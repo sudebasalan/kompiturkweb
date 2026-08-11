@@ -74,9 +74,9 @@ function loadHeader() {
     <section class="bg-brandRed text-white py-2.5 px-4 sm:px-6 lg:px-8 relative z-[60]" aria-label="Hızlı İletişim">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3">
             <address class="flex flex-wrap justify-center md:justify-start items-center gap-4 md:gap-8 not-italic">
-                <a href="mailto:destek@Kompiturk.com.tr" class="flex items-center gap-2 text-xs md:text-sm font-medium hover:text-white/80 transition-colors" title="E-posta Gönder">
+                <a href="mailto:destek@compiturk.com.tr" class="flex items-center gap-2 text-xs md:text-sm font-medium hover:text-white/80 transition-colors" title="E-posta Gönder">
                     <i data-lucide="mail" class="w-4 h-4"></i>
-                    destek@Kompiturk.com.tr
+                    destek@compiturk.com.tr
                 </a>
                 <a href="tel:+902128733537" class="flex items-center gap-2 text-xs md:text-sm font-medium hover:text-white/80 transition-colors" title="Bizi Arayın">
                     <i data-lucide="phone" class="w-4 h-4"></i>

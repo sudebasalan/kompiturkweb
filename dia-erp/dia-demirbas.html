@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DİA Demirbaş Programı | Duran Varlık ve Zimmet Takibi | Kompiturk</title>
+    <meta name="description" content="DİA Demirbaş Programı ile duran varlıklarınızı, amortismanlarınızı ve personel zimmetlerinizi tek ekranda takip edin. Barkodlu sayım ve muhasebe entegrasyonu. Kompiturk Yetkili Çözüm Ortağı.">
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#DC2626',
+                        brandNavy: '#0F172A',
+                        brandSlate: '#64748b',
+                        brandIce: '#F8FAFC',
+                        diaBlue: '#245BA7',
+                        diaOrange: '#E77F18',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
+
+    <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-header"></div>
+
+    <!-- MAIN İÇERİK BAŞLANGICI -->
+    <main class="flex-grow">
+
+        <!-- ========================================================================= -->
+        <!-- 1. BÖLÜM: BANNER / HERO SECTION -->
+        <!-- ========================================================================= -->
+        <section id="module-hero" class="w-full bg-[#245BA7] text-white py-6 lg:py-10 relative overflow-hidden z-20">
+            <!-- Arka Plan Vektörel Desen & Işıltılar -->
+            <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#E77F18]/20 rounded-full blur-[130px] pointer-events-none"></div>
+            <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#0F1D38]/40 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+
+                    <!-- SOL KOLON: İÇERİK VE VURGULAR (Col-span-7) -->
+                    <div class="lg:col-span-7 space-y-4 text-left">
+
+                        <!-- TEK H1 BAŞLIĞI -->
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                            DİA Demirbaş <br class="hidden sm:inline" />
+                            <span class="text-[#E77F18]">Programı</span>
+                        </h1>
+
+                        <p class="text-sm sm:text-base text-blue-100 font-normal leading-relaxed max-w-2xl">
+                            İşletmenizin sahip olduğu tüm duran varlıkları, amortisman hesaplamalarını ve personel zimmet süreçlerini DİA ERP üzerinden tek ekranda, hatasız ve mevzuata uygun şekilde takip edin.
+                        </p>
+
+                        <!-- İkonlu Vurgu Maddeleri -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3 border-t border-white/15">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-9 h-9 rounded-xl bg-white/10 border border-white/20 text-[#E77F18] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="calculator" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    VUK & UFRS Uyumlu Amortisman
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-9 h-9 rounded-xl bg-white/10 border border-white/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="barcode" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Barkodlu Demirbaş Sayımı
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-9 h-9 rounded-xl bg-white/10 border border-white/20 text-blue-200 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="users" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Personel Zimmet Takibi
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SAĞ KOLON: DEMO & BİLGİ FORMU KUTUSU (Col-span-5) -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-white rounded-2xl p-5 sm:p-6 text-slate-900 shadow-2xl border-2 border-[#E77F18]/40 relative overflow-hidden scale-[0.85] origin-top -mb-12 lg:-mb-20">
+                            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#245BA7] via-[#E77F18] to-[#DC2626]"></div>
+
+                            <div class="border-b border-slate-100 pb-3 mb-4 pt-1">
+                                <h2 class="text-lg sm:text-xl font-black text-slate-900 flex items-center gap-2">
+                                    <i data-lucide="sparkles" class="w-5 h-5 text-[#E77F18]"></i>
+                                    Demirbaş Yönetimi Demo Talebi
+                                </h2>
+                                <p class="text-xs text-slate-500 mt-0.5">
+                                    Duran varlık ve zimmet takipleriniz için bilgilerinizi bırakın, uzmanımız hemen arasın.
+                                </p>
+                            </div>
+
+                            <form action="#" method="POST" class="space-y-3" onsubmit="event.preventDefault();">
+                                <div class="space-y-1">
+                                    <label for="fullname" class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider">
+                                        Ad Soyad <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="text" id="fullname" name="fullname" required placeholder="Örn: Ahmet Yılmaz" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 outline-none transition-all" />
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <div class="space-y-1">
+                                        <label for="phone" class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider">
+                                            Telefon <span class="text-[#DC2626]">*</span>
+                                        </label>
+                                        <input type="tel" id="phone" name="phone" required placeholder="05XX XXX XX XX" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 outline-none transition-all" />
+                                    </div>
+
+                                    <div class="space-y-1">
+                                        <label for="company" class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider">
+                                            Şirket Adı
+                                        </label>
+                                        <input type="text" id="company" name="company" placeholder="Firma Ünvanı" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 outline-none transition-all" />
+                                    </div>
+                                </div>
+
+                                <div class="space-y-1">
+                                    <label for="email" class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider">
+                                        E-Posta Adresi <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" required placeholder="ahmet@sirketiniz.com" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 outline-none transition-all" />
+                                </div>
+
+                                <button type="submit" class="w-full py-3 px-5 rounded-xl bg-[#E77F18] hover:bg-[#d06f13] text-white font-extrabold text-sm shadow-md shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-[1.005] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer border border-orange-400/30">
+                                    <span>Hemen Bilgi & Demo İsteyin</span>
+                                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+
+                                <p class="text-[10px] text-center text-slate-400 mt-1 flex items-center justify-center gap-1">
+                                    <i data-lucide="shield-check" class="w-3 h-3 text-emerald-600"></i>
+                                    Verileriniz KVKK kapsamında %100 güvende tutulmaktadır.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 2. BÖLÜM: DEMİRBAŞ YÖNETİMİNİZİ GÜÇLENDİREN ÖZELLİKLER (3x2 GRID)   -->
+        <!-- ========================================================================= -->
+        <section id="demirbas-ozellikler" class="py-6 lg:py-10 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Duran Varlık Süreçlerinizi <span class="text-[#245BA7]">Güçlendiren Özellikler</span>
+                    </h2>
+                    <p class="text-base text-slate-600 font-normal">
+                        Otomatik amortisman hesaplamalarından, detaylı lokasyon takibine kadar tüm demirbaş yönetimi ihtiyaçlarınız tek ekranda.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+
+                    <!-- Kart 1 -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#245BA7] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-blue-50 text-[#245BA7] flex items-center justify-center group-hover:bg-[#245BA7] group-hover:text-white transition-colors">
+                                <i data-lucide="calculator" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors">Amortisman ve Yeniden Değerleme</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                VUK ve UFRS standartlarına uygun olarak normal, azalan bakiyeler yöntemiyle otomatik amortisman ve kıst amortisman hesaplamaları yapın.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 2 -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#E77F18] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-amber-50 text-[#E77F18] flex items-center justify-center group-hover:bg-[#E77F18] group-hover:text-white transition-colors">
+                                <i data-lucide="user-check" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#E77F18] transition-colors">Personel Zimmet Takibi</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Şirket demirbaşlarını personellere zimmetleyin. Teslim ve iade süreçlerini kayıt altına alın, matbu zimmet tutanaklarını sistemden anında yazdırın.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 3 -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-red-50 text-[#DC2626] flex items-center justify-center group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                                <i data-lucide="barcode" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Barkodlu Demirbaş Sayımı</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                El terminalleri ve mobil cihazlar ile barkod/karekod okutarak hızlı ve hatasız periyodik demirbaş sayım işlemlerini gerçekleştirin.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 4 -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                                <i data-lucide="refresh-cw" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Tam Muhasebe Entegrasyonu</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Hesaplanan amortisman tutarlarını, duran varlık alım veya satım faturalarını tek tuşla genel muhasebeye mahsup fişi olarak aktarın.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 5 -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-indigo-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                <i data-lucide="building-2" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">Masraf Merkezi & Lokasyon Takibi</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Demirbaş giderlerini ve amortisman maliyetlerini şube, departman veya proje bazlı masraf merkezlerine bağlayarak detaylı karlılık analizleri yapın.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 6 -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-cyan-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                                <i data-lucide="wrench" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-cyan-600 transition-colors">Bakım, Onarım ve Sigorta</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Duran varlıkların garanti sürelerini, periyodik bakım tarihlerini ve kasko/sigorta poliçesi bitiş günlerini sistem üzerinden günü gününe izleyin.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 3. BÖLÜM: NEDEN DİA DEMİRBAŞ YAZILIMI? -->
+        <!-- ========================================================================= -->
+        <section id="demirbas-verimlilik" class="py-6 lg:py-10 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <div class="space-y-6">
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
+                            Neden DİA Demirbaş <br />
+                            <span class="text-[#245BA7]">Yazılımı Kullanmalısınız?</span>
+                        </h2>
+                        <p class="text-slate-600 text-base leading-relaxed">
+                            Excel tablolarında kaybolan bilgisayarlara, hatalı hesaplanan amortismanlara ve karmaşık zimmet takiplerine son verin. Tüm duran varlık yaşam döngüsünü dijitalleştirerek %100 kontrol altına alın.
+                        </p>
+                        <div class="space-y-3 text-sm font-semibold text-slate-800">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600"></i>
+                                <span>Excel hatalarından ve manuel hesaplama yükünden kurtulun</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600"></i>
+                                <span>Personel ayrılışlarında zimmetli ürünleri eksiksiz teslim alın</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600"></i>
+                                <span>Vergi mevzuatına (VUK/UFRS) tam uyumlu amortisman hesaplayın</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sağ Taraf İstatistik Paneli -->
+                    <div class="bg-[#0F1D38] text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-slate-800 space-y-6">
+                        <div class="border-b border-slate-800 pb-5">
+                            <div class="text-4xl font-black text-[#E77F18]">360°</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Tam Kapsamlı Varlık Takibi</div>
+                            <p class="text-xs text-slate-400 mt-1">Demirbaşların alımından amortismanına, zimmetinden hurdaya ayrılmasına kadar uçtan uca kontrol.</p>
+                        </div>
+
+                        <div>
+                            <div class="text-4xl font-black text-[#245BA7]">%100</div>
+                            <div class="text-sm font-bold text-slate-200 mt-1">Muhasebe ve VUK Uyumlu</div>
+                            <p class="text-xs text-slate-400 mt-1">Sistemdeki yeniden değerleme ve amortisman rakamları anında resmi yevmiye fişine dönüşür.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 4. BÖLÜM: 4 ADIMDA DEMİRBAŞ SİSTEMİNİZİ KURUN -->
+        <!-- ========================================================================= -->
+        <section id="demirbas-kurulum-adimlari" class="py-6 lg:py-10 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        4 Adımda Demirbaş <span class="text-[#245BA7]">Sisteminizi Kurun</span>
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        Kompiturk uzmanlığı ile duran varlık yönetiminizi en kısa sürede dijitalleştiriyoruz.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+
+                    <!-- Adım 1 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#245BA7] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#245BA7] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="settings" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#245BA7] transition-colors">01</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Sisteme Tanımlama</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Demirbaş grupları, VUK faydalı ömür oranları ve kullanılacak amortisman yöntemleri sisteme tanımlanır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 2 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#E77F18] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-amber-50 text-[#E77F18] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="database" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#E77F18] transition-colors">02</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Veri Aktarımı & Etiketleme</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Mevcut varlıklarınız Excel'den DİA'ya hızla aktarılır, dilenirse barkod etiketleri oluşturulup yapıştırılır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 3 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center font-extrabold">
+                                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#DC2626] transition-colors">03</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Zimmet ve Lokasyon</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Duran varlıklar ilgili şubelere, masraf merkezlerine veya doğrudan kullanım yapacak personellere zimmetlenir.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Adım 4 -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-emerald-500/80 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between relative overflow-hidden group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-extrabold">
+                                    <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-2xl font-black text-emerald-500">04</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Otomatik Hesaplama</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Dönem sonlarında amortismanlar tek tuşla hesaplanır, isterseniz muhasebe fişleri otomatik olarak kesilir.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 5. BÖLÜM: BİRLİKTE KULLANABİLECEĞİNİZ DİĞER ÇÖZÜMLERİMİZ -->
+        <!-- ========================================================================= -->
+        <section id="tamamlayici-cozumler" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                        Birlikte Kullanabileceğiniz <span class="text-[#DC2626]">Diğer Çözümlerimiz</span>
+                    </h2>
+                    <p class="text-sm text-slate-600">Demirbaş modülünüzle tam entegre çalışan diğer DİA modülleri.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Çözüm 1 -->
+                    <a href="dia-insan-kaynaklari.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#245BA7] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#245BA7] flex items-center justify-center mb-4 group-hover:bg-[#245BA7] group-hover:text-white transition-colors">
+                            <i data-lucide="users" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors">İnsan Kaynakları</h3>
+                        <p class="text-xs text-slate-500 mt-1">İşe giriş ve çıkışlarda eksiksiz personel zimmet takibi.</p>
+                    </a>
+
+                    <!-- Çözüm 2 -->
+                    <a href="dia-genel-muhasebe.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#E77F18] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-amber-50 text-[#E77F18] flex items-center justify-center mb-4 group-hover:bg-[#E77F18] group-hover:text-white transition-colors">
+                            <i data-lucide="calculator" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#E77F18] transition-colors">Genel Muhasebe</h3>
+                        <p class="text-xs text-slate-500 mt-1">Amortisman tutarlarının tek tuşla fişleştirilmesi.</p>
+                    </a>
+
+                    <!-- Çözüm 3 -->
+                    <a href="dia-satin-alma.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#DC2626] hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center mb-4 group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Satın Alma Yönetimi</h3>
+                        <p class="text-xs text-slate-500 mt-1">Yeni demirbaş alımlarının faturadan direkt aktarımı.</p>
+                    </a>
+
+                    <!-- Çözüm 4 -->
+                    <a href="dia-masraf-merkezleri.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <i data-lucide="pie-chart" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Masraf Merkezleri</h3>
+                        <p class="text-xs text-slate-500 mt-1">Amortisman maliyetlerinin departmanlara dağıtımı.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 6. BÖLÜM: SIKÇA SORULAN SORULAR (SEO FAQ - ACCORDION) -->
+        <!-- ========================================================================= -->
+        <section id="faq" class="py-16 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                
+                <div class="text-center space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Sıkça Sorulan <span class="text-[#245BA7]">Sorular</span></h2>
+                    <p class="text-sm text-slate-600">DİA Demirbaş Programı hakkında merak ettiğiniz tüm yanıtlar.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Soru 1 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                            <span>Amortisman hesaplamaları otomatik olarak muhasebeleşir mi?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet, DİA Demirbaş modülünde hesaplanan amortisman ve yeniden değerleme tutarları, tek bir tuşla Genel Muhasebe modülüne fiş olarak sorunsuz bir şekilde entegre edilebilir.
+                        </p>
+                    </details>
+
+                    <!-- Soru 2 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                            <span>Kıst amortisman (aylık hesaplama) destekleniyor mu?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet, binek otomobiller gibi kanunen kıst amortisman ayrılması gereken araçlar ve duran varlıklar için sistemsel olarak aylık veya günlük bazda kıst amortisman hesaplaması yapılabilmektedir.
+                        </p>
+                    </details>
+
+                    <!-- Soru 3 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                            <span>El terminali ile barkodlu demirbaş sayımı yapabilir miyiz?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet, DİA Mobil altyapısı sayesinde cep telefonları, tabletler veya endüstriyel el terminalleriyle barkod okutarak hızlı ve hatasız periyodik demirbaş sayımı gerçekleştirebilirsiniz.
+                        </p>
+                    </details>
+
+                    <!-- Soru 4 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                            <span>Personel bazlı zimmet ve iade tutanağı alabilir miyiz?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Kesinlikle. Donanım ve demirbaşları personelinize zimmetleyebilir, teslim sırasında firmanıza özel tasarlanmış resmi zimmet/teslimat tutanaklarının dökümünü alarak imzalattırabilirsiniz.
+                        </p>
+                    </details>
+
+                    <!-- Soru 5 -->
+                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                            <span>Farklı amortisman yöntemleri (Normal / Azalan) kullanabilir miyim?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Evet, mevzuata uygun olarak Normal Amortisman, Azalan Bakiyeler (Hızlandırılmış) ve Özel Tükenmeye Tabi Varlıklar için farklı hesaplama yöntemleri sistemde standart olarak desteklenmektedir.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 7. BÖLÜM: MÜŞTERİ YORUMLARI & REFERANSLAR (3 KART) -->
+        <!-- ========================================================================= -->
+        <section id="referanslar" class="py-16 bg-white border-b border-slate-200/80">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Müşterilerimiz <span class="text-[#E77F18]">Ne Diyor?</span></h2>
+                    <p class="text-sm text-slate-600">Duran varlık ve zimmet yönetimini DİA ile dijitalleştiren firmaların görüşleri.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Yorum 1 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Şirketimizde 500'den fazla bilgisayar ve ofis ekipmanı var. Eskiden Excel'de kimde ne var takip edemiyorduk, ürünler kayboluyordu. DİA'nın demirbaş ve zimmet takibi sayesinde tüm donanımlarımız artık %100 kontrol altında."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Mert K.</span>
+                            <span class="text-xs text-slate-500 font-medium">IT Yöneticisi - Yazılım & Teknoloji</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 2 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Her yıl sonu amortisman hesaplamak ekibimizin günlerini alıyordu. Şimdi DİA üzerinden faydalı ömür oranlarını bir kere tanımlıyoruz, gerisini sistem saniyeler içinde hesaplayıp tek tuşla genel muhasebeye atıyor."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Selin Y.</span>
+                            <span class="text-xs text-slate-500 font-medium">Mali İşler Müdürü - Üretim Sanayi</span>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 3 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1 text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 italic leading-relaxed">
+                                "Şantiyelerimiz arası makine ve ekipman transferleri çok yoğundu. Hangi jeneratör hangi şantiyede, kime zimmetli anlık görebiliyoruz. Barkod entegrasyonu yıl sonu sayımlarımızı inanılmaz derecede hızlandırdı."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                            <span class="text-sm font-bold text-slate-900">Ahmet M.</span>
+                            <span class="text-xs text-slate-500 font-medium">Şantiye Şefi - İnşaat A.Ş.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 8. BÖLÜM: BLOG YAZILARIMIZ (3 KART) -->
+        <!-- ========================================================================= -->
+        <section id="blog" class="py-16 bg-[#F8FAFC]">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Demirbaş Yönetimi <span class="text-[#245BA7]">Rehberi</span></h2>
+                    <p class="text-sm text-slate-600">Amortisman mevzuatları ve duran varlık takibi hakkında uzman içeriklerimiz.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Makale 1 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#245BA7] uppercase tracking-wider bg-blue-50 px-2.5 py-1 rounded-md">MEVZUAT</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors line-clamp-2">
+                                2024 Yılı İçin VUK Amortisman Oranları ve Faydalı Ömür Sınırları
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Vergi Usul Kanunu kapsamında duran varlık amortisman hesaplamalarında dikkat edilmesi gereken önemli detaylar.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 2 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#E77F18] uppercase tracking-wider bg-amber-50 px-2.5 py-1 rounded-md">ZİMMET TAKİBİ</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#E77F18] transition-colors line-clamp-2">
+                                İşletmelerde Etkili Personel Zimmet Takibi Nasıl Yapılır?
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Kayıp ekipman maliyetlerini sıfıra indirmenin yolları ve dijital zimmet tutanağının insan kaynakları süreçlerine faydası.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Makale 3 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded-md">DİJİTALLEŞME</span>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2">
+                                Excel'den Bırakıp Demirbaş Yazılımına Geçmek İçin 5 Neden
+                            </h3>
+                            <p class="text-xs text-slate-600 line-clamp-2">
+                                Manuel tabloların şirketlere yarattığı gizli maliyetler ve ERP entegreli duran varlık yönetiminin sağladığı büyük avantajlar.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
+    <div id="global-footer"></div>
+
+    <!-- SCRIPT ÇAĞRILARI -->
+    <script src="../js/components.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
