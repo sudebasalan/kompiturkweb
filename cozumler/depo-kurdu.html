@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Depo Kurdu — Mobil Depo Yönetim Sistemi (WMS) | Kompiturk</title>
-    <meta name="description" content="El terminalleri ile mal kabul, adresli raf yerleştirme ve hızlı sipariş toplama süreçlerinizi DİA ERP ile anlık yönetin. Depo Kurdu. Kompiturk.">
+    <meta name="description"
+        content="El terminalleri ile mal kabul, adresli raf yerleştirme ve hızlı sipariş toplama süreçlerinizi DİA ERP ile anlık yönetin. Depo Kurdu. Kompiturk.">
 
     <!-- Google Fonts: Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -34,6 +37,7 @@
         }
     </script>
 </head>
+
 <body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
 
     <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
@@ -45,18 +49,25 @@
         <!-- ========================================================================= -->
         <!-- 1. HERO / BANNER SECTION (LACİVERT & KIRMIZI VURGULU ARKA PLAN)           -->
         <!-- ========================================================================= -->
-        <section id="module-hero" class="w-full bg-[#0F172A] text-white pt-2 pb-0 lg:pt-4 lg:pb-0 relative overflow-hidden z-20">
+        <section id="module-hero"
+            class="w-full bg-[#0F172A] text-white pt-2 pb-0 lg:pt-4 lg:pb-0 relative overflow-hidden z-20">
             <!-- Arka Plan Vektörel Desen & Kırmızı/Lacivert İşıltılar -->
-            <div class="absolute inset-0 bg-[radial-gradient(rgba(220,38,38,0.15)_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
-            <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#DC2626]/20 rounded-full blur-[130px] pointer-events-none"></div>
-            <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#1E3A8A]/40 rounded-full blur-[150px] pointer-events-none"></div>
+            <div
+                class="absolute inset-0 bg-[radial-gradient(rgba(220,38,38,0.15)_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none">
+            </div>
+            <div
+                class="absolute -top-32 -left-32 w-96 h-96 bg-[#DC2626]/20 rounded-full blur-[130px] pointer-events-none">
+            </div>
+            <div
+                class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#1E3A8A]/40 rounded-full blur-[150px] pointer-events-none">
+            </div>
 
             <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
 
                     <!-- SOL KOLON: İÇERİK VE VURGULAR (Col-span-7) -->
                     <div class="lg:col-span-7 space-y-6 text-left">
-                        
+
                         <!-- TEK H1 BAŞLIĞI -->
                         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
                             Depo Kurdu — Mobil Depo <br class="hidden sm:inline" />
@@ -64,13 +75,16 @@
                         </h1>
 
                         <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl">
-                            El terminalleri üzerinden mal kabul, adresli raf yerleştirme, hızlı sipariş toplama ve stok sayım süreçlerinizi DİA ERP ile anlık senkronize yönetin; depo operasyonlarınızda %100 doğruluk sağlayın.
+                            El terminalleri üzerinden mal kabul, adresli raf yerleştirme, hızlı sipariş toplama ve stok
+                            sayım süreçlerinizi DİA ERP ile anlık senkronize yönetin; depo operasyonlarınızda %100
+                            doğruluk sağlayın.
                         </p>
 
                         <!-- İkonlu Vurgu Maddeleri -->
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/15">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-[#DC2626] flex items-center justify-center flex-shrink-0">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-[#DC2626] flex items-center justify-center flex-shrink-0">
                                     <i data-lucide="tablet-smartphone" class="w-5 h-5"></i>
                                 </div>
                                 <span class="text-xs sm:text-sm font-bold text-white leading-snug">
@@ -79,7 +93,8 @@
                             </div>
 
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
                                     <i data-lucide="map-pin" class="w-5 h-5"></i>
                                 </div>
                                 <span class="text-xs sm:text-sm font-bold text-white leading-snug">
@@ -88,7 +103,8 @@
                             </div>
 
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-blue-300 flex items-center justify-center flex-shrink-0">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-blue-300 flex items-center justify-center flex-shrink-0">
                                     <i data-lucide="refresh-cw" class="w-5 h-5"></i>
                                 </div>
                                 <span class="text-xs sm:text-sm font-bold text-white leading-snug">
@@ -100,7 +116,11 @@
 
                     <!-- SAĞ KOLON: DEMO & BİLGİ FORMU KUTUSU (Col-span-5) -->
                     <div class="lg:col-span-5">
-                        <div class="bg-white rounded-2xl p-6 sm:p-8 text-slate-900 shadow-2xl border-2 border-[#DC2626]/40 relative overflow-hidden scale-[0.80] origin-top -mb-12 lg:-mb-20">                            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#0F1D38] via-[#DC2626] to-[#B91C1C]"></div>
+                        <div
+                            class="bg-white rounded-2xl p-6 sm:p-8 text-slate-900 shadow-2xl border-2 border-[#DC2626]/40 relative overflow-hidden scale-[0.80] origin-top -mb-12 lg:-mb-20">
+                            <div
+                                class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#0F1D38] via-[#DC2626] to-[#B91C1C]">
+                            </div>
 
                             <div class="border-b border-slate-100 pb-4 mb-5 pt-1">
                                 <h2 class="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
@@ -114,41 +134,54 @@
 
                             <form action="#" method="POST" class="space-y-4" onsubmit="event.preventDefault();">
                                 <div class="space-y-1">
-                                    <label for="fullname" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                    <label for="fullname"
+                                        class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                         Ad Soyad <span class="text-[#DC2626]">*</span>
                                     </label>
-                                    <input type="text" id="fullname" name="fullname" required placeholder="Örn: Ahmet Yılmaz" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    <input type="text" id="fullname" name="fullname" required
+                                        placeholder="Örn: Ahmet Yılmaz"
+                                        class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
                                 </div>
 
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div class="space-y-1">
-                                        <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        <label for="phone"
+                                            class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                             Telefon <span class="text-[#DC2626]">*</span>
                                         </label>
-                                        <input type="tel" id="phone" name="phone" required placeholder="05XX XXX XX XX" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                        <input type="tel" id="phone" name="phone" required placeholder="05XX XXX XX XX"
+                                            class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
                                     </div>
 
                                     <div class="space-y-1">
-                                        <label for="company" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        <label for="company"
+                                            class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                             Şirket Adı
                                         </label>
-                                        <input type="text" id="company" name="company" placeholder="Firma Ünvanı" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                        <input type="text" id="company" name="company" placeholder="Firma Ünvanı"
+                                            class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
                                     </div>
                                 </div>
 
                                 <div class="space-y-1">
-                                    <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                    <label for="email"
+                                        class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                         E-Posta Adresi <span class="text-[#DC2626]">*</span>
                                     </label>
-                                    <input type="email" id="email" name="email" required placeholder="ahmet@sirketiniz.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    <input type="email" id="email" name="email" required
+                                        placeholder="ahmet@sirketiniz.com"
+                                        class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
                                 </div>
 
-                                <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-[#DC2626] hover:bg-[#b91c1c] text-white font-extrabold text-base shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:scale-[1.005] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer border border-red-400/30">
+                                <button type="submit"
+                                    class="w-full py-3.5 px-6 rounded-xl bg-[#DC2626] hover:bg-[#b91c1c] text-white font-extrabold text-base shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:scale-[1.005] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer border border-red-400/30">
                                     <span>Hemen Bilgi & Teklif İsteyin</span>
-                                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                                    <i data-lucide="arrow-right"
+                                        class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
                                 </button>
 
-                                <p class="text-[11px] text-center text-slate-400 mt-2 flex items-center justify-center gap-1">
+                                <p
+                                    class="text-[11px] text-center text-slate-400 mt-2 flex items-center justify-center gap-1">
                                     <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
                                     Verileriniz KVKK kapsamında %100 güvende tutulmaktadır.
                                 </p>
@@ -167,7 +200,7 @@
             <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
                 <div class="text-center max-w-3xl mx-auto space-y-3">
-                    
+
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
                         Depo Kurdu <span class="text-[#DC2626]">Yetenekleri</span>
                     </h2>
@@ -179,79 +212,103 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
 
                     <!-- Kart 1: Barkodlu Mal Kabul ve Satın Alma Eşleştirme -->
-                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                    <div
+                        class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] hover:-translate-y-1 transition-all group flex flex-col justify-between">
                         <div class="space-y-4">
-                            <div class="w-14 h-14 rounded-2xl bg-red-50 text-[#DC2626] flex items-center justify-center group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-red-50 text-[#DC2626] flex items-center justify-center group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
                                 <i data-lucide="scan-barcode" class="w-7 h-7"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Barkodlu Mal Kabul</h3>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">
+                                Barkodlu Mal Kabul</h3>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                Depoya giren ürünlerin el terminali ile okutularak DİA ERP satın alma irsaliye ve faturalarıyla anında doğrulanması ve kontrolü.
+                                Depoya giren ürünlerin el terminali ile okutularak DİA ERP satın alma irsaliye ve
+                                faturalarıyla anında doğrulanması ve kontrolü.
                             </p>
                         </div>
                     </div>
 
                     <!-- Kart 2: Adresli Depo ve Hücre/Raf Yönetimi -->
-                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0F172A] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                    <div
+                        class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0F172A] hover:-translate-y-1 transition-all group flex flex-col justify-between">
                         <div class="space-y-4">
-                            <div class="w-14 h-14 rounded-2xl bg-slate-100 text-[#0F172A] flex items-center justify-center group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-slate-100 text-[#0F172A] flex items-center justify-center group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
                                 <i data-lucide="map-pin" class="w-7 h-7"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors">Adresli Depo & Raf Yönetimi</h3>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors">
+                                Adresli Depo & Raf Yönetimi</h3>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                Ürünlerin hangi koridor, raf ve gözde durduğunun dijital harita üzerinde anlık takibi ve optimum yerleştirme optimizasyonu.
+                                Ürünlerin hangi koridor, raf ve gözde durduğunun dijital harita üzerinde anlık takibi ve
+                                optimum yerleştirme optimizasyonu.
                             </p>
                         </div>
                     </div>
 
                     <!-- Kart 3: Akıllı Sipariş Toplama / Picking -->
-                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                    <div
+                        class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
                         <div class="space-y-4">
-                            <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
                                 <i data-lucide="list-checks" class="w-7 h-7"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Akıllı Sipariş Toplama (Picking)</h3>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors">
+                                Akıllı Sipariş Toplama (Picking)</h3>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                Yanlış ürün veya miktar çıkışını engelleyen sesli ve görsel uyarı sistemli mobil sipariş toplama ve rotalama mantığı.
+                                Yanlış ürün veya miktar çıkışını engelleyen sesli ve görsel uyarı sistemli mobil sipariş
+                                toplama ve rotalama mantığı.
                             </p>
                         </div>
                     </div>
 
                     <!-- Kart 4: Mobil Depo Sayımı ve Stok Güncelleme -->
-                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                    <div
+                        class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
                         <div class="space-y-4">
-                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
                                 <i data-lucide="clipboard-list" class="w-7 h-7"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Mobil Sayım & Stok Güncelleme</h3>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">
+                                Mobil Sayım & Stok Güncelleme</h3>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                Barkod, Seri No ve Lot bazlı anlık depo sayımları yaparak DİA ERP stok bakiyelerini saniyeler içinde hatasız güncelleme.
+                                Barkod, Seri No ve Lot bazlı anlık depo sayımları yaparak DİA ERP stok bakiyelerini
+                                saniyeler içinde hatasız güncelleme.
                             </p>
                         </div>
                     </div>
 
                     <!-- Kart 5: Depolar Arası Transfer & Sevkiyat Onayı -->
-                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-purple-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                    <div
+                        class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-purple-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
                         <div class="space-y-4">
-                            <div class="w-14 h-14 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
                                 <i data-lucide="arrow-left-right" class="w-7 h-7"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-purple-600 transition-colors">Depolar Arası Transfer & Sevk</h3>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-purple-600 transition-colors">
+                                Depolar Arası Transfer & Sevk</h3>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                Şubeler ve merkez depolar arası mal sevkiyatlarının mobil onay mekanizması ve barkod doğrulamasıyla kontrol altında yapılması.
+                                Şubeler ve merkez depolar arası mal sevkiyatlarının mobil onay mekanizması ve barkod
+                                doğrulamasıyla kontrol altında yapılması.
                             </p>
                         </div>
                     </div>
 
                     <!-- Kart 6: Seri No, Lot & SKT Takibi -->
-                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-cyan-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                    <div
+                        class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-cyan-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
                         <div class="space-y-4">
-                            <div class="w-14 h-14 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
                                 <i data-lucide="calendar-clock" class="w-7 h-7"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-cyan-600 transition-colors">Seri No, Lot & SKT Takibi</h3>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-cyan-600 transition-colors">
+                                Seri No, Lot & SKT Takibi</h3>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                Gıda, kimya, ilaç ve elektronik gibi hassas ürünlerde son kullanma tarihi ve seri numarası kontrolü ile tam izlenebilirlik.
+                                Gıda, kimya, ilaç ve elektronik gibi hassas ürünlerde son kullanma tarihi ve seri
+                                numarası kontrolü ile tam izlenebilirlik.
                             </p>
                         </div>
                     </div>
@@ -266,44 +323,51 @@
         <section id="neden-Kompiturk-depo-kurdu" class="py-6 lg:py-10 bg-[#DC2626] text-white">
             <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    
+
                     <div class="space-y-6">
-                        
+
                         <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
                             Neden Kompiturk <br />
                             Depo Kurdu Çözümü?
                         </h2>
                         <p class="text-red-100 text-base leading-relaxed">
-                            Hatalı sevkiyat riskini sıfıra indiren, depo operasyon hızını 3 katına çıkaran ve kağıt tabanlı sayım kargaşasını bitiren DİA ERP entegre mobil depo yönetimi.
+                            Hatalı sevkiyat riskini sıfıra indiren, depo operasyon hızını 3 katına çıkaran ve kağıt
+                            tabanlı sayım kargaşasını bitiren DİA ERP entegre mobil depo yönetimi.
                         </p>
                         <div class="space-y-3 text-sm font-semibold text-white">
                             <div class="flex items-center gap-3">
                                 <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
-                                <span>Yanlış ürün sevkiyatı ve müşteri iade maliyetlerini tamamen ortadan kaldırın</span>
+                                <span>Yanlış ürün sevkiyatı ve müşteri iade maliyetlerini tamamen ortadan
+                                    kaldırın</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
-                                <span>Sipariş toplama sürelerini kısaltarak sevkiyat kapasitenizi 3 katına çıkarın</span>
+                                <span>Sipariş toplama sürelerini kısaltarak sevkiyat kapasitenizi 3 katına
+                                    çıkarın</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
-                                <span>Stok tutarsızlıklarına son vererek DİA ERP verilerinizle her an %100 uyumlu kalın</span>
+                                <span>Stok tutarsızlıklarına son vererek DİA ERP verilerinizle her an %100 uyumlu
+                                    kalın</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Sağ Taraf İstatistik Paneli -->
-                    <div class="bg-[#0F172A] text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-red-500/30 space-y-6">
+                    <div
+                        class="bg-[#0F172A] text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-red-500/30 space-y-6">
                         <div class="border-b border-slate-800 pb-5">
                             <div class="text-4xl font-black text-[#DC2626]">3 Kat</div>
                             <div class="text-sm font-bold text-slate-200 mt-1">Depo Operasyon & Toplama Hızı</div>
-                            <p class="text-xs text-slate-400 mt-1">El terminali yönlendirmesiyle garson usulü ürün arama dönemi kapanır.</p>
+                            <p class="text-xs text-slate-400 mt-1">El terminali yönlendirmesiyle garson usulü ürün arama
+                                dönemi kapanır.</p>
                         </div>
 
                         <div>
                             <div class="text-4xl font-black text-white">%100</div>
                             <div class="text-sm font-bold text-slate-200 mt-1">DİA ERP Canlı Senkronizasyon</div>
-                            <p class="text-xs text-slate-400 mt-1">El terminalinden yapılan her hareket anında merkez sisteme işlenir.</p>
+                            <p class="text-xs text-slate-400 mt-1">El terminalinden yapılan her hareket anında merkez
+                                sisteme işlenir.</p>
                         </div>
                     </div>
 
@@ -316,9 +380,9 @@
         <!-- ========================================================================= -->
         <section id="depo-kurdu-adimlari" class="py-6 lg:py-10 bg-[#F8FAFC] border-b border-slate-200/80">
             <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-                
+
                 <div class="text-center max-w-3xl mx-auto space-y-3">
-                    
+
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
                         4 Adımda Mobil Depo <span class="text-[#DC2626]">Yönetimi Süreci</span>
                     </h2>
@@ -330,13 +394,16 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
 
                     <!-- Adım 1 -->
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] transition-all flex flex-col justify-between relative overflow-hidden group">
+                    <div
+                        class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] transition-all flex flex-col justify-between relative overflow-hidden group">
                         <div class="space-y-4">
                             <div class="flex items-center justify-between">
-                                <div class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center font-extrabold">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center font-extrabold">
                                     <i data-lucide="map-pin" class="w-5 h-5"></i>
                                 </div>
-                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#DC2626] transition-colors">01</span>
+                                <span
+                                    class="text-2xl font-black text-slate-300 group-hover:text-[#DC2626] transition-colors">01</span>
                             </div>
                             <h3 class="text-lg font-bold text-slate-900">Depo Raf & Lokasyon Tanımları</h3>
                             <p class="text-xs text-slate-600 leading-relaxed">
@@ -346,49 +413,60 @@
                     </div>
 
                     <!-- Adım 2 -->
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0F172A] transition-all flex flex-col justify-between relative overflow-hidden group">
+                    <div
+                        class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0F172A] transition-all flex flex-col justify-between relative overflow-hidden group">
                         <div class="space-y-4">
                             <div class="flex items-center justify-between">
-                                <div class="w-10 h-10 rounded-lg bg-slate-100 text-[#0F172A] flex items-center justify-center font-extrabold">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-slate-100 text-[#0F172A] flex items-center justify-center font-extrabold">
                                     <i data-lucide="smartphone" class="w-5 h-5"></i>
                                 </div>
-                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#0F172A] transition-colors">02</span>
+                                <span
+                                    class="text-2xl font-black text-slate-300 group-hover:text-[#0F172A] transition-colors">02</span>
                             </div>
                             <h3 class="text-lg font-bold text-slate-900">El Terminali Uygulaması</h3>
                             <p class="text-xs text-slate-600 leading-relaxed">
-                                El terminallerine Depo Kurdu mobil uygulaması yüklenip Wi-Fi ve API entegrasyon ayarları yapılır.
+                                El terminallerine Depo Kurdu mobil uygulaması yüklenip Wi-Fi ve API entegrasyon ayarları
+                                yapılır.
                             </p>
                         </div>
                     </div>
 
                     <!-- Adım 3 -->
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-600 transition-all flex flex-col justify-between relative overflow-hidden group">
+                    <div
+                        class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-600 transition-all flex flex-col justify-between relative overflow-hidden group">
                         <div class="space-y-4">
                             <div class="flex items-center justify-between">
-                                <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center font-extrabold">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center font-extrabold">
                                     <i data-lucide="scan-barcode" class="w-5 h-5"></i>
                                 </div>
-                                <span class="text-2xl font-black text-slate-300 group-hover:text-amber-600 transition-colors">03</span>
+                                <span
+                                    class="text-2xl font-black text-slate-300 group-hover:text-amber-600 transition-colors">03</span>
                             </div>
                             <h3 class="text-lg font-bold text-slate-900">Barkodlu Mal Kabul & Toplama</h3>
                             <p class="text-xs text-slate-600 leading-relaxed">
-                                Personel el terminaliyle mal kabul, rafa yerleştirme ve sipariş toplama operasyonlarını hızla yürütür.
+                                Personel el terminaliyle mal kabul, rafa yerleştirme ve sipariş toplama operasyonlarını
+                                hızla yürütür.
                             </p>
                         </div>
                     </div>
 
                     <!-- Adım 4 -->
-                    <div class="bg-white p-6 rounded-2xl border-2 border-emerald-500/80 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between relative overflow-hidden group">
+                    <div
+                        class="bg-white p-6 rounded-2xl border-2 border-emerald-500/80 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between relative overflow-hidden group">
                         <div class="space-y-4">
                             <div class="flex items-center justify-between">
-                                <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-extrabold">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-extrabold">
                                     <i data-lucide="check-circle-2" class="w-5 h-5"></i>
                                 </div>
                                 <span class="text-2xl font-black text-emerald-500">04</span>
                             </div>
                             <h3 class="text-lg font-bold text-slate-900">Otomatik Fişleme & Güncelleme</h3>
                             <p class="text-xs text-slate-600 leading-relaxed">
-                                İşlemler onaylandığında DİA ERP cari ve stok bakiyeleri saniyesinde otomatik olarak güncellenir.
+                                İşlemler onaylandığında DİA ERP cari ve stok bakiyeleri saniyesinde otomatik olarak
+                                güncellenir.
                             </p>
                         </div>
                     </div>
@@ -406,43 +484,57 @@
                     <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
                         Birlikte Kullanabileceğiniz <span class="text-[#DC2626]">Diğer Çözümlerimiz</span>
                     </h2>
-                    <p class="text-sm text-slate-600">Depo Kurdu altyapınızı destekleyen diğer entegre DİA ve Kompiturk yazılımları.</p>
+                    <p class="text-sm text-slate-600">Depo Kurdu altyapınızı destekleyen diğer entegre DİA ve Kompiturk
+                        yazılımları.</p>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Çözüm 1 -->
-                    <a href="ahtapot-depo-yonetimi.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#DC2626] hover:bg-white hover:shadow-lg transition-all group">
-                        <div class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center mb-4 group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                    <a href="ahtapot-depo-yonetimi.html"
+                        class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#DC2626] hover:bg-white hover:shadow-lg transition-all group">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center mb-4 group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
                             <i data-lucide="boxes" class="w-5 h-5"></i>
                         </div>
-                        <h3 class="font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Ahtapot Depo Yönetimi</h3>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Ahtapot Depo
+                            Yönetimi</h3>
                         <p class="text-xs text-slate-500 mt-1">Gelişmiş WMS çözümleri ve depo otomasyonu.</p>
                     </a>
 
                     <!-- Çözüm 2 -->
-                    <a href="kargo-entegrasyonu.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#0F172A] hover:bg-white hover:shadow-lg transition-all group">
-                        <div class="w-10 h-10 rounded-lg bg-slate-100 text-[#0F172A] flex items-center justify-center mb-4 group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
+                    <a href="kargo-entegrasyonu.html"
+                        class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#0F172A] hover:bg-white hover:shadow-lg transition-all group">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-slate-100 text-[#0F172A] flex items-center justify-center mb-4 group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
                             <i data-lucide="truck" class="w-5 h-5"></i>
                         </div>
-                        <h3 class="font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors">Kargo Entegrasyonu</h3>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors">Kargo
+                            Entegrasyonu</h3>
                         <p class="text-xs text-slate-500 mt-1">Yurtiçi & Global kargo barkod ve takip entegrasyonu.</p>
                     </a>
 
                     <!-- Çözüm 3 -->
-                    <a href="pazaryeri-entegrasyonu.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-600 hover:bg-white hover:shadow-lg transition-all group">
-                        <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center mb-4 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                    <a href="pazaryeri-entegrasyonu.html"
+                        class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center mb-4 group-hover:bg-amber-600 group-hover:text-white transition-colors">
                             <i data-lucide="shopping-bag" class="w-5 h-5"></i>
                         </div>
-                        <h3 class="font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Pazar Yeri Entegrasyonu</h3>
-                        <p class="text-xs text-slate-500 mt-1">Trendyol ve Hepsiburada siparişlerini depodan yönetin.</p>
+                        <h3 class="font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Pazar Yeri
+                            Entegrasyonu</h3>
+                        <p class="text-xs text-slate-500 mt-1">Trendyol ve Hepsiburada siparişlerini depodan yönetin.
+                        </p>
                     </a>
 
                     <!-- Çözüm 4 -->
-                    <a href="mobil-b2b-bayi-platformu.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-600 hover:bg-white hover:shadow-lg transition-all group">
-                        <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                    <a href="mobil-b2b-bayi-platformu.html"
+                        class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
                             <i data-lucide="smartphone" class="w-5 h-5"></i>
                         </div>
-                        <h3 class="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Mobil B2B Bayi Platformu</h3>
+                        <h3 class="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Mobil B2B
+                            Bayi Platformu</h3>
                         <p class="text-xs text-slate-500 mt-1">Bayilerin mobil siparişlerini depoya anında aktarın.</p>
                     </a>
                 </div>
@@ -454,65 +546,91 @@
         <!-- ========================================================================= -->
         <section id="faq" class="py-16 bg-[#F8FAFC] border-b border-slate-200/80">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-                
+
                 <div class="text-center space-y-2">
-                    <h2 class="text-3xl font-extrabold text-slate-900">Sıkça Sorulan <span class="text-[#DC2626]">Sorular</span></h2>
-                    <p class="text-sm text-slate-600">Depo Kurdu mobil depo yönetim sistemi hakkında merak ettiğiniz tüm yanıtlar.</p>
+                    <h2 class="text-3xl font-extrabold text-slate-900">Sıkça Sorulan <span
+                            class="text-[#DC2626]">Sorular</span></h2>
+                    <p class="text-sm text-slate-600">Depo Kurdu mobil depo yönetim sistemi hakkında merak ettiğiniz tüm
+                        yanıtlar.</p>
                 </div>
 
-                <div class="space-y-4">
-                    <!-- Soru 1 -->
-                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
-                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4"> <!-- Soru 1 -->
+                    <details
+                        class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary
+                            class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
                             <span>Depo Kurdu hangi marka el terminallerini ve işletim sistemlerini destekler?</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                            <i data-lucide="chevron-down"
+                                class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
                         </summary>
                         <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-                            Depo Kurdu, Android tabanlı işletim sistemine sahip Zebra, Honeywell, Datalogic, CipherLab gibi piyasadaki tüm popüler endüstriyel el terminalleri ve el tipi barkod okuyucularla tam uyumlu çalışır.
+                            Depo Kurdu, Android tabanlı işletim sistemine sahip Zebra, Honeywell, Datalogic, CipherLab
+                            gibi piyasadaki tüm popüler endüstriyel el terminalleri ve el tipi barkod okuyucularla tam
+                            uyumlu çalışır.
                         </p>
                     </details>
 
                     <!-- Soru 2 -->
-                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
-                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                    <details
+                        class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary
+                            class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
                             <span>Wi-Fi çekmeyen depo alanlarında offline (çevrimdışı) çalışabilir mi?</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                            <i data-lucide="chevron-down"
+                                class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
                         </summary>
                         <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-                            Evet. Deponun bazı noktasında Wi-Fi sinyalinin zayıf olduğu durumlarda sistem çevrimdışı (offline) veri toplama modunu destekler. Bağlantı tekrar sağlandığında toplanan veriler güvenle merkeze aktarılır.
+                            Evet. Deponun bazı noktasında Wi-Fi sinyalinin zayıf olduğu durumlarda sistem çevrimdışı
+                            (offline) veri toplama modunu destekler. Bağlantı tekrar sağlandığında toplanan veriler
+                            güvenle merkeze aktarılır.
                         </p>
                     </details>
 
                     <!-- Soru 3 -->
-                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
-                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                    <details
+                        class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary
+                            class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
                             <span>DİA ERP ile veri senkronizasyonu anlık (canlı) mı gerçekleşir?</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                            <i data-lucide="chevron-down"
+                                class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
                         </summary>
                         <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-                            Evet. Depo Kurdu, DİA ERP altyapısı ile anlık olarak çift yönlü (real-time) haberleşir. El terminalinden yapılan her mal kabul veya sipariş toplama hareketi saniyesinde DİA ERP stoklarına yansır.
+                            Evet. Depo Kurdu, DİA ERP altyapısı ile anlık olarak çift yönlü (real-time) haberleşir. El
+                            terminalinden yapılan her mal kabul veya sipariş toplama hareketi saniyesinde DİA ERP
+                            stoklarına yansır.
                         </p>
                     </details>
 
                     <!-- Soru 4 -->
-                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
-                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                    <details
+                        class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary
+                            class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
                             <span>Seri No, Lot ve SKT takibi olan ürünler için uygun mudur?</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                            <i data-lucide="chevron-down"
+                                class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
                         </summary>
                         <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-                            Kesinlikle. Gıda, ilaç, kimya ve teknoloji sektörlerinde kritik önem taşıyan seri numarası, lot numarası ve son kullanma tarihi (SKT) takiplerini el terminalinden barkod okutarak kusursuz şekilde yönetebilirsiniz.
+                            Kesinlikle. Gıda, ilaç, kimya ve teknoloji sektörlerinde kritik önem taşıyan seri numarası,
+                            lot numarası ve son kullanma tarihi (SKT) takiplerini el terminalinden barkod okutarak
+                            kusursuz şekilde yönetebilirsiniz.
                         </p>
                     </details>
 
                     <!-- Soru 5 -->
-                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
-                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                    <details
+                        class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary
+                            class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
                             <span>Sayım esnasında depodaki mal giriş-çıkış hareketleri durdurulmalı mıdır?</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                            <i data-lucide="chevron-down"
+                                class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
                         </summary>
                         <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-                            Hayır. Depo Kurdu esnek sayım mimarisi sayesinde genel depo sayımı yapılırken bile lokasyon bazlı veya koridor bazlı sayımlar esnasında mal giriş-çıkış hareketlerine kontrollü şekilde devam edebilirsiniz.
+                            Hayır. Depo Kurdu esnek sayım mimarisi sayesinde genel depo sayımı yapılırken bile lokasyon
+                            bazlı veya koridor bazlı sayımlar esnasında mal giriş-çıkış hareketlerine kontrollü şekilde
+                            devam edebilirsiniz.
                         </p>
                     </details>
                 </div>
@@ -525,13 +643,16 @@
         <section id="referanslar" class="py-16 bg-white border-b border-slate-200/80">
             <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
                 <div class="text-center max-w-2xl mx-auto space-y-2">
-                    <h2 class="text-3xl font-extrabold text-slate-900">Müşterilerimiz <span class="text-[#DC2626]">Ne Diyor?</span></h2>
-                    <p class="text-sm text-slate-600">Depo ve lojistik süreçlerini Depo Kurdu ile otomatikleştiren firmaların görüşleri.</p>
+                    <h2 class="text-3xl font-extrabold text-slate-900">Müşterilerimiz <span class="text-[#DC2626]">Ne
+                            Diyor?</span></h2>
+                    <p class="text-sm text-slate-600">Depo ve lojistik süreçlerini Depo Kurdu ile otomatikleştiren
+                        firmaların görüşleri.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Yorum 1 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                    <div
+                        class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
                         <div class="space-y-3">
                             <div class="flex items-center gap-1 text-amber-400">
                                 <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
@@ -541,7 +662,9 @@
                                 <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
                             </div>
                             <p class="text-sm text-slate-600 italic leading-relaxed">
-                                "Depoda yanlış ürün sevkiyatı ve sayım farkları en büyük başa belamızdı. Depo Kurdu ve el terminallerine geçtikten sonra hata oranımız sıfırlandı, sevkiyat hızımız 3 katına çıktı."
+                                "Depoda yanlış ürün sevkiyatı ve sayım farkları en büyük başa belamızdı. Depo Kurdu ve
+                                el terminallerine geçtikten sonra hata oranımız sıfırlandı, sevkiyat hızımız 3 katına
+                                çıktı."
                             </p>
                         </div>
                         <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
@@ -551,7 +674,8 @@
                     </div>
 
                     <!-- Yorum 2 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                    <div
+                        class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
                         <div class="space-y-3">
                             <div class="flex items-center gap-1 text-amber-400">
                                 <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
@@ -561,7 +685,9 @@
                                 <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
                             </div>
                             <p class="text-sm text-slate-600 italic leading-relaxed">
-                                "DİA ERP ile anlık senkronizasyonu mükemmel çalışıyor. Mal kabulden rafa yerleştirmeye kadar her şey el terminaliyle yönetiliyor. Kompiturk ekibinin desteği için teşekkür ederiz."
+                                "DİA ERP ile anlık senkronizasyonu mükemmel çalışıyor. Mal kabulden rafa yerleştirmeye
+                                kadar her şey el terminaliyle yönetiliyor. Kompiturk ekibinin desteği için teşekkür
+                                ederiz."
                             </p>
                         </div>
                         <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
@@ -571,7 +697,8 @@
                     </div>
 
                     <!-- Yorum 3 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                    <div
+                        class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
                         <div class="space-y-3">
                             <div class="flex items-center gap-1 text-amber-400">
                                 <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
@@ -581,7 +708,8 @@
                                 <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
                             </div>
                             <p class="text-sm text-slate-600 italic leading-relaxed">
-                                "Lot ve SKT takipli ürünlerimizde son kullanma tarihi kontrollerini mobil olarak yapabilmek işimizi inanılmaz kolaylaştırdı. Kesinlikle tavsiye ediyorum."
+                                "Lot ve SKT takipli ürünlerimizde son kullanma tarihi kontrollerini mobil olarak
+                                yapabilmek işimizi inanılmaz kolaylaştırdı. Kesinlikle tavsiye ediyorum."
                             </p>
                         </div>
                         <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
@@ -599,46 +727,63 @@
         <section id="blog" class="py-16 bg-[#F8FAFC]">
             <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
                 <div class="text-center max-w-2xl mx-auto space-y-2">
-                    <h2 class="text-3xl font-extrabold text-slate-900">Depo Otomasyonu <span class="text-[#DC2626]">Rehberi & Makaleler</span></h2>
-                    <p class="text-sm text-slate-600">Depo operasyonlarınızı ve sevkiyat verimliliğinizi artıracak uzman içeriklerimiz.</p>
+                    <h2 class="text-3xl font-extrabold text-slate-900">Depo Otomasyonu <span
+                            class="text-[#DC2626]">Rehberi & Makaleler</span></h2>
+                    <p class="text-sm text-slate-600">Depo operasyonlarınızı ve sevkiyat verimliliğinizi artıracak uzman
+                        içeriklerimiz.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Makale 1 -->
-                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                    <article
+                        class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
                         <div class="p-6 space-y-3">
-                            <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded-md">HATASIZ SEVKİYAT</span>
-                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2">
+                            <span
+                                class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded-md">HATASIZ
+                                SEVKİYAT</span>
+                            <h3
+                                class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2">
                                 Depo Operasyonlarında Hatalı Sevkiyatları Sıfıra İndirmenin 5 Yolu
                             </h3>
                             <p class="text-xs text-slate-600 line-clamp-2">
-                                El terminali ve barkod doğrulama otomasyonu ile yanlış ürün gönderimlerini ve iadeleri önleme teknikleri.
+                                El terminali ve barkod doğrulama otomasyonu ile yanlış ürün gönderimlerini ve iadeleri
+                                önleme teknikleri.
                             </p>
                         </div>
                     </article>
 
                     <!-- Makale 2 -->
-                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                    <article
+                        class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
                         <div class="p-6 space-y-3">
-                            <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider bg-slate-100 px-2.5 py-1 rounded-md">SAYIM HIZI</span>
-                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors line-clamp-2">
+                            <span
+                                class="text-xs font-bold text-[#0F172A] uppercase tracking-wider bg-slate-100 px-2.5 py-1 rounded-md">SAYIM
+                                HIZI</span>
+                            <h3
+                                class="text-lg font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors line-clamp-2">
                                 El Terminali Kullanımının Depo Sayım Hızına Ve Doğruluğuna Etkisi
                             </h3>
                             <p class="text-xs text-slate-600 line-clamp-2">
-                                Kağıt tabanlı sayımlardan mobil el terminallerine geçişin işletmeye sağladığı devasa zaman tasarrufu.
+                                Kağıt tabanlı sayımlardan mobil el terminallerine geçişin işletmeye sağladığı devasa
+                                zaman tasarrufu.
                             </p>
                         </div>
                     </article>
 
                     <!-- Makale 3 -->
-                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                    <article
+                        class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
                         <div class="p-6 space-y-3">
-                            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider bg-amber-50 px-2.5 py-1 rounded-md">RAF VERİMLİLİĞİ</span>
-                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-amber-600 transition-colors line-clamp-2">
+                            <span
+                                class="text-xs font-bold text-amber-600 uppercase tracking-wider bg-amber-50 px-2.5 py-1 rounded-md">RAF
+                                VERİMLİLİĞİ</span>
+                            <h3
+                                class="text-lg font-bold text-slate-900 group-hover:text-amber-600 transition-colors line-clamp-2">
                                 Adresli Raf Sistemleri İle Depo Alan Verimliliğini Artırma Stratejileri
                             </h3>
                             <p class="text-xs text-slate-600 line-clamp-2">
-                                Koridor, raf ve göz bazlı lokasyon optimizasyonu ile depo depolama kapasitesini maksimuma çıkarma yolları.
+                                Koridor, raf ve göz bazlı lokasyon optimizasyonu ile depo depolama kapasitesini
+                                maksimuma çıkarma yolları.
                             </p>
                         </div>
                     </article>
@@ -657,4 +802,5 @@
         lucide.createIcons();
     </script>
 </body>
+
 </html>

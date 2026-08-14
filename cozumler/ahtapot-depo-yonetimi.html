@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahtapot Depo Yönetim Sistemi (WMS) | El Terminali & Barkod Otomasyonu | Kompiturk</title>
-    <meta name="description" content="Ahtapot Depo Yönetim Sistemi (WMS) ile depoda sıfır hata; adresli raf takibi, barkodlu mal kabul ve akıllı toplama süreçlerini DİA ERP entegrasyonuyla yönetin. Kompiturk.">
+    <meta name="description"
+        content="Ahtapot Depo Yönetim Sistemi (WMS) ile depoda sıfır hata; adresli raf takibi, barkodlu mal kabul ve akıllı toplama süreçlerini DİA ERP entegrasyonuyla yönetin. Kompiturk.">
 
     <!-- Google Fonts: Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -34,6 +37,7 @@
         }
     </script>
 </head>
+
 <body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
 
     <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
@@ -45,18 +49,25 @@
         <!-- ========================================================================= -->
         <!-- 1. HERO / BANNER SECTION (LACİVERT & KIRMIZI VURGULU ARKA PLAN)           -->
         <!-- ========================================================================= -->
-        <section id="module-hero" class="w-full bg-[#0F172A] text-white pt-2 pb-0 lg:pt-4 lg:pb-0 relative overflow-hidden z-20">
+        <section id="module-hero"
+            class="w-full bg-[#0F172A] text-white pt-2 pb-0 lg:pt-4 lg:pb-0 relative overflow-hidden z-20">
             <!-- Arka Plan Vektörel Desen & Kırmızı/Lacivert İşıltılar -->
-            <div class="absolute inset-0 bg-[radial-gradient(rgba(220,38,38,0.15)_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
-            <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#DC2626]/20 rounded-full blur-[130px] pointer-events-none"></div>
-            <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#1E3A8A]/40 rounded-full blur-[150px] pointer-events-none"></div>
+            <div
+                class="absolute inset-0 bg-[radial-gradient(rgba(220,38,38,0.15)_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none">
+            </div>
+            <div
+                class="absolute -top-32 -left-32 w-96 h-96 bg-[#DC2626]/20 rounded-full blur-[130px] pointer-events-none">
+            </div>
+            <div
+                class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#1E3A8A]/40 rounded-full blur-[150px] pointer-events-none">
+            </div>
 
             <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
 
                     <!-- SOL KOLON: İÇERİK VE VURGULAR (Col-span-7) -->
                     <div class="lg:col-span-7 space-y-6 text-left">
-                       
+
 
                         <!-- TEK H1 BAŞLIĞI -->
                         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
@@ -65,13 +76,16 @@
                         </h1>
 
                         <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl">
-                            Depo operasyonlarınızı el terminalleri ve barkod otomasyonu ile sıfır hatayla yönetin; mal kabulden adresli raf takibine, akıllı toplamadan sevkiyata kadar tüm süreçleri DİA ERP ile entegre izleyin.
+                            Depo operasyonlarınızı el terminalleri ve barkod otomasyonu ile sıfır hatayla yönetin; mal
+                            kabulden adresli raf takibine, akıllı toplamadan sevkiyata kadar tüm süreçleri DİA ERP ile
+                            entegre izleyin.
                         </p>
 
                         <!-- İkonlu Vurgu Maddeleri -->
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/15">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-[#DC2626] flex items-center justify-center flex-shrink-0">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-[#DC2626] flex items-center justify-center flex-shrink-0">
                                     <i data-lucide="map-pin" class="w-5 h-5"></i>
                                 </div>
                                 <span class="text-xs sm:text-sm font-bold text-white leading-snug">
@@ -80,7 +94,8 @@
                             </div>
 
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
                                     <i data-lucide="scan-barcode" class="w-5 h-5"></i>
                                 </div>
                                 <span class="text-xs sm:text-sm font-bold text-white leading-snug">
@@ -89,7 +104,8 @@
                             </div>
 
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-blue-300 flex items-center justify-center flex-shrink-0">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-blue-300 flex items-center justify-center flex-shrink-0">
                                     <i data-lucide="refresh-cw" class="w-5 h-5"></i>
                                 </div>
                                 <span class="text-xs sm:text-sm font-bold text-white leading-snug">
@@ -101,7 +117,11 @@
 
                     <!-- SAĞ KOLON: DEMO & BİLGİ FORMU KUTUSU (Col-span-5) -->
                     <div class="lg:col-span-5">
-                        <div class="bg-white rounded-2xl p-6 sm:p-8 text-slate-900 shadow-2xl border-2 border-[#DC2626]/40 relative overflow-hidden scale-[0.80] origin-top -mb-12 lg:-mb-20">                            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#0F1D38] via-[#DC2626] to-[#B91C1C]"></div>
+                        <div
+                            class="bg-white rounded-2xl p-6 sm:p-8 text-slate-900 shadow-2xl border-2 border-[#DC2626]/40 relative overflow-hidden scale-[0.80] origin-top -mb-12 lg:-mb-20">
+                            <div
+                                class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#0F1D38] via-[#DC2626] to-[#B91C1C]">
+                            </div>
 
                             <div class="border-b border-slate-100 pb-4 mb-5 pt-1">
                                 <h2 class="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
@@ -109,47 +129,61 @@
                                     Ahtapot WMS Demo & Teklif Alın
                                 </h2>
                                 <p class="text-xs text-slate-500 mt-1">
-                                    Depo operasyonlarınızı hızlandırmak için hemen bilgilerinizi bırakın, uzmanımız arasın.
+                                    Depo operasyonlarınızı hızlandırmak için hemen bilgilerinizi bırakın, uzmanımız
+                                    arasın.
                                 </p>
                             </div>
 
                             <form action="#" method="POST" class="space-y-4" onsubmit="event.preventDefault();">
                                 <div class="space-y-1">
-                                    <label for="fullname" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                    <label for="fullname"
+                                        class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                         Ad Soyad <span class="text-[#DC2626]">*</span>
                                     </label>
-                                    <input type="text" id="fullname" name="fullname" required placeholder="Örn: Ahmet Yılmaz" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    <input type="text" id="fullname" name="fullname" required
+                                        placeholder="Örn: Ahmet Yılmaz"
+                                        class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
                                 </div>
 
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div class="space-y-1">
-                                        <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        <label for="phone"
+                                            class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                             Telefon <span class="text-[#DC2626]">*</span>
                                         </label>
-                                        <input type="tel" id="phone" name="phone" required placeholder="05XX XXX XX XX" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                        <input type="tel" id="phone" name="phone" required placeholder="05XX XXX XX XX"
+                                            class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
                                     </div>
 
                                     <div class="space-y-1">
-                                        <label for="company" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                        <label for="company"
+                                            class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                             Şirket Adı
                                         </label>
-                                        <input type="text" id="company" name="company" placeholder="Firma Ünvanı" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                        <input type="text" id="company" name="company" placeholder="Firma Ünvanı"
+                                            class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
                                     </div>
                                 </div>
 
                                 <div class="space-y-1">
-                                    <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                    <label for="email"
+                                        class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                         E-Posta Adresi <span class="text-[#DC2626]">*</span>
                                     </label>
-                                    <input type="email" id="email" name="email" required placeholder="ahmet@sirketiniz.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
+                                    <input type="email" id="email" name="email" required
+                                        placeholder="ahmet@sirketiniz.com"
+                                        class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
                                 </div>
 
-                                <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-[#DC2626] hover:bg-[#b91c1c] text-white font-extrabold text-base shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:scale-[1.005] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer border border-red-400/30">
+                                <button type="submit"
+                                    class="w-full py-3.5 px-6 rounded-xl bg-[#DC2626] hover:bg-[#b91c1c] text-white font-extrabold text-base shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:scale-[1.005] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer border border-red-400/30">
                                     <span>Hemen Bilgi & Teklif İsteyin</span>
-                                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                                    <i data-lucide="arrow-right"
+                                        class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
                                 </button>
 
-                                <p class="text-[11px] text-center text-slate-400 mt-2 flex items-center justify-center gap-1">
+                                <p
+                                    class="text-[11px] text-center text-slate-400 mt-2 flex items-center justify-center gap-1">
                                     <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
                                     Verileriniz KVKK kapsamında %100 güvende tutulmaktadır.
                                 </p>
@@ -164,95 +198,120 @@
         <!-- ========================================================================= -->
         <!-- 2. AHTAPOT WMS DEPO YETENEKLERİ (3x2 GRID KARTLAR)                        -->
         <!-- ========================================================================= -->
-        <section id="ahtapot-wms-ozellikler" class="py-10 lg:py-10 bg-[#F8FAFC] border-b border-slate-200/80">
+        <section id="ahtapot-wms-ozellikler" class="py-8 lg:py-8 bg-[#F8FAFC] border-b border-slate-200/80">
             <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
-                <div class="text-center max-w-3xl mx-auto space-y-3">
-                   
+                <div class="text-center max-w-5xl mx-auto">
+
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
                         Ahtapot WMS Depo <span class="text-[#DC2626]">Yetenekleri</span>
                     </h2>
                     <p class="text-base text-slate-600 font-normal">
-                        Depo içi hareketleri el terminali kılavuzluğunda optimize eden, kayıp ve hataları önleyen endüstriyel çözüm.
+                        Depo içi hareketleri el terminali kılavuzluğunda optimize eden, kayıp ve hataları önleyen
+                        endüstriyel çözüm.
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
 
                     <!-- Kart 1: Adresli ve Raflı Depo Yönetimi -->
-                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                    <div
+                        class="bg-white p-3 m-1 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] hover:-translate-y-1 transition-all group flex flex-col justify-between">
                         <div class="space-y-4">
-                            <div class="w-14 h-14 rounded-2xl bg-red-50 text-[#DC2626] flex items-center justify-center group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-red-50 text-[#DC2626] flex items-center justify-center group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
                                 <i data-lucide="map-pinned" class="w-7 h-7"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Adresli & Raflı Depo Yönetimi</h3>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">
+                                Adresli & Raflı Depo Yönetimi</h3>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                Koridor, raf, kat ve göz detayında stok takibi; ürünlerin depodaki kesin konumunu anlık görme ve kayıp ürünleri tarihe gömme.
+                                Koridor, raf, kat ve göz detayında stok takibi; ürünlerin depodaki kesin konumunu anlık
+                                görme ve kayıp ürünleri tarihe gömme.
                             </p>
                         </div>
                     </div>
 
                     <!-- Kart 2: Barkodlu El Terminali Operasyonları -->
-                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0F172A] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                    <div
+                        class="bg-white p-3 m-1 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0F172A] hover:-translate-y-1 transition-all group flex flex-col justify-between">
                         <div class="space-y-4">
-                            <div class="w-14 h-14 rounded-2xl bg-slate-100 text-[#0F172A] flex items-center justify-center group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-slate-100 text-[#0F172A] flex items-center justify-center group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
                                 <i data-lucide="scan-barcode" class="w-7 h-7"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors">Barkodlu El Terminali Operasyonları</h3>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors">
+                                Barkodlu El Terminali Operasyonları</h3>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                Mal kabul, hızlı mal toplama, depo içi stok transferi ve barkodlu sevkiyatı Android el terminalleri üzerinden yönetme.
+                                Mal kabul, hızlı mal toplama, depo içi stok transferi ve barkodlu sevkiyatı Android el
+                                terminalleri üzerinden yönetme.
                             </p>
                         </div>
                     </div>
 
                     <!-- Kart 3: Akıllı Sipariş Toplama (Picking) ve Rotalama -->
-                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                    <div
+                        class="bg-white p-3 m-1 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
                         <div class="space-y-4">
-                            <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
                                 <i data-lucide="route" class="w-7 h-7"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Akıllı Sipariş Toplama (Picking)</h3>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors">
+                                Akıllı Sipariş Toplama (Picking)</h3>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                Siparişleri depodaki en kısa yürüme rotasına göre optimize ederek toplama, depo içinde gereksiz tur atmayı ve hatalı ürün alımını engelleme.
+                                Siparişleri depodaki en kısa yürüme rotasına göre optimize ederek toplama, depo içinde
+                                gereksiz tur atmayı ve hatalı ürün alımını engelleme.
                             </p>
                         </div>
                     </div>
 
                     <!-- Kart 4: Parti, Lot, SKT ve Seri No Takibi -->
-                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                    <div
+                        class="bg-white p-3 m-1 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
                         <div class="space-y-4">
-                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
                                 <i data-lucide="calendar-clock" class="w-7 h-7"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Parti, Lot, SKT & Seri No Takibi</h3>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">
+                                Parti, Lot, SKT & Seri No Takibi</h3>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                Son kullanma tarihi hassas gıda/ilaç veya seri no takipli elektronik ürünlerin üretimden sevkiyata uçtan uca izlenebilirliği.
+                                Son kullanma tarihi hassas gıda/ilaç veya seri no takipli elektronik ürünlerin üretimden
+                                sevkiyata uçtan uca izlenebilirliği.
                             </p>
                         </div>
                     </div>
 
                     <!-- Kart 5: Depo Transfer ve Anlık Hızlı Sayım -->
-                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-purple-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                    <div
+                        class="bg-white p-3 m-1 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-purple-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
                         <div class="space-y-4">
-                            <div class="w-14 h-14 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
                                 <i data-lucide="clipboard-check" class="w-7 h-7"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-purple-600 transition-colors">Depo Transfer & Hızlı Sayım</h3>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-purple-600 transition-colors">
+                                Depo Transfer & Hızlı Sayım</h3>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                Merkez ve şube depoları arası onaylı transfer işlemleri ve lokasyon bazlı hızlı barkodlu kör/genel depo sayımları.
+                                Merkez ve şube depoları arası onaylı transfer işlemleri ve lokasyon bazlı hızlı barkodlu
+                                kör/genel depo sayımları.
                             </p>
                         </div>
                     </div>
 
                     <!-- Kart 6: Otomatik Etiket ve Barkod Basımı -->
-                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-cyan-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                    <div
+                        class="bg-white p-3 m-1 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-cyan-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
                         <div class="space-y-4">
-                            <div class="w-14 h-14 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
                                 <i data-lucide="printer" class="w-7 h-7"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-cyan-600 transition-colors">Otomatik Etiket & Barkod Basımı</h3>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-cyan-600 transition-colors">
+                                Otomatik Etiket & Barkod Basımı</h3>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                Mal kabul anında raf, koli ve ürün barkod etiketlerini el terminali üzerinden doğrudan Bluetooth/Wi-Fi yazıcılara gönderip basma.
+                                Mal kabul anında raf, koli ve ürün barkod etiketlerini el terminali üzerinden doğrudan
+                                Bluetooth/Wi-Fi yazıcılara gönderip basma.
                             </p>
                         </div>
                     </div>
@@ -264,18 +323,20 @@
         <!-- ========================================================================= -->
         <!-- 3. NEDEN Kompiturk AHTAPOT WMS? (KIRMIZI ACCENT BÖLÜMÜ)                   -->
         <!-- ========================================================================= -->
-        <section id="neden-Kompiturk-ahtapot" class="py-6 lg:py-10 bg-[#DC2626] text-white">
+        <section id="neden-Kompiturk-ahtapot" class="py-6 lg:py-8 bg-[#DC2626] text-white">
             <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    
+
                     <div class="space-y-6">
-                        
+
                         <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
                             Neden Kompiturk <br />
                             Ahtapot WMS Çözümü?
                         </h2>
                         <p class="text-red-100 text-base leading-relaxed">
-                            Yanlış ürün ve eksik paket gönderimlerini tamamen sıfırlayan, depo operasyon hızını ve sevkiyat kapasitesini %300 artıran endüstriyel WMS otomasyonu ile lojistik maliyetlerinizi düşürün.
+                            Yanlış ürün ve eksik paket gönderimlerini tamamen sıfırlayan, depo operasyon hızını ve
+                            sevkiyat kapasitesini %300 artıran endüstriyel WMS otomasyonu ile lojistik maliyetlerinizi
+                            düşürün.
                         </p>
                         <div class="space-y-3 text-sm font-semibold text-white">
                             <div class="flex items-center gap-3">
@@ -284,27 +345,32 @@
                             </div>
                             <div class="flex items-center gap-3">
                                 <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
-                                <span>Depo içi toplama ve sevk sürelerini kısaltarak sevkiyat hızını 3 katına çıkarın</span>
+                                <span>Depo içi toplama ve sevk sürelerini kısaltarak sevkiyat hızını 3 katına
+                                    çıkarın</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
-                                <span>Adresli raf sistemiyle depo metrekare verimliliğini maksimum düzeyde kullanın</span>
+                                <span>Adresli raf sistemiyle depo metrekare verimliliğini maksimum düzeyde
+                                    kullanın</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Sağ Taraf İstatistik Paneli -->
-                    <div class="bg-[#0F172A] text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-red-500/30 space-y-6">
+                    <div
+                        class="bg-[#0F172A] text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-red-500/30 space-y-6">
                         <div class="border-b border-slate-800 pb-5">
                             <div class="text-4xl font-black text-[#DC2626]">%300</div>
                             <div class="text-sm font-bold text-slate-200 mt-1">Depo Operasyon Hızında Artış</div>
-                            <p class="text-xs text-slate-400 mt-1">El terminali rotalaması sayesinde garson usulü arama dönemi kapanır, süreler kısalır.</p>
+                            <p class="text-xs text-slate-400 mt-1">El terminali rotalaması sayesinde garson usulü arama
+                                dönemi kapanır, süreler kısalır.</p>
                         </div>
 
                         <div>
                             <div class="text-4xl font-black text-white">Sıfır Hata</div>
                             <div class="text-sm font-bold text-slate-200 mt-1">Paketleme & Sevkiyat Doğrulaması</div>
-                            <p class="text-xs text-slate-400 mt-1">Barkod okutmadan koli kapatma ve sevk etmeye izin vermeyen güvenlik mimarisi.</p>
+                            <p class="text-xs text-slate-400 mt-1">Barkod okutmadan koli kapatma ve sevk etmeye izin
+                                vermeyen güvenlik mimarisi.</p>
                         </div>
                     </div>
 
@@ -315,11 +381,11 @@
         <!-- ========================================================================= -->
         <!-- 4. 4 ADIMDA WMS DEPO OTOMASYONU KURULUMU                                  -->
         <!-- ========================================================================= -->
-        <section id="wms-adimlari" class="py-16 lg:py-14 bg-[#F8FAFC] border-b border-slate-200/80">
+        <section id="wms-adimlari" class="py-8 lg:py-14 bg-[#F8FAFC] border-b border-slate-200/80">
             <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-                
-                <div class="text-center max-w-3xl mx-auto space-y-3">
-                    
+
+                <div class="text-center max-w-5xl mx-auto">
+
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
                         4 Adımda WMS Depo <span class="text-[#DC2626]">Otomasyonu Kurulumu</span>
                     </h2>
@@ -331,65 +397,80 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
 
                     <!-- Adım 1 -->
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] transition-all flex flex-col justify-between relative overflow-hidden group">
+                    <div
+                        class="bg-white p-4 m-2 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] transition-all flex flex-col justify-between relative overflow-hidden group">
                         <div class="space-y-4">
                             <div class="flex items-center justify-between">
-                                <div class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center font-extrabold">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center font-extrabold">
                                     <i data-lucide="map-pin" class="w-5 h-5"></i>
                                 </div>
-                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#DC2626] transition-colors">01</span>
+                                <span
+                                    class="text-2xl font-black text-slate-300 group-hover:text-[#DC2626] transition-colors">01</span>
                             </div>
                             <h3 class="text-lg font-bold text-slate-900">Raf & Adres Haritalaması</h3>
                             <p class="text-xs text-slate-600 leading-relaxed">
-                                Deponun koridor, raf ve göz planı çıkarılarak etiketlenir ve barkodlu adres haritası oluşturulur.
+                                Deponun koridor, raf ve göz planı çıkarılarak etiketlenir ve barkodlu adres haritası
+                                oluşturulur.
                             </p>
                         </div>
                     </div>
 
                     <!-- Adım 2 -->
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0F172A] transition-all flex flex-col justify-between relative overflow-hidden group">
+                    <div
+                        class="bg-white p-4 m-2 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#0F172A] transition-all flex flex-col justify-between relative overflow-hidden group">
                         <div class="space-y-4">
                             <div class="flex items-center justify-between">
-                                <div class="w-10 h-10 rounded-lg bg-slate-100 text-[#0F172A] flex items-center justify-center font-extrabold">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-slate-100 text-[#0F172A] flex items-center justify-center font-extrabold">
                                     <i data-lucide="tablet" class="w-5 h-5"></i>
                                 </div>
-                                <span class="text-2xl font-black text-slate-300 group-hover:text-[#0F172A] transition-colors">02</span>
+                                <span
+                                    class="text-2xl font-black text-slate-300 group-hover:text-[#0F172A] transition-colors">02</span>
                             </div>
                             <h3 class="text-lg font-bold text-slate-900">El Terminali Kurulumu</h3>
                             <p class="text-xs text-slate-600 leading-relaxed">
-                                Android el terminallerine Ahtapot WMS mobil uygulaması yüklenip Wi-Fi optimizasyonları yapılır.
+                                Android el terminallerine Ahtapot WMS mobil uygulaması yüklenip Wi-Fi optimizasyonları
+                                yapılır.
                             </p>
                         </div>
                     </div>
 
                     <!-- Adım 3 -->
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-600 transition-all flex flex-col justify-between relative overflow-hidden group">
+                    <div
+                        class="bg-white p-4 m-2 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-600 transition-all flex flex-col justify-between relative overflow-hidden group">
                         <div class="space-y-4">
                             <div class="flex items-center justify-between">
-                                <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center font-extrabold">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center font-extrabold">
                                     <i data-lucide="refresh-cw" class="w-5 h-5"></i>
                                 </div>
-                                <span class="text-2xl font-black text-slate-300 group-hover:text-amber-600 transition-colors">03</span>
+                                <span
+                                    class="text-2xl font-black text-slate-300 group-hover:text-amber-600 transition-colors">03</span>
                             </div>
                             <h3 class="text-lg font-bold text-slate-900">DİA ERP Entegrasyonu</h3>
                             <p class="text-xs text-slate-600 leading-relaxed">
-                                WMS yazılımı ile DİA ERP arasında çift yönlü stok ve sipariş aktarım köprüsü test edilip devreye alınır.
+                                WMS yazılımı ile DİA ERP arasında çift yönlü stok ve sipariş aktarım köprüsü test edilip
+                                devreye alınır.
                             </p>
                         </div>
                     </div>
 
                     <!-- Adım 4 -->
-                    <div class="bg-white p-6 rounded-2xl border-2 border-emerald-500/80 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between relative overflow-hidden group">
+                    <div
+                        class="bg-white p-4 m-2 rounded-2xl border-2 border-emerald-500/80 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between relative overflow-hidden group">
                         <div class="space-y-4">
                             <div class="flex items-center justify-between">
-                                <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-extrabold">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-extrabold">
                                     <i data-lucide="rocket" class="w-5 h-5"></i>
                                 </div>
                                 <span class="text-2xl font-black text-emerald-500">04</span>
                             </div>
                             <h3 class="text-lg font-bold text-slate-900">Canlı Operasyon Başlangıcı</h3>
                             <p class="text-xs text-slate-600 leading-relaxed">
-                                Personel eğitimlerinin ardından mal kabul, akıllı toplama ve barkodlu sevkiyat süreçleri başlatılır.
+                                Personel eğitimlerinin ardından mal kabul, akıllı toplama ve barkodlu sevkiyat süreçleri
+                                başlatılır.
                             </p>
                         </div>
                     </div>
@@ -401,50 +482,64 @@
         <!-- ========================================================================= -->
         <!-- 5. BİRLİKTE KULLANABİLECEĞİNİZ DİĞER ÇÖZÜMLERİMİZ                         -->
         <!-- ========================================================================= -->
-        <section id="tamamlayici-cozumler" class="py-16 bg-white border-b border-slate-200/80">
+        <section id="tamamlayici-cozumler" class="py-8 bg-white border-b border-slate-200/80">
             <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-                <div class="text-center max-w-2xl mx-auto space-y-2">
+                <div class="text-center max-w-5xl mx-auto">
                     <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
                         Birlikte Kullanabileceğiniz <span class="text-[#DC2626]">Diğer Çözümlerimiz</span>
                     </h2>
-                    <p class="text-sm text-slate-600">Depo otomasyonunuzu destekleyen diğer entegre DİA ve Kompiturk yazılımları.</p>
+                    <p class="text-sm text-slate-600">Depo otomasyonunuzu destekleyen diğer entegre DİA ve Kompiturk
+                        yazılımları.</p>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Çözüm 1 -->
-                    <a href="pazaryeri-entegrasyonu.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#DC2626] hover:bg-white hover:shadow-lg transition-all group">
-                        <div class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center mb-4 group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                    <a href="pazaryeri-entegrasyonu.html"
+                        class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#DC2626] hover:bg-white hover:shadow-lg transition-all group">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center mb-4 group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
                             <i data-lucide="shopping-bag" class="w-5 h-5"></i>
                         </div>
-                        <h3 class="font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Pazar Yeri Entegrasyonu</h3>
-                        <p class="text-xs text-slate-500 mt-1">Trendyol siparişlerini depoda el terminaliyle toplayın.</p>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Pazar Yeri
+                            Entegrasyonu</h3>
+                        <p class="text-xs text-slate-500 mt-1">Trendyol siparişlerini depoda el terminaliyle toplayın.
+                        </p>
                     </a>
 
                     <!-- Çözüm 2 -->
-                    <a href="mobil-b2b-bayi-platformu.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#0F172A] hover:bg-white hover:shadow-lg transition-all group">
-                        <div class="w-10 h-10 rounded-lg bg-slate-100 text-[#0F172A] flex items-center justify-center mb-4 group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
+                    <a href="mobil-b2b-bayi-platformu.html"
+                        class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#0F172A] hover:bg-white hover:shadow-lg transition-all group">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-slate-100 text-[#0F172A] flex items-center justify-center mb-4 group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
                             <i data-lucide="smartphone" class="w-5 h-5"></i>
                         </div>
-                        <h3 class="font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors">Mobil B2B Bayi Platformu</h3>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors">Mobil B2B 
+                            Platformu</h3>
                         <p class="text-xs text-slate-500 mt-1">Bayilerin mobil siparişlerini depoya anında aktarın.</p>
                     </a>
 
                     <!-- Çözüm 3 -->
-                    <a href="../dia-erp/dia-e-donusum.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-600 hover:bg-white hover:shadow-lg transition-all group">
-                        <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center mb-4 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                    <a href="../cozumler/kargo-entegrasyonu.html"
+                        class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center mb-4 group-hover:bg-amber-600 group-hover:text-white transition-colors">
                             <i data-lucide="truck" class="w-5 h-5"></i>
                         </div>
-                        <h3 class="font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Kargo Entegrasyonu</h3>
+                        <h3 class="font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Kargo
+                            Entegrasyonu</h3>
                         <p class="text-xs text-slate-500 mt-1">Sevkiyat anında kargo barkod etiketlerinin basımı.</p>
                     </a>
 
                     <!-- Çözüm 4 -->
-                    <a href="../dia-erp/dia-on-muhasebe.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-600 hover:bg-white hover:shadow-lg transition-all group">
-                        <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                    <a href="../cozumler/net-tahsilat.html"
+                        class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
                             <i data-lucide="credit-card" class="w-5 h-5"></i>
                         </div>
-                        <h3 class="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Sanal POS</h3>
-                        <p class="text-xs text-slate-500 mt-1">Online linkle ödeme ve sanal POS tahsilat altyapısı.</p>
+                        <h3 class="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Sanal POS & Banka Ödeme
+                        </h3>
+                        <p class="text-xs text-slate-500 mt-1">SMS ve WhatsApp ile linkle ödeme toplama, taksit imkanı ve ERP cari hesabına otomatik işleme..</p>
                     </a>
                 </div>
             </div>
@@ -453,67 +548,92 @@
         <!-- ========================================================================= -->
         <!-- 6. SIKÇA SORULAN SORULAR (SEO FAQ - HTML5 ACCORDION)                     -->
         <!-- ========================================================================= -->
-        <section id="faq" class="py-16 bg-[#F8FAFC] border-b border-slate-200/80">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-                
+        <section id="faq" class="py-8 bg-[#F8FAFC] border-b border-slate-200/80">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+
                 <div class="text-center space-y-2">
-                    <h2 class="text-3xl font-extrabold text-slate-900">Sıkça Sorulan <span class="text-[#DC2626]">Sorular</span></h2>
-                    <p class="text-sm text-slate-600">Ahtapot Depo Yönetim Sistemi (WMS) hakkında merak ettiğiniz tüm yanıtlar.</p>
+                    <h2 class="text-3xl font-extrabold text-slate-900">Sıkça Sorulan <span
+                            class="text-[#DC2626]">Sorular</span></h2>
+                    <p class="text-sm text-slate-600">Ahtapot Depo Yönetim Sistemi (WMS) hakkında merak ettiğiniz tüm
+                        yanıtlar.</p>
                 </div>
 
-                <div class="space-y-4">
-                    <!-- Soru 1 -->
-                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
-                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start"> <!-- Soru 1 -->
+                    <details
+                        class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary
+                            class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
                             <span>Ahtapot WMS hangi marka el terminalleri ve barkod okuyucularla çalışır?</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                            <i data-lucide="chevron-down"
+                                class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
                         </summary>
                         <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-                            Ahtapot WMS, Android işletim sistemine sahip Zebra, Honeywell, CipherLab, Datalogic gibi piyasadaki tüm popüler endüstriyel el terminalleri ve kablosuz barkod okuyucularla tam uyumlu çalışır.
+                            Ahtapot WMS, Android işletim sistemine sahip Zebra, Honeywell, CipherLab, Datalogic gibi
+                            piyasadaki tüm popüler endüstriyel el terminalleri ve kablosuz barkod okuyucularla tam
+                            uyumlu çalışır.
                         </p>
                     </details>
 
                     <!-- Soru 2 -->
-                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
-                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                    <details
+                        class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary
+                            class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
                             <span>Yanlış ürün toplandığında sistem kullanıcıyı nasıl uyarır?</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                            <i data-lucide="chevron-down"
+                                class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
                         </summary>
                         <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-                            Sipariş toplama (picking) esnasında garson veya toplayıcı yanlış bir ürünün barkodunu okuttuğunda veya yanlış rafa gittiğinde el terminali sesli/titreşimli olarak uyarı verir ve doğru ürün okutulana kadar işleme izin vermez.
+                            Sipariş toplama (picking) esnasında garson veya toplayıcı yanlış bir ürünün barkodunu
+                            okuttuğunda veya yanlış rafa gittiğinde el terminali sesli/titreşimli olarak uyarı verir ve
+                            doğru ürün okutulana kadar işleme izin vermez.
                         </p>
                     </details>
 
                     <!-- Soru 3 -->
-                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
-                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                    <details
+                        class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary
+                            class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
                             <span>Birden fazla depo veya şube aynı WMS sistemi üzerinden yönetilebilir mi?</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                            <i data-lucide="chevron-down"
+                                class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
                         </summary>
                         <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-                            Evet. Aynı lisans altında ana depo, şube depoları, konsinye depolar veya fason depolar gibi sınırsız sayıda farklı depo lokasyonu adresli olarak tek WMS ekranından yönetilebilir.
+                            Evet. Aynı lisans altında ana depo, şube depoları, konsinye depolar veya fason depolar gibi
+                            sınırsız sayıda farklı depo lokasyonu adresli olarak tek WMS ekranından yönetilebilir.
                         </p>
                     </details>
 
                     <!-- Soru 4 -->
-                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
-                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                    <details
+                        class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary
+                            class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
                             <span>Mal kabul anında otomatik barkod etiketi yazdırılabilir mi?</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                            <i data-lucide="chevron-down"
+                                class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
                         </summary>
                         <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-                            Evet. Tedarikçiden gelen ürünler mal kabul sırasında el terminali ile okutulduğunda, barkodsuz ürünler için anında raf/koli etiketi Bluetooth mobil yazıcılardan otomatik olarak basılabilir.
+                            Evet. Tedarikçiden gelen ürünler mal kabul sırasında el terminali ile okutulduğunda,
+                            barkodsuz ürünler için anında raf/koli etiketi Bluetooth mobil yazıcılardan otomatik olarak
+                            basılabilir.
                         </p>
                     </details>
 
                     <!-- Soru 5 -->
-                    <details class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
-                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
+                    <details
+                        class="group bg-white rounded-2xl border border-slate-200 p-6 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
+                        <summary
+                            class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
                             <span>Ahtapot WMS DİA ERP ile anlık mı yoksa periyodik mi eşitlenir?</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                            <i data-lucide="chevron-down"
+                                class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
                         </summary>
                         <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-                            Ahtapot WMS, DİA ERP ile anlık (real-time) olarak çift yönlü senkronize çalışır. El terminalinden yapılan her mal kabul veya sevkiyat hareketi saniyesinde DİA ERP stoklarına yansır.
+                            Ahtapot WMS, DİA ERP ile anlık (real-time) olarak çift yönlü senkronize çalışır. El
+                            terminalinden yapılan her mal kabul veya sevkiyat hareketi saniyesinde DİA ERP stoklarına
+                            yansır.
                         </p>
                     </details>
                 </div>
@@ -523,16 +643,19 @@
         <!-- ========================================================================= -->
         <!-- 7. MÜŞTERİ YORUMLARI & REFERANSLAR (3 KART)                                -->
         <!-- ========================================================================= -->
-        <section id="referanslar" class="py-16 bg-white border-b border-slate-200/80">
+        <section id="referanslar" class="py-8 bg-white border-b border-slate-200/80">
             <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-                <div class="text-center max-w-2xl mx-auto space-y-2">
-                    <h2 class="text-3xl font-extrabold text-slate-900">Müşterilerimiz <span class="text-[#DC2626]">Ne Diyor?</span></h2>
-                    <p class="text-sm text-slate-600">Depo operasyonlarını Ahtapot WMS ile sıfır hataya indiren lojistik ve toptancı firmaların görüşleri.</p>
+                <div class="text-center max-w-5xl mx-auto">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Müşterilerimiz <span class="text-[#DC2626]">Ne
+                            Diyor?</span></h2>
+                    <p class="text-sm text-slate-600">Depo operasyonlarını Ahtapot WMS ile sıfır hataya indiren lojistik
+                        ve toptancı firmaların görüşleri.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Yorum 1 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                    <div
+                        class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
                         <div class="space-y-3">
                             <div class="flex items-center gap-1 text-amber-400">
                                 <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
@@ -542,7 +665,9 @@
                                 <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
                             </div>
                             <p class="text-sm text-slate-600 italic leading-relaxed">
-                                "5.000 metrekarelik depomuzda binlerce kalem ürün var. Ahtapot WMS ve el terminalleri sayesinde yanlış ürün sevkiyatı oranımız %0'a indi. Depo sevkiyat hızımız 3 katına çıktı."
+                                "5.000 metrekarelik depomuzda binlerce kalem ürün var. Ahtapot WMS ve el terminalleri
+                                sayesinde yanlış ürün sevkiyatı oranımız %0'a indi. Depo sevkiyat hızımız 3 katına
+                                çıktı."
                             </p>
                         </div>
                         <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
@@ -552,7 +677,8 @@
                     </div>
 
                     <!-- Yorum 2 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                    <div
+                        class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
                         <div class="space-y-3">
                             <div class="flex items-center gap-1 text-amber-400">
                                 <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
@@ -562,7 +688,8 @@
                                 <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
                             </div>
                             <p class="text-sm text-slate-600 italic leading-relaxed">
-                                "Adresli raf sistemi ve akıllı toplama rotalaması personelin depoda boşuna yürümesini engelliyor. Mal kabulden sevk noktasına kadar her şey barkodla kontrol altında."
+                                "Adresli raf sistemi ve akıllı toplama rotalaması personelin depoda boşuna yürümesini
+                                engelliyor. Mal kabulden sevk noktasına kadar her şey barkodla kontrol altında."
                             </p>
                         </div>
                         <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
@@ -572,7 +699,8 @@
                     </div>
 
                     <!-- Yorum 3 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
+                    <div
+                        class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4 flex flex-col justify-between">
                         <div class="space-y-3">
                             <div class="flex items-center gap-1 text-amber-400">
                                 <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
@@ -582,7 +710,9 @@
                                 <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
                             </div>
                             <p class="text-sm text-slate-600 italic leading-relaxed">
-                                "DİA ERP ile anlık senkronizasyonu mükemmel. El terminalinden yapılan sayımlar ve transferler saniyesinde merkeze yansıyor. Kompiturk ekibine profesyonel kurulum için teşekkür ederiz."
+                                "DİA ERP ile anlık senkronizasyonu mükemmel. El terminalinden yapılan sayımlar ve
+                                transferler saniyesinde merkeze yansıyor. Kompiturk ekibine profesyonel kurulum için
+                                teşekkür ederiz."
                             </p>
                         </div>
                         <div class="pt-4 border-t border-slate-200/60 flex items-center justify-between">
@@ -597,49 +727,66 @@
         <!-- ========================================================================= -->
         <!-- 8. BLOG YAZILARIMIZ (3 KART)                                              -->
         <!-- ========================================================================= -->
-        <section id="blog" class="py-16 bg-[#F8FAFC]">
+        <section id="blog" class="py-8 bg-[#F8FAFC]">
             <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-                <div class="text-center max-w-2xl mx-auto space-y-2">
-                    <h2 class="text-3xl font-extrabold text-slate-900">Depo Otomasyonu <span class="text-[#DC2626]">Rehberi & Makaleler</span></h2>
-                    <p class="text-sm text-slate-600">Depo operasyonlarınızı ve sevkiyat verimliliğinizi artıracak uzman içeriklerimiz.</p>
+                <div class="text-center max-w-5xl mx-auto">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Depo Otomasyonu <span
+                            class="text-[#DC2626]">Rehberi & Makaleler</span></h2>
+                    <p class="text-sm text-slate-600">Depo operasyonlarınızı ve sevkiyat verimliliğinizi artıracak uzman
+                        içeriklerimiz.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Makale 1 -->
-                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                    <article
+                        class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
                         <div class="p-6 space-y-3">
-                            <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded-md">SEVKİYAT HIZI</span>
-                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2">
+                            <span
+                                class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded-md">SEVKİYAT
+                                HIZI</span>
+                            <h3
+                                class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2">
                                 Depo Operasyonlarında Hatalı Sevkiyatı Sıfıra İndirmenin 5 Yolu
                             </h3>
                             <p class="text-xs text-slate-600 line-clamp-2">
-                                El terminali ve barkod doğrulama otomasyonu ile yanlış ürün gönderimlerini ve müşteri iadelerini önleme teknikleri.
+                                El terminali ve barkod doğrulama otomasyonu ile yanlış ürün gönderimlerini ve müşteri
+                                iadelerini önleme teknikleri.
                             </p>
                         </div>
                     </article>
 
                     <!-- Makale 2 -->
-                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                    <article
+                        class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
                         <div class="p-6 space-y-3">
-                            <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider bg-slate-100 px-2.5 py-1 rounded-md">ALAN VERİMLİLİĞİ</span>
-                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors line-clamp-2">
+                            <span
+                                class="text-xs font-bold text-[#0F172A] uppercase tracking-wider bg-slate-100 px-2.5 py-1 rounded-md">ALAN
+                                VERİMLİLİĞİ</span>
+                            <h3
+                                class="text-lg font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors line-clamp-2">
                                 Adresli Depo Yönetimi (WMS) İle Alan Verimliliğini Artırma
                             </h3>
                             <p class="text-xs text-slate-600 line-clamp-2">
-                                Koridor, raf ve göz bazlı lokasyon optimizasyonu ile depo depolama kapasitesini maksimuma çıkarma yolları.
+                                Koridor, raf ve göz bazlı lokasyon optimizasyonu ile depo depolama kapasitesini
+                                maksimuma çıkarma yolları.
                             </p>
                         </div>
                     </article>
 
                     <!-- Makale 3 -->
-                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
+                    <article
+                        class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
                         <div class="p-6 space-y-3">
-                            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider bg-amber-50 px-2.5 py-1 rounded-md">EL TERMİNALİ</span>
-                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-amber-600 transition-colors line-clamp-2">
+                            <span
+                                class="text-xs font-bold text-amber-600 uppercase tracking-wider bg-amber-50 px-2.5 py-1 rounded-md">EL
+                                TERMİNALİ</span>
+                            <h3
+                                class="text-lg font-bold text-slate-900 group-hover:text-amber-600 transition-colors line-clamp-2">
                                 El Terminali Ve Barkod Otomasyonunun Depo Performansına Etkisi
                             </h3>
                             <p class="text-xs text-slate-600 line-clamp-2">
-                                Kağıt bazlı toplama listelerinden akıllı WMS terminallerine geçişin işletmeye sağladığı devasa hız avantajları.
+                                Kağıt bazlı toplama listelerinden akıllı WMS terminallerine geçişin işletmeye sağladığı
+                                devasa hız avantajları.
                             </p>
                         </div>
                     </article>
@@ -658,4 +805,5 @@
         lucide.createIcons();
     </script>
 </body>
+
 </html>

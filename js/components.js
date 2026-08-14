@@ -154,19 +154,19 @@ function loadHeader() {
                                         <span class="text-[11px] text-brandSlate leading-tight">Rut planlama, sipariş yönetimi</span>
                                     </a>
                                     <a href="${p}dia-erp/dia-crm-servis.html" class="flex flex-col group/dia p-1.5 hover:bg-brandIce/50 rounded-lg transition-all">
-                                        <span class="text-[14px] font-bold group-hover/dia:text-brandRed transition-colors">CRM & Servis</span>
+                                        <span class="text-[14px] font-bold group-hover/dia:text-brandRed transition-colors">CRM & Müşteri Yönetimi</span>
                                         <span class="text-[11px] text-brandSlate leading-tight">Müşteri ilişkileri, teknik servis</span>
                                     </a>
                                     <a href="${p}dia-erp/dia-surec-yonetimi.html" class="flex flex-col group/dia p-1.5 hover:bg-brandIce/50 rounded-lg transition-all">
-                                        <span class="text-[14px] font-bold group-hover/dia:text-brandRed transition-colors">Süreç Yönetimi</span>
+                                        <span class="text-[14px] font-bold group-hover/dia:text-brandRed transition-colors">İş Akış ve Süreç Yönetimi</span>
                                         <span class="text-[11px] text-brandSlate leading-tight">İş akışı ve operasyonel otomasyon</span>
                                     </a>
                                     <a href="${p}dia-erp/dia-e-ticaret-b2b.html" class="flex flex-col group/dia p-1.5 hover:bg-brandIce/50 rounded-lg transition-all">
-                                        <span class="text-[14px] font-bold group-hover/dia:text-brandRed transition-colors">E-Ticaret & B2B</span>
+                                        <span class="text-[14px] font-bold group-hover/dia:text-brandRed transition-colors">E-Ticaret & B2B &B2C </span>
                                         <span class="text-[11px] text-brandSlate leading-tight">Web mağaza ve bayi paneli</span>
                                     </a>
                                     <a href="${p}dia-erp/dia-e-fatura.html" class="flex flex-col group/dia p-1.5 hover:bg-brandIce/50 rounded-lg transition-all">
-                                        <span class="text-[14px] font-bold group-hover/dia:text-brandRed transition-colors">e-Fatura & e-İrsaliye</span>
+                                        <span class="text-[14px] font-bold group-hover/dia:text-brandRed transition-colors">E-Belge & E-Dönüşüm</span>
                                         <span class="text-[11px] text-brandSlate leading-tight">GİB uyumlu e-belge çözümleri</span>
                                     </a>
                                     <a href="${p}dia-erp/dia-genel-muhasebe.html" class="flex flex-col group/dia p-1.5 hover:bg-brandIce/50 rounded-lg transition-all">
@@ -182,7 +182,7 @@ function loadHeader() {
                                         <span class="text-[11px] text-brandSlate leading-tight">Masa, adisyon ve mutfak takibi</span>
                                     </a>
                                     <a href="${p}dia-erp/dia-perakende.html" class="flex flex-col group/dia p-1.5 hover:bg-brandIce/50 rounded-lg transition-all">
-                                        <span class="text-[14px] font-bold group-hover/dia:text-brandRed transition-colors">Perakende & Mağaza</span>
+                                        <span class="text-[14px] font-bold group-hover/dia:text-brandRed transition-colors"> Mağaza Yönetimi</span>
                                         <span class="text-[11px] text-brandSlate leading-tight">Hızlı satış (POS), kampanya</span>
                                     </a>
                                     <a href="${p}dia-erp/dia-personel-ik.html" class="flex flex-col group/dia p-1.5 hover:bg-brandIce/50 rounded-lg transition-all">
@@ -209,7 +209,7 @@ function loadHeader() {
                 <!-- Sol Sütun (1 - 5) -->
                 <!-- 1. Ahtapot Depo Yönetimi -->
                 <a href="${p}cozumler/ahtapot-depo-yonetimi.html" class="group/item flex flex-col hover:bg-brandIce p-2 rounded-lg transition-all border border-transparent hover:border-slate-100">
-                    <span class="text-[13px] font-bold group-hover/item:text-brandRed">WMS Depo Yönetimi</span>
+                    <span class="text-[13px] font-bold group-hover/item:text-brandRed">Ahtapot WMS Depo Yönetimi</span>
                 </a>
 
                 <!-- 2. Mobil B2B Bayi Platformu -->
