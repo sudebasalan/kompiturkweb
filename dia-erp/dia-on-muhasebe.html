@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DİA Ön Muhasebe Programı | Bulut Tabanlı Ön Muhasebe Takibi | Kompiturk</title>
-    <meta name="description" content="DİA Bulut Ön Muhasebe Programı ile nakit akışı, cari hesap, kasa, banka, çek-senet ve e-fatura süreçlerinizi tek platformdan yönetin. Kompiturk Yetkili Çözüm Ortağı.">
+    <meta name="description"
+        content="DİA Bulut Ön Muhasebe Programı ile nakit akışı, cari hesap, kasa, banka, çek-senet ve e-fatura süreçlerinizi tek platformdan yönetin. Kompiturk Yetkili Çözüm Ortağı.">
 
     <!-- Google Fonts: Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -36,23 +39,26 @@
     </script>
     <style>
         /* Mega Menu Tabancası & Animasyon Düzeltmesi */
-.mega-menu {
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none; /* Gizliyken farenin algılamasını engeller */
-    transform: translateY(10px);
-    transition: all 0.2s ease-in-out;
-}
+        .mega-menu {
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+            /* Gizliyken farenin algılamasını engeller */
+            transform: translateY(10px);
+            transition: all 0.2s ease-in-out;
+        }
 
-/* Sadece ilgili gruba gelindiğinde görünür ve tıklanabilir yap */
-.group:hover .mega-menu {
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto; /* Açıldığında tıklanabilir yap */
-    transform: translateY(0);
-}
+        /* Sadece ilgili gruba gelindiğinde görünür ve tıklanabilir yap */
+        .group:hover .mega-menu {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: auto;
+            /* Açıldığında tıklanabilir yap */
+            transform: translateY(0);
+        }
     </style>
 </head>
+
 <body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
 
     <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
@@ -63,124 +69,151 @@
 
         <!-- ========================================================================= -->
         <!-- 1. BÖLÜM: BANNER / HERO SECTION (%100 DİA MAVİSİ BG)                       -->
-      <!-- ========================================================================= -->
-<!-- HERO BÖLÜMÜ (YÜKSEKLİĞİ DÜŞÜRÜLMÜŞ GÜNCEL KOD)                           -->
-<!-- ========================================================================= -->
-<section id="module-hero" class="w-full bg-[#245BA7] text-white py-6 lg:py-8 relative overflow-hidden z-20">
-    <!-- Arka Plan Vektörel Desen & Işıltılar -->
-    <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
-    <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#E77F18]/20 rounded-full blur-[130px] pointer-events-none"></div>
-    <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#0F1D38]/40 rounded-full blur-[150px] pointer-events-none"></div>
-
-    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-
-            <!-- SOL KOLON: İÇERİK VE VURGULAR (Col-span-7) -->
-            <div class="lg:col-span-7 space-y-4 text-left">
-                
-                <!-- TEK H1 BAŞLIĞI -->
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
-                    DİA Ön Muhasebe <br class="hidden sm:inline" />
-                    <span class="text-[#E77F18]">Yönetim Programı</span>
-                </h1>
-
-                <p class="text-sm sm:text-base text-blue-100 font-normal leading-relaxed max-w-2xl">
-                    Nakit akışınızın takibi ve stok-deponuzun verimli yönetimi için DİA Ön Muhasebe Yönetimi yanınızda! Tüm finansal ve operasyonel süreçlerinizi bulut gücüyle internetin olduğu her yerden yönetin.
-                </p>
-
-                <!-- İkonlu Vurgu Maddeleri -->
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3 border-t border-white/15">
-                    <div class="flex items-center gap-2.5">
-                        <div class="w-9 h-9 rounded-xl bg-white/10 border border-white/20 text-[#E77F18] flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="cloud" class="w-4 h-4"></i>
-                        </div>
-                        <span class="text-xs sm:text-sm font-bold text-white leading-snug">
-                            %100 Bulut Tabanlı & Güvenli
-                        </span>
-                    </div>
-
-                    <div class="flex items-center gap-2.5">
-                        <div class="w-9 h-9 rounded-xl bg-white/10 border border-white/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="file-check-2" class="w-4 h-4"></i>
-                        </div>
-                        <span class="text-xs sm:text-sm font-bold text-white leading-snug">
-                            GİB Onaylı e-Fatura
-                        </span>
-                    </div>
-
-                    <div class="flex items-center gap-2.5">
-                        <div class="w-9 h-9 rounded-xl bg-white/10 border border-white/20 text-blue-200 flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="smartphone" class="w-4 h-4"></i>
-                        </div>
-                        <span class="text-xs sm:text-sm font-bold text-white leading-snug">
-                            Mobil & Masaüstü Erişim
-                        </span>
-                    </div>
-                </div>
+        <!-- ========================================================================= -->
+        <!-- HERO BÖLÜMÜ (YÜKSEKLİĞİ DÜŞÜRÜLMÜŞ GÜNCEL KOD)                           -->
+        <!-- ========================================================================= -->
+        <section id="module-hero" class="w-full bg-[#245BA7] text-white py-6 lg:py-8 relative overflow-hidden z-20">
+            <!-- Arka Plan Vektörel Desen & Işıltılar -->
+            <div
+                class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none">
+            </div>
+            <div
+                class="absolute -top-32 -left-32 w-96 h-96 bg-[#E77F18]/20 rounded-full blur-[130px] pointer-events-none">
+            </div>
+            <div
+                class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#0F1D38]/40 rounded-full blur-[150px] pointer-events-none">
             </div>
 
-            <!-- SAĞ KOLON: DEMO & BİLGİ FORMU KUTUSU (Col-span-5) -->
-            <div class="lg:col-span-5">
-                <div class="bg-white rounded-2xl p-5 sm:p-6 text-slate-900 shadow-2xl border-2 border-[#E77F18]/40 relative overflow-hidden scale-[0.85] origin-top -mb-12 lg:-mb-20">
-                    <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#245BA7] via-[#E77F18] to-[#DC2626]"></div>
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
 
-                    <div class="border-b border-slate-100 pb-3 mb-4 pt-1">
-                        <h2 class="text-lg sm:text-xl font-black text-slate-900 flex items-center gap-2">
-                            <i data-lucide="sparkles" class="w-5 h-5 text-[#E77F18]"></i>
-                            Ücretsiz Demo & Bilgi Alın
-                        </h2>
-                        <p class="text-xs text-slate-500 mt-0.5">
-                            DİA Ön Muhasebe modülü ve canlı demo talebi için bilgilerinizi bırakın.
+                    <!-- SOL KOLON: İÇERİK VE VURGULAR (Col-span-7) -->
+                    <div class="lg:col-span-7 space-y-4 text-left">
+
+                        <!-- TEK H1 BAŞLIĞI -->
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                            DİA Ön Muhasebe <br class="hidden sm:inline" />
+                            <span class="text-[#E77F18]">Yönetim Programı</span>
+                        </h1>
+
+                        <p class="text-sm sm:text-base text-blue-100 font-normal leading-relaxed max-w-2xl">
+                            Nakit akışınızın takibi ve stok-deponuzun verimli yönetimi için DİA Ön Muhasebe Yönetimi
+                            yanınızda! Tüm finansal ve operasyonel süreçlerinizi bulut gücüyle internetin olduğu her
+                            yerden yönetin.
                         </p>
+
+                        <!-- İkonlu Vurgu Maddeleri -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3 border-t border-white/15">
+                            <div class="flex items-center gap-2.5">
+                                <div
+                                    class="w-9 h-9 rounded-xl bg-white/10 border border-white/20 text-[#E77F18] flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="cloud" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    %100 Bulut Tabanlı & Güvenli
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-2.5">
+                                <div
+                                    class="w-9 h-9 rounded-xl bg-white/10 border border-white/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="file-check-2" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    GİB Onaylı e-Fatura
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-2.5">
+                                <div
+                                    class="w-9 h-9 rounded-xl bg-white/10 border border-white/20 text-blue-200 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="smartphone" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-bold text-white leading-snug">
+                                    Mobil & Masaüstü Erişim
+                                </span>
+                            </div>
+                        </div>
                     </div>
 
-                    <form action="#" method="POST" class="space-y-3" onsubmit="event.preventDefault();">
-                        <div class="space-y-1">
-                            <label for="fullname" class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider">
-                                Ad Soyad <span class="text-[#DC2626]">*</span>
-                            </label>
-                            <input type="text" id="fullname" name="fullname" required placeholder="Örn: Ahmet Yılmaz" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 outline-none transition-all" />
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <div class="space-y-1">
-                                <label for="phone" class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider">
-                                    Telefon <span class="text-[#DC2626]">*</span>
-                                </label>
-                                <input type="tel" id="phone" name="phone" required placeholder="05XX XXX XX XX" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 outline-none transition-all" />
+                    <!-- SAĞ KOLON: DEMO & BİLGİ FORMU KUTUSU (Col-span-5) -->
+                    <div class="lg:col-span-5">
+                        <div
+                            class="bg-white rounded-2xl p-5 sm:p-6 text-slate-900 shadow-2xl border-2 border-[#E77F18]/40 relative overflow-hidden scale-[0.85] origin-top -mb-12 lg:-mb-20">
+                            <div
+                                class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#245BA7] via-[#E77F18] to-[#DC2626]">
                             </div>
 
-                            <div class="space-y-1">
-                                <label for="company" class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider">
-                                    Şirket Adı
-                                </label>
-                                <input type="text" id="company" name="company" placeholder="Firma Ünvanı" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 outline-none transition-all" />
+                            <div class="border-b border-slate-100 pb-3 mb-4 pt-1">
+                                <h2 class="text-lg sm:text-xl font-black text-slate-900 flex items-center gap-2">
+                                    <i data-lucide="sparkles" class="w-5 h-5 text-[#E77F18]"></i>
+                                    Ücretsiz Demo & Bilgi Alın
+                                </h2>
+                                <p class="text-xs text-slate-500 mt-0.5">
+                                    DİA Ön Muhasebe modülü ve canlı demo talebi için bilgilerinizi bırakın.
+                                </p>
                             </div>
+
+                            <form action="#" method="POST" class="space-y-3" onsubmit="event.preventDefault();">
+                                <div class="space-y-1">
+                                    <label for="fullname"
+                                        class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider">
+                                        Ad Soyad <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="text" id="fullname" name="fullname" required
+                                        placeholder="Örn: Ahmet Yılmaz"
+                                        class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 outline-none transition-all" />
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <div class="space-y-1">
+                                        <label for="phone"
+                                            class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider">
+                                            Telefon <span class="text-[#DC2626]">*</span>
+                                        </label>
+                                        <input type="tel" id="phone" name="phone" required placeholder="05XX XXX XX XX"
+                                            class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 outline-none transition-all" />
+                                    </div>
+
+                                    <div class="space-y-1">
+                                        <label for="company"
+                                            class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider">
+                                            Şirket Adı
+                                        </label>
+                                        <input type="text" id="company" name="company" placeholder="Firma Ünvanı"
+                                            class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 outline-none transition-all" />
+                                    </div>
+                                </div>
+
+                                <div class="space-y-1">
+                                    <label for="email"
+                                        class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider">
+                                        E-Posta Adresi <span class="text-[#DC2626]">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" required
+                                        placeholder="ahmet@sirketiniz.com"
+                                        class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 outline-none transition-all" />
+                                </div>
+
+                                <button type="submit"
+                                    class="w-full py-3 px-5 rounded-xl bg-[#E77F18] hover:bg-[#d06f13] text-white font-extrabold text-sm shadow-md shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-[1.005] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer border border-orange-400/30">
+                                    <span>Hemen Bilgi & Demo İsteyin</span>
+                                    <i data-lucide="arrow-right"
+                                        class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+
+                                <p
+                                    class="text-[10px] text-center text-slate-400 mt-1 flex items-center justify-center gap-1">
+                                    <i data-lucide="shield-check" class="w-3 h-3 text-emerald-600"></i>
+                                    Verileriniz KVKK kapsamında %100 güvende tutulmaktadır.
+                                </p>
+                            </form>
                         </div>
+                    </div>
 
-                        <div class="space-y-1">
-                            <label for="email" class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider">
-                                E-Posta Adresi <span class="text-[#DC2626]">*</span>
-                            </label>
-                            <input type="email" id="email" name="email" required placeholder="ahmet@sirketiniz.com" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 outline-none transition-all" />
-                        </div>
-
-                        <button type="submit" class="w-full py-3 px-5 rounded-xl bg-[#E77F18] hover:bg-[#d06f13] text-white font-extrabold text-sm shadow-md shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-[1.005] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer border border-orange-400/30">
-                            <span>Hemen Bilgi & Demo İsteyin</span>
-                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-                        </button>
-
-                        <p class="text-[10px] text-center text-slate-400 mt-1 flex items-center justify-center gap-1">
-                            <i data-lucide="shield-check" class="w-3 h-3 text-emerald-600"></i>
-                            Verileriniz KVKK kapsamında %100 güvende tutulmaktadır.
-                        </p>
-                    </form>
                 </div>
             </div>
-
-        </div>
-    </div>
-</section>
+        </section>
 
         <!-- ========================================================================= -->
         <!-- 2. BÖLÜM: NEDEN DİA ÖN MUHASEBE PROGRAMI? (3x2 GRID KARTLAR)              -->
@@ -189,91 +222,116 @@
             <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
                 <div class="text-center max-w-5xl mx-auto">
-                   
+
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
                         Neden DİA <span class="text-[#245BA7]">Ön Muhasebe</span> Programı?
                     </h2>
                     <p class="text-base text-slate-600 font-normal">
-                        Nakit akışınızı kontrol altına alan, veri kayıplarını önleyen ve karar alma süreçlerinizi hızlandıran kurumsal çözüm.
+                        Nakit akışınızı kontrol altına alan, veri kayıplarını önleyen ve karar alma süreçlerinizi
+                        hızlandıran kurumsal çözüm.
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
 
                     <!-- Kart 1: Entegre İş Yönetimi -->
-                    <div class="bg-white p-3 m-1 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#245BA7] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                    <div
+                        class="bg-white p-3 m-1 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#245BA7] hover:-translate-y-1 transition-all group flex flex-col justify-between">
                         <div class="space-y-4">
-                            <div class="w-14 h-14 rounded-2xl bg-blue-50 text-[#245BA7] flex items-center justify-center group-hover:bg-[#245BA7] group-hover:text-white transition-colors">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-blue-50 text-[#245BA7] flex items-center justify-center group-hover:bg-[#245BA7] group-hover:text-white transition-colors">
                                 <i data-lucide="layers" class="w-7 h-7"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors">Entegre İş Yönetimi</h3>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors">
+                                Entegre İş Yönetimi</h3>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                Finans, stok, e-fatura ve satış kanallarınızı birbiriyle tam entegre çalıştırın. Tek veri girişi ile tüm raporlarınız anında güncellensin.
-                            </p>
+                                Finans, stok, e-fatura ve satış kanallarınızı birbiriyle tam entegre çalıştırın. Tek
+                                veri girişi ile tüm raporlarınız anında güncellensin. </p>
                         </div>
                     </div>
 
                     <!-- Kart 2: Verimli Muhasebe Yönetimi -->
-                    <div class="bg-white p-3 m-1 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#E77F18] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                    <div
+                        class="bg-white p-3 m-1 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#E77F18] hover:-translate-y-1 transition-all group flex flex-col justify-between">
                         <div class="space-y-4">
-                            <div class="w-14 h-14 rounded-2xl bg-amber-50 text-[#E77F18] flex items-center justify-center group-hover:bg-[#E77F18] group-hover:text-white transition-colors">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-amber-50 text-[#E77F18] flex items-center justify-center group-hover:bg-[#E77F18] group-hover:text-white transition-colors">
                                 <i data-lucide="calculator" class="w-7 h-7"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#E77F18] transition-colors">Verimli Muhasebe Yönetimi</h3>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#E77F18] transition-colors">
+                                Uctan Uca Muhasebe Yönetimi</h3>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                Cari hesap takibi, fatura ve irsaliye düzenleme, kasa-banka hareketleri ile çek/senet takiplerinizi sıfır hatayla gerçekleştirin.
+                                Cari hesap takibi, fatura ve irsaliye düzenleme, kasa-banka hareketleri ile çek/senet
+                                takiplerinizi sıfır hatayla gerçekleştirin.
                             </p>
                         </div>
                     </div>
 
                     <!-- Kart 3: Ön Muhasebe Yönetiminde Özgürlük -->
-                    <div class="bg-white p-3 m-1 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                    <div
+                        class="bg-white p-3 m-1 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#DC2626] hover:-translate-y-1 transition-all group flex flex-col justify-between">
                         <div class="space-y-4">
-                            <div class="w-14 h-14 rounded-2xl bg-red-50 text-[#DC2626] flex items-center justify-center group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-red-50 text-[#DC2626] flex items-center justify-center group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
                                 <i data-lucide="smartphone" class="w-7 h-7"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">Ön Muhasebede Özgürlük</h3>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">
+                                Ön Muhasebede Özgürlük
+                            </h3>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                Ofise veya tek bir bilgisayara bağımlı kalmayın. Mobil uygulama, tablet veya web üzerinden 7/24 finansal durumunuzu kontrol edin.
+                                Ofise veya tek bir bilgisayara bağımlı kalmayın. Mobil uygulama, tablet veya web
+                                üzerinden 7/24 finansal durumunuzu kontrol edin.
                             </p>
                         </div>
                     </div>
 
                     <!-- Kart 4: Bulut Teknolojisinin Avantajları -->
-                    <div class="bg-white p-3 m-1 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                    <div
+                        class="bg-white p-3 m-1 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
                         <div class="space-y-4">
-                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
                                 <i data-lucide="cloud-cog" class="w-7 h-7"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Bulut Teknolojisi Avantajları</h3>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">
+                                Bulut Teknolojisi Avantajları</h3>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                Sunucu yatırımı, lisans yenileme ve veri kaybetme korkusu yok. Otomatik yedekleme ile tüm muhasebe verileriniz koruma altında.
+                                Sunucu yatırımı, lisans yenileme ve veri kaybetme korkusu yok. Otomatik yedekleme ile
+                                tüm muhasebe verileriniz koruma altında.
                             </p>
                         </div>
                     </div>
 
                     <!-- Kart 5: Etkin Stok ve Depo Yönetimi -->
-                    <div class="bg-white p-3 m-1 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-indigo-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                    <div
+                        class="bg-white p-3 m-1 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-indigo-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
                         <div class="space-y-4">
-                            <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors">
                                 <i data-lucide="boxes" class="w-7 h-7"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">Etkin Stok & Depo Yönetimi</h3>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                                Etkin Stok & Depo Yönetimi</h3>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                Fatura veya irsaliye kestiğiniz anda stoklarınız canlı olarak düşsün. Kritik stok seviyeleri ile sipariş kaçırma riskini önleyin.
+                                Fatura veya irsaliye kestiğiniz anda stoklarınız canlı olarak düşsün. Kritik stok
+                                seviyeleri ile sipariş kaçırma riskini önleyin
                             </p>
                         </div>
                     </div>
 
                     <!-- Kart 6: Anlık Takip ve Raporlama -->
-                    <div class="bg-white p-3 m-1 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-cyan-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
+                    <div
+                        class="bg-white p-3 m-1 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-cyan-600 hover:-translate-y-1 transition-all group flex flex-col justify-between">
                         <div class="space-y-4">
-                            <div class="w-14 h-14 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
                                 <i data-lucide="line-chart" class="w-7 h-7"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-cyan-600 transition-colors">Anlık Takip & Raporlama</h3>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-cyan-600 transition-colors">
+                                Anlık Takip & Raporlama</h3>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                Günlük ciro, kar/zarar analizi, vadesi geçen alacaklar ve nakit akış raporlarını grafik ekranlarla saniyeler içinde alın.
+                                Günlük ciro, kar/zarar analizi, vadesi geçen alacaklar ve nakit akış raporlarını grafik
+                                ekranlarla saniyeler içinde alın
                             </p>
                         </div>
                     </div>
@@ -287,16 +345,16 @@
         <!-- ========================================================================= -->
         <section id="on-muhasebe-rehberi" class="py-6 lg:py-8 bg-white border-b border-slate-200/80">
             <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-                
+
                 <div class="text-center max-w-5xl mx-auto">
-                   
+
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
                         Ön Muhasebe Hakkında <span class="text-[#245BA7]">Bilinmesi Gerekenler</span>
                     </h2>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
-                    
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-12">
+
                     <!-- Blog 1: Ön Muhasebe Programı Nedir? -->
                     <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200/80 space-y-4">
                         <div class="flex items-center gap-3 text-[#245BA7]">
@@ -304,7 +362,11 @@
                             <h3 class="text-2xl font-bold text-slate-900">Ön Muhasebe Programı Nedir?</h3>
                         </div>
                         <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                            Ön muhasebe; bir işletmenin günlük ticari ve finansal operasyonlarının takibini kapsayan süreçtir. **DİA Ön Muhasebe Programı**, nakit giriş-çıkışları, cari hesap takibi (müşteri ve tedarikçi bakiyeleri), banka ve kasa hareketleri, çek-senet portföyü ile fatura ve irsaliye yönetimini dijital ortamda hatasız bir şekilde gerçekleştirmenizi sağlayan yazılım altyapısıdır.
+                            Ön muhasebe; bir işletmenin günlük ticari ve finansal operasyonlarının takibini kapsayan
+                            süreçtir. DİA Ön Muhasebe Programı, nakit giriş-çıkışları, cari hesap takibi (müşteri ve
+                            tedarikçi bakiyeleri), banka ve kasa hareketleri, çek-senet portföyü ile fatura ve irsaliye
+                            yönetimini dijital ortamda hatasız bir şekilde gerçekleştirmenizi sağlayan yazılım
+                            altyapısıdır.
                         </p>
                     </div>
 
@@ -315,7 +377,10 @@
                             <h3 class="text-2xl font-bold text-slate-900">Ön Muhasebe Neden Önemlidir?</h3>
                         </div>
                         <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                            İşletmelerin finansal sağlığını korumasının temeli doğru ön muhasebe tutmaktan geçer. Günü gelen ödemelerin takibi, zamanında yapılmayan tahsilatların tespiti ve nakit akışı dengesi düzgün kurulmadığında en karlı şirketler dahi finansal darboğaza girebilir. DİA, riski sıfırlayarak doğru kararlar almanıza yardımcı olur.
+                            İşletmelerin finansal sağlığını korumasının temeli doğru ön muhasebe tutmaktan geçer. Günü
+                            gelen ödemelerin takibi, zamanında yapılmayan tahsilatların tespiti ve nakit akışı dengesi
+                            düzgün kurulmadığında en karlı şirketler dahi finansal darboğaza girebilir. DİA, riski
+                            sıfırlayarak doğru kararlar almanıza yardımcı olur.
                         </p>
                     </div>
 
@@ -326,7 +391,10 @@
                             <h3 class="text-2xl font-bold text-slate-900">Neden Program Kullanılmalı?</h3>
                         </div>
                         <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                            Excel tabloları veya defter notları ile yürütülen ön muhasebede insan hatası kaçınılmazdır. Yanlış bakiye hesabı, unutulan ödemeler ve kopyalanan hatalı formüller mali kayıplara yol açar. Bir ön muhasebe yazılımı kullanmak; zaman tasarrufu sağlar, personel hatalarını engeller ve saniyeler içinde resmi evrak hazırlama imkanı sunar.
+                            Excel tabloları veya defter notları ile yürütülen ön muhasebede insan hatası kaçınılmazdır.
+                            Yanlış bakiye hesabı, unutulan ödemeler ve kopyalanan hatalı formüller mali kayıplara yol
+                            açar. Bir ön muhasebe yazılımı kullanmak; zaman tasarrufu sağlar, personel hatalarını
+                            engeller ve saniyeler içinde resmi evrak hazırlama imkanı sunar.
                         </p>
                     </div>
 
@@ -337,7 +405,10 @@
                             <h3 class="text-2xl font-bold text-slate-900">Kimler Kullanmalı?</h3>
                         </div>
                         <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                            Ölçülemeyen iş yönetilemez. Ölçeği ne olursa olsun (KOBİ'ler, e-ticaret satıcıları, perakende mağazalar, inşaat, gıda, tekstil firmaları ve serbest meslek mensupları) fatura kesen, mal alıp satan ve cari hesap takibi yapan her kurum ve girişimci DİA Ön Muhasebe Programı kullanmalıdır.
+                            Ölçülemeyen iş yönetilemez. Ölçeği ne olursa olsun (KOBİ'ler, e-ticaret satıcıları,
+                            perakende mağazalar, inşaat, gıda, tekstil firmaları ve serbest meslek mensupları) fatura
+                            kesen, mal alıp satan ve cari hesap takibi yapan her kurum ve girişimci DİA Ön Muhasebe
+                            Programı kullanmalıdır.
                         </p>
                     </div>
 
@@ -350,9 +421,9 @@
         <!-- ========================================================================= -->
         <section id="e-fatura-entegrasyonu" class="py-6 lg:py-8 bg-[#0F1D38] text-white">
             <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-                
+
                 <div class="text-center max-w-5xl mx-auto">
-                    
+
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
                         e-Fatura ile Ön Muhasebe <span class="text-[#E77F18]">Nasıl Entegre Edilir?</span>
                     </h2>
@@ -362,58 +433,70 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    
+
                     <!-- Adım 1 -->
-                    <div class="bg-[#162444] p-6 rounded-2xl border border-[#245BA7]/30 space-y-3 relative overflow-hidden">
+                    <div
+                        class="bg-[#162444] p-6 rounded-2xl border border-[#245BA7]/30 space-y-3 relative overflow-hidden">
                         <span class="text-4xl font-black text-[#245BA7]/40 absolute top-4 right-4">01</span>
                         <h3 class="text-lg font-bold text-white">GİB Onaylı Program Seçimi</h3>
                         <p class="text-xs text-slate-300 leading-relaxed">
-                            Gelir İdaresi Başkanlığı (GİB) ile tam entegre çalışan güvenilir DİA ERP altyapısını tercih ederek ilk adımı atın.
+                            Gelir İdaresi Başkanlığı (GİB) ile tam entegre çalışan güvenilir DİA ERP altyapısını tercih
+                            ederek ilk adımı atın.
                         </p>
                     </div>
 
                     <!-- Adım 2 -->
-                    <div class="bg-[#162444] p-6 rounded-2xl border border-[#245BA7]/30 space-y-3 relative overflow-hidden">
+                    <div
+                        class="bg-[#162444] p-6 rounded-2xl border border-[#245BA7]/30 space-y-3 relative overflow-hidden">
                         <span class="text-4xl font-black text-[#245BA7]/40 absolute top-4 right-4">02</span>
                         <h3 class="text-lg font-bold text-white">E-Fatura Başvurusu</h3>
                         <p class="text-xs text-slate-300 leading-relaxed">
-                            GİB portalı üzerinden e-fatura mükellefiyet başvurunuzu elektronik ortamda saniyeler içinde tamamlayın.
+                            GİB portalı üzerinden e-fatura mükellefiyet başvurunuzu elektronik ortamda saniyeler içinde
+                            tamamlayın.
                         </p>
                     </div>
 
                     <!-- Adım 3 -->
-                    <div class="bg-[#162444] p-6 rounded-2xl border border-[#245BA7]/30 space-y-3 relative overflow-hidden">
+                    <div
+                        class="bg-[#162444] p-6 rounded-2xl border border-[#245BA7]/30 space-y-3 relative overflow-hidden">
                         <span class="text-4xl font-black text-[#245BA7]/40 absolute top-4 right-4">03</span>
                         <h3 class="text-lg font-bold text-white">Mali Mühür / E-İmza</h3>
                         <p class="text-xs text-slate-300 leading-relaxed">
-                            TÜBİTAK Kamu SM üzerinden Mali Mühür veya şahıs firmaları için E-İmza teminini gerçekleştirin.
+                            TÜBİTAK Kamu SM üzerinden Mali Mühür veya şahıs firmaları için E-İmza teminini
+                            gerçekleştirin.
                         </p>
                     </div>
 
                     <!-- Adım 4 -->
-                    <div class="bg-[#162444] p-6 rounded-2xl border border-[#245BA7]/30 space-y-3 relative overflow-hidden">
+                    <div
+                        class="bg-[#162444] p-6 rounded-2xl border border-[#245BA7]/30 space-y-3 relative overflow-hidden">
                         <span class="text-4xl font-black text-[#E77F18]/40 absolute top-4 right-4">04</span>
                         <h3 class="text-lg font-bold text-white">Kullanıcı Ayarları</h3>
                         <p class="text-xs text-slate-300 leading-relaxed">
-                            Kompiturk uzman ekibimiz DİA sisteminizdeki entegratör hesap tanımlamalarını ve şablonlarınızı ayarlar.
+                            Kompiturk uzman ekibimiz DİA sisteminizdeki entegratör hesap tanımlamalarını ve
+                            şablonlarınızı ayarlar.
                         </p>
                     </div>
 
                     <!-- Adım 5 -->
-                    <div class="bg-[#162444] p-6 rounded-2xl border border-[#245BA7]/30 space-y-3 relative overflow-hidden">
+                    <div
+                        class="bg-[#162444] p-6 rounded-2xl border border-[#245BA7]/30 space-y-3 relative overflow-hidden">
                         <span class="text-4xl font-black text-[#E77F18]/40 absolute top-4 right-4">05</span>
                         <h3 class="text-lg font-bold text-white">Test Faturası Oluşturma</h3>
                         <p class="text-xs text-slate-300 leading-relaxed">
-                            Sistem üzerinden deneme faturası kesilerek tasarım, vergi kodları ve iletim kontrolleri test edilir.
+                            Sistem üzerinden deneme faturası kesilerek tasarım, vergi kodları ve iletim kontrolleri test
+                            edilir.
                         </p>
                     </div>
 
                     <!-- Adım 6 -->
-                    <div class="bg-[#162444] p-6 rounded-2xl border border-[#E77F18] space-y-3 relative overflow-hidden">
+                    <div
+                        class="bg-[#162444] p-6 rounded-2xl border border-[#E77F18] space-y-3 relative overflow-hidden">
                         <span class="text-4xl font-black text-[#E77F18] absolute top-4 right-4">06</span>
                         <h3 class="text-lg font-bold text-[#E77F18]">Tek Tıkla Canlı e-Dönüşüm</h3>
                         <p class="text-xs text-slate-300 leading-relaxed">
-                            Artık tüm faturalarınızı DİA içinden tek tıkla e-Fatura ve e-Arşiv olarak müşterilerinize anında iletebilirsiniz.
+                            Artık tüm faturalarınızı DİA içinden tek tıkla e-Fatura ve e-Arşiv olarak müşterilerinize
+                            anında iletebilirsiniz.
                         </p>
                     </div>
 
@@ -427,9 +510,10 @@
         <section id="bulut-avantaj" class="py-6 lg:py-8 bg-[#F8FAFC] border-b border-slate-200/80">
             <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    
+
                     <div class="space-y-6">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs">
                             <i data-lucide="leaf" class="w-4 h-4"></i>
                             ÇEVRE DOSTU YAZILIM
                         </div>
@@ -438,7 +522,9 @@
                             <span class="text-emerald-600">Bulut Ön Muhasebe</span>
                         </h2>
                         <p class="text-slate-600 text-base leading-relaxed">
-                            DİA'nın 20 yılı aşkın bulut tecrübesi sayesinde kağıt, dosyalama, baskı ve kargo maliyetlerinizi sıfıra indiriyoruz. Yeşil dijital dönüşüm vizyonuyla işletmenizi geleceğe taşıyın.
+                            DİA'nın 20 yılı aşkın bulut tecrübesi sayesinde kağıt, dosyalama, baskı ve kargo
+                            maliyetlerinizi sıfıra indiriyoruz. Yeşil dijital dönüşüm vizyonuyla işletmenizi geleceğe
+                            taşıyın.
                         </p>
                         <div class="space-y-3 text-sm font-semibold text-slate-800">
                             <div class="flex items-center gap-3">
@@ -461,13 +547,15 @@
                         <div class="border-b border-slate-100 pb-5">
                             <div class="text-4xl font-black text-[#245BA7]">%100</div>
                             <div class="text-sm font-bold text-slate-800 mt-1">Donanım & Bakım Maliyetsiz</div>
-                            <p class="text-xs text-slate-500 mt-1">Ek bir sunucu veya yedekleme ünitesi satın almanıza gerek kalmaz.</p>
+                            <p class="text-xs text-slate-500 mt-1">Ek bir sunucu veya yedekleme ünitesi satın almanıza
+                                gerek kalmaz.</p>
                         </div>
 
                         <div>
                             <div class="text-4xl font-black text-[#E77F18]">7/24</div>
                             <div class="text-sm font-bold text-slate-800 mt-1">Kesintisiz Erişilebilirlik</div>
-                            <p class="text-xs text-slate-500 mt-1">Evde, seyahatte veya tatilde; finansal durumunuz parmaklarınızın ucunda.</p>
+                            <p class="text-xs text-slate-500 mt-1">Evde, seyahatte veya tatilde; finansal durumunuz
+                                parmaklarınızın ucunda.</p>
                         </div>
                     </div>
 
@@ -489,38 +577,50 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Çözüm 1 -->
-                    <a href="dia-stok-depo.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#245BA7] hover:bg-white hover:shadow-lg transition-all group">
-                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#245BA7] flex items-center justify-center mb-4 group-hover:bg-[#245BA7] group-hover:text-white transition-colors">
+                    <a href="dia-stok-depo.html"
+                        class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#245BA7] hover:bg-white hover:shadow-lg transition-all group">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-blue-50 text-[#245BA7] flex items-center justify-center mb-4 group-hover:bg-[#245BA7] group-hover:text-white transition-colors">
                             <i data-lucide="boxes" class="w-5 h-5"></i>
                         </div>
-                        <h3 class="font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors">Stok & Depo Yönetimi</h3>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors">Stok & Depo
+                            Yönetimi</h3>
                         <p class="text-xs text-slate-500 mt-1">Barkod, palet ve çoklu depo takibi.</p>
                     </a>
 
                     <!-- Çözüm 2 -->
-                    <a href="dia-e-donusum.html" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#DC2626] hover:bg-white hover:shadow-lg transition-all group">
-                        <div class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center mb-4 group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
+                    <a href="dia-e-donusum.html"
+                        class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#DC2626] hover:bg-white hover:shadow-lg transition-all group">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-red-50 text-[#DC2626] flex items-center justify-center mb-4 group-hover:bg-[#DC2626] group-hover:text-white transition-colors">
                             <i data-lucide="file-text" class="w-5 h-5"></i>
                         </div>
-                        <h3 class="font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">e-Fatura & e-İrsaliye</h3>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">e-Fatura &
+                            e-İrsaliye</h3>
                         <p class="text-xs text-slate-500 mt-1">Anında dijital evrak gönderimi.</p>
                     </a>
 
                     <!-- Çözüm 3 -->
-                    <a href="../index.html#quick-services" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#E77F18] hover:bg-white hover:shadow-lg transition-all group">
-                        <div class="w-10 h-10 rounded-lg bg-amber-50 text-[#E77F18] flex items-center justify-center mb-4 group-hover:bg-[#E77F18] group-hover:text-white transition-colors">
+                    <a href="../index.html#quick-services"
+                        class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#E77F18] hover:bg-white hover:shadow-lg transition-all group">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-amber-50 text-[#E77F18] flex items-center justify-center mb-4 group-hover:bg-[#E77F18] group-hover:text-white transition-colors">
                             <i data-lucide="package-check" class="w-5 h-5"></i>
                         </div>
-                        <h3 class="font-bold text-slate-900 group-hover:text-[#E77F18] transition-colors">Ahtapot WMS</h3>
+                        <h3 class="font-bold text-slate-900 group-hover:text-[#E77F18] transition-colors">Ahtapot WMS
+                        </h3>
                         <p class="text-xs text-slate-500 mt-1">El terminali ile hatasız sevkiyat.</p>
                     </a>
 
                     <!-- Çözüm 4 -->
-                    <a href="../index.html#other-solutions" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-600 hover:bg-white hover:shadow-lg transition-all group">
-                        <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                    <a href="../index.html#other-solutions"
+                        class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-600 hover:bg-white hover:shadow-lg transition-all group">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
                             <i data-lucide="credit-card" class="w-5 h-5"></i>
                         </div>
-                        <h3 class="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Sanal POS & POS</h3>
+                        <h3 class="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Sanal POS &
+                            POS</h3>
                         <p class="text-xs text-slate-500 mt-1">Online linkle ödeme ve Sanal POS.</p>
                     </a>
                 </div>
@@ -532,65 +632,92 @@
         <!-- ========================================================================= -->
         <section id="faq" class="py-8 bg-[#F8FAFC] border-b border-slate-200/80">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-                
+
                 <div class="text-center space-y-2">
-                    <h2 class="text-3xl font-extrabold text-slate-900">Sıkça Sorulan <span class="text-[#245BA7]">Sorular</span></h2>
-                    <p class="text-sm text-slate-600">DİA Ön Muhasebe Programı hakkında merak ettiğiniz tüm yanıtlar.</p>
+                    <h2 class="text-3xl font-extrabold text-slate-900">Sıkça Sorulan <span
+                            class="text-[#245BA7]">Sorular</span></h2>
+                    <p class="text-sm text-slate-600">DİA Ön Muhasebe Programı hakkında merak ettiğiniz tüm yanıtlar.
+                    </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <!-- Soru 1 -->
-                    <details class="group bg-white rounded-2xl border border-slate-200 p-4 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
-                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                    <details
+                        class="group bg-white rounded-2xl border border-slate-200 p-4 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary
+                            class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
                             <span>Genel Muhasebe ile Ön Muhasebe Arasındaki Farklar Nelerdir?</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                            <i data-lucide="chevron-down"
+                                class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
                         </summary>
                         <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-                            Ön muhasebe; işletmenin günlük nakit akışını, stoklarını, cari hesaplarını, fatura ve çek-senet gibi operasyonel verilerini takip eder. Genel muhasebe ise devlet ve maliye karşısındaki resmi beyannameleri (KDV, Muhtasar, Kurumlar Vergisi), bilanço ve mizan tablolarını hazırlar.
+                            Ön muhasebe; işletmenin günlük nakit akışını, stoklarını, cari hesaplarını, fatura ve
+                            çek-senet gibi operasyonel verilerini takip eder. Genel muhasebe ise devlet ve maliye
+                            karşısındaki resmi beyannameleri (KDV, Muhtasar, Kurumlar Vergisi), bilanço ve mizan
+                            tablolarını hazırlar.
                         </p>
                     </details>
 
                     <!-- Soru 2 -->
-                    <details class="group bg-white rounded-2xl border border-slate-200 p-4 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
-                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                    <details
+                        class="group bg-white rounded-2xl border border-slate-200 p-4 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary
+                            class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
                             <span>Ön Muhasebenin Görev ve Sorumluluk Alanları Nelerdir?</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                            <i data-lucide="chevron-down"
+                                class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
                         </summary>
                         <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-                            Müşteri ve tedarikçi cari hesap borç/alacak takibi, kasa ve banka nakit hareketlerinin kaydı, fatura ve irsaliye kesilmesi, stok takibi ve günü gelen ödemeler ile tahsilatların kontrolü ön muhasebenin temel alanlarıdır.
+                            Müşteri ve tedarikçi cari hesap borç/alacak takibi, kasa ve banka nakit hareketlerinin
+                            kaydı, fatura ve irsaliye kesilmesi, stok takibi ve günü gelen ödemeler ile tahsilatların
+                            kontrolü ön muhasebenin temel alanlarıdır.
                         </p>
                     </details>
 
                     <!-- Soru 3 -->
-                    <details class="group bg-white rounded-2xl border border-slate-200 p-4 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
-                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                    <details
+                        class="group bg-white rounded-2xl border border-slate-200 p-4 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary
+                            class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
                             <span>DİA Ön Muhasebe Programı Mobilden Kullanılabilir mi?</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                            <i data-lucide="chevron-down"
+                                class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
                         </summary>
                         <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-                            Evet. DİA %100 bulut tabanlı bir yazılım olduğu için iOS ve Android mobil uygulamalarımızın yanı sıra tablet veya web tarayıcılar üzerinden dilediğiniz an sisteminize erişip işlem yapabilirsiniz.
+                            Evet. DİA %100 bulut tabanlı bir yazılım olduğu için iOS ve Android mobil uygulamalarımızın
+                            yanı sıra tablet veya web tarayıcılar üzerinden dilediğiniz an sisteminize erişip işlem
+                            yapabilirsiniz.
                         </p>
                     </details>
 
                     <!-- Soru 4 -->
-                    <details class="group bg-white rounded-2xl border border-slate-200 p-4 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
-                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                    <details
+                        class="group bg-white rounded-2xl border border-slate-200 p-4 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary
+                            class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
                             <span>Programda Cari ve Stok Takibi İçin Sınırlamalar Bulunuyor mu?</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                            <i data-lucide="chevron-down"
+                                class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
                         </summary>
                         <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-                            Hayır. DİA altyapısında sınırsız sayıda cari kart, ürün stok kartı, fatura ve işlem kaydı oluşturabilirsiniz. Sistem performans kaybı yaşamadan büyüyen veri hacminizi destekler.
+                            Hayır. DİA altyapısında sınırsız sayıda cari kart, ürün stok kartı, fatura ve işlem kaydı
+                            oluşturabilirsiniz. Sistem performans kaybı yaşamadan büyüyen veri hacminizi destekler.
                         </p>
                     </details>
 
                     <!-- Soru 5 -->
-                    <details class="group bg-white rounded-2xl border border-slate-200 p-4 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
-                        <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
+                    <details
+                        class="group bg-white rounded-2xl border border-slate-200 p-4 open:border-l-4 open:border-l-[#245BA7] shadow-sm transition-all">
+                        <summary
+                            class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#245BA7]">
                             <span>Geleneksel ve Bulut Ön Muhasebe Arasındaki Farklar Nelerdir?</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
+                            <i data-lucide="chevron-down"
+                                class="w-5 h-5 group-open:rotate-180 transition-transform text-slate-400"></i>
                         </summary>
                         <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-                            Geleneksel yazılımlar tek bir bilgisayara kurulur, fiziksel sunucu gerektirir ve yedekleme sorumluluğu kullanıcıdadır. Bulut ön muhasebe ise internet olan her yerden erişilebilir, sunucu maliyeti gerektirmez ve veriler otomatik yedeklenir.
+                            Geleneksel yazılımlar tek bir bilgisayara kurulur, fiziksel sunucu gerektirir ve yedekleme
+                            sorumluluğu kullanıcıdadır. Bulut ön muhasebe ise internet olan her yerden erişilebilir,
+                            sunucu maliyeti gerektirmez ve veriler otomatik yedeklenir.
                         </p>
                     </details>
                 </div>
@@ -602,12 +729,14 @@
         <!-- ========================================================================= -->
         <section id="musteri-ve-blog" class="py-8 bg-white">
             <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-                
+
                 <!-- Müşteri Yorumları -->
                 <div class="space-y-8">
                     <div class="text-center max-w-5xl mx-auto">
-                        <h2 class="text-3xl font-extrabold text-slate-900">Müşterilerimiz <span class="text-[#E77F18]">Ne Diyor?</span></h2>
-                        <p class="text-sm text-slate-600">DİA Ön Muhasebe çözümüyle finansal süreçlerini dijitalleştiren B2B firmaları.</p>
+                        <h2 class="text-3xl font-extrabold text-slate-900">Müşterilerimiz <span
+                                class="text-[#E77F18]">Ne Diyor?</span></h2>
+                        <p class="text-sm text-slate-600">DİA Ön Muhasebe çözümüyle finansal süreçlerini dijitalleştiren
+                            B2B firmaları.</p>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -620,7 +749,9 @@
                                 <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
                             </div>
                             <p class="text-sm text-slate-600 italic leading-relaxed">
-                                "Cari hesap alacak takibinde yaşadığımız karmaşa DİA Ön Muhasebe modülü sayesinde bitti. Vadesi geçen ödemeleri anında görüp aksiyon alabiliyoruz. Kompiturk ekibine teşekkürler."
+                                "Cari hesap alacak takibinde yaşadığımız karmaşa DİA Ön Muhasebe modülü sayesinde bitti.
+                                Vadesi geçen ödemeleri anında görüp aksiyon alabiliyoruz. Kompiturk ekibine
+                                teşekkürler."
                             </p>
                             <div class="pt-2 border-t border-slate-200/60 flex items-center justify-between">
                                 <span class="text-sm font-bold text-slate-900">Murat A.</span>
@@ -637,7 +768,8 @@
                                 <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
                             </div>
                             <p class="text-sm text-slate-600 italic leading-relaxed">
-                                "e-Fatura kesmek ve cep telefonumdan kasa-banka durumunu izlemek harika bir kolaylık. Kurulum aşamasındaki eğitimi ve kesintisiz desteği için Kompiturk'ü kutlarım."
+                                "e-Fatura kesmek ve cep telefonumdan kasa-banka durumunu izlemek harika bir kolaylık.
+                                Kurulum aşamasındaki eğitimi ve kesintisiz desteği için Kompiturk'ü kutlarım."
                             </p>
                             <div class="pt-2 border-t border-slate-200/60 flex items-center justify-between">
                                 <span class="text-sm font-bold text-slate-900">Canan Y.</span>
@@ -650,42 +782,57 @@
                 <!-- Blog Makaleleri (3 Kart) -->
                 <div class="space-y-8 pt-8 border-t border-slate-200/80">
                     <div class="text-center max-w-5xl mx-auto">
-                        <h2 class="text-3xl font-extrabold text-slate-900">Ön Muhasebe <span class="text-[#245BA7]">Rehberi & Makaleler</span></h2>
+                        <h2 class="text-3xl font-extrabold text-slate-900">Ön Muhasebe <span
+                                class="text-[#245BA7]">Rehberi & Makaleler</span></h2>
                         <p class="text-sm text-slate-600">Finansal süreçlerinize değer katacak güncel içeriklerimiz.</p>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <!-- Makale 1 -->
-                        <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group">
+                        <article
+                            class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group">
                             <div class="p-6 space-y-3">
-                                <span class="text-xs font-bold text-[#245BA7] uppercase tracking-wider bg-blue-50 px-2.5 py-1 rounded-md">BULUT AVANTAJI</span>
-                                <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors line-clamp-2">
+                                <span
+                                    class="text-xs font-bold text-[#245BA7] uppercase tracking-wider bg-blue-50 px-2.5 py-1 rounded-md">BULUT
+                                    AVANTAJI</span>
+                                <h3
+                                    class="text-lg font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors line-clamp-2">
                                     Bulut Ön Muhasebe Programı Kullanmanın Avantajları Nelerdir?
                                 </h3>
                                 <p class="text-xs text-slate-600 line-clamp-2">
-                                    Mekan bağımsız çalışma ve sıfır donanım yatırımıyla maliyetlerinizi nasıl düşürürsünüz?
+                                    Mekan bağımsız çalışma ve sıfır donanım yatırımıyla maliyetlerinizi nasıl
+                                    düşürürsünüz?
                                 </p>
                             </div>
                         </article>
 
                         <!-- Makale 2 -->
-                        <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group">
+                        <article
+                            class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group">
                             <div class="p-6 space-y-3">
-                                <span class="text-xs font-bold text-[#E77F18] uppercase tracking-wider bg-amber-50 px-2.5 py-1 rounded-md">SEÇİM REHBERİ</span>
-                                <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#E77F18] transition-colors line-clamp-2">
+                                <span
+                                    class="text-xs font-bold text-[#E77F18] uppercase tracking-wider bg-amber-50 px-2.5 py-1 rounded-md">SEÇİM
+                                    REHBERİ</span>
+                                <h3
+                                    class="text-lg font-bold text-slate-900 group-hover:text-[#E77F18] transition-colors line-clamp-2">
                                     Ön Muhasebe Programı Seçerken Nelere Dikkat Edilmeli?
                                 </h3>
                                 <p class="text-xs text-slate-600 line-clamp-2">
-                                    İşletmeniz için doğru yazılımı seçerken göz önünde bulundurmanız gereken kritik kriterler.
+                                    İşletmeniz için doğru yazılımı seçerken göz önünde bulundurmanız gereken kritik
+                                    kriterler.
                                 </p>
                             </div>
                         </article>
 
                         <!-- Makale 3 -->
-                        <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group">
+                        <article
+                            class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group">
                             <div class="p-6 space-y-3">
-                                <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded-md">PRATİK KULLANIM</span>
-                                <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2">
+                                <span
+                                    class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded-md">PRATİK
+                                    KULLANIM</span>
+                                <h3
+                                    class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2">
                                     Ön Muhasebe Programı Nasıl Kullanılır?
                                 </h3>
                                 <p class="text-xs text-slate-600 line-clamp-2">
@@ -710,4 +857,5 @@
         lucide.createIcons();
     </script>
 </body>
+
 </html>
