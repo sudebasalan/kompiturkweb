@@ -48,12 +48,12 @@
                 <!-- Form -->
                 <form id="it-cta-form" onsubmit="handleItFormSubmit(event)" class="space-y-4">
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">Ad Soyad / Firma Adı *</label>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">   AD SOYAD    <span class="text-[#DC2626]">*</span>  / Firma Adı *</label>
                         <input type="text" required placeholder="Ahmet Yılmaz - XYZ Lojistik" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 transition-all">
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">Telefon Numarası *</label>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Telefon <span class="text-[#DC2626]">*</span>  Numarası *</label>
                         <input type="tel" required placeholder="05XX XXX XX XX" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 transition-all">
                     </div>
 

@@ -223,23 +223,16 @@
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                     <div class="space-y-1.5">
                                         <label for="iletisim-ad" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
-                                            Ad Soyad <span class="text-[#DC2626]">*</span>
+                                            AD SOYAD <span class="text-[#DC2626]">*</span>
                                         </label>
                                         <input type="text" id="iletisim-ad" name="iletisim-ad" required placeholder="Örn: Ahmet Yılmaz" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
-                                    </div>
-
-                                    <div class="space-y-1.5">
-                                        <label for="iletisim-sirket" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
-                                            Şirket Adı <span class="text-[#DC2626]">*</span>
-                                        </label>
-                                        <input type="text" id="iletisim-sirket" name="iletisim-sirket" required placeholder="Firma Ünvanı" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
                                     </div>
                                 </div>
 
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                     <div class="space-y-1.5">
                                         <label for="iletisim-eposta" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
-                                            E-Posta Adresi <span class="text-[#DC2626]">*</span>
+                                            E-Posta Adresi
                                         </label>
                                         <input type="email" id="iletisim-eposta" name="iletisim-eposta" required placeholder="ahmet@sirketiniz.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all" />
                                     </div>
@@ -254,7 +247,7 @@
 
                                 <div class="space-y-1.5">
                                     <label for="iletisim-hizmet" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
-                                        İlgilendiğiniz Hizmet / Çözüm <span class="text-[#DC2626]">*</span>
+                                        İlgilendiğiniz Hizmet / Çözüm
                                     </label>
                                     <select id="iletisim-hizmet" name="iletisim-hizmet" required class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all cursor-pointer">
                                         <option value="" disabled selected>Lütfen bir hizmet seçin</option>
@@ -269,7 +262,7 @@
 
                                 <div class="space-y-1.5">
                                     <label for="iletisim-mesaj" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
-                                        Mesajınız veya Proje Detayınız <span class="text-[#DC2626]">*</span>
+                                        Mesajınız veya Proje Detayınız
                                     </label>
                                     <textarea id="iletisim-mesaj" name="iletisim-mesaj" rows="4" required placeholder="Şirketinizin ihtiyaçlarını veya sormak istediklerinizi buraya yazabilirsiniz..." class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 outline-none transition-all resize-none"></textarea>
                                 </div>
@@ -277,7 +270,7 @@
                                 <div class="flex items-start gap-3 pt-1">
                                     <input type="checkbox" id="kvkk-onay" name="kvkk-onay" required class="w-4 h-4 mt-0.5 rounded border-slate-300 text-[#DC2626] focus:ring-[#DC2626] cursor-pointer" />
                                     <label for="kvkk-onay" class="text-xs text-slate-500 leading-snug cursor-pointer">
-                                        Kişisel verilerimin KVKK Aydınlatma Metni kapsamında demo ve bilgilendirme amacıyla işlenmesini kabul ediyorum. <span class="text-[#DC2626]">*</span>
+                                        Kişisel verilerimin KVKK Aydınlatma Metni kapsamında demo ve bilgilendirme amacıyla işlenmesini kabul ediyorum.
                                     </label>
                                 </div>
 
@@ -292,62 +285,54 @@
                 </div>
             </div>
         </section>
-<!-- ========================================================================= -->
-<!-- 3. İNTERAKTİF GOOGLE MAPS / HARİTA BÖLÜMÜ (DOĞRU NOKTA & TAM MERKEZLENMİŞ) -->
-<!-- ========================================================================= -->
-<section id="harita-bolumu" class="py-8 bg-white border-b border-slate-200/85">
-    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-        
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div class="space-y-1">
-                <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-3 py-1 rounded-full border border-red-100">
-                    LOKASYONUMUZ
-                </span>
-                <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight">
-                    Ofisimizi <span class="text-[#1E3A8A]">Ziyaret Edin</span>
-                </h2>
-                <p class="text-xs sm:text-sm text-slate-600">
-                    Yakuplu Mah. Yakuplu Cad. Ceylan Rezidans A Blok Daire: 157-158 Beylikdüzü / İstanbul
-                </p>
+
+        <!-- 3. İNTERAKTİF GOOGLE MAPS / HARİTA BÖLÜMÜ -->
+        <section id="harita-bolumu" class="py-8 bg-white border-b border-slate-200/85">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                    <div class="space-y-1">
+                        <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-3 py-1 rounded-full border border-red-100">
+                            LOKASYONUMUZ
+                        </span>
+                        <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight">
+                            Ofisimizi <span class="text-[#1E3A8A]">Ziyaret Edin</span>
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-600">
+                            Yakuplu Mah. Yakuplu Cad. Ceylan Rezidans A Blok Daire: 157-158 Beylikdüzü / İstanbul
+                        </p>
+                    </div>
+
+                    <a href="https://maps.google.com/?q=Kompiturk+Bilgisayar+Yakuplu+Ceylan+Rezidans" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#DC2626] hover:bg-[#B91C1C] text-white font-bold text-xs sm:text-sm shadow-md transition-all self-start md:self-auto">
+                        <i data-lucide="navigation" class="w-4 h-4"></i>
+                        <span>Yol Tarifi Al</span>
+                    </a>
+                </div>
+
+                <div class="relative rounded-2xl overflow-hidden shadow-md border border-slate-200 h-[280px] w-full bg-slate-100">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=Kompiturk%20Bilgisayar%20Yakuplu%20Caddesi%20Ceylan%20Rezidans%20Beylikduzu&t=&z=16&ie=UTF8&iwloc=B&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Kompiturk Bilgisayar Ofis Konumu"
+                        class="w-full h-full">
+                    </iframe>
+                </div>
             </div>
+        </section>
 
-            <a href="https://maps.google.com/?q=Kompiturk+Bilgisayar+Yakuplu+Ceylan+Rezidans" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#DC2626] hover:bg-[#B91C1C] text-white font-bold text-xs sm:text-sm shadow-md transition-all self-start md:self-auto">
-                <i data-lucide="navigation" class="w-4 h-4"></i>
-                <span>Yol Tarifi Al</span>
-            </a>
-        </div>
-
-        <!-- Canlı Harita Konteyneri (Doğru Bina Tam Ortada) -->
-        <div class="relative rounded-2xl overflow-hidden shadow-md border border-slate-200 h-[280px] w-full bg-slate-100">
-            <iframe 
-                src="https://maps.google.com/maps?q=Kompiturk%20Bilgisayar%20Yakuplu%20Caddesi%20Ceylan%20Rezidans%20Beylikduzu&t=&z=16&ie=UTF8&iwloc=B&output=embed" 
-                width="100%" 
-                height="100%" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Kompiturk Bilgisayar Ofis Konumu"
-                class="w-full h-full">
-            </iframe>
-        </div>
-
-    </div>
-</section>
-
-        <!-- ========================================================================= -->
         <!-- 4. HIZLI DESTEK & SIKÇA SORULAN SORULAR -->
-        <!-- ========================================================================= -->
         <section id="iletisim-faq" class="py-12 bg-[#F8FAFC]">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-                
                 <div class="text-center space-y-2">
                     <h2 class="text-3xl font-extrabold text-slate-900">Sıkça Sorulan <span class="text-[#DC2626]">Sorular</span></h2>
                     <p class="text-sm text-slate-600">İletişim, demo talepleri ve destek süreçleri hakkında merak edilenler.</p>
                 </div>
 
                 <div class="space-y-4">
-                    <!-- Soru 1 -->
                     <details class="group bg-white rounded-2xl border border-slate-200 p-4 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
                         <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
                             <span>DİA ERP demo talebim ne kadar sürede karşılanır?</span>
@@ -358,7 +343,6 @@
                         </p>
                     </details>
 
-                    <!-- Soru 2 -->
                     <details class="group bg-white rounded-2xl border border-slate-200 p-4 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
                         <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
                             <span>Uzaktan teknik destek hizmetiniz var mı?</span>
@@ -369,7 +353,6 @@
                         </p>
                     </details>
 
-                    <!-- Soru 3 -->
                     <details class="group bg-white rounded-2xl border border-slate-200 p-4 open:border-l-4 open:border-l-[#DC2626] shadow-sm transition-all">
                         <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 group-open:text-[#DC2626]">
                             <span>İstanbul dışındaki şirketlere de hizmet veriyor musunuz?</span>

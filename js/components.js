@@ -337,7 +337,7 @@ function loadHeader() {
                                     <i data-lucide="help-circle" class="w-4 h-4 text-brandSlate group-hover/sub:text-brandRed"></i>
                                     <span class="text-sm font-bold">Sıkça Sorulan Sorular </span>
                                 </a>
-                                <a href="${p}kurumsal/blog.htm" target ="_blank" class="flex items-center gap-3 px-4 py-2.5 hover:bg-brandIce rounded-lg group/sub">
+                                <a href="${p}kurumsal/blog.html" target ="_blank" class="flex items-center gap-3 px-4 py-2.5 hover:bg-brandIce rounded-lg group/sub">
                                     <i data-lucide="layout" class="w-4 h-4 text-brandSlate group-hover/sub:text-brandRed"></i>
                                     <span class="text-sm font-bold">Blog</span>
                                 </a>
