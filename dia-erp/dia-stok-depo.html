@@ -549,54 +549,22 @@
         </section>
 
         <!-- ========================================================================= -->
-        <!-- 8. BÖLÜM: BLOG YAZILARIMIZ (3 KART)                                       -->
+        <!-- 8. BÖLÜM: BLOG YAZILARIMIZ (3 KART) -->
         <!-- ========================================================================= -->
-        <section id="blog" class="py-8 bg-[#F8FAFC]">
-            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-                <div class="text-center max-w-5xl mx-auto">
-                    <h2 class="text-3xl font-extrabold text-slate-900">Stok Yönetimi <span class="text-[#245BA7]">Rehberi</span></h2>
-                    <p class="text-sm text-slate-600">Depo ve stok süreçlerinizi iyileştirecek uzman içeriklerimiz.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Makale 1 -->
-                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
-                        <div class="p-6 space-y-3">
-                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors line-clamp-2">
-                                İyi Bir Stok Depo Yönetimi Çözümü Kullanmanın Avantajları
-                            </h3>
-                            <p class="text-xs text-slate-600 line-clamp-2">
-                                Doğru depo otomasyonu ile işletme maliyetlerinizi %30 oranında nasıl düşürebileceğinizi inceleyin.
-                            </p>
-                        </div>
-                    </article>
-
-                    <!-- Makale 2 -->
-                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
-                        <div class="p-6 space-y-3">
-                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#E77F18] transition-colors line-clamp-2">
-                                Stok ve Depo Yönetimi Yapan Yazılımlar Ne İşe Yarar?
-                            </h3>
-                            <p class="text-xs text-slate-600 line-clamp-2">
-                                Karmaşık depo operasyonlarını tek merkezden izlemenin işletmelere kattığı hız ve verimlilik.
-                            </p>
-                        </div>
-                    </article>
-
-                    <!-- Makale 3 -->
-                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
-                        <div class="p-6 space-y-3">
-                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2">
-                                Depoda Stok Fazlalıklarının Başlıca Nedenleri
-                            </h3>
-                            <p class="text-xs text-slate-600 line-clamp-2">
-                                Atıl stok birikmesini önlemek için uygulamanız gereken akıllı sipariş ve tahminleme yöntemleri.
-                            </p>
-                        </div>
-                    </article>
-                </div>
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <h2 class="text-2xl font-black mb-8">İlgili Rehberler ve Makaleler</h2>
+            <div id="blog-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- JS Kartları Buraya Basacak -->
             </div>
-        </section>
+        </div>
+
+        <!-- JS Çağrıları -->
+        <script src="../../js/blog-data.js"></script>
+        <script src="../../js/render-blogs.js"></script>
+        <script>
+            // Fonksiyon adı loadBlogSection olmalı ve it-altyapı sayfasındayken 'it' çağrılmalı
+            loadBlogSection('erp');
+        </script>
 
     </main>
 

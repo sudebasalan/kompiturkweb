@@ -717,75 +717,24 @@
             </div>
         </section>
 
+        
         <!-- ========================================================================= -->
-        <!-- 8. BLOG YAZILARIMIZ (3 KART)                                              -->
+        <!-- 8. BÖLÜM: BLOG YAZILARIMIZ (3 KART) -->
         <!-- ========================================================================= -->
-        <section id="blog" class="py-8 bg-[#F8FAFC]">
-            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-                <div class="text-center max-w-5xl mx-auto">
-                    <h2 class="text-3xl font-extrabold text-slate-900">Yazıcı & Baskı <span
-                            class="text-[#1E3A8A]">Rehberi & Makaleler</span></h2>
-                    <p class="text-sm text-slate-600">Ağ yazıcı yönetimi ve baskı maliyeti optimizasyonuna dair uzman
-                        içeriklerimiz.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Makale 1 -->
-                    <article
-                        class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
-                        <div class="p-6 space-y-3">
-                            <span
-                                class="text-xs font-bold text-[#1E3A8A] uppercase tracking-wider bg-blue-50 px-2.5 py-1 rounded-md">BASKI
-                                MALİYETİ</span>
-                            <h3
-                                class="text-lg font-bold text-slate-900 group-hover:text-[#1E3A8A] transition-colors line-clamp-2">
-                                Kurumsal Şirketlerde Yazdırma Maliyetlerini Ve Kağıt İsrafını %40 Azaltma Yolları
-                            </h3>
-                            <p class="text-xs text-slate-600 line-clamp-2">
-                                Kota yönetimi, varsayılan çift taraflı baskı ve siyah-beyaz optimizasyonları ile toner
-                                ve kağıt tasarrufu sağlama.
-                            </p>
-                        </div>
-                    </article>
-
-                    <!-- Makale 2 -->
-                    <article
-                        class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
-                        <div class="p-6 space-y-3">
-                            <span
-                                class="text-xs font-bold text-[#0EA5E9] uppercase tracking-wider bg-sky-50 px-2.5 py-1 rounded-md">GÜVENLİ
-                                BASKI</span>
-                            <h3
-                                class="text-lg font-bold text-slate-900 group-hover:text-[#0EA5E9] transition-colors line-clamp-2">
-                                Ağ Yazıcılarında Güvenlik: PIN Veya Kartlı Doğrulama İle Bilgi Sızıntısını Önleme
-                            </h3>
-                            <p class="text-xs text-slate-600 line-clamp-2">
-                                Gizli kurumsal evrakların yazıcı üzerinde başıboş kalmasını engelleyen Secure Print
-                                teknolojisinin önemi.
-                            </p>
-                        </div>
-                    </article>
-
-                    <!-- Makale 3 -->
-                    <article
-                        class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
-                        <div class="p-6 space-y-3">
-                            <span
-                                class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded-md">BARKOD
-                                ENTEGRASYONU</span>
-                            <h3
-                                class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2">
-                                Depo Ve Üretim Tesislerinde Barkod Yazıcı Entegrasyonunun Operasyonel Hıza Etkisi
-                            </h3>
-                            <p class="text-xs text-slate-600 line-clamp-2">
-                                ERP ve WMS sistemlerinden doğrudan etiket basım otomasyonunun depo sevkiyat süreçlerine
-                                kattığı hız.
-                            </p>
-                        </div>
-                    </article>
-                </div>
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <h2 class="text-2xl font-black mb-8">İlgili Rehberler ve Makaleler</h2>
+            <div id="blog-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- JS Kartları Buraya Basacak -->
             </div>
-        </section>
+        </div>
+
+        <!-- JS Çağrıları -->
+        <script src="../../js/blog-data.js"></script>
+        <script src="../../js/render-blogs.js"></script>
+        <script>
+            // Fonksiyon adı loadBlogSection olmalı ve it-altyapı sayfasındayken 'it' çağrılmalı
+            loadBlogSection('it');
+        </script>
 
     </main>
 

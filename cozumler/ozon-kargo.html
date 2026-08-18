@@ -587,57 +587,20 @@
 
         <!-- ========================================================================= -->
         <!-- 8. BLOG YAZILARIMIZ (3 KART)                                              -->
-        <!-- ========================================================================= -->
-        <section id="blog" class="py-8 bg-[#F8FAFC]">
-            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-                <div class="text-center max-w-5xl mx-auto">
-                    <h2 class="text-3xl font-extrabold text-slate-900">Kargo Otomasyonu <span class="text-[#DC2626]">Rehberi & Makaleler</span></h2>
-                    <p class="text-sm text-slate-600">Sevkiyat ve kargo operasyonlarınızı geliştirecek uzman içeriklerimiz.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Makale 1 -->
-                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
-                        <div class="p-6 space-y-3">
-                            <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded-md">PAKETLEME HIZI</span>
-                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2">
-                                E-Ticarette Kargo Paketleme Ve Etiketleme Hızını Artırmanın Yolları
-                            </h3>
-                            <p class="text-xs text-slate-600 line-clamp-2">
-                                Otomatik kargo barkod yazıcı entegrasyonu ile sevkiyat bandındaki darboğazları ortadan kaldırma teknikleri.
-                            </p>
-                        </div>
-                    </article>
-
-                    <!-- Makale 2 -->
-                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
-                        <div class="p-6 space-y-3">
-                            <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider bg-slate-100 px-2.5 py-1 rounded-md">HATASIZ SEVKİYAT</span>
-                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#0F172A] transition-colors line-clamp-2">
-                                Yanlış Adres Ve Hatalı Kargo Gönderimlerini Önleme Stratejileri
-                            </h3>
-                            <p class="text-xs text-slate-600 line-clamp-2">
-                                E-ticaret sipariş adreslerinin kargo firmalarına hatasız aktarılması ve iade maliyetlerinin düşürülmesi.
-                            </p>
-                        </div>
-                    </article>
-
-                    <!-- Makale 3 -->
-                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
-                        <div class="p-6 space-y-3">
-                            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider bg-amber-50 px-2.5 py-1 rounded-md">MÜŞTERİ MEMNUNİYETİ</span>
-                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-amber-600 transition-colors line-clamp-2">
-                                Kargo Entegrasyonlarının Müşteri Memnuniyeti Ve Operasyonel Maliyetlere Etkisi
-                            </h3>
-                            <p class="text-xs text-slate-600 line-clamp-2">
-                                Otomatik SMS bildirimleri ve canlı takip eşleşmelerinin destek maliyetlerini düşürmedeki rolü.
-                            </p>
-                        </div>
-                    </article>
-                </div>
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <h2 class="text-2xl font-black mb-8">İlgili Rehberler ve Makaleler</h2>
+            <div id="blog-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- JS Kartları Buraya Basacak -->
             </div>
-        </section>
+        </div>
 
+        <!-- JS Çağrıları -->
+        <script src="../../js/blog-data.js"></script>
+        <script src="../../js/render-blogs.js"></script>
+        <script>
+            // Fonksiyon adı loadBlogSection olmalı ve it-altyapı sayfasındayken 'it' çağrılmalı
+            loadBlogSection('entegre');
+        </script>
     </main>
 
     <!-- GLOBAL FOOTER BİLEŞENİ (components.js Tarafından Doldurulacak) -->

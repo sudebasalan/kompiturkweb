@@ -722,74 +722,22 @@
         </section>
 
         <!-- ========================================================================= -->
-        <!-- 8. BLOG YAZILARIMIZ (3 KART)                                              -->
+        <!-- 8. BÖLÜM: BLOG YAZILARIMIZ (3 KART) -->
         <!-- ========================================================================= -->
-        <section id="blog" class="py-8 bg-[#F8FAFC]">
-            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-                <div class="text-center max-w-5xl mx-auto">
-                    <h2 class="text-3xl font-extrabold text-slate-900">Donanım Destek <span
-                            class="text-[#1E3A8A]">Rehberi & Makaleler</span></h2>
-                    <p class="text-sm text-slate-600">Donanım bakımı ve kurumsal teknik servis süreçlerine dair uzman
-                        içeriklerimiz.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Makale 1 -->
-                    <article
-                        class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
-                        <div class="p-6 space-y-3">
-                            <span
-                                class="text-xs font-bold text-[#1E3A8A] uppercase tracking-wider bg-blue-50 px-2.5 py-1 rounded-md">İŞ
-                                SÜREKLİLİĞİ</span>
-                            <h3
-                                class="text-lg font-bold text-slate-900 group-hover:text-[#1E3A8A] transition-colors line-clamp-2">
-                                Kurumsal Şirketlerde Donanım Arızalarından Kaynaklı Veri Ve İş Kayıplarını Önleme
-                            </h3>
-                            <p class="text-xs text-slate-600 line-clamp-2">
-                                Ani sunucu ve disk arızalarının işletmelere maliyeti ile önleyici bakım tekniklerinin
-                                önemi.
-                            </p>
-                        </div>
-                    </article>
-
-                    <!-- Makale 2 -->
-                    <article
-                        class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
-                        <div class="p-6 space-y-3">
-                            <span
-                                class="text-xs font-bold text-[#0EA5E9] uppercase tracking-wider bg-sky-50 px-2.5 py-1 rounded-md">PERİYODİK
-                                BAKIM</span>
-                            <h3
-                                class="text-lg font-bold text-slate-900 group-hover:text-[#0EA5E9] transition-colors line-clamp-2">
-                                Sunucu Ve Bilgisayarlarda Periyodik Bakımın Cihaz Ömrüne Và Performansına Etkisi
-                            </h3>
-                            <p class="text-xs text-slate-600 line-clamp-2">
-                                Toz temizliği, termal macun değişimi ve disk sağlık taramalarının donanım arızalarını
-                                engellemedeki rolü.
-                            </p>
-                        </div>
-                    </article>
-
-                    <!-- Makale 3 -->
-                    <article
-                        class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
-                        <div class="p-6 space-y-3">
-                            <span
-                                class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded-md">SLA
-                                SÜREÇLERİ</span>
-                            <h3
-                                class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2">
-                                IT Destek Anlaşmalarında SLA (Servis Seviyesi Garanti) Süreçlerinin Önemi
-                            </h3>
-                            <p class="text-xs text-slate-600 line-clamp-2">
-                                Kurumsal bakım sözleşmelerinde yerinde müdahale sürelerinin ve konsinye cihaz
-                                garantisinin işletmeye sağladığı konfor.
-                            </p>
-                        </div>
-                    </article>
-                </div>
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <h2 class="text-2xl font-black mb-8">İlgili Rehberler ve Makaleler</h2>
+            <div id="blog-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- JS Kartları Buraya Basacak -->
             </div>
-        </section>
+        </div>
+
+        <!-- JS Çağrıları -->
+        <script src="../../js/blog-data.js"></script>
+        <script src="../../js/render-blogs.js"></script>
+        <script>
+            // Fonksiyon adı loadBlogSection olmalı ve it-altyapı sayfasındayken 'it' çağrılmalı
+            loadBlogSection('it');
+        </script>
 
     </main>
 

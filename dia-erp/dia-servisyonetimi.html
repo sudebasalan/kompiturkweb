@@ -587,58 +587,23 @@
             </div>
         </section>
 
-        <!-- ========================================================================= -->
+      <!-- ========================================================================= -->
         <!-- 8. BÖLÜM: BLOG YAZILARIMIZ (3 KART) -->
         <!-- ========================================================================= -->
-        <section id="blog" class="py-8 bg-[#F8FAFC]">
-            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-                <div class="text-center max-w-5xl mx-auto">
-                    <h2 class="text-3xl font-extrabold text-slate-900">Teknik Servis <span class="text-[#245BA7]">Rehberi</span></h2>
-                    <p class="text-sm text-slate-600">Onarım sürelerini kısaltmak, saha operasyonlarını yönetmek ve müşteri memnuniyeti üzerine içerikler.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Makale 1 -->
-                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
-                        <div class="p-6 space-y-3">
-                            <span class="text-xs font-bold text-[#245BA7] uppercase tracking-wider bg-blue-50 px-2.5 py-1 rounded-md">SAHA YÖNETİMİ</span>
-                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#245BA7] transition-colors line-clamp-2">
-                                Saha Teknisyenleri İçin Mobil Servis Uygulamasının 5 Avantajı
-                            </h3>
-                            <p class="text-xs text-slate-600 line-clamp-2">
-                                İş emirlerini sahada anında kapatmanın operasyonel hıza ve faturalandırmaya etkileri.
-                            </p>
-                        </div>
-                    </article>
-
-                    <!-- Makale 2 -->
-                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
-                        <div class="p-6 space-y-3">
-                            <span class="text-xs font-bold text-[#E77F18] uppercase tracking-wider bg-amber-50 px-2.5 py-1 rounded-md">YEDEK PARÇA</span>
-                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#E77F18] transition-colors line-clamp-2">
-                                Karlılığı Artıran Yedek Parça ve Araç Depo Yönetimi
-                            </h3>
-                            <p class="text-xs text-slate-600 line-clamp-2">
-                                Servis araçlarındaki stokların anlık takibi ile kayıpları engellemenin ve fire oranlarını düşürmenin yolları.
-                            </p>
-                        </div>
-                    </article>
-
-                    <!-- Makale 3 -->
-                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
-                        <div class="p-6 space-y-3">
-                            <span class="text-xs font-bold text-[#DC2626] uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded-md">MÜŞTERİ MEMNUNİYETİ</span>
-                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors line-clamp-2">
-                                İş Emri Takibi ve Şeffaf İletişim ile Müşteri Sadakati Yaratmak
-                            </h3>
-                            <p class="text-xs text-slate-600 line-clamp-2">
-                                Cihaz durumunu SMS ile anlık bildirmenin, çağrı merkezi yoğunluğunu azaltırken güveni nasıl inşa ettiği.
-                            </p>
-                        </div>
-                    </article>
-                </div>
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <h2 class="text-2xl font-black mb-8">İlgili Rehberler ve Makaleler</h2>
+            <div id="blog-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- JS Kartları Buraya Basacak -->
             </div>
-        </section>
+        </div>
+
+        <!-- JS Çağrıları -->
+        <script src="../../js/blog-data.js"></script>
+        <script src="../../js/render-blogs.js"></script>
+        <script>
+            // Fonksiyon adı loadBlogSection olmalı ve it-altyapı sayfasındayken 'it' çağrılmalı
+            loadBlogSection('erp');
+        </script>
 
     </main>
 
