@@ -79,17 +79,19 @@
             <!-- 2. ÖNE ÇIKAN SON DUYURU (FEATURED NEWS CARD) -->
             <section aria-label="Öne Çıkan Haber">
                 <div
-                    class="bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-8 shadow-xl shadow-slate-200/50 transition-all duration-300">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    class="bg-white border border-slate-200/80 rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl shadow-slate-200/50 transition-all duration-300">
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
 
                         <!-- Sol Taraf: Görsel Container -->
-                        <div class="lg:col-span-6 h-full min-h-[260px] sm:min-h-[300px]">
+                        <div class="lg:col-span-6 w-full">
                             <div
-                                class="relative rounded-2xl overflow-hidden h-full min-h-[260px] flex flex-col items-center justify-center">
-                                <img src="../images/haber/odul.jpg" alt="Ödüyo & Kompiturk Entegrasyonu" class="w-full h-full object-cover rounded-2xl">
+                                class="relative w-full rounded-2xl overflow-hidden bg-slate-50 flex items-center justify-center">
+
+                                <img src="../images/haber/odul.jpg" alt="Ödüyo & Kompiturk Entegrasyonu"
+                                    class="w-full h-auto max-w-full object-contain rounded-2xl block">
                             </div>
                         </div>
-
                         <!-- Sağ Taraf: İçerik -->
                         <div class="lg:col-span-6 space-y-4">
                             <div
@@ -153,8 +155,9 @@
                     <article
                         class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
                         <div>
-                            <div class="relative w-full h-56 overflow-hidden">
-                                <img src="../images/haber/yeniruthaber.png" alt="DİA ERP Mobil Saha Satış" class="w-full h-full object-cover">
+                            <div class="relative w-full aspect-video overflow-hidden">
+                                <img src="../images/haber/yeniruthaber.png" alt="DİA ERP Mobil Saha Satış"
+                                    class="w-full h-full object-cover">
                             </div>
 
                             <div class="p-6 space-y-3">
@@ -199,8 +202,9 @@
                     <article
                         class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
                         <div>
-                            <div class="relative w-full h-56 overflow-hidden">
-                                <img src="../images/haber/giblimithaber.png" alt="GİB e-Fatura ve e-İrsaliye" class="w-full h-full object-cover">
+                            <div class="relative w-full aspect-video overflow-hidden">
+                                <img src="../images/haber/giblimithaber.png" alt="GİB e-Fatura ve e-İrsaliye"
+                                    class="w-full h-full object-cover">
                             </div>
 
                             <div class="p-6 space-y-3">
@@ -245,8 +249,9 @@
                     <article
                         class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
                         <div>
-                            <div class="relative w-full h-56 overflow-hidden">
-                                <img src="../images/haber/ahtapothaber.png" alt="Ahtapot Depo Yönetim Sistemi" class="w-full h-full object-cover">
+                            <div class="relative w-full aspect-video overflow-hidden">
+                                <img src="../images/haber/ahtapothaber.png" alt="Ahtapot Depo Yönetim Sistemi"
+                                    class="w-full h-full object-cover">
                             </div>
 
                             <div class="p-6 space-y-3">
@@ -291,8 +296,9 @@
                     <article
                         class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
                         <div>
-                            <div class="relative w-full h-56 overflow-hidden">
-                                <img src="../images/haber/fuar.jpg" alt="TÜYAFED Fuarı" class="w-full h-full object-cover">
+                            <div class="relative w-full aspect-video overflow-hidden">
+                                <img src="../images/haber/fuar.jpg" alt="TÜYAFED Fuarı"
+                                    class="w-full h-full object-cover">
                             </div>
 
                             <div class="p-6 space-y-3">
@@ -342,8 +348,9 @@
                     <article
                         class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
                         <div>
-                            <div class="relative w-full h-56 overflow-hidden">
-                                <img src="../images/haber/utmhaber.png" alt="UTM Firewall Güvenlik Duvarı" class="w-full h-full object-cover">
+                            <div class="relative w-full aspect-video overflow-hidden">
+                                <img src="../images/haber/utmhaber.png" alt="UTM Firewall Güvenlik Duvarı"
+                                    class="w-full h-full object-cover">
                             </div>
 
                             <div class="p-6 space-y-3">
@@ -388,8 +395,9 @@
                     <article
                         class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
                         <div>
-                            <div class="relative w-full h-56 overflow-hidden">
-                                <img src="../images/haber/oduyohaber.png" alt="İş Ortaklığı" class="w-full h-full object-cover">
+                            <div class="relative w-full aspect-video overflow-hidden">
+                                <img src="../images/haber/oduyohaber.png" alt="İş Ortaklığı"
+                                    class="w-full h-full object-cover">
                             </div>
 
                             <div class="p-6 space-y-3">
@@ -433,7 +441,6 @@
 
         </div>
     </main>
-
     <!-- GLOBAL FOOTER (components.js tarafından doldurulur) -->
     <div id="global-footer"></div>
 
