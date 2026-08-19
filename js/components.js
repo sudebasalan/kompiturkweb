@@ -433,7 +433,7 @@ function loadHeader() {
                         <a href="${p}kurumsal/hakkımızda.html" class="block py-1.5 hover:text-brandRed">Hakkımızda</a>
                         <a href="${p}kurumsal/haberler.html" class="block py-1.5 hover:text-brandRed">Haberler</a>
                         <a href="${p}kurumsal/S.S.S.html" class="block py-1.5 hover:text-brandRed">S.S.S.</a>
-                        <a href="${p}kurumsal/blog.htm" class="block py-1.5 hover:text-brandRed">Blog & Rehberler</a>
+                        <a href="${p}kurumsal/blog.html" class="block py-1.5 hover:text-brandRed">Blog & Rehberler</a>
                     </div>
                 </div>
 
@@ -593,7 +593,7 @@ function loadFooter() {
                     <ul class="space-y-2.5 text-xs sm:text-sm text-slate-400">
                         <li><a href="${p}kurumsal/hakkımızda.html" class="hover:text-white hover:translate-x-1 transition-all inline-block">Hakkımızda</a></li>
                         <li><a href="${p}kurumsal/S.S.S.html" class="hover:text-white hover:translate-x-1 transition-all inline-block">S.S.S. (Sıkça Sorulanlar)</a></li>
-                        <li><a href="${p}kurumsal/blog.htm" class="hover:text-white hover:translate-x-1 transition-all inline-block">Blog & Rehberler</a></li>
+                        <li><a href="${p}kurumsal/blog.html" class="hover:text-white hover:translate-x-1 transition-all inline-block">Blog & Rehberler</a></li>
                         <li><a href="${p}iletisim/iletisim.html" class="hover:text-white hover:translate-x-1 transition-all inline-block">İletişim</a></li>
                     </ul>
                 </div>
