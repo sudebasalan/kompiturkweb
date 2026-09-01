@@ -1,11 +1,594 @@
+/* =========================================================================
+ * KOMPITURK MERKEZİ FORM VE API YAPILANDIRMASI (CENTRAL CONFIG)
+ * =========================================================================
+ * Backend endpoint hazır olduğunda sadece 'apiUrl' değerini doldurmanız yeterlidir.
+ * Tüm sitedeki (50+ sayfa) formlar otomatik olarak bu adrese POST isteği atacaktır.
+ */
+window.KOMPITURK_CONFIG = window.KOMPITURK_CONFIG || {
+    // Backend API URL (Örn: 'https://api.kompiturk.com.tr/api/leads' veya webhook adresi)
+    apiUrl: '', 
+    
+    // Backend hazır olana kadar sahte (mock) başarılı cevap simülasyonu (true / false)
+    useMock: true, 
+    
+    // Gerçekçi ağ gecikmesi simülasyonu (milisaniye cinsinden)
+    mockDelayMs: 850, 
+    
+    // Geliştirici konsolunda giden verileri ve bildirimleri renkli göster
+    debug: true 
+};
+
 // Global Taşma (Horizontal Scroll) Engelleyici ve Dinamik Menü Dinleyicisi
-document.addEventListener("DOMContentLoaded", function () {
+function initKompiturkComponents() {
     document.documentElement.classList.add('overflow-x-hidden', 'w-full');
     document.body.classList.add('overflow-x-hidden', 'w-full', 'max-w-full');
 
     loadHeader();
     loadFooter();
-});
+    initGlobalFormHandler();
+    initScrollReveal();
+    initMarqueeSliders();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener("DOMContentLoaded", initKompiturkComponents);
+} else {
+    initKompiturkComponents();
+}
+
+// Sayfa dosyası adına göre net ve kurumsal hizmet/ürün eşleştirme tablosu
+const PAGE_SERVICE_MAP = {
+    // DİA ERP Modülleri
+    'dia-on-muhasebe.html': 'DİA Ön Muhasebe',
+    'dia-genel-muhasebe.html': 'DİA Genel Muhasebe',
+    'dia-e-fatura.html': 'DİA e-Fatura & e-İrsaliye',
+    'dia-stok-depo.html': 'DİA Stok & Depo Yönetimi',
+    'dia-mobil-saha-satis.html': 'DİA Mobil Saha Satış',
+    'dia-e-ticaret-b2b.html': 'DİA E-Ticaret B2B',
+    'dia-perakende.html': 'DİA Perakende Satış & POS',
+    'dia-crm-servis.html': 'DİA CRM & Servis Yönetimi',
+    'dia-servisyonetimi.html': 'DİA Teknik Servis Yönetimi',
+    'dia-uretim.html': 'DİA Üretim Yönetimi',
+    'dia-restoran.html': 'DİA Restoran & Kafe POS',
+    'dia-personel-ik.html': 'DİA Personel & İK Bordro',
+    'dia-disticaret.html': 'DİA Dış Ticaret & İthalat/İhracat',
+    'dia-demirbas.html': 'DİA Demirbaş & Sabit Kıymet',
+    'dia-surec-yonetimi.html': 'DİA Süreç Yönetimi & İş Akışı',
+    'dia-yazilim-cozumleri.html': 'DİA ERP Kurumsal Çözümler',
+
+    // Çözümler & Entegrasyonlar
+    'pazaryeri-entegrasyonu.html': 'Pazaryeri Entegrasyonu',
+    'xml-hub-entegrasyon.html': 'XML Hub Entegrasyonu',
+    'depo-kurdu.html': 'Depo Kurdu Mobil WMS',
+    'ahtapot-depo-yonetimi.html': 'Ahtapot Depo Yönetimi',
+    'mobil-b2b-bayi-platformu.html': 'Mobil B2B Bayi Platformu',
+    'mobil-sicak-satis.html': 'Mobil Sıcak Satış',
+    'net-tahsilat.html': 'Net Tahsilat Sanal POS',
+    'distributor-pos.html': 'Distribütör POS',
+    'kargo-entegrasyonu.html': 'Kargo Entegrasyonu',
+    'ozon-kargo.html': 'Ozon & Kargo Entegrasyonu',
+    'logo-entegrasyon.html': 'Logo Yazılım Entegrasyonu',
+    'ford-otosan.html': 'Ford Otosan Entegrasyonu',
+    'kalite-kontrol-arsiv.html': 'Kalite Kontrol & Arşiv',
+    'kantar-entegrasyonu.html': 'Kantar Entegrasyonu',
+    'kompiboss.html': 'KompiBoss Yönetici Paneli',
+    'kurumsal-mobil-uygulama.html': 'Kurumsal Mobil Uygulama',
+    'pdks.html': 'PDKS Personel Devam Takip',
+    'yazilimcozumleri.html': 'Tüm Yazılım Çözümleri',
+
+    // IT Altyapı
+    'sunucu-kurulumu.html': 'Sunucu & Cloud Kurulumu',
+    'guvenlik-duvari.html': 'UTM Firewall Güvenlik Duvarı',
+    'yedekleme-cozumleri.html': 'Otomatik Yedekleme Çözümleri',
+    'ag-altyapisi.html': 'Kurumsal Ağ & Kablolama Altyapısı',
+    'yazilim-lisanslama.html': 'Yazılım Lisanslama',
+    'yazici-kurulumu.html': 'Yazıcı & Donanım Kurulumu',
+    'donanim-destegi.html': 'Donanım & Teknik Servis Desteği',
+    'bilgisayar-yazici-kiralama.html': 'Bilgisayar & Yazıcı Kiralama',
+    'sarf-malzemeleri.html': 'Sarf Malzemeleri Tedariği',
+    'hosting-domain.html': 'Kurumsal Hosting & Domain',
+    'e-imza.html': 'E-İmza & KEP Hizmetleri',
+    'itcozumleri.html': 'Kurumsal IT Çözümleri',
+
+    // Diğer Çözümler
+    'entegra.html': 'Entegra Entegrasyonu',
+    'ödüyo.html': 'Ödüyo Ödeme Sistemleri',
+
+    // Kurumsal
+    'hakkimizda.html': 'Kurumsal İletişim & Bilgi Formu',
+    'iletisim.html': 'Genel İletişim & Demo Talebi',
+    'index.html': 'Anasayfa Demo & Teklif Formu'
+};
+
+// Telefon numarasını Türkiye standart formatına anlık dönüştürür (05XX XXX XX XX)
+function formatPhoneNumber(value) {
+    if (!value) return '';
+    let digits = value.replace(/\D/g, '');
+    
+    // Eğer kullanıcı '5' ile başladıysa otomatik '0' ekle
+    if (digits.length > 0 && digits[0] === '5') {
+        digits = '0' + digits;
+    }
+    
+    // Maksimum 11 hane (05XX XXX XX XX)
+    digits = digits.substring(0, 11);
+    
+    if (digits.length <= 4) {
+        return digits;
+    } else if (digits.length <= 7) {
+        return `${digits.substring(0, 4)} ${digits.substring(4)}`;
+    } else if (digits.length <= 9) {
+        return `${digits.substring(0, 4)} ${digits.substring(4, 7)} ${digits.substring(7)}`;
+    } else {
+        return `${digits.substring(0, 4)} ${digits.substring(4, 7)} ${digits.substring(7, 9)} ${digits.substring(9, 11)}`;
+    }
+}
+
+// Telefon numarasının geçerli Türkiye numarası olup olmadığını doğrular
+function isValidTurkishPhone(phoneStr) {
+    if (!phoneStr) return false;
+    const digits = phoneStr.replace(/\D/g, '');
+    // 11 hane (05XXXXXXXXX veya 02XXXXXXXXX sabit hatlar)
+    if (digits.length === 11 && (digits.startsWith('05') || digits.startsWith('02') || digits.startsWith('03') || digits.startsWith('04') || digits.startsWith('08'))) {
+        return true;
+    }
+    // 10 hane (5XXXXXXXXX)
+    if (digits.length === 10 && digits.startsWith('5')) {
+        return true;
+    }
+    return false;
+}
+
+// Form içine gizli (hidden) hizmet inputu ve bot tuzağı (honeypot) ekler
+function ensureServiceInput(form) {
+    if (!form) return;
+    
+    // 1. Bot Tuzağı (Honeypot) Koruması
+    if (!form.querySelector('[name="_gotcha_hp"]')) {
+        const hpInput = document.createElement('input');
+        hpInput.type = 'text';
+        hpInput.name = '_gotcha_hp';
+        hpInput.tabIndex = -1;
+        hpInput.autocomplete = 'off';
+        hpInput.style.cssText = 'display:none!important;position:absolute!important;left:-9999px!important;visibility:hidden!important;';
+        form.prepend(hpInput);
+    }
+
+    // 2. Hizmet Bilgisi Kontrolü
+    const existing = form.querySelector('[name="service"], [name="hizmet"], [name="iletisim-hizmet"], [name="selected_service"]');
+    if (existing && existing.value) {
+        return;
+    }
+
+    const serviceName = detectFormService(form);
+    
+    if (existing) {
+        existing.value = serviceName;
+    } else {
+        const hiddenInput = document.createElement('input');
+        hiddenInput.type = 'hidden';
+        hiddenInput.name = 'service';
+        hiddenInput.value = serviceName;
+        form.prepend(hiddenInput);
+    }
+}
+
+// Bulunulan formun veya sayfanın hangi hizmete/ürüne ait olduğunu kesin olarak tespit eder
+function detectFormService(form) {
+    if (!form) return 'Genel İletişim / Demo Talebi';
+
+    // 1. Form içinde açık bir select veya input seçimi var mı?
+    const serviceInput = form.querySelector('[name="iletisim-hizmet"], [name="hizmet"], [name="service"], [name="selected_service"], [name="hizmet_turu"]');
+    if (serviceInput && serviceInput.value && serviceInput.value.trim() !== '') {
+        if (serviceInput.tagName === 'SELECT' && serviceInput.selectedOptions && serviceInput.selectedOptions.length > 0) {
+            const selectedText = serviceInput.selectedOptions[0].text.trim();
+            if (!selectedText.toLowerCase().includes('lütfen') && !selectedText.toLowerCase().includes('seçin')) {
+                return selectedText;
+            }
+        }
+        return serviceInput.value.trim();
+    }
+
+    // 2. Form üzerinde data-service veya data-product özniteliği var mı?
+    if (form.dataset.service) return form.dataset.service;
+    if (form.dataset.product) return form.dataset.product;
+
+    // 3. Dosya adına (URL pathname) göre eşleştirme tablosundan çek (En güvenilir yöntem)
+    const path = window.location.pathname;
+    const filename = path.substring(path.lastIndexOf('/') + 1).toLowerCase() || 'index.html';
+    if (PAGE_SERVICE_MAP[filename]) {
+        return PAGE_SERVICE_MAP[filename];
+    }
+
+    // 4. Formun bulunduğu kartın veya bölümün başlığı var mı?
+    const cardHeading = form.closest('.bg-white, section, div[class*="rounded"]')?.querySelector('h1, h2, h3');
+    if (cardHeading && cardHeading.innerText) {
+        const headingText = cardHeading.innerText.replace(/[\n\r]+/g, ' ').trim();
+        const cleanHeading = headingText
+            .replace(/Demo\s*&\s*Teklif(\s*Formu)?/gi, '')
+            .replace(/İçin\s*Ücretsiz\s*Keşif/gi, '')
+            .replace(/Demo\s*Talep\s*&\s*İletişim\s*Formu/gi, '')
+            .replace(/Ücretsiz\s*Demo\s*&\s*(Teklif|Bilgi)(\s*Alın|\s*İsteyin|\s*Formu)?/gi, '')
+            .replace(/Hızlı\s*Teklif\s*&\s*İletişim\s*Formu/gi, '')
+            .replace(/Demo\s*İsteyin/gi, '')
+            .replace(/Keşif\s*ve\s*Fiyat\s*Teklifi/gi, '')
+            .trim();
+        if (cleanHeading.length > 2) return cleanHeading;
+    }
+
+    // 5. Sayfa ana başlığı (h1)
+    const mainH1 = document.querySelector('h1');
+    if (mainH1 && mainH1.innerText) {
+        const h1Text = mainH1.innerText.replace(/[\n\r]+/g, ' ').trim();
+        if (h1Text.length > 2) return h1Text;
+    }
+
+    // 6. Belge başlığından (document.title) tespit et
+    if (document.title) {
+        const titlePart = document.title.split('|')[0].split('-')[0].trim();
+        if (titlePart && titlePart.toLowerCase() !== 'kompiturk' && titlePart.toLowerCase() !== 'kompiturk bilgisayar') {
+            return titlePart;
+        }
+    }
+
+    return 'Genel İletişim / Demo Talebi';
+}
+
+// Form içindeki isimsiz (name özniteliği olmayan) inputları akıllıca etiketler
+function ensureInputNames(form) {
+    if (!form) return;
+    const inputs = form.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+        if (!input.name || input.name.trim() === '') {
+            const type = (input.type || '').toLowerCase();
+            const placeholder = (input.placeholder || '').toLowerCase();
+            const id = (input.id || '').toLowerCase();
+            const labelText = (input.closest('div, label')?.querySelector('label')?.innerText || '').toLowerCase();
+
+            if (type === 'email' || placeholder.includes('eposta') || placeholder.includes('email') || labelText.includes('eposta') || labelText.includes('e-posta')) {
+                input.name = 'email';
+            } else if (type === 'tel' || placeholder.includes('05') || labelText.includes('telefon') || labelText.includes('gsm') || labelText.includes('phone') || id.includes('phone') || id.includes('tel')) {
+                input.name = 'phone';
+            } else if (labelText.includes('ad') || labelText.includes('soyad') || placeholder.includes('ahmet') || id.includes('fullname') || id.includes('name')) {
+                input.name = 'fullname';
+            } else if (labelText.includes('firma') || placeholder.includes('ltd') || placeholder.includes('şirket') || placeholder.includes('firma') || id.includes('company')) {
+                input.name = 'company';
+            } else if (input.tagName === 'TEXTAREA' || labelText.includes('mesaj') || labelText.includes('not') || labelText.includes('talep') || id.includes('message')) {
+                input.name = 'message';
+            } else if (input.tagName === 'SELECT' || labelText.includes('hizmet') || labelText.includes('ürün') || labelText.includes('modül')) {
+                input.name = 'service';
+            } else if (type === 'checkbox' && (id.includes('kvkk') || labelText.includes('kvkk'))) {
+                input.name = 'kvkk_consent';
+            } else {
+                input.name = id || `field_${Math.random().toString(36).substring(2, 7)}`;
+            }
+        }
+    });
+}
+
+// Modern, Tailwind & Glassmorphism Uyumlu Toast Bildirim Sistemi
+function showToast({ title, message, type = 'success', duration = 5000 }) {
+    let container = document.getElementById('kompiturk-toast-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.id = 'kompiturk-toast-container';
+        container.className = 'fixed bottom-10 sm:bottom-12 right-6 z-[999999] flex flex-col gap-3 max-w-sm w-full pointer-events-none px-4 sm:px-0';
+        document.body.appendChild(container);
+    }
+
+    const isSuccess = type === 'success';
+    const borderColor = isSuccess ? 'border-emerald-500/40' : 'border-red-500/40';
+    const shadowColor = isSuccess ? 'shadow-emerald-500/10' : 'shadow-red-500/10';
+    const iconBg = isSuccess ? 'bg-emerald-100 text-emerald-600' : 'bg-red-100 text-red-600';
+    const iconSvg = isSuccess 
+        ? `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>`
+        : `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"></circle><line x1="12" y1="8" x2="12" y2="12" stroke-width="2"></line><line x1="12" y1="16" x2="12.01" y2="16" stroke-width="2"></line></svg>`;
+
+    const toast = document.createElement('div');
+    toast.className = `bg-white/95 backdrop-blur-md pointer-events-auto border-2 ${borderColor} rounded-2xl p-4 shadow-2xl ${shadowColor} flex items-start gap-3.5 transform translate-y-10 opacity-0 transition-all duration-300 ease-out`;
+    toast.innerHTML = `
+        <div class="flex-shrink-0 w-10 h-10 rounded-xl ${iconBg} flex items-center justify-center">
+            ${iconSvg}
+        </div>
+        <div class="flex-1 pt-0.5">
+            <h4 class="text-sm font-black text-slate-900 leading-tight">${title}</h4>
+            <p class="text-xs text-slate-600 mt-1 leading-snug">${message}</p>
+        </div>
+        <button type="button" class="text-slate-400 hover:text-slate-700 p-1 transition-colors rounded-lg" aria-label="Kapat">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+    `;
+
+    const closeBtn = toast.querySelector('button');
+    const dismiss = () => {
+        toast.classList.add('translate-y-10', 'opacity-0');
+        setTimeout(() => {
+            toast.remove();
+        }, 300);
+    };
+
+    closeBtn.addEventListener('click', dismiss);
+    container.appendChild(toast);
+
+    // Giriş animasyonu
+    requestAnimationFrame(() => {
+        toast.classList.remove('translate-y-10', 'opacity-0');
+    });
+
+    if (duration > 0) {
+        setTimeout(dismiss, duration);
+    }
+}
+
+// Merkezi Asenkron Form Gönderim İşleyicisi
+async function handleGlobalFormSubmit(form, e) {
+    if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+
+    if (!form) return;
+
+    // 1. Bot Tuzağı (Honeypot) Kontrolü — Bot yakalandığında sessizce başarılı dön
+    const hp = form.querySelector('[name="_gotcha_hp"]');
+    if (hp && hp.value && hp.value.trim() !== '') {
+        console.warn('🤖 [Bot Koruması] Spam bot formu engellendi.');
+        showToast({
+            type: 'success',
+            title: 'Talebiniz Başarıyla Alındı!',
+            message: 'Talebiniz bize ulaştı. Ekibimiz en kısa sürede sizinle iletişime geçecektir.'
+        });
+        form.reset();
+        return;
+    }
+
+    // İsimsiz inputları otomatik düzelt
+    ensureInputNames(form);
+
+    // 2. Gelişmiş Telefon Numarası Doğrulaması (Türkiye 10/11 Hane Kontrolü)
+    const phoneInput = form.querySelector('input[type="tel"], [name="phone"], [name="iletisim-telefon"], [name="tel"]');
+    if (phoneInput) {
+        const rawPhone = phoneInput.value.trim();
+        if (!isValidTurkishPhone(rawPhone)) {
+            phoneInput.classList.add('border-red-500', 'ring-2', 'ring-red-500/20', 'animate-shake');
+            phoneInput.focus();
+            showToast({
+                type: 'error',
+                title: 'Geçersiz Telefon Numarası',
+                message: 'Lütfen 11 haneli geçerli bir telefon numarası giriniz (Örn: 05XX XXX XX XX).'
+            });
+            setTimeout(() => {
+                phoneInput.classList.remove('animate-shake');
+            }, 500);
+            return;
+        } else {
+            phoneInput.classList.remove('border-red-500', 'ring-2', 'ring-red-500/20');
+        }
+    }
+
+    // HTML5 Doğrulama Kontrolü (Email formatı, required alanlar vb.)
+    if (form.checkValidity && !form.checkValidity()) {
+        if (form.reportValidity) {
+            form.reportValidity();
+        }
+        return;
+    }
+
+    const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('button:not([type="button"])');
+    let originalBtnHtml = '';
+
+    if (submitBtn) {
+        originalBtnHtml = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.classList.add('opacity-80', 'cursor-not-allowed');
+        submitBtn.innerHTML = `
+            <svg class="animate-spin -ml-1 mr-2 h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <span>Gönderiliyor...</span>
+        `;
+    }
+
+    try {
+        const formData = new FormData(form);
+        const detectedService = detectFormService(form);
+        
+        const formType = formData.get('form_type') || (form.id === 'it-cta-form' ? 'hizli_it_kesif' : (window.location.pathname.includes('iletisim') ? 'genel_iletisim' : 'demo_teklif'));
+
+        // Backend'e gidecek standart ve temiz payload nesnesi
+        const payload = {
+            form_type: formType,
+            service: detectedService,
+            fullname: '',
+            phone: '',
+            email: '',
+            company: '',
+            message: '',
+            page_url: window.location.href,
+            page_title: document.title,
+            submitted_at: new Date().toISOString(),
+            raw_fields: {}
+        };
+
+        // Form alanlarını ayrıştır ve standartlaştır
+        for (const [key, value] of formData.entries()) {
+            // Honeypot alanını backend payload'a dahil etme
+            if (key === '_gotcha_hp') continue;
+
+            payload.raw_fields[key] = value;
+
+            const lowerKey = key.toLowerCase();
+            if ((lowerKey.includes('name') || lowerKey.includes('ad') || lowerKey === 'fullname') && !lowerKey.includes('firma')) {
+                if (!payload.fullname) payload.fullname = value;
+            } else if (lowerKey.includes('phone') || lowerKey.includes('tel') || lowerKey.includes('gsm')) {
+                if (!payload.phone) payload.phone = value;
+            } else if (lowerKey.includes('mail') || lowerKey.includes('eposta')) {
+                if (!payload.email) payload.email = value;
+            } else if (lowerKey.includes('company') || lowerKey.includes('firma') || lowerKey.includes('sirket')) {
+                if (!payload.company) payload.company = value;
+            } else if (lowerKey.includes('mesaj') || lowerKey.includes('message') || lowerKey.includes('not') || lowerKey.includes('talep')) {
+                if (!payload.message) payload.message = value;
+            }
+        }
+
+        const config = window.KOMPITURK_CONFIG || {};
+
+        if (config.debug) {
+            console.log(
+                '%c🚀 [Kompiturk Form Motoru] Form Gönderildi!',
+                'background: #DC2626; color: #fff; padding: 4px 10px; border-radius: 6px; font-weight: bold; font-size: 12px;',
+                payload
+            );
+        }
+
+        // Mock veya Canlı Endpoint Gönderimi
+        if (config.apiUrl && !config.useMock) {
+            const response = await fetch(config.apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP Error: ${response.status}`);
+            }
+        } else {
+            // Sahte (Mock) gecikme simülasyonu
+            const delay = config.mockDelayMs || 850;
+            await new Promise(resolve => setTimeout(resolve, delay));
+        }
+
+        // Başarılı Bildirim
+        showToast({
+            type: 'success',
+            title: 'Talebiniz Başarıyla Alındı!',
+            message: `"${detectedService}" konulu talebiniz bize ulaştı. Ekibimiz en kısa sürede sizinle iletişime geçecektir.`
+        });
+
+        // Formu temizle
+        form.reset();
+
+        // Eğer IT Modal içindeyse kapatma işlemini tetikle
+        if (typeof toggleItModal === 'function' && form.id === 'it-cta-form') {
+            const itSuccess = document.getElementById('it-cta-success');
+            const itForm = document.getElementById('it-cta-form');
+            if (itSuccess && itForm) {
+                itForm.classList.add('hidden');
+                itSuccess.classList.remove('hidden');
+                setTimeout(() => {
+                    toggleItModal(false);
+                    setTimeout(() => {
+                        itForm.classList.remove('hidden');
+                        itSuccess.classList.add('hidden');
+                    }, 500);
+                }, 2000);
+            }
+        }
+
+    } catch (error) {
+        console.error('Form gönderim hatası:', error);
+        showToast({
+            type: 'error',
+            title: 'Gönderim Başarısız Oldu',
+            message: 'Talebiniz iletilemedi. Lütfen WhatsApp veya +90 (212) 873 35 37 numarasından bize doğrudan ulaşın.'
+        });
+    } finally {
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('opacity-80', 'cursor-not-allowed');
+            submitBtn.innerHTML = originalBtnHtml;
+        }
+    }
+}
+
+
+
+// Sayfa Kaydırıldıkça Elementleri Canlandıran Global Observer
+function initScrollReveal() {
+    const revealEls = document.querySelectorAll('.reveal-drop, .reveal-pop, .reveal-left, .reveal-right, .reveal-fade');
+    if (revealEls.length === 0) return;
+
+    // Eğer IntersectionObserver desteklenmiyorsa hepsini görünür yap
+    if (!('IntersectionObserver' in window)) {
+        revealEls.forEach(el => el.classList.add('active'));
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.08,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealEls.forEach(el => observer.observe(el));
+}
+
+// Otomatik Kayan Ekranları (Marquee) Sonsuz Döngü İçin Klonlar ve Başlatır
+function initMarqueeSliders() {
+    const tracks = document.querySelectorAll('#yazilim-track, #it-track, .animate-marquee-right, .animate-marquee-left');
+    tracks.forEach(track => {
+        // Eğer zaten klonlandıysa tekrar klonlama
+        if (track.dataset.cloned === 'true') return;
+        track.dataset.cloned = 'true';
+
+        const originalChildren = Array.from(track.children);
+        if (originalChildren.length > 0) {
+            // Kesintisiz sonsuz kayma için kartları bir kez klonla
+            originalChildren.forEach(child => {
+                const clone = child.cloneNode(true);
+                clone.setAttribute('aria-hidden', 'true');
+                track.appendChild(clone);
+            });
+        }
+    });
+}
+
+// Tüm sitedeki formları dinleyen global başlatıcı
+function initGlobalFormHandler() {
+    // 1. Telefon Alanları İçin Otomatik Formatlayıcı (Auto-Mask: 05XX XXX XX XX)
+    document.addEventListener('input', function (e) {
+        const target = e.target;
+        if (target && (target.type === 'tel' || target.name === 'phone' || target.name === 'iletisim-telefon' || target.id?.includes('phone') || target.id?.includes('tel'))) {
+            const formatted = formatPhoneNumber(target.value);
+            if (target.value !== formatted) {
+                target.value = formatted;
+            }
+        }
+    });
+
+    // 2. Mevcut formların inline onsubmit engelleyicilerini temizle, input isimlerini ve hizmet bilgisini bağla
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        ensureServiceInput(form);
+        ensureInputNames(form);
+        form.onsubmit = function (e) {
+            e.preventDefault();
+            handleGlobalFormSubmit(form, e);
+            return false;
+        };
+    });
+
+    // 3. Event Delegation (Dinamik ve sonradan DOM'a eklenen formlar için)
+    document.addEventListener('submit', function (e) {
+        const form = e.target.closest('form');
+        if (form) {
+            e.preventDefault();
+            e.stopPropagation();
+            ensureServiceInput(form);
+            handleGlobalFormSubmit(form, e);
+        }
+    }, true);
+}
 
 // Bulunulan sayfanın klasör derinliğine göre kök dizin yolunu hesaplar
 function getPrefix() {
@@ -96,22 +679,46 @@ function loadHeader() {
     </section>
 
     <style>
-        /* Mega Menu Geçiş ve Köprü Düzeltmesi */
+        /* Mega Menu Geçiş ve Çakışmasız Akıllı Menü Yönetimi */
         .mega-menu {
             visibility: hidden;
             opacity: 0;
             pointer-events: none;
-            transform: translateY(8px);
-            transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+            transform: translateY(6px);
+            transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+            transition-delay: 0s;
         }
 
-        /* Hover esnasında menünün açık kalmasını sağlayan görünmez köprü */
-        .group:hover .mega-menu,
-        .mega-menu:hover {
-            visibility: visible;
-            opacity: 1;
+        /* Görünmez Hover Köprüsü (Nav Link ile Menü Arasındaki Boşluğu Kapatır) */
+        .mega-menu::before {
+            content: '';
+            position: absolute;
+            top: -24px;
+            left: -20px;
+            right: -20px;
+            height: 30px;
+            background: transparent;
             pointer-events: auto;
-            transform: translateY(0);
+        }
+
+        /* Sadece farenin üzerinde olduğu menü anında ve temiz açılır */
+        .group:hover > .mega-menu,
+        .mega-menu:hover {
+            visibility: visible !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
+            transform: translateY(0) !important;
+            transition: opacity 0.15s ease, transform 0.15s ease, visibility 0s !important;
+            transition-delay: 0s !important;
+        }
+
+        /* Başka bir menüye geçildiğinde önceki menüyü ANINDA kapat (Çakışmayı önler) */
+        .group:not(:hover) > .mega-menu {
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+            transform: translateY(6px) !important;
+            transition: none !important;
         }
         
         #mobile-menu-btn * {
@@ -479,7 +1086,7 @@ function loadFooter() {
     const p = getPrefix();
 
     const footerHTML = `
-  <footer id="main-footer" class="w-full bg-[##99999e] text-slate-300 overflow-hidden">
+  <footer id="main-footer" class="w-full bg-[#0B132B] text-slate-300 overflow-hidden">
     <div class="w-full !max-w-none !m-0 block bg-[#0B132B] text-slate-300 pt-16 pb-8 border-t-4 border-[#DC2626] relative z-20 mt-auto">
         
         <!-- İçeriklerin aşırı kenara yapışmaması için koruyucu iç container -->
@@ -607,11 +1214,11 @@ function loadFooter() {
                 </div>
                 
                 <div class="flex flex-wrap justify-center gap-3 sm:gap-6 text-slate-400">
-                    <a class="hover:text-slate-200 transition-colors">KVKK Aydınlatma Metni</a>
+                    <a href="${p}kurumsal/kvkk-aydinlatma-metni.html" class="hover:text-white hover:underline transition-colors">KVKK Aydınlatma Metni</a>
                     <span>•</span>
-                    <a class="hover:text-slate-200 transition-colors">Gizlilik Politikası</a>
+                    <a href="${p}kurumsal/gizlilik-politikasi.html" class="hover:text-white hover:underline transition-colors">Gizlilik Politikası</a>
                     <span>•</span>
-                    <a class="hover:text-slate-200 transition-colors">Çerez Politikası</a>
+                    <a href="${p}kurumsal/cerez-politikasi.html" class="hover:text-white hover:underline transition-colors">Çerez Politikası</a>
                 </div>
             </div>
 

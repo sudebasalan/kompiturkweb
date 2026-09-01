@@ -6,49 +6,18 @@
     <title>İletişim & DİA ERP Destek Merkezi | Kompiturk</title>
     <meta name="description" content="DİA ERP çözümleri, kurumsal IT altyapı hizmetleri, ücretsiz demo ve teknik destek talepleriniz için bize ulaşın. Kompiturk Bilgisayar.">
 
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter (Preconnected) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Local Compiled Tailwind CSS -->
+    <link rel="stylesheet" href="../css/style.css">
 
     <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brandRed: '#DC2626',
-                        brandRedDark: '#B91C1C',
-                        brandNavy: '#0F172A',
-                        brandNavyLight: '#1E3A8A',
-                        brandSlate: '#334155',
-                        brandIce: '#F8FAFC',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        },
-                        pulseGlow: {
-                            '0%, 100%': { opacity: 0.4 },
-                            '50%': { opacity: 0.8 },
-                        }
-                    },
-                    animation: {
-                        float: 'float 4s ease-in-out infinite',
-                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
-                    }
-                }
-            }
-        }
-    </script>
-</head>
+    </head>
 
 <body class="font-sans antialiased text-slate-800 bg-[#F8FAFC] min-h-screen flex flex-col overflow-x-hidden">
 
@@ -219,7 +188,7 @@
                                 </p>
                             </div>
 
-                            <form action="#" method="POST" class="space-y-5 relative z-10" onsubmit="event.preventDefault(); alert('Mesajınız ve demo talebiniz başarıyla alınmıştır. En kısa sürede size dönüş yapacağız.');">
+                            <form action="#" method="POST" class="space-y-5 relative z-10" id="iletisim-form">
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                     <div class="space-y-1.5">
                                         <label for="iletisim-ad" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">

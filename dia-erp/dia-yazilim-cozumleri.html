@@ -8,37 +8,20 @@
     <meta name="description"
         content="Ön muhasebeden stok depoya, e-faturadan üretim ve restoran yönetimine kadar tüm operasyonlarınızı DİA'nın güvenli bulut altyapısıyla otomatize edin. Kompiturk Yetkili Çözüm Ortağı.">
 
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter (Preconnected) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Local Compiled Tailwind CSS -->
+    <link rel="stylesheet" href="../css/style.css">
 
     <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
 
     <!-- Tailwind Konfigürasyon Sabitleri (Resmi DİA ERP Renk Paleti) -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brandRed: '#DC2626',
-                        brandNavy: '#0F172A',
-                        brandSlate: '#64748b',
-                        brandIce: '#F8FAFC',
-                        diaBlue: '#245BA7',
-                        diaOrange: '#E77F18',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-</head>
+    </head>
 
 <body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
 
@@ -241,7 +224,7 @@
         <div class="p-6 space-y-4">
             <div
                 class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
-                <img src="../images/diaimg/personel_ik.jpg" alt="Personel - İK Yönetimi" class="w-full h-full object-cover min-h-[180px]">
+                <img loading="lazy" decoding="async" src="../images/diaimg/personel_ik.jpg" alt="Personel - İK Yönetimi" class="w-full h-full object-cover min-h-[180px]">
             </div>
             <div class="flex items-center gap-3 pt-2">
                 <div
@@ -277,7 +260,7 @@
         <div class="p-6 space-y-4">
             <div
                 class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
-                <img src="../images/diaimg/on-muhasebe.jpeg" alt="Ön Muhasebe" class="w-full h-full object-cover min-h-[180px]">
+                <img loading="lazy" decoding="async" src="../images/diaimg/on-muhasebe.jpeg" alt="Ön Muhasebe" class="w-full h-full object-cover min-h-[180px]">
             </div>
             <div class="flex items-center gap-3 pt-2">
                 <div
@@ -310,7 +293,7 @@
         <div class="p-6 space-y-4">
             <div
                 class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
-                <img src="../images/diaimg/stokdepo-yonetimi.jpg" alt="Stok & Depo Yönetimi" class="w-full h-full object-cover min-h-[180px]">
+                <img loading="lazy" decoding="async" src="../images/diaimg/stokdepo-yonetimi.jpg" alt="Stok & Depo Yönetimi" class="w-full h-full object-cover min-h-[180px]">
             </div>
             <div class="flex items-center gap-3 pt-2">
                 <div
@@ -343,7 +326,7 @@
         <div class="p-6 space-y-4">
             <div
                 class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
-                <img src="../images/diaimg/mobil_saha_satis.jpg" alt="Mobil Saha Satış" class="w-full h-full object-cover min-h-[180px]">
+                <img loading="lazy" decoding="async" src="../images/diaimg/mobil_saha_satis.jpg" alt="Mobil Saha Satış" class="w-full h-full object-cover min-h-[180px]">
             </div>
             <div class="flex items-center gap-3 pt-2">
                 <div
@@ -377,7 +360,7 @@
         <div class="p-6 space-y-4">
             <div
                 class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
-                <img src="../images/diaimg/crm-musteri.jpeg" alt="CRM & Müşteri Yönetimi" class="w-full h-full object-cover min-h-[180px]">
+                <img loading="lazy" decoding="async" src="../images/diaimg/crm-musteri.jpeg" alt="CRM & Müşteri Yönetimi" class="w-full h-full object-cover min-h-[180px]">
             </div>
             <div class="flex items-center gap-3 pt-2">
                 <div
@@ -410,7 +393,7 @@
         <div class="p-6 space-y-4">
             <div
                 class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
-                <img src="../images/diaimg/is_akis_surec.jpg" alt="İş Akış ve Süreç Yönetimi" class="w-full h-full object-cover min-h-[180px]">
+                <img loading="lazy" decoding="async" src="../images/diaimg/is_akis_surec.jpg" alt="İş Akış ve Süreç Yönetimi" class="w-full h-full object-cover min-h-[180px]">
             </div>
             <div class="flex items-center gap-3 pt-2">
                 <div
@@ -443,7 +426,7 @@
         <div class="p-6 space-y-4">
             <div
                 class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
-                <img src="../images/diaimg/e-ticaret-b2b-b2c-pazaryeri.jpg" alt="E-Ticaret - B2B - B2C - Pazaryeri" class="w-full h-full object-cover min-h-[180px]">
+                <img loading="lazy" decoding="async" src="../images/diaimg/e-ticaret-b2b-b2c-pazaryeri.jpg" alt="E-Ticaret - B2B - B2C - Pazaryeri" class="w-full h-full object-cover min-h-[180px]">
             </div>
             <div class="flex items-center gap-3 pt-2">
                 <div
@@ -476,7 +459,7 @@
         <div class="p-6 space-y-4">
             <div
                 class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
-                <img src="../images/diaimg/e-donusum.jpeg" alt="E-Dönüşüm - E-Belge Yönetimi" class="w-full h-full object-cover min-h-[180px]">
+                <img loading="lazy" decoding="async" src="../images/diaimg/e-donusum.jpeg" alt="E-Dönüşüm - E-Belge Yönetimi" class="w-full h-full object-cover min-h-[180px]">
             </div>
             <div class="flex items-center gap-3 pt-2">
                 <div
@@ -507,7 +490,7 @@
         <div class="p-6 space-y-4">
             <div
                 class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
-                <img src="../images/diaimg/genel_muhasebe.jpg" alt="Genel Muhasebe Yönetimi" class="w-full h-full object-cover min-h-[180px]">
+                <img loading="lazy" decoding="async" src="../images/diaimg/genel_muhasebe.jpg" alt="Genel Muhasebe Yönetimi" class="w-full h-full object-cover min-h-[180px]">
             </div>
             <div class="flex items-center gap-3 pt-2">
                 <div
@@ -539,7 +522,7 @@
         <div class="p-6 space-y-4">
             <div
                 class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
-                <img src="../images/diaimg/uretim-yonetimi.jpg" alt="Üretim Yönetimi" class="w-full h-full object-cover min-h-[180px]">
+                <img loading="lazy" decoding="async" src="../images/diaimg/uretim-yonetimi.jpg" alt="Üretim Yönetimi" class="w-full h-full object-cover min-h-[180px]">
             </div>
             <div class="flex items-center gap-3 pt-2">
                 <div
@@ -570,7 +553,7 @@
         <div class="p-6 space-y-4">
             <div
                 class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
-                <img src="../images/diaimg/restoran_yonetim.jpg" alt="Restoran Yönetimi" class="w-full h-full object-cover min-h-[180px]">
+                <img loading="lazy" decoding="async" src="../images/diaimg/restoran_yonetim.jpg" alt="Restoran Yönetimi" class="w-full h-full object-cover min-h-[180px]">
             </div>
             <div class="flex items-center gap-3 pt-2">
                 <div
@@ -606,7 +589,7 @@
         <div class="p-6 space-y-4">
             <div
                 class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
-                <img src="../images/diaimg/magazayonetim.jpg" alt="Mağaza Yönetimi" class="w-full h-full object-cover min-h-[180px]">
+                <img loading="lazy" decoding="async" src="../images/diaimg/magazayonetim.jpg" alt="Mağaza Yönetimi" class="w-full h-full object-cover min-h-[180px]">
             </div>
             <div class="flex items-center gap-3 pt-2">
                 <div
@@ -642,7 +625,7 @@
         <div class="p-6 space-y-4">
             <div
                 class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
-                <img src="../images/diaimg/demirbas-yonetimi.jpg" alt="Demirbaş Yönetimi" class="w-full h-full object-cover min-h-[180px]">
+                <img loading="lazy" decoding="async" src="../images/diaimg/demirbas-yonetimi.jpg" alt="Demirbaş Yönetimi" class="w-full h-full object-cover min-h-[180px]">
             </div>
             <div class="flex items-center gap-3 pt-2">
                 <div
@@ -674,7 +657,7 @@
         <div class="p-6 space-y-4">
             <div
                 class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
-                <img src="../images/diaimg/dis-ticaret.jpg" alt="Dış Ticaret Yönetimi" class="w-full h-full object-cover min-h-[180px]">
+                <img loading="lazy" decoding="async" src="../images/diaimg/dis-ticaret.jpg" alt="Dış Ticaret Yönetimi" class="w-full h-full object-cover min-h-[180px]">
             </div>
             <div class="flex items-center gap-3 pt-2">
                 <div
@@ -706,7 +689,7 @@
         <div class="p-6 space-y-4">
             <div
                 class="relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/60 min-h-[180px] flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
-                <img src="../images/diaimg/servis_yonetimi.jpg" alt="Servis Yönetimi" class="w-full h-full object-cover min-h-[180px]">
+                <img loading="lazy" decoding="async" src="../images/diaimg/servis_yonetimi.jpg" alt="Servis Yönetimi" class="w-full h-full object-cover min-h-[180px]">
             </div>
             <div class="flex items-center gap-3 pt-2">
                 <div

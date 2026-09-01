@@ -6,37 +6,18 @@
     <title>Ödüyo — Akıllı Ödeme, Sanal POS ve Tahsilat Entegrasyonu | Kompiturk</title>
     <meta name="description" content="DİA ERP ile tam entegre Ödüyo altyapısı sayesinde tüm bankaların sanal POS'larını tek merkezden yönetin, tahsilatlarınızı otomatize edin. Kompiturk.">
 
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter (Preconnected) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Local Compiled Tailwind CSS -->
+    <link rel="stylesheet" href="../css/style.css">
 
     <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brandNavy: '#0F172A',
-                        brandNavyLight: '#1E3A8A',
-                        brandBlue: '#0066FF',
-                        brandBlueLight: '#00D2FF',
-                        brandSky: '#0284C7',
-                        brandRed: '#DC2626',
-                        brandSlate: '#334155',
-                        brandIce: '#F8FAFC',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-</head>
+    </head>
 <body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
 
     <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->
@@ -60,7 +41,7 @@
                     <!-- SOL KOLON: İÇERİK VE VURGULAR (Col-span-7) -->
                     <div class="lg:col-span-7 space-y-6 text-left">
                         <div class="inline-block bg-white p-3.5 rounded-2xl shadow-xl border border-white/80 mb-2">
-                            <img src="../images/logo.png" alt="Ödüyo Logo" class="h-12 w-auto object-contain">
+                            <img loading="lazy" decoding="async" src="../images/logo.png" alt="Ödüyo Logo" class="h-12 w-auto object-contain">
                         </div>
 
                         <div class="flex flex-wrap items-center gap-2">
@@ -153,16 +134,13 @@
                                     <input type="text" id="fullname" name="fullname" required placeholder="Örn: Ahmet Yılmaz" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#0066FF] focus:ring-2 focus:ring-[#0066FF]/20 outline-none transition-all" />
                                 </div>
 
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                
                                     <div class="space-y-1">
                                         <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                             Telefon <span class="text-[#DC2626]">*</span>  <span class="text-[#DC2626]">*</span><span class="text-[#0066FF]">*</span>
                                         </label>
                                         <input type="tel" id="phone" name="phone" required placeholder="05XX XXX XX XX" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:bg-white focus:border-[#0066FF] focus:ring-2 focus:ring-[#0066FF]/20 outline-none transition-all" />
                                     </div>
-
-                                    
-                                </div>
 
                                 <div class="space-y-1">
                                     <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">

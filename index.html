@@ -6,153 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kompiturk Bilgisayar | Yazılım, DİA ERP ve IT Çözümleri</title>
 
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter (Preconnected) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Local Compiled Tailwind CSS -->
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+    <!-- LCP Hero Image Preload -->
+    <link rel="preload" as="image" href="images/sliderimg/1.jpg" fetchpriority="high">
 
     <!-- Swiper.js CSS (Hero Slider İçin) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brandRed: '#DC2626',
-                        brandNavy: '#0F172A',
-                        brandSlate: '#64748b',
-                        brandIce: '#F8FAFC',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <style>
-        .mega-menu {
-            visibility: hidden;
-            opacity: 0;
-            transform: translateY(15px) translateX(-50%);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .group:hover .mega-menu {
-            visibility: visible;
-            opacity: 1;
-            transform: translateY(0) translateX(-50%);
-        }
-
-        .nav-link-underline {
-            position: relative;
-        }
-
-        .nav-link-underline::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: #DC2626;
-            transition: width 0.3s ease;
-        }
-
-        .nav-link-underline:hover::after {
-            width: 100%;
-        }
-
-        /* Swiper Özel Pagination Stil Özelleştirmesi */
-        .swiper-pagination-bullet {
-            width: 10px;
-            height: 10px;
-            background: #cbd5e1;
-            opacity: 1;
-            border-radius: 9999px;
-            transition: all 0.3s ease;
-        }
-
-        .swiper-pagination-bullet-active {
-            width: 28px;
-            background: #DC2626;
-        }
-
-        /* SAĞA DOĞRU AKAN MARQUEE ANİMASYONU */
-        @keyframes marquee-right {
-            0% {
-                transform: translateX(-50%);
-            }
-
-            100% {
-                transform: translateX(0%);
-            }
-        }
-
-        .animate-marquee-right {
-            display: flex;
-            width: max-content;
-            animation: marquee-right 40s linear infinite;
-        }
-
-        .marquee-container:hover .animate-marquee-right {
-            animation-play-state: paused;
-        }
-
-        /* SCROLL REVEAL (EKRANA GELDİKÇE YUKARIDAN DÜŞME ANİMASYONLARI) */
-        .reveal-drop {
-            opacity: 0;
-            transform: translateY(-40px);
-            transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal-pop {
-            opacity: 0;
-            transform: translateY(-20px) scale(0.95);
-            transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        /* Ekrana Girildiğinde Tetiklenen Aktif Sınıf */
-        .reveal-drop.active,
-        .reveal-pop.active {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-
-        /* Sırayla Düşme Gecikmeleri (Staggered Effect) */
-        .delay-1 {
-            transition-delay: 0.15s;
-        }
-
-        .delay-2 {
-            transition-delay: 0.30s;
-        }
-
-        .delay-3 {
-            transition-delay: 0.45s;
-        }
-
-        .delay-4 {
-            transition-delay: 0.60s;
-        }
-
-        /* Scrollbar'ı tamamen gizle */
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none !important;
-        }
-
-        .hide-scrollbar {
-            -ms-overflow-style: none !important;
-            scrollbar-width: none !important;
-        }
-    </style>
-</head>
+    </head>
 
 <body class="font-sans antialiased text-brandNavy bg-white">
 
@@ -217,7 +89,7 @@
                                         class="relative mx-auto max-w-lg lg:max-w-none rounded-2xl bg-white p-3 shadow-2xl border border-slate-200/80 group hover:shadow-orange-500/10 transition-all duration-500">
                                         <div
                                             class="relative overflow-hidden rounded-xl bg-slate-100 aspect-[16/10] flex flex-col items-center justify-center">
-                                            <img src="images/sliderimg/1.jpg" alt="DİA Cloud ERP Bulut Yazılım Arayüzü"
+                                            <img fetchpriority="high" loading="eager" decoding="async" src="images/sliderimg/1.jpg" alt="DİA Cloud ERP Bulut Yazılım Arayüzü"
                                                 class="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-500 ease-out"
                                                 onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-6\'><i data-lucide=\'monitor\' class=\'w-12 h-12 text-[#245BA7] mx-auto mb-2 opacity-80\'></i><p class=\'text-sm font-bold text-slate-700\'>DİA ERP Dashboard Ekran Görseli</p><p class=\'text-xs text-slate-400 mt-1\'>Önerilen Boyut: 1200x750px (WebP / PNG)</p></div>';" />
                                         </div>
@@ -270,7 +142,7 @@
                                         <div
                                             class="relative overflow-hidden rounded-xl bg-slate-100 aspect-[16/10] flex flex-col items-center justify-center">
 
-                                            <img src="images/sliderimg/2.jpg"
+                                            <img loading="lazy" decoding="async" src="images/sliderimg/2.jpg"
                                                 alt="Kompiturk B2B ve Pazaryeri Entegrasyonları"
                                                 class="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-500 ease-out"
                                                 onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-6\'><i data-lucide=\'layers\' class=\'w-12 h-12 text-[#DC2626] mx-auto mb-2 opacity-80\'></i><p class=\'text-sm font-bold text-slate-700\'>Kompiturk B2B & Entegrasyon Görseli</p><p class=\'text-xs text-slate-400 mt-1\'>Önerilen Boyut: 1200x750px (WMS / B2B Vektörü)</p></div>';" />
@@ -310,7 +182,7 @@
                                         class="relative mx-auto max-w-lg lg:max-w-none rounded-2xl bg-white p-3 shadow-2xl border border-slate-200/80 group hover:shadow-blue-500/10 transition-all duration-500">
                                         <div
                                             class="relative overflow-hidden rounded-xl bg-slate-100 aspect-[16/10] flex flex-col items-center justify-center">
-                                            <img src="images/sliderimg/3.jpg"
+                                            <img loading="lazy" decoding="async" src="images/sliderimg/3.jpg"
                                                 alt="Kurumsal IT Sunucu ve Firewall Sistemleri"
                                                 class="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-500 ease-out"
                                                 onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-6\'><i data-lucide=\'server\' class=\'w-12 h-12 text-[#245BA7] mx-auto mb-2 opacity-80\'></i><p class=\'text-sm font-bold text-slate-700\'>IT Sunucu & Ağ Görseli</p><p class=\'text-xs text-slate-400 mt-1\'>Önerilen Boyut: 1200x750px (Sunucu Odası / Güvenlik)</p></div>';" />
@@ -349,7 +221,7 @@
                                         class="relative mx-auto max-w-lg lg:max-w-none rounded-2xl bg-white p-3 shadow-2xl border border-slate-200/80 group hover:shadow-amber-500/10 transition-all duration-500">
                                         <div
                                             class="relative overflow-hidden rounded-xl bg-slate-100 aspect-[16/10] flex flex-col items-center justify-center">
-                                            <img src="images/sliderimg/4.jpg"
+                                            <img loading="lazy" decoding="async" src="images/sliderimg/4.jpg"
                                                 alt="Kompiturk DİA ERP Ödül Töreni ve Ekip"
                                                 class="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-500 ease-out"
                                                 onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-6\'><i data-lucide=\'award\' class=\'w-12 h-12 text-[#E77F18] mx-auto mb-2 opacity-80\'></i><p class=\'text-sm font-bold text-slate-700\'>Ödül Töreni / Ekip Fotoğrafı Görseli</p><p class=\'text-xs text-slate-400 mt-1\'>Önerilen Boyut: 1200x750px (Etkinlik Fotoğrafı)</p></div>';" />
@@ -479,10 +351,10 @@
                                             <div>
                                                 <div
                                                     class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-slate-200 group-hover:bg-white flex items-center justify-center mb-4 transition-all duration-300 overflow-hidden shadow-sm">
-                                                    <img src="./images/icon_light/PazarYeriEntegrasyonu_light.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_light/PazarYeriEntegrasyonu_light.svg"
                                                         alt="Pazaryeri Entegrasyonu"
                                                         class="w-8 h-8 object-contain block group-hover:hidden" />
-                                                    <img src="./images/icon_dark/PazarYeriEntegrasyonu.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_dark/PazarYeriEntegrasyonu.svg"
                                                         alt="Pazaryeri Entegrasyonu"
                                                         class="w-8 h-8 object-contain hidden group-hover:block" />
                                                 </div>
@@ -506,10 +378,10 @@
                                             <div>
                                                 <div
                                                     class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-slate-100 group-hover:bg-white flex items-center justify-center mb-4 transition-all duration-300 overflow-hidden shadow-sm">
-                                                    <img src="./images/icon_light/Ahtapotdepo_light.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_light/Ahtapotdepo_light.svg"
                                                         alt="Ahtapot WMS Depo"
                                                         class="w-8 h-8 object-contain block group-hover:hidden" />
-                                                    <img src="./images/icon_dark/AhtapotDepo.svg" alt="Ahtapot WMS Depo"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_dark/AhtapotDepo.svg" alt="Ahtapot WMS Depo"
                                                         class="w-8 h-8 object-contain hidden group-hover:block" />
                                                 </div>
                                                 <h3
@@ -532,9 +404,9 @@
                                             <div>
                                                 <div
                                                     class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-slate-100 group-hover:bg-white flex items-center justify-center mb-4 transition-all duration-300 overflow-hidden shadow-sm">
-                                                    <img src="./images/icon_light/depokurdu_light.svg" alt="Depo Kurdu"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_light/depokurdu_light.svg" alt="Depo Kurdu"
                                                         class="w-8 h-8 object-contain block group-hover:hidden" />
-                                                    <img src="./images/icon_dark/depoKurdu.svg" alt="Depo Kurdu"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_dark/depoKurdu.svg" alt="Depo Kurdu"
                                                         class="w-8 h-8 object-contain hidden group-hover:block" />
                                                 </div>
                                                 <h3
@@ -557,10 +429,10 @@
                                             <div>
                                                 <div
                                                     class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-slate-100 group-hover:bg-white flex items-center justify-center mb-4 transition-all duration-300 overflow-hidden shadow-sm">
-                                                    <img src="./images/icon_light/MobilB2BBayiSiparisPlatformu_light.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_light/MobilB2BBayiSiparisPlatformu_light.svg"
                                                         alt="Mobil B2B Portalı"
                                                         class="w-8 h-8 object-contain block group-hover:hidden" />
-                                                    <img src="./images/icon_dark/MobilB2BBayiSiparisPlatformu.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_dark/MobilB2BBayiSiparisPlatformu.svg"
                                                         alt="Mobil B2B Portalı"
                                                         class="w-8 h-8 object-contain hidden group-hover:block" />
                                                 </div>
@@ -584,10 +456,10 @@
                                             <div>
                                                 <div
                                                     class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-slate-100 group-hover:bg-white flex items-center justify-center mb-4 transition-all duration-300 overflow-hidden shadow-sm">
-                                                    <img src="./images/icon_light/MobilSicaksatis_light.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_light/MobilSicaksatis_light.svg"
                                                         alt="Mobil Sıcak Satış"
                                                         class="w-8 h-8 object-contain block group-hover:hidden" />
-                                                    <img src="./images/icon_dark/MobilSicaksatis.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_dark/MobilSicaksatis.svg"
                                                         alt="Mobil Sıcak Satış"
                                                         class="w-8 h-8 object-contain hidden group-hover:block" />
                                                 </div>
@@ -611,10 +483,10 @@
                                             <div>
                                                 <div
                                                     class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-slate-100 group-hover:bg-white flex items-center justify-center mb-4 transition-all duration-300 overflow-hidden shadow-sm">
-                                                    <img src="./images/icon_light/KompiBossMobilPatronEkrani_light.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_light/KompiBossMobilPatronEkrani_light.svg"
                                                         alt="Kompiboss"
                                                         class="w-8 h-8 object-contain block group-hover:hidden" />
-                                                    <img src="./images/icon_dark/KompiBossMobilPatron.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_dark/KompiBossMobilPatron.svg"
                                                         alt="Kompiboss"
                                                         class="w-8 h-8 object-contain hidden group-hover:block" />
                                                 </div>
@@ -638,10 +510,10 @@
                                             <div>
                                                 <div
                                                     class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-slate-100 group-hover:bg-white flex items-center justify-center mb-4 transition-all duration-300 overflow-hidden shadow-sm">
-                                                    <img src="./images/icon_light/KurumsalMobilUygulama_light.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_light/KurumsalMobilUygulama_light.svg"
                                                         alt="Kurumsal Mobil Uygulama"
                                                         class="w-8 h-8 object-contain block group-hover:hidden" />
-                                                    <img src="./images/icon_dark/KurumsalMobilUygulama.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_dark/KurumsalMobilUygulama.svg"
                                                         alt="Kurumsal Mobil Uygulama"
                                                         class="w-8 h-8 object-contain hidden group-hover:block" />
                                                 </div>
@@ -665,9 +537,9 @@
                                             <div>
                                                 <div
                                                     class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-slate-100 group-hover:bg-white flex items-center justify-center mb-4 transition-all duration-300 overflow-hidden shadow-sm">
-                                                    <img src="./images/icon_light/NetTahsilat_light.svg" alt="Sanal Pos"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_light/NetTahsilat_light.svg" alt="Sanal Pos"
                                                         class="w-8 h-8 object-contain block group-hover:hidden" />
-                                                    <img src="./images/icon_dark/NetTahsilat.svg" alt="Sanal Pos"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_dark/NetTahsilat.svg" alt="Sanal Pos"
                                                         class="w-8 h-8 object-contain hidden group-hover:block" />
                                                 </div>
                                                 <h3
@@ -690,10 +562,10 @@
                                             <div>
                                                 <div
                                                     class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-slate-100 group-hover:bg-white flex items-center justify-center mb-4 transition-all duration-300 overflow-hidden shadow-sm">
-                                                    <img src="./images/icon_light/DistriEntegrasyonu_light.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_light/DistriEntegrasyonu_light.svg"
                                                         alt="Distribütör POS"
                                                         class="w-8 h-8 object-contain block group-hover:hidden" />
-                                                    <img src="./images/icon_dark/DistribEntegrasyonu.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_dark/DistribEntegrasyonu.svg"
                                                         alt="Distribütör POS"
                                                         class="w-8 h-8 object-contain hidden group-hover:block" />
                                                 </div>
@@ -717,10 +589,10 @@
                                             <div>
                                                 <div
                                                     class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-slate-100 group-hover:bg-white flex items-center justify-center mb-4 transition-all duration-300 overflow-hidden shadow-sm">
-                                                    <img src="./images/icon_light/XMLHubAkilliXMLEntegrasyonMerkezi_light.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_light/XMLHubAkilliXMLEntegrasyonMerkezi_light.svg"
                                                         alt="XML Hub Entegrasyon"
                                                         class="w-8 h-8 object-contain block group-hover:hidden" />
-                                                    <img src="./images/icon_dark/XMLHubAkilliXMLEntegrasyonMerkezi.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_dark/XMLHubAkilliXMLEntegrasyonMerkezi.svg"
                                                         alt="XML Hub Entegrasyon"
                                                         class="w-8 h-8 object-contain hidden group-hover:block" />
                                                 </div>
@@ -744,10 +616,10 @@
                                             <div>
                                                 <div
                                                     class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-slate-100 group-hover:bg-white flex items-center justify-center mb-4 transition-all duration-300 overflow-hidden shadow-sm">
-                                                    <img src="./images/icon_light/LogoEntegrasyon_light.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_light/LogoEntegrasyon_light.svg"
                                                         alt="Logo Entegrasyonu"
                                                         class="w-8 h-8 object-contain block group-hover:hidden" />
-                                                    <img src="./images/icon_dark/LogoEntegrasyon.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_dark/LogoEntegrasyon.svg"
                                                         alt="Logo Entegrasyonu"
                                                         class="w-8 h-8 object-contain hidden group-hover:block" />
                                                 </div>
@@ -771,10 +643,10 @@
                                             <div>
                                                 <div
                                                     class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-slate-100 group-hover:bg-white flex items-center justify-center mb-4 transition-all duration-300 overflow-hidden shadow-sm">
-                                                    <img src="./images/icon_light/YurticiGlobalKargoEntegrasyonu_light.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_light/YurticiGlobalKargoEntegrasyonu_light.svg"
                                                         alt="Kargo Entegrasyonu"
                                                         class="w-8 h-8 object-contain block group-hover:hidden" />
-                                                    <img src="./images/icon_dark/YurticiGlobalKargoEntegrasyonu.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_dark/YurticiGlobalKargoEntegrasyonu.svg"
                                                         alt="Kargo Entegrasyonu"
                                                         class="w-8 h-8 object-contain hidden group-hover:block" />
                                                 </div>
@@ -798,9 +670,9 @@
                                             <div>
                                                 <div
                                                     class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-slate-100 group-hover:bg-white flex items-center justify-center mb-4 transition-all duration-300 overflow-hidden shadow-sm">
-                                                    <img src="./images/icon_light/ozonlight.svg" alt="Ozon Kargo"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_light/ozonlight.svg" alt="Ozon Kargo"
                                                         class="w-8 h-8 object-contain block group-hover:hidden" />
-                                                    <img src="./images/icon_dark/ozondark.svg" alt="Ozon Kargo"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_dark/ozondark.svg" alt="Ozon Kargo"
                                                         class="w-8 h-8 object-contain hidden group-hover:block" />
                                                 </div>
                                                 <h3
@@ -823,10 +695,10 @@
                                             <div>
                                                 <div
                                                     class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-slate-100 group-hover:bg-white flex items-center justify-center mb-4 transition-all duration-300 overflow-hidden shadow-sm">
-                                                    <img src="./images/icon_light/Agirtonaj_light.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_light/Agirtonaj_light.svg"
                                                         alt="Kantar Entegrasyonu"
                                                         class="w-8 h-8 object-contain block group-hover:hidden" />
-                                                    <img src="./images/icon_dark/AgirTonaj.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_dark/AgirTonaj.svg"
                                                         alt="Kantar Entegrasyonu"
                                                         class="w-8 h-8 object-contain hidden group-hover:block" />
                                                 </div>
@@ -850,10 +722,10 @@
                                             <div>
                                                 <div
                                                     class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-slate-100 group-hover:bg-white flex items-center justify-center mb-4 transition-all duration-300 overflow-hidden shadow-sm">
-                                                    <img src="./images/icon_light/FordOtomasyon_light.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_light/FordOtomasyon_light.svg"
                                                         alt="Ford Otosan"
                                                         class="w-8 h-8 object-contain block group-hover:hidden" />
-                                                    <img src="./images/icon_dark/FordOtomasyon.svg" alt="Ford Otosan"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_dark/FordOtomasyon.svg" alt="Ford Otosan"
                                                         class="w-8 h-8 object-contain hidden group-hover:block" />
                                                 </div>
                                                 <h3
@@ -876,10 +748,10 @@
                                             <div>
                                                 <div
                                                     class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-slate-100 group-hover:bg-white flex items-center justify-center mb-4 transition-all duration-300 overflow-hidden shadow-sm">
-                                                    <img src="./images/icon_light/MobilKaliteKontrolArsivYonetimi_light.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_light/MobilKaliteKontrolArsivYonetimi_light.svg"
                                                         alt="Kalite Kontrol Arşiv"
                                                         class="w-8 h-8 object-contain block group-hover:hidden" />
-                                                    <img src="./images/icon_dark/MobilKaliteKontrolArsivYonetimi.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_dark/MobilKaliteKontrolArsivYonetimi.svg"
                                                         alt="Kalite Kontrol Arşiv"
                                                         class="w-8 h-8 object-contain hidden group-hover:block" />
                                                 </div>
@@ -903,10 +775,10 @@
                                             <div>
                                                 <div
                                                     class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-slate-100 group-hover:bg-white flex items-center justify-center mb-4 transition-all duration-300 overflow-hidden shadow-sm">
-                                                    <img src="./images/icon_light/PDKSPersonelDevamKontrol_light.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_light/PDKSPersonelDevamKontrol_light.svg"
                                                         alt="PDKS Personel Takip"
                                                         class="w-8 h-8 object-contain block group-hover:hidden" />
-                                                    <img src="./images/icon_dark/PDKSPersonelDevamKontrol.svg"
+                                                    <img loading="lazy" decoding="async" src="./images/icon_dark/PDKSPersonelDevamKontrol.svg"
                                                         alt="PDKS Personel Takip"
                                                         class="w-8 h-8 object-contain hidden group-hover:block" />
                                                 </div>
@@ -1257,12 +1129,12 @@
                             <div class="flex items-center justify-between gap-4">
                                 <div
                                     class="px-3.5 py-2 rounded-xl bg-white/95 border border-slate-200 shadow-md flex items-center justify-center">
-                                    <img src="images/dialogo.svg" alt="DİA Yazılım Yetkili Çözüm Ortağı Logo"
+                                    <img loading="lazy" decoding="async" src="images/dialogo.svg" alt="DİA Yazılım Yetkili Çözüm Ortağı Logo"
                                         class="h-8 w-auto object-contain" />
                                 </div>
                                 <div
                                     class="px-3.5 py-2 rounded-xl bg-white/95 border border-slate-200 shadow-md flex items-center justify-center">
-                                    <img src="images/komplogo.png" alt="DİA Yazılım Yetkili Çözüm Ortağı Logo"
+                                    <img loading="lazy" decoding="async" src="images/komplogo.png" alt="DİA Yazılım Yetkili Çözüm Ortağı Logo"
                                         class="h-8 w-auto object-contain" />
                                 </div>
 
@@ -1681,13 +1553,13 @@
                                 <div class="flex items-center gap-2">
                                     <div
                                         class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-red-50 p-2 flex items-center justify-center shadow-inner">
-                                        <img src="images/logo.png" alt="Ödüyo Logo"
+                                        <img loading="lazy" decoding="async" src="images/logo.png" alt="Ödüyo Logo"
                                             class="w-full h-full object-contain">
                                     </div>
                                     <span class="text-slate-300 font-light text-sm">|</span>
                                     <div
                                         class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-red-50 p-2 flex items-center justify-center shadow-inner">
-                                        <img src="images/komplogo.png" alt="Compiturk Logo"
+                                        <img loading="lazy" decoding="async" src="images/komplogo.png" alt="Compiturk Logo"
                                             class="w-full h-full object-contain">
                                     </div>
                                 </div>
@@ -1730,13 +1602,13 @@
                                 <div class="flex items-center gap-2">
                                     <div
                                         class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-blue-50 p-2 flex items-center justify-center shadow-inner">
-                                        <img src="images/logo (1).png" alt="Entegra Logo"
+                                        <img loading="lazy" decoding="async" src="images/logo (1).png" alt="Entegra Logo"
                                             class="w-full h-full object-contain">
                                     </div>
                                     <span class="text-slate-300 font-light text-sm">|</span>
                                     <div
                                         class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-blue-50 p-2 flex items-center justify-center shadow-inner">
-                                        <img src="images/komplogo.png" alt="Compiturk Logo"
+                                        <img loading="lazy" decoding="async" src="images/komplogo.png" alt="Compiturk Logo"
                                             class="w-full h-full object-contain">
                                     </div>
                                 </div>
@@ -2445,7 +2317,41 @@
 
     <!-- JavaScript Başlatma ve Scroll Dinleyici Kodları -->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        function initPageHeroSwiper() {
+            if (typeof Swiper === 'undefined') {
+                setTimeout(initPageHeroSwiper, 100);
+                return;
+            }
+
+            const sliderEl = document.querySelector('.hero-slider');
+            if (sliderEl && !sliderEl.swiper) {
+                const swiperInstance = new Swiper(sliderEl, {
+                    loop: true,
+                    observer: true,
+                    observeParents: true,
+                    autoplay: {
+                        delay: 3500,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: false
+                    },
+                    speed: 700,
+                    spaceBetween: 30,
+                    grabCursor: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.hero-next',
+                        prevEl: '.hero-prev',
+                    },
+                });
+
+                if (swiperInstance && swiperInstance.autoplay) {
+                    swiperInstance.autoplay.start();
+                }
+            }
+
             // Lucide İkonları Başlatma
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
@@ -2461,27 +2367,6 @@
                 });
             }
 
-            // Hero Swiper Slider Başlatma
-            const heroSwiper = new Swiper('.hero-slider', {
-                loop: true,
-                observer: true,
-                observeParents: true,
-                autoplay: {
-                    delay: 6000,
-                    disableOnInteraction: false,
-                },
-                speed: 800,
-                spaceBetween: 30,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.hero-next',
-                    prevEl: '.hero-prev',
-                },
-            });
-
             // YUKARIDAN DÜŞME ANİMASYONU İÇİN INTERSECTION OBSERVER
             const observerOptions = {
                 root: null,
@@ -2496,11 +2381,16 @@
                 });
             }, observerOptions);
 
-            // Tüm animasyonlu elementleri dinlemeye başla
             document.querySelectorAll('.reveal-drop, .reveal-pop').forEach(el => {
                 observer.observe(el);
             });
-        });
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener("DOMContentLoaded", initPageHeroSwiper);
+        } else {
+            initPageHeroSwiper();
+        }
     </script>
 </body>
 
