@@ -6,53 +6,18 @@
     <title>DİA CRM ve Teknik Servis Yönetimi Programı | Müşteri & Servis Takip | Kompiturk</title>
     <meta name="description" content="DİA CRM ve Teknik Servis Yönetimi Yazılımı ile müşteri ilişkilerini, teklifleri, cihaz garanti takibini ve saha servis ekiplerini tek platformdan yönetin. Kompiturk Yetkili Çözüm Ortağı.">
 
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter (Preconnected) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Local Compiled Tailwind CSS -->
+    <link rel="stylesheet" href="../css/style.css">
 
     <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brandRed: '#DC2626',
-                        brandNavy: '#0F172A',
-                        brandSlate: '#64748b',
-                        brandIce: '#F8FAFC',
-                        diaBlue: '#245BA7',
-                        diaOrange: '#E77F18',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Mega Menu Tabancası & Animasyon Düzeltmesi */
-.mega-menu {
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none; /* Gizliyken farenin algılamasını engeller */
-    transform: translateY(10px);
-    transition: all 0.2s ease-in-out;
-}
-
-/* Sadece ilgili gruba gelindiğinde görünür ve tıklanabilir yap */
-.group:hover .mega-menu {
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto; /* Açıldığında tıklanabilir yap */
-    transform: translateY(0);
-}
-    </style>
-</head>
+    </head>
 <body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
 
     <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->

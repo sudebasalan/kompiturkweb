@@ -11,54 +11,19 @@
         content="B2B yazılım çözümleri, Ahtapot WMS, pazaryeri entegrasyonu, mobil B2B, Sanal POS, KompiBoss, kargo entegrasyonu, PDKS">
     <meta name="author" content="Kompiturk Bilgisayar">
 
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter (Preconnected) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Local Compiled Tailwind CSS -->
+    <link rel="stylesheet" href="../css/style.css">
 
     <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brandRed: '#DC2626',
-                        brandRedDark: '#B91C1C',
-                        brandNavy: '#0F172A',
-                        brandNavyLight: '#1E3A8A',
-                        brandSlate: '#334155',
-                        brandIce: '#F8FAFC',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Kategori İkonunun Hover Durumu (Açık -> Koyu) */
-        .category-icon-container .icon-dark {
-            display: none;
-        }
-
-        .category-icon-container .icon-light {
-            display: block;
-        }
-
-        .group:hover .category-icon-container .icon-dark {
-            display: block;
-        }
-
-        .group:hover .category-icon-container .icon-light {
-            display: none;
-        }
-    </style>
-</head>
+    </head>
 
 <body
     class="bg-[#F8FAFC] text-[#334155] font-sans antialiased min-h-screen flex flex-col justify-between overflow-x-hidden">
@@ -130,7 +95,7 @@
                         <div>
                             <a href="ahtapot-depo-yonetimi.html" class="block">
                                 <div class="relative rounded-t-xl overflow-hidden h-48 flex items-center justify-center">
-                                    <img src="../images/products/ahtapot.jpg" alt="Ahtapot Depo Yönetimi Ekran Görseli"
+                                    <img loading="lazy" decoding="async" src="../images/products/ahtapot.jpg" alt="Ahtapot Depo Yönetimi Ekran Görseli"
                                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                         onerror="this.onerror=null; this.parentNode.innerHTML='<span class=\'text-xs text-slate-400 font-semibold\'>ÜRÜN GÖRSEL ALANI</span>';">
                                 </div>
@@ -140,10 +105,10 @@
                                 <div class="flex items-center gap-2.5">
                                     <div
                                         class="category-icon-container w-10 h-10 flex-shrink-0 flex items-center justify-center">
-                                        <img src="../images/icon_light/Ahtapotdepo_light.svg"
+                                        <img loading="lazy" decoding="async" src="../images/icon_light/Ahtapotdepo_light.svg"
                                             alt="Ahtapot Depo Yönetimi İkon"
                                             class="icon-light w-10 h-10 object-contain">
-                                        <img src="../images/icon_dark/AhtapotDepo.svg" alt="Ahtapot Depo Yönetimi İkon"
+                                        <img loading="lazy" decoding="async" src="../images/icon_dark/AhtapotDepo.svg" alt="Ahtapot Depo Yönetimi İkon"
                                             class="icon-dark w-10 h-10 object-contain">
                                     </div>
                                     <h3
@@ -172,7 +137,7 @@
                         <div>
                             <a href="depo-kurdu.html" class="block">
                                 <div class="relative rounded-t-xl overflow-hidden h-48 flex items-center justify-center">
-                                    <img src="../images/products/depo-kurdu.jpg" alt="Depo Kurdu Ekran Görseli"
+                                    <img loading="lazy" decoding="async" src="../images/products/depo-kurdu.jpg" alt="Depo Kurdu Ekran Görseli"
                                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                         onerror="this.onerror=null; this.parentNode.innerHTML='<span class=\'text-xs text-slate-400 font-semibold\'>ÜRÜN GÖRSEL ALANI</span>';">
                                 </div>
@@ -182,9 +147,9 @@
                                 <div class="flex items-center gap-2.5">
                                     <div
                                         class="category-icon-container w-10 h-10 flex-shrink-0 flex items-center justify-center">
-                                        <img src="../images/icon_light/depokurdu_light.svg" alt="Depo Kurdu İkon"
+                                        <img loading="lazy" decoding="async" src="../images/icon_light/depokurdu_light.svg" alt="Depo Kurdu İkon"
                                             class="icon-light w-10 h-10 object-contain">
-                                        <img src="../images/icon_dark/depoKurdu.svg" alt="Depo Kurdu İkon"
+                                        <img loading="lazy" decoding="async" src="../images/icon_dark/depoKurdu.svg" alt="Depo Kurdu İkon"
                                             class="icon-dark w-10 h-10 object-contain">
                                     </div>
                                     <h3
@@ -213,7 +178,7 @@
                         <div>
                             <a href="distributor-pos.html" class="block">
                                 <div class="relative rounded-t-xl overflow-hidden h-48 flex items-center justify-center">
-                                    <img src="../images/products/distribitor-pos.jpg"
+                                    <img loading="lazy" decoding="async" src="../images/products/distribitor-pos.jpg"
                                         alt="Distribütör POS Ekran Görseli"
                                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                         onerror="this.onerror=null; this.parentNode.innerHTML='<span class=\'text-xs text-slate-400 font-semibold\'>ÜRÜN GÖRSEL ALANI</span>';">
@@ -224,9 +189,9 @@
                                 <div class="flex items-center gap-2.5">
                                     <div
                                         class="category-icon-container w-10 h-10 flex-shrink-0 flex items-center justify-center">
-                                        <img src="../images/icon_light/DistriEntegrasyonu_light.svg"
+                                        <img loading="lazy" decoding="async" src="../images/icon_light/DistriEntegrasyonu_light.svg"
                                             alt="Distribütör POS İkon" class="icon-light w-10 h-10 object-contain">
-                                        <img src="../images/icon_dark/DistribEntegrasyonu.svg"
+                                        <img loading="lazy" decoding="async" src="../images/icon_dark/DistribEntegrasyonu.svg"
                                             alt="Distribütör POS İkon" class="icon-dark w-10 h-10 object-contain">
                                     </div>
                                     <h3
@@ -254,7 +219,7 @@
                         <div>
                             <a href="ford-otosan.html" class="block">
                                 <div class="relative rounded-t-xl overflow-hidden h-48 flex items-center justify-center">
-                                    <img src="../images/products/Ford-Otosan-Entegrasyonu.jpg"
+                                    <img loading="lazy" decoding="async" src="../images/products/Ford-Otosan-Entegrasyonu.jpg"
                                         alt="Ford Otosan Ekran Görseli"
                                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                         onerror="this.onerror=null; this.parentNode.innerHTML='<span class=\'text-xs text-slate-400 font-semibold\'>ÜRÜN GÖRSEL ALANI</span>';">
@@ -265,9 +230,9 @@
                                 <div class="flex items-center gap-2.5">
                                     <div
                                         class="category-icon-container w-10 h-10 flex-shrink-0 flex items-center justify-center">
-                                        <img src="../images/icon_light/FordOtomasyon_light.svg" alt="Ford Otosan İkon"
+                                        <img loading="lazy" decoding="async" src="../images/icon_light/FordOtomasyon_light.svg" alt="Ford Otosan İkon"
                                             class="icon-light w-10 h-10 object-contain">
-                                        <img src="../images/icon_dark/FordOtomasyon.svg" alt="Ford Otosan İkon"
+                                        <img loading="lazy" decoding="async" src="../images/icon_dark/FordOtomasyon.svg" alt="Ford Otosan İkon"
                                             class="icon-dark w-10 h-10 object-contain">
                                     </div>
                                     <h3
@@ -296,7 +261,7 @@
                         <div>
                             <a href="kalite-kontrol-arsiv.html" class="block">
                                 <div class="relative rounded-t-xl overflow-hidden h-48 flex items-center justify-center">
-                                    <img src="../images/products/Kalite-Kontrol-Arsiv.jpg"
+                                    <img loading="lazy" decoding="async" src="../images/products/Kalite-Kontrol-Arsiv.jpg"
                                         alt="Kalite Kontrol Ekran Görseli"
                                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                         onerror="this.onerror=null; this.parentNode.innerHTML='<span class=\'text-xs text-slate-400 font-semibold\'>ÜRÜN GÖRSEL ALANI</span>';">
@@ -307,9 +272,9 @@
                                 <div class="flex items-center gap-2.5">
                                     <div
                                         class="category-icon-container w-10 h-10 flex-shrink-0 flex items-center justify-center">
-                                        <img src="../images/icon_light/MobilKaliteKontrolArsivYonetimi_light.svg"
+                                        <img loading="lazy" decoding="async" src="../images/icon_light/MobilKaliteKontrolArsivYonetimi_light.svg"
                                             alt="Kalite Kontrol İkon" class="icon-light w-10 h-10 object-contain">
-                                        <img src="../images/icon_dark/MobilKaliteKontrolArsivYonetimi.svg"
+                                        <img loading="lazy" decoding="async" src="../images/icon_dark/MobilKaliteKontrolArsivYonetimi.svg"
                                             alt="Kalite Kontrol İkon" class="icon-dark w-10 h-10 object-contain">
                                     </div>
                                     <h3
@@ -338,7 +303,7 @@
                         <div>
                             <a href="kantar-entegrasyonu.html" class="block">
                                 <div class="relative rounded-t-xl overflow-hidden h-48 flex items-center justify-center">
-                                    <img src="../images/products/Kantar-Entegrasyonu.jpg" alt="Kantar Ekran Görseli"
+                                    <img loading="lazy" decoding="async" src="../images/products/Kantar-Entegrasyonu.jpg" alt="Kantar Ekran Görseli"
                                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                         onerror="this.onerror=null; this.parentNode.innerHTML='<span class=\'text-xs text-slate-400 font-semibold\'>ÜRÜN GÖRSEL ALANI</span>';">
                                 </div>
@@ -348,9 +313,9 @@
                                 <div class="flex items-center gap-2.5">
                                     <div
                                         class="category-icon-container w-10 h-10 flex-shrink-0 flex items-center justify-center">
-                                        <img src="../images/icon_light/Agirtonaj_light.svg"
+                                        <img loading="lazy" decoding="async" src="../images/icon_light/Agirtonaj_light.svg"
                                             alt="Kantar Entegrasyonu İkon" class="icon-light w-10 h-10 object-contain">
-                                        <img src="../images/icon_dark/AgirTonaj.svg" alt="Kantar Entegrasyonu İkon"
+                                        <img loading="lazy" decoding="async" src="../images/icon_dark/AgirTonaj.svg" alt="Kantar Entegrasyonu İkon"
                                             class="icon-dark w-10 h-10 object-contain">
                                     </div>
                                     <h3
@@ -379,7 +344,7 @@
                         <div>
                             <a href="kargo-entegrasyonu.html" class="block">
                                 <div class="relative rounded-t-xl overflow-hidden h-48 flex items-center justify-center">
-                                    <img src="../images/products/Kargo-Entegrasyonu.jpg" alt="Kargo Ekran Görseli"
+                                    <img loading="lazy" decoding="async" src="../images/products/Kargo-Entegrasyonu.jpg" alt="Kargo Ekran Görseli"
                                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                         onerror="this.onerror=null; this.parentNode.innerHTML='<span class=\'text-xs text-slate-400 font-semibold\'>ÜRÜN GÖRSEL ALANI</span>';">
                                 </div>
@@ -389,9 +354,9 @@
                                 <div class="flex items-center gap-2.5">
                                     <div
                                         class="category-icon-container w-10 h-10 flex-shrink-0 flex items-center justify-center">
-                                        <img src="../images/icon_light/YurticiGlobalKargoEntegrasyonu_light.svg"
+                                        <img loading="lazy" decoding="async" src="../images/icon_light/YurticiGlobalKargoEntegrasyonu_light.svg"
                                             alt="Kargo Entegrasyonu İkon" class="icon-light w-10 h-10 object-contain">
-                                        <img src="../images/icon_dark/YurticiGlobalKargoEntegrasyonu.svg"
+                                        <img loading="lazy" decoding="async" src="../images/icon_dark/YurticiGlobalKargoEntegrasyonu.svg"
                                             alt="Kargo Entegrasyonu İkon" class="icon-dark w-10 h-10 object-contain">
                                     </div>
                                     <h3
@@ -420,7 +385,7 @@
                         <div>
                             <a href="kompiboss.html" class="block">
                                 <div class="relative rounded-t-xl overflow-hidden h-48 flex items-center justify-center">
-                                    <img src="../images/products/KompiBoss-(Patron-Ekrani).jpg"
+                                    <img loading="lazy" decoding="async" src="../images/products/KompiBoss-(Patron-Ekrani).jpg"
                                         alt="KompiBoss Ekran Görseli"
                                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                         onerror="this.onerror=null; this.parentNode.innerHTML='<span class=\'text-xs text-slate-400 font-semibold\'>ÜRÜN GÖRSEL ALANI</span>';">
@@ -431,9 +396,9 @@
                                 <div class="flex items-center gap-2.5">
                                     <div
                                         class="category-icon-container w-10 h-10 flex-shrink-0 flex items-center justify-center">
-                                        <img src="../images/icon_light/KompiBossMobilPatronEkrani_light.svg"
+                                        <img loading="lazy" decoding="async" src="../images/icon_light/KompiBossMobilPatronEkrani_light.svg"
                                             alt="KompiBoss İkon" class="icon-light w-10 h-10 object-contain">
-                                        <img src="../images/icon_dark/KompiBossMobilPatron.svg" alt="KompiBoss İkon"
+                                        <img loading="lazy" decoding="async" src="../images/icon_dark/KompiBossMobilPatron.svg" alt="KompiBoss İkon"
                                             class="icon-dark w-10 h-10 object-contain">
                                     </div>
                                     <h3
@@ -462,7 +427,7 @@
                         <div>
                             <a href="kurumsal-mobil-uygulama.html" class="block">
                                 <div class="relative rounded-t-xl overflow-hidden h-48 flex items-center justify-center">
-                                    <img src="../images/products/Kurumsal-Mobil-Uygulama.jpg"
+                                    <img loading="lazy" decoding="async" src="../images/products/Kurumsal-Mobil-Uygulama.jpg"
                                         alt="Kurumsal Mobil Ekran Görseli"
                                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                         onerror="this.onerror=null; this.parentNode.innerHTML='<span class=\'text-xs text-slate-400 font-semibold\'>ÜRÜN GÖRSEL ALANI</span>';">
@@ -473,10 +438,10 @@
                                 <div class="flex items-center gap-2.5">
                                     <div
                                         class="category-icon-container w-10 h-10 flex-shrink-0 flex items-center justify-center">
-                                        <img src="../images/icon_light/KurumsalMobilUygulama_light.svg"
+                                        <img loading="lazy" decoding="async" src="../images/icon_light/KurumsalMobilUygulama_light.svg"
                                             alt="Kurumsal Mobil Uygulama İkon"
                                             class="icon-light w-10 h-10 object-contain">
-                                        <img src="../images/icon_dark/KurumsalMobilUygulama.svg"
+                                        <img loading="lazy" decoding="async" src="../images/icon_dark/KurumsalMobilUygulama.svg"
                                             alt="Kurumsal Mobil Uygulama İkon"
                                             class="icon-dark w-10 h-10 object-contain">
                                     </div>
@@ -506,7 +471,7 @@
                         <div>
                             <a href="logo-entegrasyon.html" class="block">
                                 <div class="relative rounded-t-xl overflow-hidden h-48 flex items-center justify-center">
-                                    <img src="../images/products/Logo-Entegrasyonu.jpg"
+                                    <img loading="lazy" decoding="async" src="../images/products/Logo-Entegrasyonu.jpg"
                                         alt="Logo Entegrasyonu Ekran Görseli"
                                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                         onerror="this.onerror=null; this.parentNode.innerHTML='<span class=\'text-xs text-slate-400 font-semibold\'>ÜRÜN GÖRSEL ALANI</span>';">
@@ -517,9 +482,9 @@
                                 <div class="flex items-center gap-2.5">
                                     <div
                                         class="category-icon-container w-10 h-10 flex-shrink-0 flex items-center justify-center">
-                                        <img src="../images/icon_light/LogoEntegrasyon_light.svg"
+                                        <img loading="lazy" decoding="async" src="../images/icon_light/LogoEntegrasyon_light.svg"
                                             alt="Logo Entegrasyonu İkon" class="icon-light w-10 h-10 object-contain">
-                                        <img src="../images/icon_dark/LogoEntegrasyon.svg" alt="Logo Entegrasyonu İkon"
+                                        <img loading="lazy" decoding="async" src="../images/icon_dark/LogoEntegrasyon.svg" alt="Logo Entegrasyonu İkon"
                                             class="icon-dark w-10 h-10 object-contain">
                                     </div>
                                     <h3
@@ -548,7 +513,7 @@
                         <div>
                             <a href="mobil-b2b-bayi-platformu.html" class="block">
                                 <div class="relative rounded-t-xl overflow-hidden h-48 flex items-center justify-center">
-                                    <img src="../images/products/Mobil-B2B-Platformu.jpg" alt="Mobil B2B Ekran Görseli"
+                                    <img loading="lazy" decoding="async" src="../images/products/Mobil-B2B-Platformu.jpg" alt="Mobil B2B Ekran Görseli"
                                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                         onerror="this.onerror=null; this.parentNode.innerHTML='<span class=\'text-xs text-slate-400 font-semibold\'>ÜRÜN GÖRSEL ALANI</span>';">
                                 </div>
@@ -558,10 +523,10 @@
                                 <div class="flex items-center gap-2.5">
                                     <div
                                         class="category-icon-container w-10 h-10 flex-shrink-0 flex items-center justify-center">
-                                        <img src="../images/icon_light/MobilB2BBayiSiparisPlatformu_light.svg"
+                                        <img loading="lazy" decoding="async" src="../images/icon_light/MobilB2BBayiSiparisPlatformu_light.svg"
                                             alt="Mobil B2B Bayi Platformu İkon"
                                             class="icon-light w-10 h-10 object-contain">
-                                        <img src="../images/icon_dark/MobilB2BBayiSiparisPlatformu.svg"
+                                        <img loading="lazy" decoding="async" src="../images/icon_dark/MobilB2BBayiSiparisPlatformu.svg"
                                             alt="Mobil B2B Bayi Platformu İkon"
                                             class="icon-dark w-10 h-10 object-contain">
                                     </div>
@@ -591,7 +556,7 @@
                         <div>
                             <a href="mobil-sicak-satis.html" class="block">
                                 <div class="relative rounded-t-xl overflow-hidden h-48 flex items-center justify-center">
-                                    <img src="../images/products/Mobil-Sicak-Satis.jpg"
+                                    <img loading="lazy" decoding="async" src="../images/products/Mobil-Sicak-Satis.jpg"
                                         alt="Mobil Sıcak Satış Ekran Görseli"
                                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                         onerror="this.onerror=null; this.parentNode.innerHTML='<span class=\'text-xs text-slate-400 font-semibold\'>ÜRÜN GÖRSEL ALANI</span>';">
@@ -602,9 +567,9 @@
                                 <div class="flex items-center gap-2.5">
                                     <div
                                         class="category-icon-container w-10 h-10 flex-shrink-0 flex items-center justify-center">
-                                        <img src="../images/icon_light/MobilSicaksatis_light.svg"
+                                        <img loading="lazy" decoding="async" src="../images/icon_light/MobilSicaksatis_light.svg"
                                             alt="Mobil Sıcak Satış İkon" class="icon-light w-10 h-10 object-contain">
-                                        <img src="../images/icon_dark/MobilSicaksatis.svg" alt="Mobil Sıcak Satış İkon"
+                                        <img loading="lazy" decoding="async" src="../images/icon_dark/MobilSicaksatis.svg" alt="Mobil Sıcak Satış İkon"
                                             class="icon-dark w-10 h-10 object-contain">
                                     </div>
                                     <h3
@@ -633,7 +598,7 @@
                         <div>
                             <a href="net-tahsilat.html" class="block">
                                 <div class="relative rounded-t-xl overflow-hidden h-48 flex items-center justify-center">
-                                    <img src="../images/products/Sanal-POS-Banka-odeme.jpg"
+                                    <img loading="lazy" decoding="async" src="../images/products/Sanal-POS-Banka-odeme.jpg"
                                         alt="Sanal POS Ekran Görseli"
                                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                         onerror="this.onerror=null; this.parentNode.innerHTML='<span class=\'text-xs text-slate-400 font-semibold\'>ÜRÜN GÖRSEL ALANI</span>';">
@@ -644,9 +609,9 @@
                                 <div class="flex items-center gap-2.5">
                                     <div
                                         class="category-icon-container w-10 h-10 flex-shrink-0 flex items-center justify-center">
-                                        <img src="../images/icon_light/NetTahsilat_light.svg" alt="Sanal POS İkon"
+                                        <img loading="lazy" decoding="async" src="../images/icon_light/NetTahsilat_light.svg" alt="Sanal POS İkon"
                                             class="icon-light w-10 h-10 object-contain">
-                                        <img src="../images/icon_dark/NetTahsilat.svg" alt="Sanal POS İkon"
+                                        <img loading="lazy" decoding="async" src="../images/icon_dark/NetTahsilat.svg" alt="Sanal POS İkon"
                                             class="icon-dark w-10 h-10 object-contain">
                                     </div>
                                     <h3
@@ -675,7 +640,7 @@
                         <div>
                             <a href="ozon-kargo.html" class="block">
                                 <div class="relative rounded-t-xl overflow-hidden h-48 flex items-center justify-center">
-                                    <img src="../images/products/Ozon-Kargo-Entegrasyonu.jpg"
+                                    <img loading="lazy" decoding="async" src="../images/products/Ozon-Kargo-Entegrasyonu.jpg"
                                         alt="Ozon Kargo Ekran Görseli"
                                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                         onerror="this.onerror=null; this.parentNode.innerHTML='<span class=\'text-xs text-slate-400 font-semibold\'>ÜRÜN GÖRSEL ALANI</span>';">
@@ -686,9 +651,9 @@
                                 <div class="flex items-center gap-2.5">
                                     <div
                                         class="category-icon-container w-10 h-10 flex-shrink-0 flex items-center justify-center">
-                                        <img src="../images/icon_light/ozonlight.svg" alt="Ozon Kargo İkon"
+                                        <img loading="lazy" decoding="async" src="../images/icon_light/ozonlight.svg" alt="Ozon Kargo İkon"
                                             class="icon-light w-10 h-10 object-contain">
-                                        <img src="../images/icon_dark/ozondark.svg" alt="Ozon Kargo İkon"
+                                        <img loading="lazy" decoding="async" src="../images/icon_dark/ozondark.svg" alt="Ozon Kargo İkon"
                                             class="icon-dark w-10 h-10 object-contain">
                                     </div>
                                     <h3
@@ -717,7 +682,7 @@
                         <div>
                             <a href="pazaryeri-entegrasyonu.html" class="block">
                                 <div class="relative rounded-t-xl overflow-hidden h-48 flex items-center justify-center">
-                                    <img src="../images/products/Pazaryeri-Entegrasyonu.jpg"
+                                    <img loading="lazy" decoding="async" src="../images/products/Pazaryeri-Entegrasyonu.jpg"
                                         alt="Pazaryeri Entegrasyonu Ekran Görseli"
                                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                         onerror="this.onerror=null; this.parentNode.innerHTML='<span class=\'text-xs text-slate-400 font-semibold\'>ÜRÜN GÖRSEL ALANI</span>';">
@@ -728,10 +693,10 @@
                                 <div class="flex items-center gap-2.5">
                                     <div
                                         class="category-icon-container w-10 h-10 flex-shrink-0 flex items-center justify-center">
-                                        <img src="../images/icon_light/PazarYeriEntegrasyonu_light.svg"
+                                        <img loading="lazy" decoding="async" src="../images/icon_light/PazarYeriEntegrasyonu_light.svg"
                                             alt="Pazaryeri Entegrasyonu İkon"
                                             class="icon-light w-10 h-10 object-contain">
-                                        <img src="../images/icon_dark/PazarYeriEntegrasyonu.svg"
+                                        <img loading="lazy" decoding="async" src="../images/icon_dark/PazarYeriEntegrasyonu.svg"
                                             alt="Pazaryeri Entegrasyonu İkon"
                                             class="icon-dark w-10 h-10 object-contain">
                                     </div>
@@ -761,7 +726,7 @@
                         <div>
                             <a href="pdks.html" class="block">
                                 <div class="relative rounded-t-xl overflow-hidden h-48 flex items-center justify-center">
-                                    <img src="../images/products/pdks.jpg" alt="PDKS Ekran Görseli"
+                                    <img loading="lazy" decoding="async" src="../images/products/pdks.jpg" alt="PDKS Ekran Görseli"
                                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                         onerror="this.onerror=null; this.parentNode.innerHTML='<span class=\'text-xs text-slate-400 font-semibold\'>ÜRÜN GÖRSEL ALANI</span>';">
                                 </div>
@@ -771,9 +736,9 @@
                                 <div class="flex items-center gap-2.5">
                                     <div
                                         class="category-icon-container w-10 h-10 flex-shrink-0 flex items-center justify-center">
-                                        <img src="../images/icon_light/PDKSPersonelDevamKontrol_light.svg"
+                                        <img loading="lazy" decoding="async" src="../images/icon_light/PDKSPersonelDevamKontrol_light.svg"
                                             alt="PDKS İkon" class="icon-light w-10 h-10 object-contain">
-                                        <img src="../images/icon_dark/PDKSPersonelDevamKontrol.svg" alt="PDKS İkon"
+                                        <img loading="lazy" decoding="async" src="../images/icon_dark/PDKSPersonelDevamKontrol.svg" alt="PDKS İkon"
                                             class="icon-dark w-10 h-10 object-contain">
                                     </div>
                                     <h3
@@ -802,7 +767,7 @@
                         <div>
                             <a href="xml-hub-entegrasyon.html" class="block">
                                 <div class="relative rounded-t-xl overflow-hidden h-48 flex items-center justify-center">
-                                    <img src="../images/products/XML-Hub-Entegrasyonu.jpg" alt="XML Hub Ekran Görseli"
+                                    <img loading="lazy" decoding="async" src="../images/products/XML-Hub-Entegrasyonu.jpg" alt="XML Hub Ekran Görseli"
                                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                         onerror="this.onerror=null; this.parentNode.innerHTML='<span class=\'text-xs text-slate-400 font-semibold\'>ÜRÜN GÖRSEL ALANI</span>';">
                                 </div>
@@ -812,9 +777,9 @@
                                 <div class="flex items-center gap-2.5">
                                     <div
                                         class="category-icon-container w-10 h-10 flex-shrink-0 flex items-center justify-center">
-                                        <img src="../images/icon_light/XMLHubAkilliXMLEntegrasyonMerkezi_light.svg"
+                                        <img loading="lazy" decoding="async" src="../images/icon_light/XMLHubAkilliXMLEntegrasyonMerkezi_light.svg"
                                             alt="XML Hub Entegrasyonu İkon" class="icon-light w-10 h-10 object-contain">
-                                        <img src="../images/icon_dark/XMLHubAkilliXMLEntegrasyonMerkezi.svg"
+                                        <img loading="lazy" decoding="async" src="../images/icon_dark/XMLHubAkilliXMLEntegrasyonMerkezi.svg"
                                             alt="XML Hub Entegrasyonu İkon" class="icon-dark w-10 h-10 object-contain">
                                     </div>
                                     <h3

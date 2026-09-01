@@ -8,50 +8,19 @@
     <meta name="description"
         content="20 yılı aşkın tecrübemizle işletmelerin dijital dönüşüm süreçlerini DİA ERP entegre yazılımlar ve uçtan uca IT altyapı hizmetleriyle geleceğe taşıyoruz. Compiturk.">
 
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter (Preconnected) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Local Compiled Tailwind CSS -->
+    <link rel="stylesheet" href="../css/style.css">
 
     <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brandRed: '#DC2626',
-                        brandRedDark: '#B91C1C',
-                        brandNavy: '#0F172A',
-                        brandNavyLight: '#1E3A8A',
-                        brandSlate: '#334155',
-                        brandIce: '#F8FAFC',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        },
-                        pulseGlow: {
-                            '0%, 100%': { opacity: 0.4 },
-                            '50%': { opacity: 0.8 },
-                        }
-                    },
-                    animation: {
-                        float: 'float 4s ease-in-out infinite',
-                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
-                    }
-                }
-            }
-        }
-    </script>
-</head>
+    </head>
 
 <body
     class="font-sans antialiased text-slate-800 bg-[#F8FAFC] min-h-screen flex flex-col selection:bg-[#DC2626] selection:text-white">
@@ -72,7 +41,7 @@
                     <!-- Sol Taraf: Görsel & Rozet Kutusu -->
                     <div class="lg:col-span-6 relative">
                         <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
-                            <img src="../images/hakkimizdaodul.jpeg" alt="Kompiturk Ödül"
+                            <img loading="lazy" decoding="async" src="../images/hakkimizdaodul.jpeg" alt="Kompiturk Ödül"
                                 class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
 
                             <!-- 500+ Aktif Müşteri Rozeti -->
@@ -389,20 +358,20 @@
                             <p class="text-xs sm:text-sm text-slate-500 mb-6">Aşağıdaki formu doldurun, uzman ekibimiz
                                 en kısa sürede size dönüş yapsın.</p>
 
-                            <form onsubmit="event.preventDefault();" class="space-y-4">
+                            <form class="space-y-4">
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
                                         <label
                                             class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Adınız
                                             Soyadınız *</label>
-                                        <input type="text" placeholder="Örn: Ahmet Yılmaz" required
+                                        <input type="text" name="fullname" placeholder="Örn: Ahmet Yılmaz" required
                                             class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-[#DC2626] focus:bg-white transition-all">
                                     </div>
                                     <div>
                                         <label
                                             class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Firma
                                             Adı</label>
-                                        <input type="text" placeholder="Örn: Compiturk Ltd. Şti."
+                                        <input type="text" name="company" placeholder="Örn: Compiturk Ltd. Şti."
                                             class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-[#DC2626] focus:bg-white transition-all">
                                     </div>
                                 </div>
@@ -412,14 +381,14 @@
                                         <label
                                             class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">E-Posta
                                             Adresi *</label>
-                                        <input type="email" placeholder="ahmet@firma.com" required
+                                        <input type="email" name="email" placeholder="ahmet@firma.com" required
                                             class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-[#DC2626] focus:bg-white transition-all">
                                     </div>
                                     <div>
                                         <label
                                             class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Telefon
                                             <span class="text-[#DC2626]">*</span> Numarası *</label>
-                                        <input type="tel" placeholder="05XX XXX XX XX" required
+                                        <input type="tel" name="phone" placeholder="05XX XXX XX XX" required
                                             class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-[#DC2626] focus:bg-white transition-all">
                                     </div>
                                 </div>
@@ -428,8 +397,8 @@
                                     <label
                                         class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">İlgilendiğiniz
                                         Hizmet / Ürün</label>
-                                    <select
-                                        class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-[#DC2626] focus:bg-white transition-all">
+                                    <select name="service"
+                                        class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-[#DC2626] focus:bg-white transition-all cursor-pointer">
                                         <option value="dia-erp">DİA ERP Kurulum &amp; Danışmanlık</option>
                                         <option value="e-ticaret">E-Ticaret &amp; Pazaryeri Entegrasyonları</option>
                                         <option value="wms-depo">Ahtapot WMS Depo Yönetimi</option>
@@ -442,12 +411,12 @@
                                 <div>
                                     <label
                                         class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Mesajınız</label>
-                                    <textarea rows="3" placeholder="İhtiyaçlarınızdan kısaca bahsedin..."
+                                    <textarea name="message" rows="3" placeholder="İhtiyaçlarınızdan kısaca bahsedin..."
                                         class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-[#DC2626] focus:bg-white transition-all resize-none"></textarea>
                                 </div>
 
                                 <button type="submit"
-                                    class="w-full py-4 rounded-xl bg-[#DC2626] hover:bg-[#B91C1C] text-white font-extrabold text-base shadow-lg shadow-red-600/30 transition-all duration-300 flex items-center justify-center gap-2">
+                                    class="w-full py-4 rounded-xl bg-[#DC2626] hover:bg-[#B91C1C] text-white font-extrabold text-base shadow-lg shadow-red-600/30 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer">
                                     <span>Formu Gönder</span>
                                     <i data-lucide="send" class="w-5 h-5"></i>
                                 </button>

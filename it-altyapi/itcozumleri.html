@@ -11,36 +11,19 @@
         content="IT altyapı, sunucu kurulumu, UTM Firewall, siber güvenlik, ağ altyapısı, otomatik yedekleme, yazılım lisanslama, bilgisayar kiralama">
     <meta name="author" content="Kompiturk Bilgisayar">
 
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter (Preconnected) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Local Compiled Tailwind CSS -->
+    <link rel="stylesheet" href="../css/style.css">
 
     <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brandRed: '#DC2626',
-                        brandRedDark: '#B91C1C',
-                        brandNavy: '#0F172A',
-                        brandNavyLight: '#1E3A8A',
-                        brandSlate: '#334155',
-                        brandIce: '#F8FAFC',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-</head>
+    </head>
 
 <body
     class="bg-[#F8FAFC] text-[#334155] font-sans antialiased min-h-screen flex flex-col justify-between overflow-x-hidden">
@@ -122,7 +105,7 @@
                         <div>
                             <a href="sunucu-kurulumu.html" class="block">
                                 <div class="relative rounded-t-2xl overflow-hidden border-b border-slate-200 h-[180px]">
-                                    <img src="../images/itimg/Sunucukurulumu.png" alt="Sunucu ve Cloud Kurulumu"
+                                    <img loading="lazy" decoding="async" src="../images/itimg/Sunucukurulumu.png" alt="Sunucu ve Cloud Kurulumu"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                 </div>
                             </a>
@@ -156,7 +139,7 @@
                         <div>
                             <a href="guvenlik-duvari.html" class="block">
                                 <div class="relative rounded-t-2xl overflow-hidden border-b border-slate-200 h-[180px]">
-                                    <img src="../images/itimg/UTM_Firewall_Guvenlik_Duvari.png"
+                                    <img loading="lazy" decoding="async" src="../images/itimg/UTM_Firewall_Guvenlik_Duvari.png"
                                         alt="UTM Güvenlik Duvarı"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                 </div>
@@ -191,7 +174,7 @@
                         <div>
                             <a href="yedekleme-cozumleri.html" class="block">
                                 <div class="relative rounded-t-2xl overflow-hidden border-b border-slate-200 h-[180px]">
-                                    <img src="../images/itimg/Otomatik_Yedekleme_cozumleri.png"
+                                    <img loading="lazy" decoding="async" src="../images/itimg/Otomatik_Yedekleme_cozumleri.png"
                                         alt="Yedekleme Çözümleri"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                 </div>
@@ -226,7 +209,7 @@
                         <div>
                             <a href="ag-altyapisi.html" class="block">
                                 <div class="relative rounded-t-2xl overflow-hidden border-b border-slate-200 h-[180px]">
-                                    <img src="../images/itimg/Agaltyapisi.png" alt="Ağ Altyapısı"
+                                    <img loading="lazy" decoding="async" src="../images/itimg/Agaltyapisi.png" alt="Ağ Altyapısı"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                 </div>
                             </a>
@@ -261,7 +244,7 @@
                         <div>
                             <a href="yazilim-lisanslama.html" class="block">
                                 <div class="relative rounded-t-2xl overflow-hidden border-b border-slate-200 h-[180px]">
-                                    <img src="../images/itimg/Yazilim_Lisanslama.png" alt="Yazılım Lisanslama"
+                                    <img loading="lazy" decoding="async" src="../images/itimg/Yazilim_Lisanslama.png" alt="Yazılım Lisanslama"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                 </div>
                             </a>
@@ -295,7 +278,7 @@
                         <div>
                             <a href="hosting-domain.html" class="block">
                                 <div class="relative rounded-t-2xl overflow-hidden border-b border-slate-200 h-[180px]">
-                                    <img src="../images/itimg/Hosting_DomainHizmetleri.png"
+                                    <img loading="lazy" decoding="async" src="../images/itimg/Hosting_DomainHizmetleri.png"
                                         alt="Hosting & Domain Hizmetleri"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                 </div>
@@ -330,7 +313,7 @@
                         <div>
                             <a href="bilgisayar-yazici-kiralama.html" class="block">
                                 <div class="relative rounded-t-2xl overflow-hidden border-b border-slate-200 h-[180px]">
-                                    <img src="../images/itimg/Bilgisayar_YaziciKiralama.png"
+                                    <img loading="lazy" decoding="async" src="../images/itimg/Bilgisayar_YaziciKiralama.png"
                                         alt="Bilgisayar & Yazıcı Kiralama"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                 </div>
@@ -365,7 +348,7 @@
                         <div>
                             <a href="donanim-destegi.html" class="block">
                                 <div class="relative rounded-t-2xl overflow-hidden border-b border-slate-200 h-[180px]">
-                                    <img src="../images/itimg/DonanimDestekHizmetleri.png"
+                                    <img loading="lazy" decoding="async" src="../images/itimg/DonanimDestekHizmetleri.png"
                                         alt="Donanım Destek Hizmetleri"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                 </div>
@@ -400,7 +383,7 @@
                         <div>
                             <a href="yazici-kurulumu.html" class="block">
                                 <div class="relative rounded-t-2xl overflow-hidden border-b border-slate-200 h-[180px]">
-                                    <img src="../images/itimg/Yazici_Kurulumu_Bakimi.png" alt="Yazıcı Kurulumu & Bakım"
+                                    <img loading="lazy" decoding="async" src="../images/itimg/Yazici_Kurulumu_Bakimi.png" alt="Yazıcı Kurulumu & Bakım"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                 </div>
                             </a>
@@ -434,7 +417,7 @@
                         <div>
                             <a href="sarf-malzemeleri.html" class="block">
                                 <div class="relative rounded-t-2xl overflow-hidden border-b border-slate-200 h-[180px]">
-                                    <img src="../images/itimg/Sarf_Malzemeleri_Tedarigi.png"
+                                    <img loading="lazy" decoding="async" src="../images/itimg/Sarf_Malzemeleri_Tedarigi.png"
                                         alt="Sarf Malzemeleri Tedariği"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                 </div>
@@ -469,7 +452,7 @@
                         <div>
                             <a href="e-imza.html" class="block">
                                 <div class="relative rounded-t-2xl overflow-hidden border-b border-slate-200 h-[180px]">
-                                    <img src="../images/itimg/e-imza.png" alt="E-imza"
+                                    <img loading="lazy" decoding="async" src="../images/itimg/e-imza.png" alt="E-imza"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                 </div>
                             </a>

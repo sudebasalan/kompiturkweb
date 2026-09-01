@@ -46,23 +46,25 @@
                 </div>
 
                 <!-- Form -->
-                <form id="it-cta-form" onsubmit="handleItFormSubmit(event)" class="space-y-4">
+                <form id="it-cta-form" data-service="${h1Heading}" onsubmit="handleItFormSubmit(event)" class="space-y-4">
+                    <input type="hidden" name="service" value="${h1Heading}">
+                    <input type="hidden" name="form_type" value="hizli_it_kesif">
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">   AD SOYAD    <span class="text-[#DC2626]">*</span>  / Firma Adı *</label>
-                        <input type="text" required placeholder="Ahmet Yılmaz - XYZ Lojistik" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 transition-all">
+                        <label class="block text-xs font-bold text-slate-700 mb-1">AD SOYAD <span class="text-[#DC2626]">*</span> / Firma Adı *</label>
+                        <input type="text" name="fullname" required placeholder="Ahmet Yılmaz - XYZ Lojistik" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 transition-all">
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">Telefon <span class="text-[#DC2626]">*</span>  Numarası *</label>
-                        <input type="tel" required placeholder="05XX XXX XX XX" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 transition-all">
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Telefon <span class="text-[#DC2626]">*</span> Numarası *</label>
+                        <input type="tel" name="phone" required placeholder="05XX XXX XX XX" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 transition-all">
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">Talep Özeti (İsteğe Bağlı)</label>
-                        <textarea rows="2" placeholder="Örn: 20 kullanıcılı sunucu kurulumu ve yedekleme desteği..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 transition-all resize-none"></textarea>
+                        <textarea name="message" rows="2" placeholder="Örn: 20 kullanıcılı sunucu kurulumu ve yedekleme desteği..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#245BA7] focus:ring-2 focus:ring-[#245BA7]/20 transition-all resize-none"></textarea>
                     </div>
 
-                    <button type="submit" class="w-full bg-[#245BA7] hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl shadow-lg hover:shadow-xl active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+                    <button type="submit" class="w-full bg-[#245BA7] hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl shadow-lg hover:shadow-xl active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer">
                         <span>Ücretsiz Danışmanlık ve Teklif İsteyin</span>
                         <i data-lucide="send" class="w-4 h-4"></i>
                     </button>
@@ -114,19 +116,23 @@ function toggleItModal(show) {
     }
 }
 
-// Form Gönderim Yönetimi
+// Form Gönderim Yönetimi (Merkezi Form Motoruna Bağlı)
 function handleItFormSubmit(e) {
-    e.preventDefault();
-    document.getElementById('it-cta-form').classList.add('hidden');
-    document.getElementById('it-cta-success').classList.remove('hidden');
+    if (e) e.preventDefault();
+    const form = document.getElementById('it-cta-form');
+    if (typeof handleGlobalFormSubmit === 'function') {
+        handleGlobalFormSubmit(form, e);
+    } else {
+        document.getElementById('it-cta-form').classList.add('hidden');
+        document.getElementById('it-cta-success').classList.remove('hidden');
 
-    setTimeout(() => {
-        toggleItModal(false);
-        // Formu sıfırla
         setTimeout(() => {
-            document.getElementById('it-cta-form').reset();
-            document.getElementById('it-cta-form').classList.remove('hidden');
-            document.getElementById('it-cta-success').classList.add('hidden');
-        }, 500);
-    }, 2500);
+            toggleItModal(false);
+            setTimeout(() => {
+                document.getElementById('it-cta-form').reset();
+                document.getElementById('it-cta-form').classList.remove('hidden');
+                document.getElementById('it-cta-success').classList.add('hidden');
+            }, 500);
+        }, 2500);
+    }
 }

@@ -6,35 +6,18 @@
     <title>Kurumsal Ağ Altyapısı & Yapısal Kablolama Çözümleri | Kompiturk</title>
     <meta name="description" content="Şirketinizin veri trafiğini, sunucu bağlantılarını ve DİA ERP altyapısını yüksek hızlı Cat6/Cat7, Fiber Optik kablolama ve akıllı Managed Switch çözümleriyle kuruyoruz. Kompiturk.">
 
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter (Preconnected) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Local Compiled Tailwind CSS -->
+    <link rel="stylesheet" href="../css/style.css">
 
     <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brandRed: '#DC2626',
-                        brandRedDark: '#B91C1C',
-                        brandNavy: '#0F172A',
-                        brandTechBlue: '#0EA5E9',
-                        brandSlate: '#334155',
-                        brandIce: '#F8FAFC',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-</head>
+    </head>
 <body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
 
     <!-- GLOBAL HEADER BİLEŞENİ (components.js Tarafından Doldurulacak) -->

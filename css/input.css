@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================================================= */
+/* MEGA MENU & DROPDOWN - AKILLI, KESİNTİSİZ VE ÇAKIŞMASIZ GEÇİŞ            */
+/* ========================================================================= */
+.mega-menu {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(6px);
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+    transition-delay: 0s;
+}
+
+/* Görünmez Hover Köprüsü (Nav Link ile Menü Arasındaki Boşluğu Kapatır) */
+.mega-menu::before {
+    content: '';
+    position: absolute;
+    top: -24px;
+    left: -20px;
+    right: -20px;
+    height: 30px;
+    background: transparent;
+    pointer-events: auto;
+}
+
+/* Sadece ve sadece farenin üzerinde olduğu menü anında ve temiz açılır */
+.group:hover > .mega-menu,
+.mega-menu:hover {
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0s !important;
+    transition-delay: 0s !important;
+}
+
+/* Başka bir menüye geçildiğinde önceki menüyü ANINDA kapat (Çakışmayı önler) */
+.group:not(:hover) > .mega-menu {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: translateY(6px) !important;
+    transition: none !important;
+}
+
+/* Nav Link Underline */
+.nav-link-underline {
+    position: relative;
+}
+
+.nav-link-underline::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #DC2626;
+    transition: width 0.3s ease;
+}
+
+.nav-link-underline:hover::after {
+    width: 100%;
+}
+
+/* Kategori İkonu Hover (Light / Dark Değişimi) */
+.category-icon-container .icon-dark {
+    display: none;
+}
+
+.category-icon-container .icon-light {
+    display: block;
+}
+
+.group:hover .category-icon-container .icon-dark {
+    display: block;
+}
+
+.group:hover .category-icon-container .icon-light {
+    display: none;
+}
+
+/* Swiper Pagination */
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #cbd5e1;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    width: 28px;
+    border-radius: 9999px;
+    background: #DC2626 !important;
+}
+
+/* Form Shake Animation */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
+}
+
+.animate-shake {
+    animation: shake 0.4s ease-in-out;
+}
+
+/* ========================================================================= */
+/* MARQUEE & OTOMATİK KAYAN EKRAN ANİMASYONLARI                              */
+/* ========================================================================= */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@keyframes marqueeScroll {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+.animate-marquee-right {
+    display: flex !important;
+    width: max-content !important;
+    animation: marqueeScroll 40s linear infinite !important;
+    will-change: transform;
+}
+
+.animate-marquee-left {
+    display: flex !important;
+    width: max-content !important;
+    animation: marqueeScroll 40s linear infinite reverse !important;
+    will-change: transform;
+}
+
+.marquee-container:hover .animate-marquee-right,
+.marquee-container:hover .animate-marquee-left,
+.animate-marquee-right:hover,
+.animate-marquee-left:hover,
+#yazilim-scroll-box:hover #yazilim-track,
+#it-scroll-box:hover #it-track {
+    animation-play-state: paused !important;
+}
+
+/* ========================================================================= */
+/* SCROLL REVEAL & GÖRÜNÜM ANİMASYONLARI (DİNAMİK SAYFA EFEKTLERİ)           */
+/* ========================================================================= */
+.reveal-drop {
+    opacity: 0;
+    transform: translateY(-24px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-drop.active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.reveal-pop {
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-pop.active {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-left.active {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-right.active {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
+.reveal-fade {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    will-change: opacity;
+}
+
+.reveal-fade.active {
+    opacity: 1 !important;
+}
+
+/* ========================================================================= */
+/* MİKRO ANİMASYONLAR & CANLI EFEKTLER (FLOAT, GLOW, GENTLE BOUNCE)          */
+/* ========================================================================= */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.animate-float {
+    animation: float 3.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.75;
+        transform: scale(1.04);
+    }
+}
+
+.animate-pulse-glow {
+    animation: pulseGlow 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes gentleBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.animate-bounce-gentle {
+    animation: gentleBounce 2.2s ease-in-out infinite;
+}
